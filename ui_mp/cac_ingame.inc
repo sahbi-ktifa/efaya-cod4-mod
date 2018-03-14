@@ -247,7 +247,7 @@
 
 	#define LOCAL_PRIMARY_WEAPON_ACTION( suffix, weapClass, weapRef ) \
 		play "mouse_click"; \
-		execOnDvarStringValue loadout_primary_attachment reflex ""; \
+		execOnDvarStringValue loadout_primary_attachment none ""; \
 		scriptMenuResponse "loadout_primary:"weapRef;\
 		setdvar loadout_primary weapRef; \
 		close self;\
@@ -256,7 +256,7 @@
 
 	#define LOCAL_PRIMARY_WEAPON_ACTION3( suffix, weapClass, weapRef ) \
 		play "mouse_click"; \
-		execOnDvarStringValue loadout_primary_attachment reflex ""; \
+		execOnDvarStringValue loadout_primary_attachment none ""; \
 		scriptMenuResponse "loadout_primary:"weapRef;\
 		setdvar loadout_primary weapRef; \
 		setdvar	loadout_primary_attachment none; \

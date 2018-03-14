@@ -81,8 +81,8 @@ init()
 	initWeaponData( "g36c", "assault", "allies" );
 	initWeaponData( "m14", "assault", "allies" );
 	initWeaponData( "mp44", "assault", "axis" );
-	initWeaponAttachments( "assault", "none;gl;reflex;silencer;acog" );
-	game["attach_assault_gl_limit"] = getdvarx( "attach_assault_gl_limit", "int", 64, 0, 64 );
+	initWeaponAttachments( "assault", "none;reflex;silencer;acog" );
+	//game["attach_assault_gl_limit"] = getdvarx( "attach_assault_gl_limit", "int", 64, 0, 64 );
 			
 	//**************************************************************************
 	// Specops weapons:
@@ -171,7 +171,7 @@ init()
 	initPerkData( "specialty_parabolic" );
 	
 	// Classes
-	initClassData( "assault", "m16;m16;ak47", "gl", "camo_none", "beretta;beretta;deserteagle", "none", "specialty_null", "specialty_bulletdamage", "specialty_longersprint", "frag_grenade", 1, "concussion_grenade", 1 );
+	initClassData( "assault", "m16;m16;ak47", "reflex", "camo_none", "beretta;beretta;deserteagle", "none", "none", "specialty_bulletdamage", "specialty_longersprint", "frag_grenade", 1, "concussion_grenade", 1 );
 	initClassData( "specops", "mp5;mp5;p90", "none", "camo_none", "usp;usp;deserteagle", "silencer", "c4_mp", "specialty_explosivedamage", "specialty_bulletaccuracy", "frag_grenade", 1, "flash_grenade", 1 );
 	initClassData( "heavygunner", "saw;saw;rpd", "none", "camo_none", "usp;usp;deserteagle", "none", "specialty_specialgrenade", "specialty_armorvest", "specialty_bulletpenetration", "frag_grenade", 1, "concussion_grenade", 1 );
 	initClassData( "demolitions", "winchester1200;m1014;winchester1200", "none", "camo_none", "beretta;beretta;deserteagle", "none", "rpg_mp", "specialty_explosivedamage", "specialty_longersprint", "frag_grenade", 1, "smoke_grenade", 1 );

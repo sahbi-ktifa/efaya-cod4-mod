@@ -13,11 +13,17 @@ VERSION             "1"
 CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
 FILENOTES           "Strings used in the weapon settings go in this file."
 
-REFERENCE           M16A4
-LANG_ENGLISH        "Proner's M16A4"
+REFERENCE           M16
+LANG_ENGLISH        "MW2 M16"
 
 REFERENCE           MW2_M16
-LANG_ENGLISH        "Proner's M16A4"
+LANG_ENGLISH        "Proner's M16"
+
+REFERENCE           MW3_DESERTEAGLE
+LANG_ENGLISH        "Gangsta's Eagle"
+
+REFERENCE           DESERTEAGLEGOLD
+LANG_ENGLISH        "Gangsta's Eagle"
 
 ENDMARKER
 

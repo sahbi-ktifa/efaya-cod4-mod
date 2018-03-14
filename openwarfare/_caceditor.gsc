@@ -836,7 +836,6 @@ addPrimaryAttachments()
 {
 	//Add Primary Attachments ( attachment_stat )
 	self addCACPrimaryAttachments( 0 ); //None
-	self addCACPrimaryAttachments( 5 ); //GL
 	self addCACPrimaryAttachments( 3 ); //Silencer
 	self addCACPrimaryAttachments( 2 ); //Reflex
 	self addCACPrimaryAttachments( 1 ); //Acog

@@ -1,10 +1,10 @@
 x,x,x,x,x,x,x
 0,200,customclass1,Primary Grenade,frag_grenade,100,1
 1,201,customclass1,Primary Weapon,m16,25,
-2,202,customclass1,Primary Attachment,reflex,5,
+2,202,customclass1,Primary Attachment,none,5,
 3,203,customclass1,Secondary Weapon,beretta,0,
 4,204,customclass1,Secondary Attachment,none,0,
-5,205,customclass1,Specialty1,specialty_null,191,
+5,205,customclass1,Specialty1,specialty_weapon_c4,184,
 6,206,customclass1,Specialty2,specialty_bulletdamage,160,
 7,207,customclass1,Specialty3,specialty_longersprint,154,
 8,208,customclass1,Special Grenade,concussion_grenade,103,1

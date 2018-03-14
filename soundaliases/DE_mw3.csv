@@ -1,0 +1,33 @@
+name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,probability,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage,conversion
+
+# Authors:
+# Fire: RUS[PROTOTYPE] 
+# Reload: TEH STRELOK / VALVe
+
+
+,DESERT EAGLE MW3
+
+# RELOAD
+weap_mw3_desert_eagle_clip_out_plr,,weps/DE_mw3/weap_mw3_desert_eagle_clip_out.wav,0.55,0.6,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+weap_mw3_desert_eagle_clip_in_plr,,weps/DE_mw3/weap_mw3_desert_eagle_clip_in.wav,0.55,0.6,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+weap_mw3_desert_eagle_pullout_first_plr,,weps/DE_mw3/weap_mw3_desert_eagle_slide_back_pf.wav,0.55,0.6,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+weap_mw3_desert_eagle_pullout_plr,,weps/DE_mw3/weap_mw3_desert_eagle_pullout.wav,0.55,0.6,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+
+
+# FIRE
+weap_mw3_desert_eagle_fire_plr,,weps/DE_mw3/weap_mw3_desert_eagle_fire.wav,0.72,0.79,wpnplyr,1,1,500000,,local,,,,0.85,,,,,weapon2
+
+weap_mw3_desert_eagle_fire_npc,,weps/DE_mw3/weap_mw3_desert_eagle_fire.wav,0.76,0.82,wpnai,1,1,35,8400,weapon,,,,0.7,!ac130 all_mp,,,,weapon4
+weap_mw3_desert_eagle_fire_npc,,weps/DE_mw3/weap_mw3_desert_eagle_fire.wav,0.76,0.82,wpnai,1,1,35,10920,weapon,,,,0.7,all_mp,,,,weapon4
+
+
+# NPC RELOAD
+weap_mw3_desert_eagle_reload_npc,,weps/DE_mw3/weap_mw3_desert_eagle_clip_out.wav,0.55,0.6,wpnai,1,1,7,500,reload,,,,0.7,all_mp,,,weap_mw3_desert_eagle_clip_in_npc,weapon2,50
+weap_mw3_desert_eagle_clip_in_npc,,weps/DE_mw3/weap_mw3_desert_eagle_clip_in.wav,0.55,0.6,wpnai,1,1,7,500,auto,,,,0.7,all_mp,,,,weapon2,600
+
+
+
+
+
+# Not used, just extra one if you'd like to put some other anims:
+weap_mw3_desert_eagle_slide_back_plr,,weps/DE_mw3/weap_mw3_desert_eagle_slide_back.wav,0.55,0.6,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,

@@ -102,8 +102,8 @@ unlockSpecialAttachments()
 	attachmentList[4] = "p90 silencer;skorpion silencer;uzi silencer;ak47 acog;ak74u acog;barrett acog";
 	attachmentList[5] = "dragunov acog;g3 acog;g36c acog;m14 acog;m16 acog;m21 acog";
 	attachmentList[6] = "m4 acog;m40a3 acog;m60e4 acog;mp5 acog;p90 acog;remington700 acog;rpd acog";
-	attachmentList[7] = "saw acog;skorpion acog;uzi acog;ak47 gl;g3 gl;g36c gl;m14 gl";
-	attachmentList[8] = "m16 gl;m4 gl;m1014 grip;m60e4 grip;rpd grip;saw grip;winchester1200 grip";
+	attachmentList[7] = "saw acog;skorpion acog;uzi acog";
+	attachmentList[8] = "m1014 grip;m60e4 grip;rpd grip;saw grip;winchester1200 grip";
 
 	// Get the last array of attachments unlocked for this player
 	attachix = self getStat( 3150 );

@@ -262,6 +262,7 @@ material,mtl_mw2_eotech
 material,mtl_mw2_eotech_lens
 material,mtl_weapon_mw2_eotech_dot
 material,mtl_mw2_m203
+material,mtl_mw3_desert_eagle
 
 rawfile,mp/CoD2maps.arena
 stringtable,mp/propsTable.csv
@@ -385,6 +386,7 @@ sound,misc,,all_mp
 sound,unreal,,all_mp
 sound,sr,,all_mp
 sound,m4_mw2,,all_mp
+sound,DE_mw3,,all_mp
 
 xanim,viewmodel_binoculars_idle
 xanim,viewmodel_mw2_m16m203_ADS_fire
@@ -438,6 +440,19 @@ xanim,viewmodel_mw2_m16_reflex_ADS_up
 xanim,viewmodel_mw2_m16_eotech_ADS_down
 xanim,viewmodel_mw2_m16_eotech_ADS_fire
 xanim,viewmodel_mw2_m16_eotech_ADS_up
+xanim,viewmodel_mw3_desert_eagle_fire
+xanim,viewmodel_mw3_desert_eagle_idle
+xanim,viewmodel_mw3_desert_eagle_pullout
+xanim,viewmodel_mw3_desert_eagle_pullout_first
+xanim,viewmodel_mw3_desert_eagle_putaway
+xanim,viewmodel_mw3_desert_eagle_reload
+xanim,viewmodel_mw3_desert_eagle_reload_empty
+xanim,viewmodel_mw3_desert_eagle_sprint_in
+xanim,viewmodel_mw3_desert_eagle_sprint_loop
+xanim,viewmodel_mw3_desert_eagle_sprint_out
+xanim,viewmodel_mw3_desert_eagle_ADS_down
+xanim,viewmodel_mw3_desert_eagle_ADS_fire
+xanim,viewmodel_mw3_desert_eagle_ADS_up
 
 xmodel,body_complete_mp_zakhaev
 xmodel,com_office_book_red_flat
@@ -450,6 +465,8 @@ xmodel,skull_ddogtag
 xmodel,viewmodel_mw2_m16
 xmodel,worldmodel_mw2_m16
 xmodel,worldmodel_mw2_m16_gl
+xmodel,viewmodel_mw3_desert_eagle
+xmodel,worldmodel_mw3_desert_eagle
 
 weapon,mp/binoculars_mp
 
