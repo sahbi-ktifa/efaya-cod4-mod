@@ -19,13 +19,13 @@ x,x,x,x,x,x,x,x,x,x,x
 17,3017,weapon_smg,,,,,,,,
 18,3018,weapon_smg,,,,,,,,
 19,3019,weapon_smg,,,,,,,,
-20,3020,weapon_assault,WEAPON_AK47,ak47,,weapon_ak47,PERKS_FULLY_AUTOMATIC_WITH5,reflex silencer acog gl,,
-21,3021,weapon_assault,WEAPON_M14,m14,,weapon_m14,PERKS_SINGLEFIRE_WITH_HIGH,reflex silencer acog gl,,PERKS_UNLOCKED_AT_LV46
+20,3020,weapon_assault,WEAPON_AK47,ak47,,weapon_ak47,PERKS_FULLY_AUTOMATIC_WITH5,reflex silencer acog,,
+21,3021,weapon_assault,WEAPON_M14,m14,,weapon_m14,PERKS_SINGLEFIRE_WITH_HIGH,reflex silencer acog,,PERKS_UNLOCKED_AT_LV46
 22,3022,weapon_assault,WEAPON_MP44,mp44,,weapon_mp44,PERKS_FULLY_AUTOMATIC_WITH6,,,PERKS_UNLOCKED_AT_LV52
-23,3023,weapon_assault,WEAPON_G3,g3,,weapon_g3,PERKS_SINGLEFIRE_WITH_A_HIGH,reflex silencer acog gl,,PERKS_UNLOCKED_AT_LV25
-24,3024,weapon_assault,WEAPON_G36C,g36c,,weapon_g36c,PERKS_FULLY_AUTOMATIC_WITH7,reflex silencer acog gl,,PERKS_UNLOCKED_AT_LV37
-25,3025,weapon_assault,WEAPON_M16,m16,,weapon_m16a4,PERKS_SEMIAUTOMATIC_WITH_THREE,reflex silencer acog gl,,
-26,3026,weapon_assault,WEAPON_M4_CARBINE,m4,,weapon_m4carbine,PERKS_FULLY_AUTOMATIC_WITH8,reflex silencer acog gl,,PERKS_UNLOCKED_AT_LV10
+23,3023,weapon_assault,WEAPON_G3,g3,,weapon_g3,PERKS_SINGLEFIRE_WITH_A_HIGH,reflex silencer acog,,PERKS_UNLOCKED_AT_LV25
+24,3024,weapon_assault,WEAPON_G36C,g36c,,weapon_g36c,PERKS_FULLY_AUTOMATIC_WITH7,reflex silencer acog,,PERKS_UNLOCKED_AT_LV37
+25,3025,weapon_assault,WEAPON_MW2_M16,m16,,weapon_m16a4,PERKS_SEMIAUTOMATIC_WITH_THREE,reflex silencer acog,,
+26,3026,weapon_assault,WEAPON_M4_CARBINE,m4,,weapon_m4carbine,PERKS_FULLY_AUTOMATIC_WITH8,reflex silencer acog,,PERKS_UNLOCKED_AT_LV10
 27,3027,weapon_assault,,,,,,,,
 28,3028,weapon_assault,,,,,,,,
 29,3029,weapon_assault,,,,,,,,

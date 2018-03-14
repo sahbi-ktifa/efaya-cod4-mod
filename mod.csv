@@ -254,6 +254,14 @@ material,cross_tag
 material,skull_tag
 material,cross_hud
 material,skull_hud
+material,mtl_mw2_m16
+material,mtl_mw2_acog
+material,mtl_mw2_reflex
+material,mtl_mw2_silencer
+material,mtl_mw2_eotech
+material,mtl_mw2_eotech_lens
+material,mtl_weapon_mw2_eotech_dot
+material,mtl_mw2_m203
 
 rawfile,mp/CoD2maps.arena
 stringtable,mp/propsTable.csv
@@ -376,8 +384,60 @@ sound,hideandseek,,all_mp
 sound,misc,,all_mp
 sound,unreal,,all_mp
 sound,sr,,all_mp
+sound,m4_mw2,,all_mp
 
 xanim,viewmodel_binoculars_idle
+xanim,viewmodel_mw2_m16m203_ADS_fire
+xanim,viewmodel_mw2_m16m203_idle
+xanim,viewmodel_mw2_m16m203_fire
+xanim,viewmodel_mw2_m16m203_reload
+xanim,viewmodel_mw2_m16m203_reload_empty
+xanim,viewmodel_mw2_m16m203_pullout
+xanim,viewmodel_mw2_m16m203_pullout_quick
+xanim,viewmodel_mw2_m16m203_pullout_first
+xanim,viewmodel_mw2_m16m203_putaway
+xanim,viewmodel_mw2_m16m203_putaway_quick
+xanim,viewmodel_mw2_m16m203_sprint_in
+xanim,viewmodel_mw2_m16m203_sprint_loop
+xanim,viewmodel_mw2_m16m203_sprint_out
+xanim,viewmodel_mw2_m16m203_bullet_2_grenade
+xanim,viewmodel_mw2_m16m203_grenade_2_bullet
+xanim,viewmodel_mw2_m16m203_grenade_ADS_down
+xanim,viewmodel_mw2_m16m203_grenade_ADS_up
+xanim,viewmodel_mw2_m16m203_grenade_idle
+xanim,viewmodel_mw2_m16m203_grenade_fire
+xanim,viewmodel_mw2_m16m203_grenade_reload
+xanim,viewmodel_mw2_m16m203_grenade_pullout
+xanim,viewmodel_mw2_m16m203_grenade_pullout_quick
+xanim,viewmodel_mw2_m16m203_grenade_putaway
+xanim,viewmodel_mw2_m16m203_grenade_putaway_quick
+xanim,viewmodel_mw2_m16m203_grenade_sprint_in
+xanim,viewmodel_mw2_m16m203_grenade_sprint_loop
+xanim,viewmodel_mw2_m16m203_grenade_sprint_out
+xanim,viewmodel_mw2_m16_ADS_down
+xanim,viewmodel_mw2_m16_ADS_up
+xanim,viewmodel_mw2_m16_ADS_fire
+xanim,viewmodel_mw2_m16_idle
+xanim,viewmodel_mw2_m16_fire
+xanim,viewmodel_mw2_m16_reload
+xanim,viewmodel_mw2_m16_reload_empty
+xanim,viewmodel_mw2_m16_pullout
+xanim,viewmodel_mw2_m16_pullout_quick
+xanim,viewmodel_mw2_m16_pullout_first
+xanim,viewmodel_mw2_m16_putaway
+xanim,viewmodel_mw2_m16_putaway_quick
+xanim,viewmodel_mw2_m16_sprint_in
+xanim,viewmodel_mw2_m16_sprint_loop
+xanim,viewmodel_mw2_m16_sprint_out
+xanim,viewmodel_mw2_m16_acog_ADS_down
+xanim,viewmodel_mw2_m16_acog_ADS_fire
+xanim,viewmodel_mw2_m16_acog_ADS_up
+xanim,viewmodel_mw2_m16_reflex_ADS_down
+xanim,viewmodel_mw2_m16_reflex_ADS_fire
+xanim,viewmodel_mw2_m16_reflex_ADS_up
+xanim,viewmodel_mw2_m16_eotech_ADS_down
+xanim,viewmodel_mw2_m16_eotech_ADS_fire
+xanim,viewmodel_mw2_m16_eotech_ADS_up
 
 xmodel,body_complete_mp_zakhaev
 xmodel,com_office_book_red_flat
@@ -387,6 +447,9 @@ xmodel,iceberg
 xmodel,icebergred
 xmodel,cross_ddogtag
 xmodel,skull_ddogtag
+xmodel,viewmodel_mw2_m16
+xmodel,worldmodel_mw2_m16
+xmodel,worldmodel_mw2_m16_gl
 
 weapon,mp/binoculars_mp
 
