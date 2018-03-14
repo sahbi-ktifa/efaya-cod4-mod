@@ -29,7 +29,6 @@
 
 	// ========================== Perk 1 special cases ===========================
 	#define UPDATE_PERK1 \
-		execOnDvarStringValue loadout_primary_attachment gl "set loadout_perk1_locked 1;set loadout_perk1 specialty_null"; \
 		execOnDvarStringValue loadout_primary_attachment grip "set loadout_perk1_locked 1;set loadout_perk1 specialty_null"; \
 		execOnDvarStringValue loadout_primary_attachment none "set loadout_perk1_locked 0"; \
 		execOnDvarStringValue loadout_primary_attachment acog "set loadout_perk1_locked 0"; \
@@ -248,7 +247,7 @@
 
 	#define LOCAL_PRIMARY_WEAPON_ACTION( suffix, weapClass, weapRef ) \
 		play "mouse_click"; \
-		execOnDvarStringValue loadout_primary_attachment gl ""; \
+		execOnDvarStringValue loadout_primary_attachment reflex ""; \
 		scriptMenuResponse "loadout_primary:"weapRef;\
 		setdvar loadout_primary weapRef; \
 		close self;\
@@ -257,7 +256,7 @@
 
 	#define LOCAL_PRIMARY_WEAPON_ACTION3( suffix, weapClass, weapRef ) \
 		play "mouse_click"; \
-		execOnDvarStringValue loadout_primary_attachment gl ""; \
+		execOnDvarStringValue loadout_primary_attachment reflex ""; \
 		scriptMenuResponse "loadout_primary:"weapRef;\
 		setdvar loadout_primary weapRef; \
 		setdvar	loadout_primary_attachment none; \
@@ -409,10 +408,9 @@
 		onClose{execnow "set ui_inside_popup 0";} \
 		LOCAL_ATTACHMENT_INFO_WINDOW( "loadout_"ptype )\
 		LOCAL_ATTACHMENT_ITEM( 1, stat_slot, "assault", NUM_NONE, "none", ;, ptype, statDvar, 0 )\
-		LOCAL_ATTACHMENT_ITEM( 2, stat_slot, "assault", NUM_GL, "gl", play "mouse_click"; ;, ptype, statDvar, GL_NEW_BITMASK )\
-		LOCAL_ATTACHMENT_ITEM( 3, stat_slot, "assault", NUM_SUPPRESSOR, "silencer", ;, ptype, statDvar, SILENCER_NEW_BITMASK )\
-		LOCAL_ATTACHMENT_ITEM( 4, stat_slot, "assault", NUM_REFLEX, "reflex", ;, ptype, statDvar, REDDOT_NEW_BITMASK )\
-		LOCAL_ATTACHMENT_ITEM( 5, stat_slot, "assault", NUM_ACOG, "acog", ;, ptype, statDvar, ACOG_NEW_BITMASK )\
+		LOCAL_ATTACHMENT_ITEM( 2, stat_slot, "assault", NUM_SUPPRESSOR, "silencer", ;, ptype, statDvar, SILENCER_NEW_BITMASK )\
+		LOCAL_ATTACHMENT_ITEM( 3, stat_slot, "assault", NUM_REFLEX, "reflex", ;, ptype, statDvar, REDDOT_NEW_BITMASK )\
+		LOCAL_ATTACHMENT_ITEM( 4, stat_slot, "assault", NUM_ACOG, "acog", ;, ptype, statDvar, ACOG_NEW_BITMASK )\
 	}\
 	menuDef { /* LMG attachments*/\
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_attachment_popup_heavygunner"suffix, 7, (CHOICE_X( pos )-2), (CHOICE_Y( pos )+44+y_offset), ;, execnow "set "UI_FOCUSFIRST" "REF_ATTACHMENT_NONE"; set ui_inside_popup attachment";, 0 )\
