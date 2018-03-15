@@ -25,6 +25,12 @@ LANG_ENGLISH        "Gangsta's DEagle"
 REFERENCE           DESERTEAGLEGOLD
 LANG_ENGLISH        "Gangsta's DEagle"
 
+REFERENCE           M1GARAND
+LANG_ENGLISH        "M1 Garand"
+
+REFERENCE           M1GARAND_SCOPED
+LANG_ENGLISH        "M1 Garand"
+
 ENDMARKER
 
 

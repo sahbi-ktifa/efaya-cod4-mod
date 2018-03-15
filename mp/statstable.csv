@@ -79,7 +79,7 @@ x,x,x,x,x,x,x,x,x,x,x
 77,3077,weapon_shotgun,,,,,,,,
 78,3078,weapon_shotgun,,,,,,,,
 79,3079,weapon_shotgun,,,,,,,,
-80,3080,weapon_lmg,WEAPON_RPD,rpd,,weapon_rpd,PERKS_FULLY_AUTOMATIC_WITH9,acog grip reflex,,
+80,3080,weapon_lmg,WEAPON_M1GARAND,rpd,,weapon_m1garand,WEAPON_M1GARAND,acog,,
 81,3081,weapon_lmg,WEAPON_SAW,saw,,weapon_m249saw,PERKS_FULLY_AUTOMATIC_WITH10,acog grip reflex,,
 82,3082,weapon_lmg,WEAPON_M60E4,m60e4,,weapon_m60e4,PERKS_FULLY_AUTOMATIC_WITH11,acog grip reflex,,PERKS_UNLOCKED_AT_LV19
 83,3083,weapon_lmg,,,,,,,,

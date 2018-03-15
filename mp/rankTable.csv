@@ -1,7 +1,7 @@
-0,pfc1,0,30,RANK_PFC,RANK_PFC_FULL,rank_pfc1,30,;,;,;,;,;,1,1,;,RANK_PFC_FULL
-1,pfc2,30,90,RANK_PFC,RANK_PFC_FULL2,rank_pfc2,120,;,;,;,;,;,2,2,feature_demolitions,RANK_PFC_FULL_N
-2,pfc3,120,150,RANK_PFC,RANK_PFC_FULL3,rank_pfc3,270,;,;,;,;,;,3,3,feature_sniper,RANK_PFC_FULL_N
-3,lcpl1,270,210,RANK_LCPL,RANK_LCPL_FULL,rank_lcpl1,480,;,;,;,;,;,4,4,feature_cac,RANK_LCPL_FULL
+0,pfc1,0,30,RANK_PFC,RANK_PFC_FULL,rank_pfc1,30,;,;,;,;,;,1,1,feature_cac feature_demolitions feature_sniper,RANK_PFC_FULL
+1,pfc2,30,90,RANK_PFC,RANK_PFC_FULL2,rank_pfc2,120,;,;,;,;,;,2,2,;,RANK_PFC_FULL_N
+2,pfc3,120,150,RANK_PFC,RANK_PFC_FULL3,rank_pfc3,270,;,;,;,;,;,3,3,;,RANK_PFC_FULL_N
+3,lcpl1,270,210,RANK_LCPL,RANK_LCPL_FULL,rank_lcpl1,480,;,;,;,;,;,4,4,;,RANK_LCPL_FULL
 4,lcpl2,480,270,RANK_LCPL,RANK_LCPL_FULL2,rank_lcpl2,750,;,;,tier_1_a;tier_2_a;tier_3_a;tier_4_a;tier_5_a,;,;,5,5,feature_challenges,RANK_LCPL_FULL_N
 5,lcpl3,750,330,RANK_LCPL,RANK_LCPL_FULL3,rank_lcpl3,1080,;,;,;,;,;,6,6,;,RANK_LCPL_FULL_N
 6,cpl1,1080,390,RANK_CPL,RANK_CPL_FULL,rank_cpl1,1470,m21,;,ch_marksman_m21;ch_expert_m21_1,m21 camo_brockhaurd;m21 camo_bushdweller,;,7,7,;,RANK_CPL_FULL
