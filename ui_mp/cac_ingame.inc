@@ -74,8 +74,8 @@
 		#define CAC_SETUP_ACTION1 \
 			play "mouse_click"; \
 			execOnDvarStringValue loadout_class assault "set selected_weapon_class assault;set ui_weapon_class_selected @MPUI_ASSAULT_RIFLES"; \
-			execOnDvarStringValue loadout_class heavygunner "set selected_weapon_class heavygunner;set ui_weapon_class_selected @MPUI_SUB_MACHINE_GUNS"; \
-			execOnDvarStringValue loadout_class specops "set selected_weapon_class specops;set ui_weapon_class_selected @MPUI_LIGHT_MACHINE_GUNS"; \
+			execOnDvarStringValue loadout_class heavygunner "set selected_weapon_class heavygunner;set ui_weapon_class_selected @WEAPON_LIGHT_MACHINE_GUNS"; \
+			execOnDvarStringValue loadout_class specops "set selected_weapon_class specops;set ui_weapon_class_selected @MPUI_SUB_MACHINE_GUNS"; \
 			execOnDvarStringValue loadout_class demolitions "set selected_weapon_class demolitions;set ui_weapon_class_selected @MPUI_SHOTGUNS"; \
 			execOnDvarStringValue loadout_class sniper "set selected_weapon_class sniper;set ui_weapon_class_selected @MPUI_SNIPER_RIFLES"; \
 			uiScript openMenuOnDvar loadout_class assault "ocd_popup_cac_assault"; \
