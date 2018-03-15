@@ -20,7 +20,7 @@ x,x,x,x,x,x,x
 18,218,defaultclass2,Special Grenade,smoke_grenade,102,1
 19,219,defaultclass2,Camo is not scripted for offline,camo_none,0,
 20,220,defaultclass3,Primary Grenade,frag_grenade,100,1
-21,221,defaultclass3,Primary Weapon,m60e4,82,
+21,221,defaultclass3,Primary Weapon,rpd,82,
 22,222,defaultclass3,Primary Attachment,grip,4,
 23,223,defaultclass3,Secondary Weapon,deserteagle,3,
 24,224,defaultclass3,Secondary Attachment,none,0,
@@ -70,7 +70,7 @@ x,x,x,x,x,x,x
 68,268,defaultclass7,Special Grenade,flash_grenade,101,3
 69,269,defaultclass7,Camo is not scripted for offline,camo_none,0,
 70,270,defaultclass8,Primary Grenade,frag_grenade,100,1
-71,271,defaultclass8,Primary Weapon,saw,81,
+71,271,defaultclass8,Primary Weapon,rpd,81,
 72,272,defaultclass8,Primary Attachment,acog,1,
 73,273,defaultclass8,Secondary Weapon,deserteagle,3,
 74,274,defaultclass8,Secondary Attachment,none,0,

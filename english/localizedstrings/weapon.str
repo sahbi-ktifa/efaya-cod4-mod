@@ -31,6 +31,12 @@ LANG_ENGLISH        "M1 Garand"
 REFERENCE           M1GARAND_SCOPED
 LANG_ENGLISH        "M1 Garand"
 
+REFERENCE           RPD
+LANG_ENGLISH        "M1 Garand"
+
+REFERENCE			LIGHT_MACHINE_GUNS
+LANG_ENGLISH		"Classic Rifles"
+
 ENDMARKER
 
 

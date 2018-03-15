@@ -266,6 +266,11 @@ material,mtl_weapon_mw2_eotech_dot
 material,mtl_mw2_m203
 material,mtl_mw3_desert_eagle
 material,hud_icon_m1garand
+material,scoped_overlay_german
+material,scoped_overlay_britain
+material,scoped_overlay_american
+material,scoped_overlay_russian
+material,scope_overlay_mp
 
 rawfile,mp/CoD2maps.arena
 stringtable,mp/propsTable.csv

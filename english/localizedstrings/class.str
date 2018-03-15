@@ -14,10 +14,10 @@ CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
 FILENOTES           ""
 
 REFERENCE           CLASS3
-LANG_ENGLISH        "Classic Rifles"
+LANG_ENGLISH        "My Classic Rifle"
 
 REFERENCE           DEFAULT_HEAVYGUNNER
-LANG_ENGLISH        "Default classic rilfe"
+LANG_ENGLISH        "Default classic rifle"
 
 REFERENCE           CUSTOM3
-LANG_ENGLISH        "Classic rifle"
+LANG_ENGLISH        "My Classic Rifle"

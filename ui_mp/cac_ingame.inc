@@ -295,8 +295,8 @@
 			CHOICE_BUTTON_EX( itemNum, plabel, play "mouse_click"; execnow "set selected_weapon_class "ptext"; set ui_weapon_class_selected "plabel; open "ocd_popup_cac_"ptext;, name ptext )
 
 		LOCAL_WEAPON_CLASS( 1, "assault", "@MPUI_ASSAULT_RIFLES" )
-		LOCAL_WEAPON_CLASS( 2, "heavygunner", "@MPUI_SUB_MACHINE_GUNS" )
-		LOCAL_WEAPON_CLASS( 3, "specops", "@MPUI_LIGHT_MACHINE_GUNS" )
+		LOCAL_WEAPON_CLASS( 2, "heavygunner", "@WEAPON_LIGHT_MACHINE_GUNS" )
+		LOCAL_WEAPON_CLASS( 3, "specops", "@MPUI_SUB_MACHINE_GUNS" )
 		LOCAL_WEAPON_CLASS( 4, "demolitions", "@MPUI_SHOTGUNS" )
 		LOCAL_WEAPON_CLASS( 5, "sniper", "@MPUI_SNIPER_RIFLES" )	
 	}
@@ -321,8 +321,8 @@
 	menuDef	{\
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_popup_cac_heavygunner"suffix, 7, (CHOICE_X( pos )-2), (CHOICE_Y( pos )+20+y_offset), ;, execnow "set "UI_FOCUSFIRST" "REF_M249SAW"; set ui_inside_popup heavygunner";, 0 )\
 		LOCAL_WEAPON_INFO_WINDOW( "ui_primary_highlighted" )\
-		LOCAL_WEAPON_ITEM( suffix, 1, "@WEAPON_SAW", "heavygunner", REF_M249SAW )\
-		LOCAL_WEAPON_ITEM( suffix, 2, "@WEAPON_RPD", "heavygunner", REF_RPD )\
+		LOCAL_WEAPON_ITEM( suffix, 1, "@WEAPON_RPD", "heavygunner", REF_RPD )\
+		LOCAL_WEAPON_ITEM( suffix, 2, "@WEAPON_SAW", "heavygunner", REF_M249SAW )\
 		LOCAL_WEAPON_ITEM( suffix, 3, "@WEAPON_M60E4", "heavygunner", REF_M60E4 )\
 	}\
 	menuDef	{\

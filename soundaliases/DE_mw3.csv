@@ -30,4 +30,4 @@ weap_mw3_desert_eagle_clip_in_npc,,weps/DE_mw3/weap_mw3_desert_eagle_clip_in.wav
 
 
 # Not used, just extra one if you'd like to put some other anims:
-weap_mw3_desert_eagle_slide_back_plr,,weps/DE_mw3/weap_mw3_desert_eagle_slide_back.wav,0.55,0.6,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+#weap_mw3_desert_eagle_slide_back_plr,,weps/DE_mw3/weap_mw3_desert_eagle_slide_back.wav,0.55,0.6,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
