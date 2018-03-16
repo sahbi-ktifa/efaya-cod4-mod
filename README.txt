@@ -8,5 +8,5 @@ DESERTEAGLE GOLD -----> MW3 DESERT EAGLE (http://cfgfactory.com/downloads/show/5
 
 /* LMG */
 RPD ------------------> M1 Garand 
-M60A4 ----------------> Kar98
+M60E4 ----------------> Kar98
 SAW ------------------> Mosin Nagant
