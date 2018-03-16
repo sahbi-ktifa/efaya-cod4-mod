@@ -23,10 +23,10 @@ gr_m1gar_pull_slide_plr,,WAW/m1gar_pull_slide.wav,1,1,,1,1,7,500,reload,,,,0.7,a
 
 #Kar 98,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
-weap_kar98k_fire_plr,,WAW/wpn_kar98_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_kar98k_fire_plr_act,,weapon2
+#weap_kar98k_fire_plr,,WAW/wpn_kar98_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_kar98k_fire_plr_act,,weapon2
 weap_kar98k_fire_plr_act,,WAW/wpn_kar98_st_act.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,,,weapon2
 
-weap_kar98k_fire,,WAW/mono_01.wav,1,1,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,weap_kar98k_fire_act,weapon4
+#weap_kar98k_fire,,WAW/mono_01.wav,1,1,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,weap_kar98k_fire_act,weapon4
 weap_kar98k_fire_act,,WAW/act_00.wav,1,1,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,,weapon4
 
 gr_kar98_bolt_back_plr,,WAW/gr_kar98_bolt_back.wav,1,1,,1,1,7,500,reload,,,,0.7,all_mp,,,,weapon2,50
@@ -42,13 +42,25 @@ weap_kar98k_fire_plr_act_snp,,WAW/wpn_kar98_st_act.wav,0.72,0.79,wpnplyr,0.8,0.9
 weap_kar98k_fire_snp,,WAW/mono_02.wav,1,1,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,,weapon4
 gr_kar98_shell_in_plr,,WAW/round_in_01.wav,1,1,,1,1,7,500,reload,,,,0.7,all_mp,,,,weapon2,50
 
+weap_kar98k_fire_plr,,weapons/kar98k/wpnfire_k98_1b.wav,0.75,0.82,wpnplyr,1.05,1.2,500000,,local,,,,0.85,,,,,,,,,0.2
 
-weap_mosinnagant_fire_plr,,WAW/wpn_mosin_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_mosinnagant_fire_plr_act,,weapon2
+#Player Weapons Non-Player,,,,,,,,,,,,,,,,,,,,,,,
+weap_kar98k_fire,,weapons/kar98k/wpnfire_k98_1b.wav,0.6,0.65,wpnai,0.96,1.32,35,8400,weapon,,,,0.7,,,,,weapon2
+
+weap_kar98k_rechamber,,weapons/kar98k/kar98_rechamber.wav,0.77,0.9,wpnplyr,,,7,500,music,,,,,all_mp,,,,,
+
+#weap_mosinnagant_fire_plr,,WAW/wpn_mosin_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_mosinnagant_fire_plr_act,,weapon2
 
 weap_mosinnagant_fire_plr_act,,WAW/wpn_mosin_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,,,weapon2
 
-weap_mosinnagant_fire,,WAW/mono_00.wav,1,1,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,,weapon4
+#weap_mosinnagant_fire,,WAW/mono_00.wav,1,1,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,,weapon4
 
+weap_mosinnagant_fire_plr,,weapons/kar98k/wpnfire_k98_1b.wav,0.75,0.82,wpnplyr,1.05,1.2,500000,,local,,,,0.85,,,,,,,,,0.2
+
+#Player Weapons Non-Player,,,,,,,,,,,,,,,,,,,,,,,
+weap_mosinnagant_fire,,weapons/kar98k/wpnfire_k98_1b.wav,0.6,0.65,wpnai,0.96,1.32,35,8400,weapon,,,,0.7,,,,,weapon2
+
+weap_kar98k_rechamber,,weapons/kar98k/kar98_rechamber.wav,0.77,0.9,wpnplyr,,,7,500,music,,,,,all_mp,,,,,
 
 
 
@@ -86,6 +98,13 @@ gr_mosin_shell_in_plr,,WAW/round_in_01.wav,1,1,,1,1,7,500,reload,,,,0.7,all_mp,,
 
 #Kar 98 Rifle Grenade,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
-weap_kar98gren_fire_plr,,WAW/wpn_M1Gren_st_f.wav,0.87,0.94,wpnplyr,1,1,500000,,local,,,,0.85,,,,,weapon2
-weap_kar98gren_fire,,WAW/wpn_M1Gren_mn.wav,0.7,0.8,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,,weapon4
-weap_kar98gren_reload,,WAW/GR_kar98gren_raise.wav,0.75,0.8,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,100
+#weap_kar98gren_fire_plr,,WAW/wpn_M1Gren_st_f.wav,0.87,0.94,wpnplyr,1,1,500000,,local,,,,0.85,,,,,weapon2
+#weap_kar98gren_fire,,WAW/wpn_M1Gren_mn.wav,0.7,0.8,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,,weapon4
+#weap_kar98gren_reload,,WAW/GR_kar98gren_raise.wav,0.75,0.8,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,100
+
+weap_kar98gren_fire_plr,,weapons/kar98k/wpnfire_k98_1b.wav,0.75,0.82,wpnplyr,1.05,1.2,500000,,local,,,,0.85,,,,,,,,,0.2
+
+#Player Weapons Non-Player,,,,,,,,,,,,,,,,,,,,,,,
+weap_kar98gren_fire,,weapons/kar98k/wpnfire_k98_1b.wav,0.6,0.65,wpnai,0.96,1.32,35,8400,weapon,,,,0.7,,,,,weapon2
+
+weap_kar98gren_reload,,weapons/kar98k/kar98_rechamber.wav,0.77,0.9,wpnplyr,,,7,500,music,,,,,all_mp,,,,,
