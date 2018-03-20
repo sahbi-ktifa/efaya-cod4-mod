@@ -13,6 +13,9 @@ VERSION             "1"
 CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
 FILENOTES           "Strings used in the weapon settings go in this file."
 
+REFERENCE           SINGLEFIRE_WITH_A_HIGH
+LANG_ENGLISH        "The Honey Badger is an integrally suppressed personal defense weapon based on the AR-15."
+
 REFERENCE           FULLY_AUTOMATIC_WITH9
 LANG_ENGLISH        "Semi-automatic sniper rifle.  Effective at long range."
 

@@ -277,6 +277,10 @@ material,scope_overlay_mp
 
 
 rawfile,mp/CoD2maps.arena
+#stringtable,mp/attachmentTable.csv
+#stringtable,mp/statstable.csv
+stringtable,mp/classTable.csv
+stringtable,mp/offline_classtable.csv
 stringtable,mp/propsTable.csv
 stringtable,mp/rankIconTable.csv
 stringtable,mp/rankTable.csv
@@ -401,6 +405,9 @@ sound,m4_mw2,,all_mp
 sound,DE_mw3,,all_mp
 sound,waw,,all_mp
 sound,honeybadger,,all_mp
+sound,bf3_ak74u,,all_mp
+sound,bf3_m4a1,,all_mp
+sound,bf4_m416,,all_mp
 
 xanim,viewmodel_binoculars_idle
 xanim,viewmodel_mw2_m16m203_ADS_fire
@@ -683,3 +690,25 @@ xanim,viewmodel_mosinnagant_grenade_alt_lower
 xanim,viewmodel_mosinnagant_grenade_pullout
 xanim,viewmodel_mosinnagant_grenade_putaway
 xanim,viewmodel_mosinnagant_grenade_putaway_empty
+
+xanim,iw6_remington_ads_down
+xanim,iw6_remington_ads_down_acog
+xanim,iw6_remington_ads_down_eotech
+xanim,iw6_remington_ads_down_reflex
+xanim,iw6_remington_ads_up
+xanim,iw6_remington_ads_up_acog
+xanim,iw6_remington_ads_up_eotech
+xanim,iw6_remington_ads_up_reflex
+xanim,iw6_remington_fire
+xanim,iw6_remington_fire_ads
+xanim,iw6_remington_first_raise
+xanim,iw6_remington_idle
+xanim,iw6_remington_pullout
+xanim,iw6_remington_putaway
+xanim,iw6_remington_reload
+xanim,iw6_remington_reload_empty
+xanim,iw6_remington_sprint_in
+xanim,iw6_remington_sprint_loop
+xanim,iw6_remington_sprint_out
+xmodel,ghosts_remington_view
+xmodel,ghosts_remington_world

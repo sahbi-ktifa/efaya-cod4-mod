@@ -1,0 +1,11 @@
+name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,probability,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage,conversion
+
+weap_m4_bf3_fire_plr,,weapons/bf3_m4a1/bf3_m4_fire_plr.wav,0.9,1,max,1,1,5000,,local,,,,0.85,,,,,weapon2,,,,
+weap_m4_bf3_fire_npc,,weapons/bf3_m4a1/bf3_m4_fire_npc.wav,0.8,1,wpnai,1,1,35,13780,weapon,,,,0.7,all_mp,,,,weapon4
+weap_m4_bf3_firesil_plr,,weapons/bf3_m4a1/bf3_m4_fire_sil_plr.wav,0.9,1,max,1,1,5000,,local,,,,0.85,,,,,weapon2,,,,
+weap_m4_bf3_firesil_npc,,weapons/bf3_m4a1/bf3_m4_fire_sil_npc.wav,0.8,1,wpnai,1,1,35,13780,weapon,,,,0.7,all_mp,,,,weapon4
+
+
+m4_clipout,,weapons/bf3_m4a1/bf3_m4_clipout.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+m4_clipin,,weapons/bf3_m4a1/bf3_m4_clipin.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+m4_button,,weapons/bf3_m4a1/bf3_m4_chamber.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,

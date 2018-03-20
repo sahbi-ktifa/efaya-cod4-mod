@@ -22,11 +22,14 @@ LANG_ENGLISH        "Proner's M16"
 REFERENCE			G3
 LANG_ENGLISH		"Honey Badger"
 
+REFERENCE			M4CARBINE
+LANG_ENGLISH		"Remington R5"
+
 REFERENCE           MW3_DESERTEAGLE
-LANG_ENGLISH        "Gangsta's DEagle"
+LANG_ENGLISH        "Gangsta's Desert Eagle"
 
 REFERENCE           DESERTEAGLEGOLD
-LANG_ENGLISH        "Gangsta's DEagle"
+LANG_ENGLISH        "Gangsta's Desert Eagle"
 
 REFERENCE           M1GARAND
 LANG_ENGLISH        "M1 Garand"

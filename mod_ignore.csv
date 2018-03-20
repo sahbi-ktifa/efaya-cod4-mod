@@ -52,3 +52,8 @@ material,rank_rec1
 material,scorebar_backdrop
 material,scorebar_fadein
 material,white
+
+weapon,mp/m16_gl_mp
+weapon,mp/ak47_gl_mp
+weapon,mp/m4_gl_mp
+weapon,mp/g36c_gl_mp
