@@ -5,7 +5,9 @@
 
 * Assault:
 	* M16A4 ----------------> MW2 M16 (http://cfgfactory.com/downloads/show/4f6ce2ecb97bb)
-	* G3 ----------------> Ghosts Honey Badger (http://cfgfactory.com/downloads/show/5a59420e85e50)
+	* G3 -------------------> Ghosts Honey Badger (http://cfgfactory.com/downloads/show/5a59420e85e50)
+	* M4 -------------------> Ghosts Remington R5 (http://cfgfactory.com/downloads/show/5a523e2ad013f)
+	* G36C -----------------> BO Commando (http://cfgfactory.com/downloads/show/4e5b671927131)
 
 * Pistols:
 	* DESERTEAGLE GOLD -----> MW3 DESERT EAGLE (http://cfgfactory.com/downloads/show/51dea65933a4a)

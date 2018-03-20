@@ -408,6 +408,7 @@ sound,honeybadger,,all_mp
 sound,bf3_ak74u,,all_mp
 sound,bf3_m4a1,,all_mp
 sound,bf4_m416,,all_mp
+sound,bo_commando,,all_mp
 
 xanim,viewmodel_binoculars_idle
 xanim,viewmodel_mw2_m16m203_ADS_fire
@@ -712,3 +713,17 @@ xanim,iw6_remington_sprint_loop
 xanim,iw6_remington_sprint_out
 xmodel,ghosts_remington_view
 xmodel,ghosts_remington_world
+
+material,mtl_bo_acog_lens
+material,mtl_bo_acog_reticle_colt3x20
+material,mtl_bo_commando
+material,mtl_bo_iron_sight
+material,mtl_bo_reflex
+material,mtl_bo_reflex_lens
+material,mtl_bo_sangle
+material,mtl_bo_scope_colt3x20
+material,mtl_bo_scope_inside
+material,mtl_bo_silencer
+
+xmodel,viewmodel_bo_commando
+xmodel,worldmodel_bo_commando
