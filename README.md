@@ -12,7 +12,7 @@
 * Pistols:
 	* DESERTEAGLE GOLD -----> MW3 DESERT EAGLE (http://cfgfactory.com/downloads/show/51dea65933a4a)
 
-* LMG (Now "Clasic Rifles"):
+* LMG (Now "Clasic Rifles" - http://cfgfactory.com/downloads/show/507eb82c51988):
 	* RPD ------------------> M1 Garand 
 	* M60E4 ----------------> Kar98
 	* SAW ------------------> Mosin Nagant

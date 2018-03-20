@@ -496,7 +496,6 @@
 		LOCAL_WEAPON_ITEM( suffix, 4, "@WEAPON_G3", STAT_ASSAULT_G3, REF_G3, "ui_primary_highlighted", 3023 )\
 		LOCAL_WEAPON_ITEM( suffix, 5, "@WEAPON_G36C", STAT_ASSAULT_G36C, REF_G36C, "ui_primary_highlighted", 3024 )\
 		LOCAL_WEAPON_ITEM( suffix, 6, "@WEAPON_M14", STAT_ASSAULT_M14, REF_M14, "ui_primary_highlighted", 3021 )\
-		LOCAL_WEAPON_ITEM2( suffix, 7, "@WEAPON_MP44", STAT_ASSAULT_MP44, REF_MP44, "ui_primary_highlighted", 3022 )\
 	}\
 	menuDef	{\
 		IMPROVED_POPUP_SETUP_ONOPEN( CAC_PREFIX"popup_cac_LMG"suffix, 7, (CHOICE_X( pos )-2), (CHOICE_Y( pos )+20+y_offset), ;, execnow "set "UI_FOCUSFIRST" "REF_M249SAW"; set ui_inside_popup lmg";, 0 )\

@@ -314,7 +314,6 @@
 		LOCAL_WEAPON_ITEM( suffix, 4, "@WEAPON_G3", "assault", REF_G3 )\
 		LOCAL_WEAPON_ITEM( suffix, 5, "@WEAPON_G36C", "assault", REF_G36C )\
 		LOCAL_WEAPON_ITEM( suffix, 6, "@WEAPON_M14", "assault", REF_M14 )\
-		LOCAL_WEAPON_ITEM2( suffix, 7, "@WEAPON_MP44", "assault", REF_MP44 )\
 	}\
 	menuDef	{\
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_popup_cac_heavygunner"suffix, 7, (CHOICE_X( pos )-2), (CHOICE_Y( pos )+20+y_offset), ;, execnow "set "UI_FOCUSFIRST" "REF_M249SAW"; set ui_inside_popup heavygunner";, 0 )\
