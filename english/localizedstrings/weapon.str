@@ -19,6 +19,9 @@ LANG_ENGLISH        "MW2 M16"
 REFERENCE           MW2_M16
 LANG_ENGLISH        "Proner's M16"
 
+REFERENCE			G3
+LANG_ENGLISH		"Honey Badger"
+
 REFERENCE           MW3_DESERTEAGLE
 LANG_ENGLISH        "Gangsta's DEagle"
 

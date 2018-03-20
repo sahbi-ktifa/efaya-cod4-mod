@@ -271,9 +271,9 @@ material,scoped_overlay_britain
 material,scoped_overlay_american
 material,scoped_overlay_russian
 material,scope_overlay_mp
-material,hud_icon_m1garand
-material,hud_icon_kar98k
-material,hud_icon_mosin_rifle
+#material,hud_icon_m1garand
+#material,hud_icon_kar98k
+#material,hud_icon_mosin_rifle
 
 
 rawfile,mp/CoD2maps.arena
@@ -400,6 +400,7 @@ sound,sr,,all_mp
 sound,m4_mw2,,all_mp
 sound,DE_mw3,,all_mp
 sound,waw,,all_mp
+sound,honeybadger,,all_mp
 
 xanim,viewmodel_binoculars_idle
 xanim,viewmodel_mw2_m16m203_ADS_fire
@@ -500,6 +501,31 @@ xanim,viewmodel_m1garand_grenade_pullout_empty
 xanim,viewmodel_m1garand_grenade_putaway_empty
 xanim,viewmodel_m1garand_grenade_ads_up
 xanim,viewmodel_m1garand_grenade_ads_down
+xanim,viewmodel_honeybadger_ads_down
+xanim,viewmodel_honeybadger_ads_up
+
+xanim,viewmodel_honeybadger_ads_down_acog
+xanim,viewmodel_honeybadger_ads_up_acog
+
+xanim,viewmodel_honeybadger_ads_down_eotech
+xanim,viewmodel_honeybadger_ads_up_eotech
+
+xanim,viewmodel_honeybadger_ads_down_reflex
+xanim,viewmodel_honeybadger_ads_up_reflex
+
+xanim,viewmodel_honeybadger_ads_fire
+xanim,viewmodel_honeybadger_fire
+xanim,viewmodel_honeybadger_idle
+xanim,viewmodel_honeybadger_pullout
+xanim,viewmodel_honeybadger_pullout_fast
+xanim,viewmodel_honeybadger_pullout_first
+xanim,viewmodel_honeybadger_putaway
+xanim,viewmodel_honeybadger_putaway_fast
+xanim,viewmodel_honeybadger_reload
+xanim,viewmodel_honeybadger_reload_empty
+xanim,viewmodel_honeybadger_sprint_in
+xanim,viewmodel_honeybadger_sprint_loop
+xanim,viewmodel_honeybadger_sprint_out
 
 xmodel,body_complete_mp_zakhaev
 xmodel,com_office_book_red_flat
@@ -525,6 +551,8 @@ xmodel,weapon_mp_kar98_scoped_rifle
 xmodel,weapon_mp_mosinnagant_rifle
 xmodel,weapon_mp_mosinnagant_rifle_bayonet
 xmodel,weapon_mp_mosinnagant_scoped_rifle
+xmodel,vm_gh_honeybadger
+xmodel,wm_gh_honeybadger
 
 weapon,mp/binoculars_mp
 

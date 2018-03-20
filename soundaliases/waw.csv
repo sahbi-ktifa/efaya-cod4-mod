@@ -47,8 +47,6 @@ weap_kar98k_fire_plr,,weapons/kar98k/wpnfire_k98_1b.wav,0.75,0.82,wpnplyr,1.05,1
 #Player Weapons Non-Player,,,,,,,,,,,,,,,,,,,,,,,
 weap_kar98k_fire,,weapons/kar98k/wpnfire_k98_1b.wav,0.6,0.65,wpnai,0.96,1.32,35,8400,weapon,,,,0.7,,,,,weapon2
 
-weap_kar98k_rechamber,,weapons/kar98k/kar98_rechamber.wav,0.77,0.9,wpnplyr,,,7,500,music,,,,,all_mp,,,,,
-
 #weap_mosinnagant_fire_plr,,WAW/wpn_mosin_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_mosinnagant_fire_plr_act,,weapon2
 
 weap_mosinnagant_fire_plr_act,,WAW/wpn_mosin_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,,,weapon2
