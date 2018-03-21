@@ -31,6 +31,9 @@ LANG_ENGLISH		"Remington R5"
 REFERENCE			G36C
 LANG_ENGLISH		"Commando"
 
+REFERENCE           USP
+LANG_ENGLISH        "TITANFALL RE45"
+
 REFERENCE           MW3_DESERTEAGLE
 LANG_ENGLISH        "Gangsta's Desert Eagle"
 

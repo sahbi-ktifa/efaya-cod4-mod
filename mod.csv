@@ -271,9 +271,6 @@ material,scoped_overlay_britain
 material,scoped_overlay_american
 material,scoped_overlay_russian
 material,scope_overlay_mp
-#material,hud_icon_m1garand
-#material,hud_icon_kar98k
-#material,hud_icon_mosin_rifle
 
 
 rawfile,mp/CoD2maps.arena
@@ -409,6 +406,7 @@ sound,bf3_ak74u,,all_mp
 sound,bf3_m4a1,,all_mp
 sound,bf4_m416,,all_mp
 sound,bo_commando,,all_mp
+sound,tf_re45,,all_mp
 
 xanim,viewmodel_binoculars_idle
 xanim,viewmodel_mw2_m16m203_ADS_fire
@@ -727,3 +725,21 @@ material,mtl_bo_silencer
 
 xmodel,viewmodel_bo_commando
 xmodel,worldmodel_bo_commando
+material,mtl_tf_ammo_screen
+material,mtl_tf_re45_col
+material,mtl_tf_sm_cylinder_suppressor
+material,mtl_tf_weapon_trinium_sight
+xanim,ndr_re45_ads_down
+xanim,ndr_re45_ads_fire
+xanim,ndr_re45_ads_up
+xanim,ndr_re45_fire
+xanim,ndr_re45_idle
+xanim,ndr_re45_pullout
+xanim,ndr_re45_putaway
+xanim,ndr_re45_reload
+xanim,ndr_re45_reload_empty
+xanim,ndr_re45_sprint_in
+xanim,ndr_re45_sprint_loop
+xanim,ndr_re45_sprint_out
+xmodel,tf_re45_view
+xmodel,tf_re45_world

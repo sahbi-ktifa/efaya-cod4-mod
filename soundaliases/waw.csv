@@ -2,13 +2,13 @@ name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max
 
 #M1 Garand,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
-weap_m1garand_fire_plr,,WAW/wpn_m1garand_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_m1garand_fire_plr_act,,weapon2
-weap_m1garand_fire_plr_act,,WAW/wpn_m1garand_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,,,weapon2
-weap_m1garand_lastshot_plr,,WAW/wpn_m1garand_st_f.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_m1garand_lastshot_plr_act,,weapon2
+weap_m1garand_fire_plr,,WAW/wpnfire_m1_plyr_blnc1.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_m1garand_fire_plr_act,,weapon2
+weap_m1garand_fire_plr_act,,WAW/wpnfire_m1_plyr_blnc1.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,,,weapon2
+weap_m1garand_lastshot_plr,,WAW/wpnfire_m1_plyr_meaty4_ping.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_m1garand_lastshot_plr_act,,weapon2
 weap_m1garand_lastshot_plr_act,,WAW/wpnfire_m1_plyr_meaty4_ping.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,weap_m1garand_clip_plr,,weapon2
 weap_m1garand_clip_plr,,WAW/wpn_m1garand_clip.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,,,weapon2
 weap_m1garand_fire,,WAW/wpnfire_m1_plyr_blnc1.wav,1,1,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,,weapon4
-weap_m1garand_lastshot,,WAW/wpnfire_m1_plyr_blnc1.wav,1,1,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,,weapon4
+weap_m1garand_lastshot,,WAW/wpnfire_m1_plyr_meaty4_ping.wav,1,1,wpnai,1,1,35,2000,weapon,,,,0.8,all_mp,,,,weapon4
 weap_m1garand_fire_plr_act_sil,,WAW/wpnfire_m1_plyr_blnc1.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,,,weapon2
 weap_m1garand_lastshot_plr_act_sil,,WAW/wpnfire_m1_plyr_blnc1.wav,0.72,0.79,wpnplyr,0.8,0.9,500000,,local,,,,0.85,,,,,weapon2
 

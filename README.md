@@ -10,6 +10,7 @@
 	* G36C -----------------> BO Commando (http://cfgfactory.com/downloads/show/4e5b671927131)
 
 * Pistols:
+	* USP ------------------> TitanFall RE45 (http://cfgfactory.com/downloads/show/549553bdc7a78)
 	* DESERTEAGLE GOLD -----> MW3 DESERT EAGLE (http://cfgfactory.com/downloads/show/51dea65933a4a)
 
 * LMG (Now "Clasic Rifles" - http://cfgfactory.com/downloads/show/507eb82c51988):
