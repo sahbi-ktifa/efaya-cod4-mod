@@ -17,3 +17,6 @@
 	* RPD ------------------> M1 Garand 
 	* M60E4 ----------------> Kar98
 	* SAW ------------------> Mosin Nagant
+	
+* Sniper:
+	* M40A3 ----------------> BF3 L96 (http://cfgfactory.com/downloads/show/50b273ab0d906)

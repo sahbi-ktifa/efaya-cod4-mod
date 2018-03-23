@@ -407,6 +407,7 @@ sound,bf3_m4a1,,all_mp
 sound,bf4_m416,,all_mp
 sound,bo_commando,,all_mp
 sound,tf_re45,,all_mp
+sound,l96,,all_mp
 
 xanim,viewmodel_binoculars_idle
 xanim,viewmodel_mw2_m16m203_ADS_fire
@@ -743,3 +744,21 @@ xanim,ndr_re45_sprint_loop
 xanim,ndr_re45_sprint_out
 xmodel,tf_re45_view
 xmodel,tf_re45_world
+
+xmodel,viewmodel_l96
+xmodel,weapon_l96
+
+xanim,viewmodel_l96_ads_down
+xanim,viewmodel_l96_ads_up
+xanim,viewmodel_l96_idle
+xanim,viewmodel_l96_pullout
+xanim,viewmodel_l96_pullout_first
+xanim,viewmodel_l96_pullout_quick
+xanim,viewmodel_l96_reload
+xanim,viewmodel_l96_reload_empty
+xanim,viewmodel_l96_sprint_in
+xanim,viewmodel_l96_sprint_loop
+xanim,viewmodel_l96_sprint_out
+xanim,viewmodel_l96_putaway
+xanim,viewmodel_l96_rechamber
+xanim,viewmodel_l96_fire
