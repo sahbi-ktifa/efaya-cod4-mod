@@ -8,6 +8,7 @@
 	* G3 -------------------> Ghosts Honey Badger (http://cfgfactory.com/downloads/show/5a59420e85e50)
 	* M4 -------------------> Ghosts Remington R5 (http://cfgfactory.com/downloads/show/5a523e2ad013f)
 	* G36C -----------------> BO Commando (http://cfgfactory.com/downloads/show/4e5b671927131)
+	* M14 ------------------> BO Famas (http://cfgfactory.com/downloads/show/4e5b52c419940)
 
 * Pistols:
 	* USP ------------------> TitanFall RE45 (http://cfgfactory.com/downloads/show/549553bdc7a78)

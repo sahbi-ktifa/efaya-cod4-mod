@@ -713,6 +713,7 @@ xanim,iw6_remington_sprint_out
 xmodel,ghosts_remington_view
 xmodel,ghosts_remington_world
 
+#Commando
 material,mtl_bo_acog_lens
 material,mtl_bo_acog_reticle_colt3x20
 material,mtl_bo_commando
@@ -726,6 +727,8 @@ material,mtl_bo_silencer
 
 xmodel,viewmodel_bo_commando
 xmodel,worldmodel_bo_commando
+
+#RE45
 material,mtl_tf_ammo_screen
 material,mtl_tf_re45_col
 material,mtl_tf_sm_cylinder_suppressor
@@ -745,6 +748,7 @@ xanim,ndr_re45_sprint_out
 xmodel,tf_re45_view
 xmodel,tf_re45_world
 
+#L96
 xmodel,viewmodel_l96
 xmodel,weapon_l96
 
@@ -762,3 +766,45 @@ xanim,viewmodel_l96_sprint_out
 xanim,viewmodel_l96_putaway
 xanim,viewmodel_l96_rechamber
 xanim,viewmodel_l96_fire
+
+
+#FAMAS
+material,mtl_bo_acog_3x20
+material,mtl_bo_acog_lens
+material,mtl_bo_acog_reticle_3x20
+material,mtl_bo_famas
+material,mtl_bo_famas_plastic
+material,mtl_bo_iron_sights
+material,mtl_bo_reflex_sight
+material,mtl_bo_reflex_sight_lens
+material,mtl_bo_scope_inside
+material,mtl_bo_suppressor
+
+sound,bo_famas,all_mp
+
+xanim,viewmodel_famas_acog_ads_down
+xanim,viewmodel_famas_acog_ads_up
+xanim,viewmodel_famas_ads_down
+xanim,viewmodel_famas_ads_fire
+xanim,viewmodel_famas_ads_up
+xanim,viewmodel_famas_aimpoint_ads_down
+xanim,viewmodel_famas_aimpoint_ads_up
+xanim,viewmodel_famas_fire
+xanim,viewmodel_famas_first_raise
+xanim,viewmodel_famas_idle
+xanim,viewmodel_famas_idle_loop
+xanim,viewmodel_famas_idle_loop
+xanim,viewmodel_famas_last_shot
+xanim,viewmodel_famas_mantle
+xanim,viewmodel_famas_pullout
+xanim,viewmodel_famas_pullout_quick
+xanim,viewmodel_famas_putaway
+xanim,viewmodel_famas_putaway_quick
+xanim,viewmodel_famas_reload
+xanim,viewmodel_famas_reload_empty
+xanim,viewmodel_famas_sprint_in
+xanim,viewmodel_famas_sprint_loop
+xanim,viewmodel_famas_sprint_out
+
+xmodel,viewmodel_bo_famas
+xmodel,worldmodel_bo_famas
