@@ -749,6 +749,8 @@ xmodel,tf_re45_view
 xmodel,tf_re45_world
 
 #L96
+sound,l96,,all_mp
+
 xmodel,viewmodel_l96
 xmodel,weapon_l96
 

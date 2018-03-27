@@ -43,7 +43,7 @@ runCheck()
 	for ( index = 0; index < iwdFiles.size; index++ ) {
 		if ( isSubStr( iwdFiles[index], modPath ) ) {
 			// Check if the .IWD file doesn't belong to the mod
-			if ( iwdFiles[index] != modPath + "z_openwarfare" ) {
+			if ( iwdFiles[index] != modPath + "z_openwarfare" && iwdFiles[index] != modPath + "iw_zzz_menu_music" ) {
 				return "Invalid file ^3" + iwdFiles[index] + ".iwd^7 has been found in the mod directory.";
 			}
 		}
