@@ -810,3 +810,21 @@ xanim,viewmodel_famas_sprint_out
 
 xmodel,viewmodel_bo_famas
 xmodel,worldmodel_bo_famas
+
+#Ghosts Magnum
+material,mtl_weapon_magnum_iw6
+xanim,iw6_magnum_ads_down
+xanim,iw6_magnum_ads_up
+xanim,iw6_magnum_fire
+xanim,iw6_magnum_fire_ads
+xanim,iw6_magnum_fire_last
+xanim,iw6_magnum_first_raise
+xanim,iw6_magnum_idle
+xanim,iw6_magnum_reload
+xanim,iw6_magnum_sprint_in
+xanim,iw6_magnum_sprint_loop
+xanim,iw6_magnum_sprint_out
+xmodel,ghosts_magnum_view
+xmodel,ghosts_magnum_world
+sound,ghosts_magnum,,all_mp
+
