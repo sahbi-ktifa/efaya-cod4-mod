@@ -828,3 +828,20 @@ xmodel,ghosts_magnum_view
 xmodel,ghosts_magnum_world
 sound,ghosts_magnum,,all_mp
 
+#BO3 Brecci
+sound,bo3_gator,,all_mp
+xmodel,vm_bo3_gator
+xmodel,wm_bo3_gator
+xanim,vm_gator_ads_base_down
+xanim,vm_gator_ads_base_up
+xanim,vm_gator_fire
+xanim,vm_gator_fire_ads
+xanim,vm_gator_first_raise
+xanim,vm_gator_idle
+xanim,vm_gator_pullout
+xanim,vm_gator_putaway
+xanim,vm_gator_reload
+xanim,vm_gator_reload_empty
+xanim,vm_gator_sprint_in
+xanim,vm_gator_sprint_loop
+xanim,vm_gator_sprint_out
