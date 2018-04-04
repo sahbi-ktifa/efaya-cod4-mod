@@ -846,8 +846,8 @@ addSecondaries()
 {
 	//Add Secondaries ( weapon_stat )
 	self addCACSecondaries( 0 ); //Beretta
-	self addCACSecondaries( 2 ); //USP
 	self addCACSecondaries( 1 ); //Colt 45 
+	self addCACSecondaries( 2 ); //USP
 	self addCACSecondaries( 3 ); //Desert Eagle
 	self addCACSecondaries( 4 ); //Gold Desert Eagle	
 }
