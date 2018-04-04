@@ -163,7 +163,7 @@ initializeEditor()
 	self addPerk2();
 	self addPerk3();
 	self addSGrenades();
-	self addCamos();
+	//self addCamos();
 	
 	//On startup this will display customclass1
 	self displayDefaultLoadout();
@@ -810,7 +810,7 @@ addPrimaries()
 	self addCACPrimaries( "assault", 23 ); //G3
 	self addCACPrimaries( "assault", 24 ); //G36C
 	self addCACPrimaries( "assault", 21 ); //M14
-	self addCACPrimaries( "assault", 22 ); //MP44
+	//self addCACPrimaries( "assault", 22 ); //MP44
 	//Sub-Machine Weapons
 	self addCACPrimaries( "smg", 10 ); //MP5
 	self addCACPrimaries( "smg", 11 ); //Skorpion
@@ -818,12 +818,12 @@ addPrimaries()
 	self addCACPrimaries( "smg", 13 ); //AK74U
 	self addCACPrimaries( "smg", 14 ); //P90
 	//Heavy Weapons
-	self addCACPrimaries( "heavy", 81 ); //SAW
 	self addCACPrimaries( "heavy", 80 ); //RPD
+	self addCACPrimaries( "heavy", 81 ); //SAW
 	self addCACPrimaries( "heavy", 82 ); //M60E4
 	//Shotgun Weapons
-	self addCACPrimaries( "shotgun", 71 ); //Winchester
 	self addCACPrimaries( "shotgun", 70 ); //Benelli
+	self addCACPrimaries( "shotgun", 71 ); //Winchester
 	//Sharpshooter Weapons
 	self addCACPrimaries( "sniper", 61 ); //M40A3
 	self addCACPrimaries( "sniper", 65 ); //M21

@@ -12,6 +12,8 @@
 
 * Pistols:
 	* USP ------------------> TitanFall RE45 (http://cfgfactory.com/downloads/show/549553bdc7a78)
+	* Colt45 ---------------> BO3 RK5 (http://cfgfactory.com/downloads/show/59e3001db2de6)
+	* Beretta --------------> Ghosts M9A1 (http://cfgfactory.com/downloads/show/5a59593e15b61)
 	* DESERTEAGLE ----------> Ghosts Magnum (http://cfgfactory.com/downloads/show/5a594410f0b69)
 	* DESERTEAGLE GOLD -----> MW3 DESERT EAGLE (http://cfgfactory.com/downloads/show/51dea65933a4a)
 
@@ -22,5 +24,7 @@
 
 * Shotguns:
 	* BENELLI --------------> BO3 Brecci (http://cfgfactory.com/downloads/show/59e3015af07b3)
+	* Winchester -----------> Far Cry 4 M133 (http://cfgfactory.com/downloads/show/5a595de642c1e)
+	
 * Sniper:
 	* M40A3 ----------------> BF3 L96 (http://cfgfactory.com/downloads/show/50b273ab0d906)

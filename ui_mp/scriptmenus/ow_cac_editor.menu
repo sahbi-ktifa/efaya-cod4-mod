@@ -241,33 +241,7 @@
 		}
 		
 		//Camo
-		itemDef 
-		{
-			name 		"cacCamoPrev"
-			type			1
-			style			WINDOW_STYLE_SHADER
-			rect			CHOICE_ORIGIN( 4 ) 16 16 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN 
-			origin			138 4
-			background		"ui_arrow_left"
-			forecolor		COLOR_FOCUSED
-			visible			1
-		    mouseEnter { play "mouse_over"; } 
-		    action { play "mouse_click"; scriptMenuResponse "cacCamoPrev"; }	
-		}
-		CHOICE_CAC_BUTTON( 4, "@OW_CAC_CAMO", 1 )
-		itemDef 
-		{
-			name 		"cacCamoNext"
-			type			1
-			style			WINDOW_STYLE_SHADER
-			rect			CHOICE_ORIGIN( 4 ) 16 16 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN 
-			origin			148 4
-			background		"ui_arrow_right"
-			forecolor		COLOR_FOCUSED
-			visible			1
-		    mouseEnter { play "mouse_over"; } 
-		    action { play "mouse_click"; scriptMenuResponse "cacCamoNext"; }	
-		}
+		//removed
 
 		//Secondary - non overkill
 		itemDef 
