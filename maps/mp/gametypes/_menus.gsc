@@ -133,12 +133,12 @@ onMenuResponse()
 			continue;
 		}
 		
-		if ( menu == "changeclass_props" ) {
+		/*if ( menu == "changeclass_props" ) {
 			self closeMenu();
 			self closeInGameMenu();
 			self thread maps\mp\gametypes\hns::choosePropClass( response );
 			continue;			
-		}
+		}*/
 
 		if(response == "changeteam")
 		{

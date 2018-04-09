@@ -45,6 +45,19 @@ init()
 	level.scr_amvs_map_time = getdvard( "scr_amvs_map_time", "float", 15, 5, 45 );
 	level.scr_amvs_winner_time = getdvard( "scr_amvs_winner_time", "float", 5, 5, 45 );
 	level.scr_amvs_can_repeat_map = getdvard( "scr_amvs_can_repeat_map", "int", 0, 0, 1 );
+
+	//Load custom loadscreens
+	level.scr_amvs_loadscreens = [];
+	level.scr_amvs_loadscreens[0] = getdvard( "scr_amvs_loadscreen1", "string", "" );
+	level.scr_amvs_loadscreens[1] = getdvard( "scr_amvs_loadscreen2", "string", "" );
+	level.scr_amvs_loadscreens[2] = getdvard( "scr_amvs_loadscreen3", "string", "" );
+	level.scr_amvs_loadscreens[3] = getdvard( "scr_amvs_loadscreen4", "string", "" );
+	level.scr_amvs_loadscreens[4] = getdvard( "scr_amvs_loadscreen5", "string", "" );
+	level.scr_amvs_loadscreens[5] = getdvard( "scr_amvs_loadscreen6", "string", "" );
+	level.scr_amvs_loadscreens[6] = getdvard( "scr_amvs_loadscreen7", "string", "" );
+	level.scr_amvs_loadscreens[7] = getdvard( "scr_amvs_loadscreen8", "string", "" );
+	level.scr_amvs_loadscreens[8] = getdvard( "scr_amvs_loadscreen9", "string", "" );
+	level.scr_amvs_loadscreens[9] = getdvard( "scr_amvs_loadscreen10", "string", "" );
 	
 	// Load allowed gametypes
 	level.scr_amvs_gametypes = getdvard( "scr_amvs_gametypes", "string", level.defaultGametypeList );
@@ -391,10 +404,18 @@ sendPlayerMapVariables()
 	if ( nextMap == level.scr_amvs_maps[level.amvsWinnerGametype].size )
 		nextMap = 0;
 
+	level.ui_amvs_map_vote_loadscreen = "";
+	for (idx = 0; idx < 10; idx++) {
+		if (level.scr_amvs_loadscreens[idx] == level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]]) {
+			level.ui_amvs_map_vote_loadscreen = "amvs_loadscreen" + (idx + 1);
+			break;
+		}
+	}
 	// Set the previous, current, and next maps for this player
 	self setClientDvars(
 		"ui_amvs_map_previous", getMapName( level.scr_amvs_maps[level.amvsWinnerGametype][previousMap] ),
 		"ui_amvs_map_vote", getMapName( level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]] ),
+		"ui_amvs_map_vote_loadscreen", level.ui_amvs_map_vote_loadscreen,
 		"ui_amvs_map_next", getMapName( level.scr_amvs_maps[level.amvsWinnerGametype][nextMap] )
 	);	
 }

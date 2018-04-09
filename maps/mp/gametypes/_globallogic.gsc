@@ -5301,11 +5301,11 @@ Callback_PlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, s
 
 finishPlayerDamageWrapper( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc, psOffsetTime )
 {
-	if ( level.gametype == "hns" && self.pers["team"] == game["defenders"] && iDamage >= self.health ) {
+	/*if ( level.gametype == "hns" && self.pers["team"] == game["defenders"] && iDamage >= self.health ) {
 		self thread maps\mp\gametypes\hns::killPropOwner( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc, psOffsetTime );
-	} else {
+	} else {*/
 		self finishPlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc, psOffsetTime );
-	}
+	//}
 
 	self damageShellshockAndRumble( eInflictor, sWeapon, sMeansOfDeath, iDamage );
 }

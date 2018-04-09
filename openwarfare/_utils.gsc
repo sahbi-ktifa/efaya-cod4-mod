@@ -1374,7 +1374,7 @@ suicidePlayer()
 	if ( level.gametype != "hns" || self.pers["team"] == game["attackers"] ) {
 		self suicide();
 	} else {
-		self maps\mp\gametypes\hns::killPropOwner( undefined, self, 0, undefined, "MOD_SUICIDE", "none", (0,0,0), (0,0,0), "torso_upper", gettime() );
+		//self maps\mp\gametypes\hns::killPropOwner( undefined, self, 0, undefined, "MOD_SUICIDE", "none", (0,0,0), (0,0,0), "torso_upper", gettime() );
 	}	
 }
 

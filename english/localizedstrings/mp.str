@@ -1,0 +1,154 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           TEAMBALANCE_NOTIFICATION_MARINES
+LANG_ENGLISH        "You were moved to Marines to balance the teams"
+
+REFERENCE           TEAMBALANCE_NOTIFICATION_SAS
+LANG_ENGLISH        "You were moved to Task Force to balance the teams"
+
+REFERENCE           TEAMBALANCE_NOTIFICATION_OPFOR
+LANG_ENGLISH        "You were moved to Ghosts to balance the teams"
+
+REFERENCE           TEAMBALANCE_NOTIFICATION_SPETSNAZ
+LANG_ENGLISH        "You were moved to Spectre to balance the teams"
+
+REFERENCE           ALLIESOBJECTIVEHELD
+LANG_ENGLISH        "Marines have held the objective"
+
+REFERENCE           AXISOBJECTIVEHELD
+LANG_ENGLISH        "Ghosts have held the objective."
+
+REFERENCE           ALLIESOBJECTIVECAPTURED
+LANG_ENGLISH        "Marines have captured the objective"
+
+REFERENCE           AXISOBJECTIVECAPTURED
+LANG_ENGLISH        "Ghosts have captured the objective."
+
+REFERENCE           ALLIES_WIN_MATCH
+LANG_ENGLISH        "Marines have won the match!"
+
+REFERENCE           ALLIED_ATTACK
+LANG_ENGLISH        "Attack the Ghosts-held objective!"
+
+REFERENCE           ALLIED_DEFEND
+LANG_ENGLISH        "Defend the objective from Ghosts attack!"
+
+REFERENCE           AXIS_ATTACK
+LANG_ENGLISH        "Attack the Marines-held objective!"
+
+REFERENCE           AXIS_DEFEND
+LANG_ENGLISH        "Defend the objective from the Marines attack!"
+
+REFERENCE           UPTEAM
+LANG_ENGLISH        "Marines"
+
+REFERENCE           DOWNTEAM
+LANG_ENGLISH        "Ghosts"
+
+REFERENCE           SAS_NAME
+LANG_ENGLISH        "Task Force"
+
+REFERENCE           OPFOR_NAME
+LANG_ENGLISH        "Ghosts"
+
+REFERENCE           SPETSNAZ_NAME
+LANG_ENGLISH        "Spectre"
+
+REFERENCE           SAS_WIN
+LANG_ENGLISH        "Task Force win!"
+
+REFERENCE           SAS_WIN_MATCH
+LANG_ENGLISH        "Task Force have won the match!"
+
+REFERENCE           SAS_WIN_ROUND
+LANG_ENGLISH        "Task Force have won the round!"
+
+REFERENCE           SAS_MISSION_ACCOMPLISHED
+LANG_ENGLISH        "Task Force mission accomplished"
+
+REFERENCE           SAS_ELIMINATED
+LANG_ENGLISH        "Task Force eliminated"
+
+REFERENCE           SAS_FORFEITED
+LANG_ENGLISH        "Task Force forfeited"
+
+REFERENCE           SAS_DESTROYED_TARGET
+LANG_ENGLISH        "Task Force destroyed target"
+
+REFERENCE           SAS_DEFENDED_TARGET
+LANG_ENGLISH        "Task Force defended target"
+
+REFERENCE           OPFOR_WIN
+LANG_ENGLISH        "Ghosts win!"
+
+REFERENCE           OPFOR_WIN_MATCH
+LANG_ENGLISH        "Ghosts have won the match!"
+
+REFERENCE           OPFOR_WIN_ROUND
+LANG_ENGLISH        "Ghosts have won the round!"
+
+REFERENCE           OPFOR_MISSION_ACCOMPLISHED
+LANG_ENGLISH        "Ghosts mission accomplished"
+
+REFERENCE           OPFOR_ELIMINATED
+LANG_ENGLISH        "Ghosts eliminated"
+
+REFERENCE           OPFOR_FORFEITED
+LANG_ENGLISH        "Ghosts forfeited"
+
+REFERENCE           OPFOR_DESTROYED_TARGET
+LANG_ENGLISH        "Ghosts destroyed target"
+
+REFERENCE           OPFOR_DEFENDED_TARGET
+LANG_ENGLISH        "Ghosts defended target"
+
+REFERENCE           SPETSNAZ_WIN
+LANG_ENGLISH        "Spectre win!"
+
+REFERENCE           SPETSNAZ_WIN_MATCH
+LANG_ENGLISH        "Spectre have won the match!"
+
+REFERENCE           SPETSNAZ_WIN_ROUND
+LANG_ENGLISH        "Spectre have won the round!"
+
+REFERENCE           SPETSNAZ_MISSION_ACCOMPLISHED
+LANG_ENGLISH        "Spectre mission accomplished"
+
+REFERENCE           SPETSNAZ_ELIMINATED
+LANG_ENGLISH        "Spectre eliminated"
+
+REFERENCE           SPETSNAZ_FORFEITED
+LANG_ENGLISH        "Spectre forfeited"
+
+REFERENCE           SPETSNAZ_DESTROYED_TARGET
+LANG_ENGLISH        "Spectre destroyed target"
+
+REFERENCE           SPETSNAZ_DEFENDED_TARGET
+LANG_ENGLISH        "Spectre defended target"
+
+REFERENCE           JOINED_SAS
+LANG_ENGLISH        "&&1 Joined Task Force"
+
+REFERENCE           JOINED_OPFOR
+LANG_ENGLISH        "&&1 Joined Ghosts"
+
+REFERENCE           JOINED_SPETSNAZ
+LANG_ENGLISH        "&&1 Joined Spectre"
+
+
+ENDMARKER
+
+

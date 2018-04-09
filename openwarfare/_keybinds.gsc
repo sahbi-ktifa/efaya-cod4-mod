@@ -47,19 +47,11 @@ onMenuResponse()
 					break;
 					
 				case "zoomin":
-					if ( level.gametype == "hns" && self.pers["team"] == game["defenders"] ) {
-						self thread maps\mp\gametypes\hns::rotateProp(5);
-					} else {
-						self thread openwarfare\_sniperzoom::zoomIn();
-					}
+					self thread openwarfare\_sniperzoom::zoomIn();
 					break;
 					
 				case "zoomout":
-					if ( level.gametype == "hns" && self.pers["team"] == game["defenders"] ) {
-						self thread maps\mp\gametypes\hns::rotateProp(-5);
-					} else {
-						self thread openwarfare\_sniperzoom::zoomOut();
-					}
+					self thread openwarfare\_sniperzoom::zoomOut();
 					break;
 					
 				case "changeclass":

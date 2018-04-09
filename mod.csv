@@ -17,6 +17,8 @@ localize,weapon
 localize,class
 localize,menu
 localize,perks
+localize,mp
+localize,mpui
 
 rawfile,maps/createfx/mp_backlot_fx.gsc
 rawfile,maps/createfx/mp_bloc_fx.gsc
@@ -215,8 +217,8 @@ material,hud_blood_stain_1
 material,hud_blood_stain_2
 material,hud_blood_stain_3
 material,hud_blood_stain_4
-material,hud_frozen
-material,hud_fznred
+#material,hud_frozen
+#material,hud_fznred
 material,hud_headshot_kill
 material,hud_healthbar_heart
 material,hud_knife_kill
@@ -538,8 +540,8 @@ xmodel,body_complete_mp_zakhaev
 xmodel,com_office_book_red_flat
 xmodel,health_obj
 xmodel,hp_medium
-xmodel,iceberg
-xmodel,icebergred
+#xmodel,iceberg
+#xmodel,icebergred
 xmodel,cross_ddogtag
 xmodel,skull_ddogtag
 xmodel,viewmodel_mw2_m16
@@ -932,3 +934,15 @@ xanim,viewmodel_ballista_sprint_out
 
 xmodel,viewmodel_bo2_ballista
 xmodel,worldmodel_bo2_ballista
+
+#AMVS
+material,amvs_loadscreen1
+material,amvs_loadscreen2
+material,amvs_loadscreen3
+material,amvs_loadscreen4
+material,amvs_loadscreen5
+material,amvs_loadscreen6
+material,amvs_loadscreen7
+material,amvs_loadscreen8
+material,amvs_loadscreen9
+material,amvs_loadscreen10

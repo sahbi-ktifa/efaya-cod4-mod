@@ -30,43 +30,6 @@ init()
 	setDvar( "scr_ass_teambalanceendofround", "1" );
 
 	//******************************************************************************
-	// configs/gametypes/behindenemylines.cfg
-	//******************************************************************************	
-	setDvar( "scr_bel_alive_points_time", "10" );
-	setDvar( "scr_bel_alive_points", "5" );
-	setDvar( "scr_bel_showoncompass", "1" );
-	setDvar( "scr_bel_showoncompass_interval", "30" );
-	setDvar( "scr_bel_showoncompass_time", "5" );
-	setDvar( "scr_bel_showoncompass_points", "5" );
-	setDvar( "scr_bel_playerrespawndelay", "3.5" );
-	setDvar( "scr_bel_scorelimit", "0" );
-	setDvar( "scr_bel_timelimit", "20" );
-	setDvar( "scr_bel_waverespawndelay", "0" );
-	setDvar( "scr_bel_teambalanceendofround", "0" );
-
-	//******************************************************************************
-	// configs/gametypes/captureandhold.cfg
-	//******************************************************************************		
-	setDvar( "scr_ch_chmode", "0" );
-	setDvar( "scr_ch_suddendeath_show_enemies", "0" );
-	setDvar( "scr_ch_suddendeath_timelimit", "90" );
-	setDvar( "scr_ch_holdtime", "100" );
-	setDvar( "scr_ch_neutraltime", "15" );
-	setDvar( "scr_ch_numlives", "0" );
-	setDvar( "scr_ch_playerrespawndelay", "7.5" );
-	setDvar( "scr_ch_ownerspawndelay", "0" );
-	setDvar( "scr_ch_roundlimit", "5" );
-	setDvar( "scr_ch_roundswitch", "2" );
-	setDvar( "scr_ch_scorelimit", "3" );
-	setDvar( "scr_ch_timelimit", "20" );
-	setDvar( "scr_ch_waverespawndelay", "0" );
-	setDvar( "scr_ch_scoreboard_flag_carrier", "1" );
-	setDvar( "scr_ch_show_flag_carrier", "0" );
-	setDvar( "scr_ch_show_flag_carrier_time", "5" );
-	setDvar( "scr_ch_show_flag_carrier_distance", "0" );
-	setDvar( "scr_ch_teambalanceendofround", "0" );
-	
-	//******************************************************************************
 	// configs/gametypes/capturetheflag.cfg
 	//******************************************************************************		
 	setDvar( "scr_ctf_ctfmode", "0" );
@@ -112,39 +75,6 @@ init()
 	setDvar( "scr_dm_roundlimit", "1" );
 	setDvar( "scr_dm_scorelimit", "0" );
 	setDvar( "scr_dm_timelimit", "30" );
-
-	//******************************************************************************
-	// configs/gametypes/freezetag.cfg
-	//******************************************************************************
-	setDvar( "scr_ftag_numlives", "0" );
-	setDvar( "scr_ftag_roundlimit", "5" );
-	setDvar( "scr_ftag_roundswitch", "2" );
-	setDvar( "scr_ftag_scorelimit", "3" );
-	setDvar( "scr_ftag_timelimit", "20" );
-	setDvar( "scr_ftag_forcestartspawns", "0" );
-	setDvar( "scr_ftag_frozen_freelook", "1" );
-	setDvar( "scr_ftag_unfreeze_score", "1" );
-	setDvar( "scr_ftag_unfreeze_time", "250" );
-	setDvar( "scr_ftag_auto_unfreeze_time", "1430" );
-	setDvar( "scr_ftag_unfreeze_maxdistance", "1000" );
-	setDvar( "scr_ftag_unfreeze_beam", "1" );
-	setDvar( "scr_ftag_unfreeze_melt_iceberg", "1" );
-	setDvar( "scr_ftag_unfreeze_respawn", "0" );
-	setDvar( "scr_ftag_show_stats", "1" );
-	setDvar( "scr_ftag_teambalanceendofround", "1" );
-
-	//******************************************************************************
-	// configs/gametypes/greed.cfg
-	//******************************************************************************
-	setDvar( "scr_gr_active_drop_zones", "2" );
-	setDvar( "scr_gr_drop_zones_relocation_time", "60" );
-	setDvar( "scr_gr_base_dogtag_score", "10" );
-	setDvar( "scr_gr_minimap_mark_red_drops", "1" );
-	setDvar( "scr_gr_dogtag_autoremoval_time", "60" );
-	setDvar( "scr_gr_playerrespawndelay", "3.5" );
-	setDvar( "scr_gr_roundlimit", "1" );
-	setDvar( "scr_gr_scorelimit", "0" );
-	setDvar( "scr_gr_timelimit", "30" );
 		
 	//******************************************************************************
 	// configs/gametypes/gungame.cfg
@@ -187,21 +117,6 @@ init()
 	setDvar( "scr_koth_flash_on_capture", "1" );
 	setDvar( "scr_koth_flash_on_destroy", "1" );
 	setDvar( "scr_koth_teambalanceendofround", "0" );
-
-	//******************************************************************************
-	// configs/gametypes/headquarters.cfg
-	//******************************************************************************
-	setDvar( "scr_hns_hidetime", "30" );
-	setDvar( "scr_hns_props_speed", "1.2" );
-	setDvar( "scr_hns_props_max_morphs", "0" );
-	setDvar( "scr_hns_props_survive_score_time", "30" );
-	setDvar( "scr_hns_hunting_music_enable", "1" );
-	setDvar( "scr_hns_hunting_music_time", "0" );	
-	setDvar( "scr_hns_roundlimit", "5" );
-	setDvar( "scr_hns_roundswitch", "2" );
-	setDvar( "scr_hns_scorelimit", "3" );
-	setDvar( "scr_hns_timelimit", "5.5" );
-	setDvar( "scr_hns_teambalanceendofround", "1"	 );
 		
 	//******************************************************************************
 	// configs/gametypes/lastmanstanding.cfg
@@ -220,19 +135,6 @@ init()
 	setDvar( "scr_lts_scorelimit", "3" );
 	setDvar( "scr_lts_timelimit", "0" );
 	setDvar( "scr_lts_teambalanceendofround", "1" );
-
-	//******************************************************************************
-	// configs/gametypes/oneinthechamber.cfg
-	//******************************************************************************	
-	setDvar( "scr_oitc_playerrespawndelay", "3.5" );
-	setDvar( "scr_oitc_roundlimit", "0" );
-	setDvar( "scr_oitc_scorelimit", "3" );
-	setDvar( "scr_oitc_timelimit", "5" );
-	setDvar( "scr_oitc_suddendeath_show_enemies", "1" );
-	setDvar( "scr_oitc_suddendeath_timelimit", "0" );		
-	setDvar( "scr_oitc_handgun", "beretta_mp;colt45_mp;usp_mp;deserteagle_mp" );
-	setDvar( "scr_oitc_specialty_slot1", "specialty_fastreload" );
-	setDvar( "scr_oitc_specialty_slot2", "specialty_longersprint" );
 	
 	//******************************************************************************
 	// configs/gametypes/retrieval.cfg
@@ -357,19 +259,6 @@ init()
         setDvar( "scr_sr_dogtags_explode_fx", "1" );
         setDvar( "scr_sr_dogtag_attacker_owner_score", "20" );
         setDvar( "scr_sr_random_second_chance", "75" );
-
-	//******************************************************************************
-	// configs/gametypes/sharpshooter.cfg
-	//******************************************************************************
-	setDvar( "scr_ss_playerrespawndelay", "3.5" );
-	setDvar( "scr_ss_roundlimit", "1" );
-	setDvar( "scr_ss_scorelimit", "0" );
-	setDvar( "scr_ss_timelimit", "30" );
-	setDvar( "scr_ss_weapon_switch_time", "45" );
-	setDvar( "scr_ss_available_weapons", "ak47_mp;ak74u_mp;g3_mp;g36c_mp;m4_mp;m14_mp;m16_mp;m60e4_mp;m1014_mp;mp5_mp;mp44_mp;p90_mp;rpd_mp;saw_mp;skorpion_mp;uzi_mp;winchester1200_mp" );
-	setDvar( "scr_ss_explosives_special", "0" );
-	setDvar( "scr_ss_specialty_slot1", "specialty_fastreload" );
-	setDvar( "scr_ss_specialty_slot2", "specialty_longersprint" );
 	
 	//******************************************************************************
 	// configs/gametypes/teamdeathmatch.cfg
@@ -384,18 +273,4 @@ init()
 	setDvar( "scr_war_forcestartspawns", "0" );
 	setDvar( "scr_war_teambalanceendofround", "0" );
 
-	//******************************************************************************
-	// configs/gametypes/teamgreed.cfg
-	//******************************************************************************	
-	setDvar( "scr_tgr_base_dogtag_score", "10" );
-	setDvar( "scr_tgr_minimap_mark_red_drops", "1" );
-	setDvar( "scr_tgr_dogtag_autoremoval_time", "60" );
-	setDvar( "scr_tgr_playerrespawndelay", "3.5" );
-	setDvar( "scr_tgr_roundlimit", "2" );
-	setDvar( "scr_tgr_roundswitch", "1" );
-	setDvar( "scr_tgr_scorelimit", "0" );
-	setDvar( "scr_tgr_timelimit", "20" );
-	setDvar( "scr_tgr_waverespawndelay", "0" );
-	setDvar( "scr_tgr_forcestartspawns", "0" );
-	setDvar( "scr_tgr_teambalanceendofround", "0" );	
 }

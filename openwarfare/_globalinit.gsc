@@ -101,26 +101,18 @@ initGametypesAndMaps()
 	// Load all the gametypes we currently support
 	level.supportedGametypes = [];
 	level.supportedGametypes["ass"] = "Assassination";
-	level.supportedGametypes["bel"] = "Behind Enemy Lines";
-	level.supportedGametypes["ch"] = "Capture and Hold";
 	level.supportedGametypes["ctf"] = "Capture the Flag";
 	level.supportedGametypes["dm"] = "Free for All";
 	level.supportedGametypes["dom"] = "Domination";
-	level.supportedGametypes["ftag"] = "Freeze Tag";
-	level.supportedGametypes["gr"] = "Greed";
 	level.supportedGametypes["gg"] = "Gun Game";
 	level.supportedGametypes["koth"] = "Headquarters";
-	level.supportedGametypes["hns"] = "Hide And Seek";	
 	level.supportedGametypes["lms"] = "Last Man Standing";
 	level.supportedGametypes["lts"] = "Last Team Standing";
-	level.supportedGametypes["oitc"] = "One In The Chamber";
 	level.supportedGametypes["re"] = "Retrieval";
 	level.supportedGametypes["sab"] = "Sabotage";
 	level.supportedGametypes["sd"] = "Search and Destroy";
 	level.supportedGametypes["sr"] = "Search and Rescue";
-	level.supportedGametypes["ss"] = "Sharp Shooter";
 	level.supportedGametypes["war"] = "Team Deathmatch";
-	level.supportedGametypes["tgr"] = "Team Greed";
 	
 	// Build the default list of gametypes
 	level.defaultGametypeList = buildListFromArrayKeys( level.supportedGametypes, ";" );
