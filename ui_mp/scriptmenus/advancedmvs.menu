@@ -334,13 +334,22 @@
 		//TRY DISPLAY MAP LOADSCREEN
 		//*****************************************************
 		//*****************************************************
-		//PREPROC_SHADER_DRAW( -200 POSITION_Y(200) 24 24, HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP, dvarString( ui_amvs_map_vote_loadscreen ), 1 1 1 1, 0, 2, 0.6 0.55 0.45 1) 
-		//PREPROC_SHADER_DRAW_ALIGNED( -100 POSITION_Y(200) 180 90 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP, 0 0, "compass_objpoint_satallite", 1 1 1 1, 0, 1, 1 1 1 1) 
-		//PREPROC_SHADER_DRAW_ALIGNED( -300 POSITION_Y(200) 200 100 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP, 0 0, "amvs_loadscreen2", 1 1 1 1, 0, 1, 1 1 1 1) 
-		//PREPROC_SHADER_DRAW_ALIGNED( -200 POSITION_Y(200) 180 90 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP, 0 0, dvarString( ui_amvs_map_vote_loadscreen ), 1 1 1 1, 0, 1, 1 1 1 1) 
 		itemDef { 
 			style			WINDOW_STYLE_SHADER 
-			rect			-300 POSITION_Y(200) 200 100 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP 
+			rect			-300 POSITION_Y(200) 130 65 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP 
+			origin 			0 0 
+			forecolor		1 1 1 1 
+			exp				material( dvarString( ui_amvs_map_vote_previous ) ); 
+			border			0 
+			bordersize		1 
+			bordercolor		1 1 1 1 
+			visible			when ( dvarString( ui_amvs_gametype_winner ) != "" && dvarString( ui_amvs_map_winner ) == "" && dvarString( ui_amvs_map_vote_previous ) != "") 
+			decoration 
+		}
+
+		itemDef { 
+			style			WINDOW_STYLE_SHADER 
+			rect			-100 POSITION_Y(200) 200 100 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP 
 			origin 			0 0 
 			forecolor		1 1 1 1 
 			exp				material( dvarString( ui_amvs_map_vote_loadscreen ) ); 
@@ -349,21 +358,20 @@
 			bordercolor		1 1 1 1 
 			visible			when ( dvarString( ui_amvs_gametype_winner ) != "" && dvarString( ui_amvs_map_winner ) == "" && dvarString( ui_amvs_map_vote_loadscreen ) != "") 
 			decoration 
+		}	
+
+		itemDef { 
+			style			WINDOW_STYLE_SHADER 
+			rect			170 POSITION_Y(200) 130 65 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP 
+			origin 			0 0 
+			forecolor		1 1 1 1 
+			exp				material( dvarString( ui_amvs_map_vote_next ) ); 
+			border			0 
+			bordersize		1 
+			bordercolor		1 1 1 1 
+			visible			when ( dvarString( ui_amvs_gametype_winner ) != "" && dvarString( ui_amvs_map_winner ) == "" && dvarString( ui_amvs_map_vote_next ) != "") 
+			decoration 
 		}		
-		/*itemDef
-		{
-			type			ITEM_TYPE_TEXT
-			rect			-220 POSITION_Y(200) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
-			exp				text( dvarstring( ui_amvs_map_vote_loadscreen ) );
-			textfont		UI_FONT_NORMAL
-			textscale		TEXTSIZE_MEDIUM
-		  style			WINDOW_STYLE_FILLED
-		  textstyle		ITEM_TEXTSTYLE_SHADOWED
-		  textAlign		ITEM_ALIGN_MIDDLE_CENTER
-			forecolor		MENU_FONT_GRAY
-			visible			when ( dvarString( ui_amvs_gametype_winner ) != "" && dvarString( ui_amvs_map_winner ) == "" )
-			decoration
-		}*/
 			//************************************
 			//************************************
 			//************************************
@@ -445,11 +453,11 @@
 		itemDef
 		{
 			name      "votemap"
-			text      "@OW_AMVS_CASTVOTE"
+			text      ""
 			type			1
 		  style			WINDOW_STYLE_FILLED
 		  textstyle		ITEM_TEXTSTYLE_SHADOWED
-			rect			-40 POSITION_Y(200) 80 15 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+		  rect			-100 POSITION_Y(200) 200 100 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 		  textAlign		ITEM_ALIGN_MIDDLE_CENTER
 		  textfont		CHOICE_TEXTFONT
 		  textscale		TEXTSIZE_MEDIUM
@@ -490,14 +498,14 @@
 		// Voting results / Loading map...
 		itemDef	{
 			style			WINDOW_STYLE_SHADER
-			rect			-80 POSITION_Y(280) 240 0.5 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			-80 POSITION_Y(310) 240 0.5 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			background		"line_horizontal"
 			forecolor		1 1 1 0.85
 			visible			1	
 			decoration	}
 		itemDef	{
 			style			WINDOW_STYLE_SHADER
-			rect			-140 POSITION_Y(280) 300 10 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			-140 POSITION_Y(310) 300 10 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			origin			30 1
 			background		"line_horizontal"
 			forecolor		OBJECTIVE_COLOR_MARINES
@@ -505,7 +513,7 @@
 			decoration	}
 		itemDef	{
 			style			WINDOW_STYLE_SHADER
-			rect			-140 POSITION_Y(280) 240 0.5 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			-140 POSITION_Y(310) 240 0.5 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			origin			0 12
 			background		"line_horizontal"
 			forecolor		1 1 1 0.85
@@ -515,7 +523,7 @@
 		itemDef
 		{
 			type			ITEM_TYPE_TEXT
-			rect			0 POSITION_Y(280) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			0 POSITION_Y(310) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			text      "@OW_AMVS_TEMPORARY_RESULTS"
 			textfont		UI_FONT_NORMAL
 			textscale		TEXTSIZE_TITLE
@@ -529,7 +537,7 @@
 		itemDef
 		{
 			type			ITEM_TYPE_TEXT
-			rect			0 POSITION_Y(280) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			0 POSITION_Y(310) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			text      "@OW_AMVS_LOADING_MAP"
 			textfont		UI_FONT_NORMAL
 			textscale		TEXTSIZE_TITLE
@@ -543,7 +551,7 @@
 		itemDef
 		{
 			type			ITEM_TYPE_TEXT
-			rect			0 POSITION_Y(315) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			0 POSITION_Y(345) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			forecolor		MENU_FONT_YELLOW
 			exp				text( secondsAsCountdown( timeLeft() ) );
 			textfont		UI_FONT_NORMAL
@@ -557,7 +565,7 @@
 		itemDef
 		{
 			type			ITEM_TYPE_TEXT
-			rect			0 POSITION_Y(310) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			0 POSITION_Y(340) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			exp				text( dvarstring( ui_amvs_firstplace ) );
 			textfont		UI_FONT_NORMAL
 			textscale		TEXTSIZE_TITLE
@@ -571,7 +579,7 @@
 		itemDef
 		{
 			type			ITEM_TYPE_TEXT
-			rect			0 POSITION_Y(310) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			0 POSITION_Y(340) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			text			"@OW_AMVS_NO_VOTES"
 			textfont		UI_FONT_NORMAL
 			textscale		TEXTSIZE_TITLE
@@ -585,7 +593,7 @@
 		itemDef
 		{
 			type			ITEM_TYPE_TEXT
-			rect			0 POSITION_Y(335) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			0 POSITION_Y(365) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			exp				text( dvarstring( ui_amvs_secondplace ) );
 			textfont		UI_FONT_NORMAL
 			textscale		TEXTSIZE_MEDIUM
@@ -599,7 +607,7 @@
 		itemDef
 		{
 			type			ITEM_TYPE_TEXT
-			rect			0 POSITION_Y(360) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect			0 POSITION_Y(390) 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			exp				text( dvarstring( ui_amvs_thirdplace ) );
 			textfont		UI_FONT_NORMAL
 			textscale		TEXTSIZE_MEDIUM
@@ -611,7 +619,7 @@
 		}		
 
 		// Leave game info
-		itemDef
+		/*itemDef
 		{
 			type			ITEM_TYPE_TEXT
 			rect			0 455 640 0 HORIZONTAL_ALIGN_DEFAULT VERTICAL_ALIGN_DEFAULT
@@ -623,7 +631,7 @@
 			forecolor		COLOR_FOCUSED
 			visible			1
 			decoration		
-		}
+		}*/
 		
 		// OpenWarfare information
 		itemDef

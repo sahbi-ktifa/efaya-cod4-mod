@@ -1,0 +1,158 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#include "ui_mp/menustyle.inc"
+#include "ui_mp/choices_setup_teams.menu"
+
+#define MENU_FONT_YELLOW	1 1 0 1
+#define MENU_FONT_WHITE		1 1 1 1
+#define MENU_FONT_GRAY		0.55 0.55 0.55 1
+
+{
+
+
+	menuDef
+	{
+		name			"buyloadout"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		//blurWorld		7.0
+		onEsc
+		{
+			close buyloadout;
+		}
+		// background overlay
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.8
+			visible			1
+			decoration
+		}
+		
+		CHOICE_MENU_TITLE( "Weapons market" )
+		
+		// Item 1
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			20 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			80 200 150 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin			30 1
+			background		"line_horizontal"
+			forecolor		OBJECTIVE_COLOR_MARINES
+			visible			1
+			decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			80 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin			0 12
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	
+			}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			160 200 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp      		text (dvarString( ui_item1_name ) );
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			style			WINDOW_STYLE_FILLED
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		MENU_FONT_GRAY
+			visible			when ( dvarString( ui_item1_name ) != undefined )
+			decoration	
+		}		
+		
+		// Item 2
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			270 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			330 200 150 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin			30 1
+			background		"line_horizontal"
+			forecolor		OBJECTIVE_COLOR_MARINES
+			visible			1
+			decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			330 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin			0 12
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	
+			}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			410 200 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp      		text (dvarString( ui_item2_name ) );
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			style			WINDOW_STYLE_FILLED
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		MENU_FONT_GRAY
+			visible			when ( dvarString( ui_item2_name ) != undefined )
+			decoration	
+		}
+		
+		// Item 3
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			520 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			580 200 150 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin			30 1
+			background		"line_horizontal"
+			forecolor		OBJECTIVE_COLOR_MARINES
+			visible			1
+			decoration	}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			580 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin			0 12
+			background		"line_horizontal"
+			forecolor		1 1 1 0.85
+			visible			1	decoration	
+			}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			660 200 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp      		text (dvarString( ui_item3_name ) );
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			style			WINDOW_STYLE_FILLED
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		MENU_FONT_GRAY
+			visible			when ( dvarString( ui_item3_name ) != undefined )
+			decoration	
+		}
+		
+		execKey "1" { scriptMenuResponse "1"; }
+		execKey "2" { scriptMenuResponse "2"; }
+		execKey "3" { scriptMenuResponse "3"; }
+		execKey "4" { scriptMenuResponse "4"; }
+		execKey "5" { scriptMenuResponse "5"; }
+		execKey "6" { scriptMenuResponse "6"; }
+	}
+}

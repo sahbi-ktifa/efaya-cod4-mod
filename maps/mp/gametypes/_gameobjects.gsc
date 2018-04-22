@@ -91,6 +91,7 @@ main(allowed)
 		case "ss":
 			spawnsNeeded = "dm";
 			break;
+		case "csd":
 		case "sr":
 			spawnsNeeded = "sd";
 			break;

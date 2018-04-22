@@ -404,19 +404,28 @@ sendPlayerMapVariables()
 	if ( nextMap == level.scr_amvs_maps[level.amvsWinnerGametype].size )
 		nextMap = 0;
 
+	level.ui_amvs_map_vote_previous = "";
 	level.ui_amvs_map_vote_loadscreen = "";
+	level.ui_amvs_map_vote_next = "";
 	for (idx = 0; idx < 10; idx++) {
-		if (level.scr_amvs_loadscreens[idx] == level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]]) {
+		if (level.scr_amvs_loadscreens[idx] == level.scr_amvs_maps[level.amvsWinnerGametype][previousMap]) {
+			level.ui_amvs_map_vote_previous = "amvs_loadscreen" + (idx + 1);
+		}
+		else if (level.scr_amvs_loadscreens[idx] == level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]]) {
 			level.ui_amvs_map_vote_loadscreen = "amvs_loadscreen" + (idx + 1);
-			break;
+		}
+		else if (level.scr_amvs_loadscreens[idx] == level.scr_amvs_maps[level.amvsWinnerGametype][nextMap]) {
+			level.ui_amvs_map_vote_next = "amvs_loadscreen" + (idx + 1);
 		}
 	}
 	// Set the previous, current, and next maps for this player
 	self setClientDvars(
 		"ui_amvs_map_previous", getMapName( level.scr_amvs_maps[level.amvsWinnerGametype][previousMap] ),
 		"ui_amvs_map_vote", getMapName( level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]] ),
+		"ui_amvs_map_next", getMapName( level.scr_amvs_maps[level.amvsWinnerGametype][nextMap] ),
+		"ui_amvs_map_vote_previous", level.ui_amvs_map_vote_previous,
 		"ui_amvs_map_vote_loadscreen", level.ui_amvs_map_vote_loadscreen,
-		"ui_amvs_map_next", getMapName( level.scr_amvs_maps[level.amvsWinnerGametype][nextMap] )
+		"ui_amvs_map_vote_next", level.ui_amvs_map_vote_next
 	);	
 }
 

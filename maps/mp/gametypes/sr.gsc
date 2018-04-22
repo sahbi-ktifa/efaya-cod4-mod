@@ -426,9 +426,15 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 	thread checkAllowSpectating();
 
         // No tags for falling, suicides or team kills
-        if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self ) 
-                self thread spawnTags( attacker );
-
+        //if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self ) 
+        if( isPlayer( attacker ) && attacker != self && sHitLoc != "head" && sHitLoc != "helmet" && sMeansOfDeath != "MOD_MELEE") { 
+            // Send notice to players 
+			iprintln("^3" + attacker.name + " ^7shot down ^3" + self.name + "^7!");			
+			self thread spawnTags( attacker );				
+		} else if (sHitLoc == "head" || sHitLoc == "helmet") {
+			// Send notice to players 
+			iprintln("^1" + self.name + " ^7.... has been ELIMINATED!");
+		}
         if( isDefined( self.destroyingExplosive ) && self.destroyingExplosive == true ) {
                 self updateSecondaryProgressBar( undefined, undefined, true, undefined );
         }

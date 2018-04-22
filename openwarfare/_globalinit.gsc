@@ -101,6 +101,7 @@ initGametypesAndMaps()
 	// Load all the gametypes we currently support
 	level.supportedGametypes = [];
 	level.supportedGametypes["ass"] = "Assassination";
+	level.supportedGametypes["csd"] = "Competitive S&D";
 	level.supportedGametypes["ctf"] = "Capture the Flag";
 	level.supportedGametypes["dm"] = "Free for All";
 	level.supportedGametypes["dom"] = "Domination";

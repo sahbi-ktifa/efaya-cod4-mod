@@ -157,6 +157,8 @@ rawfile,maps/mp/gametypes/ass.txt
 #rawfile,maps/mp/gametypes/bel.txt
 #rawfile,maps/mp/gametypes/ch.gsc
 #rawfile,maps/mp/gametypes/ch.txt
+rawfile,maps/mp/gametypes/csd.gsc
+rawfile,maps/mp/gametypes/csd.txt
 rawfile,maps/mp/gametypes/ctf.gsc
 rawfile,maps/mp/gametypes/ctf.txt
 rawfile,maps/mp/gametypes/dm.gsc
@@ -385,6 +387,7 @@ menufile,ui_mp/scriptmenus/popup_addfavorite.menu
 menufile,ui_mp/scriptmenus/scoreboard.menu
 menufile,ui_mp/scriptmenus/serverinfo.menu
 menufile,ui_mp/scriptmenus/team_marinesopfor.menu
+menufile,ui_mp/scriptmenus/buyloadout.menu
 
 rawfile,ui_mp/cac_ingame.inc
 rawfile,ui_mp/cac_loadout_ingame.inc

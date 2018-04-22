@@ -42,91 +42,11 @@ LANG_ENGLISH "V.I.P. successfully extracted"
 REFERENCE ASSASSINATION_VIP_ELIMINATED
 LANG_ENGLISH "The V.I.P. has been eliminated"
 
-
 //******************************************************************************
-// maps/mp/gametypes/bel.gsc
+// maps/mp/gametypes/csd.gsc
 //******************************************************************************
-REFERENCE BEHIND_ENEMY_LINES
-LANG_ENGLISH "Behind Enemy Lines"
-
-REFERENCE OBJECTIVES_ATTACKERS_BEL
-LANG_ENGLISH "Gain points by hunting down enemy runners."
-
-REFERENCE OBJECTIVES_DEFENDERS_BEL
-LANG_ENGLISH "Gain points by surviving and eliminating enemy players."
-
-REFERENCE OBJECTIVES_ATTACKERS_BEL_SCORE
-LANG_ENGLISH "Gain points by hunting down enemy runners. First player to &&1 points wins."
-
-REFERENCE OBJECTIVES_DEFENDERS_BEL_SCORE
-LANG_ENGLISH "Gain points by surviving and eliminating enemy players. First player to &&1 points wins."
-
-REFERENCE OBJECTIVES_ATTACKERS_BEL_HINT
-LANG_ENGLISH "Hunt down enemy runners."
-
-REFERENCE OBJECTIVES_DEFENDERS_BEL_HINT
-LANG_ENGLISH "Survive and eliminate enemy players."
-
-REFERENCE BEL_TIME_ALIVE
-LANG_ENGLISH "Time Alive: &&1"
-
-REFERENCE BEL_POINTS_EARNED
-LANG_ENGLISH "Points Earned: &&1"
-
-REFERENCE BEL_WILLSPAWN_ATTACKER
-LANG_ENGLISH "You will spawn as a hunter!"
-
-REFERENCE BEL_WILLSPAWN_DEFENDER
-LANG_ENGLISH "You will spawn as a runner!"
-
-REFERENCE BEL_SPAWNED_ATTACKER
-LANG_ENGLISH "You are a hunter!"
-
-REFERENCE BEL_SPAWNED_DEFENDER
-LANG_ENGLISH "You are a runner!"
-
-
-//******************************************************************************
-// maps/mp/gametypes/ch.gsc
-//******************************************************************************
-REFERENCE CAPTURE_AND_HOLD
-LANG_ENGLISH "Capture and Hold"
-
-REFERENCE CH_DONTHAVE_FLAG
-LANG_ENGLISH "Retrieve the flag: &&1"
-
-REFERENCE CH_FLAG_LOST
-LANG_ENGLISH "Flag lost by &&1."
-
-REFERENCE CH_FLAG_LOST_ENEMY
-LANG_ENGLISH "The enemy has lost the flag."
-
-REFERENCE CH_FLAG_TAKEN
-LANG_ENGLISH "Flag taken by &&1."
-
-REFERENCE CH_FLAG_TAKEN_ENEMY
-LANG_ENGLISH "The enemy has taken the flag."
-
-REFERENCE CH_HAVE_FLAG
-LANG_ENGLISH "Defend the flag: &&1"
-
-REFERENCE CH_HINT
-LANG_ENGLISH "Capture the flag."
-
-REFERENCE CH_MODE0
-LANG_ENGLISH "Gain points by capturing the flag and then holding it until the timer reaches zero."
-
-REFERENCE CH_MODE1
-LANG_ENGLISH "Gain points by capturing the flag and then holding it."
-
-REFERENCE CH_SCORE_MODE0
-LANG_ENGLISH "Gain points by capturing the flag and then holding it until the timer reaches zero. First team with &&1 points wins."
-
-REFERENCE CH_SCORE_MODE1
-LANG_ENGLISH "Gain points by capturing the flag and then holding it. First team with &&1 points wins."
-
-REFERENCE CH_WAITING_FOR_FLAG
-LANG_ENGLISH "Waiting to lose flag ownership or ..."
+REFERENCE COMPETITIVE_SD
+LANG_ENGLISH "Competitive S&D"
 
 
 //******************************************************************************
@@ -158,31 +78,6 @@ LANG_ENGLISH "Enemy flag returning in: &&1"
 
 
 //******************************************************************************
-// maps/mp/gametypes/ftag.gsc
-//******************************************************************************
-REFERENCE FREEZETAG
-LANG_ENGLISH "Freeze Tag"
-
-REFERENCE FTAG_ALLIES_FROZEN
-LANG_ENGLISH "Allies have been frozen"
-
-REFERENCE FTAG_AXIS_FROZEN
-LANG_ENGLISH "Axis have been frozen"
-
-REFERENCE FTAG_UNFROZEN_STATS
-LANG_ENGLISH "You were unfrozen by &&1 after being frozen for ^3&&2^7 seconds."
-
-REFERENCE OBJECTIVES_FTAG
-LANG_ENGLISH "Gain points by freezing all the enemy players."
-
-REFERENCE OBJECTIVES_FTAG_SCORE
-LANG_ENGLISH "Gain points by freezing all the enemy players. First team with &&1 points wins."
-
-REFERENCE OBJECTIVES_FTAG_HINT
-LANG_ENGLISH "Freeze all the enemy players."
-
-
-//******************************************************************************
 // maps/mp/gametypes/gg.gsc
 //******************************************************************************
 REFERENCE GUNGAME
@@ -199,110 +94,6 @@ LANG_ENGLISH "Eliminate other players."
 
 REFERENCE GUNGAME_WINNER
 LANG_ENGLISH "Made last kill with last weapon!"
-
-
-//******************************************************************************
-// maps/mp/gametypes/gr.gsc
-//******************************************************************************
-REFERENCE GREED
-LANG_ENGLISH "Greed"
-
-REFERENCE OBJECTIVES_GR
-LANG_ENGLISH "Collect dogtags and deliver them to the drop zone."
-
-REFERENCE OBJECTIVES_GR_SCORE
-LANG_ENGLISH "Collect dogtags and deliver them to the drop zone. First player with &&1 points wins."
-
-REFERENCE OBJECTIVES_GR_HINT
-LANG_ENGLISH "Collect dogtags and deliver them to the drop zone."
-
-REFERENCE DOGTAGS_CAPTURED_BY
-LANG_ENGLISH "^3&&1^7 has captured ^3&&2^7 dogtag(s)."
-
-REFERENCE GR_DROPZONES_RELOCATING_IN
-LANG_ENGLISH "Drop zones re-locating in &&1"
-
-REFERENCE GR_DROPZONE_RELOCATING_IN
-LANG_ENGLISH "Drop zone re-locating in &&1"
-
-
-//******************************************************************************
-// maps/mp/gametypes/hns.gsc
-//******************************************************************************
-REFERENCE HIDEANDSEEK
-LANG_ENGLISH "Hide And Seek"
-
-REFERENCE PROPS_SHORT
-LANG_ENGLISH "Props"
-
-REFERENCE CHOOSE_CLASS_PROP
-LANG_ENGLISH "Choose Prop Class"
-
-REFERENCE OBJECTIVES_HNS_ATTACKER
-LANG_ENGLISH "Hunt down and kill the props."
-
-REFERENCE OBJECTIVES_HNS_ATTACKER_SCORE
-LANG_ENGLISH "Hunt down and kill the props.  First team to &&1 wins."
-
-REFERENCE OBJECTIVES_HNS_ATTACKER_HINT
-LANG_ENGLISH "Hunt down and kill the props."
-
-REFERENCE OBJECTIVES_HNS_DEFENDER
-LANG_ENGLISH "Survive by hiding from the hunters."
-
-REFERENCE OBJECTIVES_HNS_DEFENDER_SCORE
-LANG_ENGLISH "Survive by hiding from the hunters. First team to &&1 wins."
-
-REFERENCE OBJECTIVES_HNS_DEFENDER_HINT
-LANG_ENGLISH "Survive by hiding from the hunters."
-
-REFERENCE PROPS_WIN
-LANG_ENGLISH "Props win!"
-
-REFERENCE PROPS_WIN_MATCH
-LANG_ENGLISH "Props have won the match!"
-
-REFERENCE PROPS_WIN_ROUND
-LANG_ENGLISH "Props have won the round!"
-
-REFERENCE  PROPS_MISSION_ACCOMPLISHED
-LANG_ENGLISH  "Props mission accomplished"
-
-REFERENCE PROPS_ELIMINATED
-LANG_ENGLISH  "Props eliminated"
-
-REFERENCE PROPS_FORFEITED
-LANG_ENGLISH "Props forfeited"
-
-REFERENCE PROPS_HIDING_TIME
-LANG_ENGLISH "Hunting starts in &&1"
-
-REFERENCE MAXIMUM_MORPHS_REACHED
-LANG_ENGLISH "You are allowed to morph only ^3&&1^7 times within the same round."
-
-REFERENCE PROPS_HINT_LINE1
-LANG_ENGLISH "Press ^3[{openscriptmenu modkeybind zoomin}]^7 and ^3[{openscriptmenu modkeybind zoomout}]^7 to rotate the prop model."
-
-REFERENCE PROPS_HINT_LINE2
-LANG_ENGLISH "Press ^3[{+attack}]^7 to align the prop model with your view."
-
-REFERENCE PROPS_HINT_LINE3
-LANG_ENGLISH "Press ^3[{+melee}]^7 to quickly select a new prop model."
-
-REFERENCE PROPS_HINT_LINE4
-LANG_ENGLISH "Remember to go ^3Prone^7 and ^3Crouch^7 to reduce your hit area."
-
-REFERENCE PROPS_HINT_LINE5
-LANG_ENGLISH "Remember that you can throw back enemy grenades!"
-
-REFERENCE HUMANS_HINT_LINE1
-LANG_ENGLISH "It's best if you use the ^3Bandolier^7 perk to have enough ammo."
-
-REFERENCE HUMANS_HINT_LINE2
-LANG_ENGLISH "Remember that Props come in all sizes and shapes and they are very sneaky!"
-
-REFERENCE HUMANS_HINT_LINE3
-LANG_ENGLISH "Be careful! Props can throw back your grenades so stay alert."
 
 
 //******************************************************************************

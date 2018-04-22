@@ -39,11 +39,14 @@ init()
         level.scr_sd_allow_defender_explosivedestroy_sound = getdvarx( "scr_sd_allow_defender_explosivedestroy_sound", "int", 0, 0, 1 );
         level.scr_sd_allow_defender_explosivedestroy_win = getdvarx( "scr_sd_allow_defender_explosivedestroy_win", "int", 0, 0, 1 );
         level.scr_sd_allow_quickdefuse = getdvarx( "scr_sd_allow_quickdefuse", "int", 0, 0, 1 );
-  
+        
+		level.scr_csd_allow_quickdefuse = getdvarx( "scr_csd_allow_quickdefuse", "int", 0, 0, 1 );
+		level.scr_csd_objective_takedamage_enable = getdvarx( "scr_csd_objective_takedamage_enable", "int", 0, 0, 1 );
+		
         //Level thread to create and control all safe zones.
         level thread setSafeZones();
   
-        if ( level.gameType == "sd" && level.scr_sd_objective_takedamage_enable ||  level.gameType == "sr" && level.scr_sr_objective_takedamage_enable )
+        if ( level.gameType == "sd" && level.scr_sd_objective_takedamage_enable ||  level.gameType == "sr" && level.scr_sr_objective_takedamage_enable ||  level.gameType == "csd" && level.scr_csd_objective_takedamage_enable )
         {
                 level._effect["bombexplosion"] = loadfx( "props/barrelexp" );
                 game["strings"]["target_destroyed"] = &"MP_TARGET_DESTROYED"; 
@@ -66,7 +69,7 @@ onPlayerConnected()
 onPlayerSpawned()
 {
 
-	if ( level.scr_sd_allow_quickdefuse == 1 )
+	if ( level.scr_sd_allow_quickdefuse == 1 || level.scr_csd_allow_quickdefuse == 1 )
 		self.didQuickDefuse = false;
 	
 	//The per-player monitor thread uses level safezones,
@@ -95,6 +98,7 @@ setSafeZones()
 	
 	switch( gametype )
 	{
+		case "csd":
 		case "sd":
 		case "sr":
 		case "dem":
@@ -286,7 +290,7 @@ monitorSafeZoneLevel()
 
 createDamageArea()
 {
-        if ( level.gameType != "sd" || level.gameType != "sr" )
+        if ( level.gameType != "sd" || level.gameType != "sr" || level.gameType != "csd" )
                 return;
     
         while ( !isDefined( level.bombZones ) )
@@ -314,6 +318,13 @@ createDamageArea()
                                         level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;     
                                 else
                                         level.objectiveHealth[index] = level.scr_sr_objective_takedamage_counter;
+                        }
+						
+						if( level.gameType == "csd" ) {      
+                                if ( level.scr_csd_objective_takedamage_option )    
+                                        level.objectiveHealth[index] = level.scr_csd_objective_takedamage_health;     
+                                else
+                                        level.objectiveHealth[index] = level.scr_csd_objective_takedamage_counter;
                         }
         
                         level.objDamageCounter[index] = 0;
@@ -361,6 +372,13 @@ createDamageArea()
                                        level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;     
                                else
                                        level.objectiveHealth[index] = level.scr_sr_objective_takedamage_counter;
+                       }
+					   
+					   if( level.gameType == "csd" ) {
+                               if ( level.scr_csd_objective_takedamage_option )    
+                                       level.objectiveHealth[index] = level.scr_csd_objective_takedamage_health;     
+                               else
+                                       level.objectiveHealth[index] = level.scr_csd_objective_takedamage_counter;
                        }
            
                        level.objDamageCounter[index] = 0;
@@ -427,6 +445,14 @@ waitForDamage( index, object, visuals )
                         }
                 }
     
+				if( level.gameType == "csd" ) {
+                        if ( level.scr_csd_objective_takedamage_option )
+                        {
+                                level.objDamageCounter[index]++;
+                                level.objDamageTotal[index] += damage;
+                        }
+                }
+				
                 wait( 0.1 );
     
                 if ( isDefined( attacker ) && isPlayer( attacker ) )
@@ -467,6 +493,22 @@ waitForDamage( index, object, visuals )
                                                         }
                                                 }
 
+												if( level.gameType == "csd" ) {
+
+                                                        if ( level.scr_csd_objective_takedamage_option )
+                                                        {
+                                                                level.objectiveHealth[index] -= int( level.objDamageTotal[index] / level.objDamageCounter[index] );
+                                                                level.objDamageCounter[index] = 0;
+                                                                level.objDamageTotal[index] = 0;
+                                                        }
+
+                                                        else
+                                                        {
+                                                                level.objectiveHealth[index]--;
+                                                        }
+
+                                                }
+												
                                                 wait( 0.1 );
 
                                                 level.isLosingHealth[index] = false;
@@ -516,6 +558,10 @@ destroyObjective( object, visuals, attacker )
         if( level.gameType == "sr" ) {  
 	        thread maps\mp\gametypes\sr::playSoundinSpace( "exp_suitcase_bomb_main", object.origin );
         }
+		
+		if( level.gameType == "csd" ) {  
+	        thread maps\mp\gametypes\csd::playSoundinSpace( "exp_suitcase_bomb_main", object.origin );
+        }
 	  
 	setGameEndTime( 0 );
 	  
@@ -527,6 +573,10 @@ destroyObjective( object, visuals, attacker )
 
         if( level.gameType == "sr" ) {  
 	        maps\mp\gametypes\sr::sr_endGame( game["attackers"], game["strings"]["target_destroyed"] );
+        }
+		
+		if( level.gameType == "csd" ) {  
+	        maps\mp\gametypes\csd::sd_endGame( game["attackers"], game["strings"]["target_destroyed"] );
         }
 
 } 

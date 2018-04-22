@@ -27,7 +27,7 @@ x,x,x,x,x,x,x
 23,223,customclass3,Secondary Weapon,usp,2,
 24,224,customclass3,Secondary Attachment,none,0,
 25,225,customclass3,Specialty1,specialty_specialgrenade,176,
-26,226,customclass3,Specialty2,specialty_armorvest,167,
+26,226,customclass3,Specialty2,specialty_bulletdamage,167,
 27,227,customclass3,Specialty3,specialty_bulletpenetration,161,
 28,228,customclass3,Special Grenade,concussion_grenade,103,3
 29,229,customclass3,Camo is not scripted for offline,camo_none,0,
