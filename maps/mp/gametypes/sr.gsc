@@ -433,7 +433,13 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 			self thread spawnTags( attacker );				
 		} else if (sHitLoc == "head" || sHitLoc == "helmet") {
 			// Send notice to players 
-			iprintln("^1" + self.name + " ^7.... has been ELIMINATED!");
+			iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a headshot by ^3" + attacker.name + "^7!");
+		}  else if (sHitLoc == "MOD_MELEE") {
+			// Send notice to players 
+			iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a knife melee by ^3" + attacker.name + "^7!");
+		} else if (attacker == self) {
+			// Send notice to players 
+			iprintln("^3" + self.name + " ^7.... has been ELIMINATED by ... himself... commiting suicide");
 		}
         if( isDefined( self.destroyingExplosive ) && self.destroyingExplosive == true ) {
                 self updateSecondaryProgressBar( undefined, undefined, true, undefined );

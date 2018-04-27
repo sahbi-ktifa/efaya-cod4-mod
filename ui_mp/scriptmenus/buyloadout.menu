@@ -7,6 +7,85 @@
 #define MENU_FONT_YELLOW	1 1 0 1
 #define MENU_FONT_WHITE		1 1 1 1
 #define MENU_FONT_GRAY		0.55 0.55 0.55 1
+#define MENU_FONT_CAN_BUY		0 0.49 0.05 1
+#define MENU_FONT_CANNOT_BUY		0.49 0.12 0.05 1
+
+#ifndef ITEM_CSD
+#define ITEM_CSD( x, y, ui_item_name, ui_item_image, ui_item_cost, ui_item_cost_color) \
+		itemDef	{ \
+			style			WINDOW_STYLE_SHADER \
+			rect			x y 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP \
+			background		"line_horizontal" \
+			forecolor		1 1 1 0.85 \
+			visible			when ( dvarString( ui_item_name ) != "" )	decoration	} \
+		itemDef	{ \
+			style			WINDOW_STYLE_SHADER \
+			rect			(x+60) y 150 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP \
+			origin			30 1 \
+			background		"line_horizontal" \
+			forecolor		OBJECTIVE_COLOR_MARINES \
+			visible			when ( dvarString( ui_item_name ) != "" ) \
+			decoration	} \
+		itemDef	{ \
+			style			WINDOW_STYLE_SHADER \
+			rect			(x+60) y 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP \
+			origin			0 12 \
+			background		"line_horizontal" \
+			forecolor		1 1 1 0.85 \
+			visible			when ( dvarString( ui_item_name ) != "" )	decoration	 \
+			} \
+		itemDef \
+		{ \
+			type			ITEM_TYPE_TEXT \
+			rect			(x+140) y 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP \
+			exp      		text (dvarString( ui_item_name ) ); \
+			textfont		UI_FONT_NORMAL \
+			textscale		TEXTSIZE_TITLE \
+			style			WINDOW_STYLE_FILLED \
+			textstyle		ITEM_TEXTSTYLE_SHADOWED \
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER \
+			forecolor		MENU_FONT_GRAY \
+			visible			when ( dvarString( ui_item_name ) != "" ) \
+			decoration	} \
+		itemDef \
+		{ \
+			type			ITEM_TYPE_TEXT \
+			rect			(x+170) (y-40) 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP \
+			exp      		text (dvarString( ui_item_cost ) ); \
+			textfont		UI_FONT_NORMAL \
+			textscale		TEXTSIZE_TITLE \
+			style			WINDOW_STYLE_FILLED \
+			textstyle		ITEM_TEXTSTYLE_SHADOWED \
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER \
+			forecolor		MENU_FONT_CAN_BUY \
+			visible			when ( dvarString( ui_item_cost ) != "" && dvarString(ui_item_cost_color) == "OK") \
+			decoration	} \
+		itemDef \
+		{ \
+			type			ITEM_TYPE_TEXT \
+			rect			(x+170) (y-40) 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP \
+			exp      		text (dvarString( ui_item_cost ) ); \
+			textfont		UI_FONT_NORMAL \
+			textscale		TEXTSIZE_TITLE \
+			style			WINDOW_STYLE_FILLED \
+			textstyle		ITEM_TEXTSTYLE_SHADOWED \
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER \
+			forecolor		MENU_FONT_CANNOT_BUY \
+			visible			when ( dvarString( ui_item_cost ) != "" && dvarString(ui_item_cost_color) == "NOK") \
+			decoration	} \
+		itemDef {  \
+			style			WINDOW_STYLE_SHADER \
+			rect			(x+30) (y-80) 100 75 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP \
+			origin 			0 0 \
+			forecolor		1 1 1 1 \
+			exp				material( dvarString( ui_item_image ) ); \
+			border			0 \
+			bordersize		1 \
+			bordercolor		1 1 1 1 \
+			visible			when (dvarString( ui_item_name ) != undefined && dvarString(ui_item_image) != "") \
+			decoration \
+		} 
+#endif
 
 {
 
@@ -17,7 +96,7 @@
 		rect			0 0 640 480
 		focuscolor		COLOR_FOCUSED
 		style			WINDOW_STYLE_EMPTY
-		//blurWorld		7.0
+		blurWorld		2.0
 		onEsc
 		{
 			close buyloadout;
@@ -33,120 +112,29 @@
 		}
 		
 		CHOICE_MENU_TITLE( "Weapons market" )
-		
-		// Item 1
-		itemDef	{
-			style			WINDOW_STYLE_SHADER
-			rect			20 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			background		"line_horizontal"
-			forecolor		1 1 1 0.85
-			visible			1	decoration	}
-		itemDef	{
-			style			WINDOW_STYLE_SHADER
-			rect			80 200 150 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			origin			30 1
-			background		"line_horizontal"
-			forecolor		OBJECTIVE_COLOR_MARINES
+
+		itemDef 	{ 
+			style			WINDOW_STYLE_SHADER 
+			rect			-120 -32 378 64 0 0 
+			background		"white" 
+			forecolor		0.9 0.9 0.95 0.175 
+			visible			1
+			decoration 	} 
+		itemDef 	{ 
+			style			WINDOW_STYLE_SHADER 
+			rect			258 -32 16 -64 0 0 
+			origin			0 0 
+			background		HIGHLIGHT_SHADER_ART 
+			forecolor		0.9 0.9 0.95 0.175 
 			visible			1
 			decoration	}
-		itemDef	{
-			style			WINDOW_STYLE_SHADER
-			rect			80 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			origin			0 12
-			background		"line_horizontal"
-			forecolor		1 1 1 0.85
-			visible			1	decoration	
-			}
-		itemDef
-		{
-			type			ITEM_TYPE_TEXT
-			rect			160 200 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			exp      		text (dvarString( ui_item1_name ) );
-			textfont		UI_FONT_NORMAL
-			textscale		TEXTSIZE_TITLE
-			style			WINDOW_STYLE_FILLED
-			textstyle		ITEM_TEXTSTYLE_SHADOWED
-			textAlign		ITEM_ALIGN_MIDDLE_CENTER
-			forecolor		MENU_FONT_GRAY
-			visible			when ( dvarString( ui_item1_name ) != undefined )
-			decoration	
-		}		
 		
-		// Item 2
-		itemDef	{
-			style			WINDOW_STYLE_SHADER
-			rect			270 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			background		"line_horizontal"
-			forecolor		1 1 1 0.85
-			visible			1	decoration	}
-		itemDef	{
-			style			WINDOW_STYLE_SHADER
-			rect			330 200 150 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			origin			30 1
-			background		"line_horizontal"
-			forecolor		OBJECTIVE_COLOR_MARINES
-			visible			1
-			decoration	}
-		itemDef	{
-			style			WINDOW_STYLE_SHADER
-			rect			330 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			origin			0 12
-			background		"line_horizontal"
-			forecolor		1 1 1 0.85
-			visible			1	decoration	
-			}
-		itemDef
-		{
-			type			ITEM_TYPE_TEXT
-			rect			410 200 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			exp      		text (dvarString( ui_item2_name ) );
-			textfont		UI_FONT_NORMAL
-			textscale		TEXTSIZE_TITLE
-			style			WINDOW_STYLE_FILLED
-			textstyle		ITEM_TEXTSTYLE_SHADOWED
-			textAlign		ITEM_ALIGN_MIDDLE_CENTER
-			forecolor		MENU_FONT_GRAY
-			visible			when ( dvarString( ui_item2_name ) != undefined )
-			decoration	
-		}
-		
-		// Item 3
-		itemDef	{
-			style			WINDOW_STYLE_SHADER
-			rect			520 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			background		"line_horizontal"
-			forecolor		1 1 1 0.85
-			visible			1	decoration	}
-		itemDef	{
-			style			WINDOW_STYLE_SHADER
-			rect			580 200 150 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			origin			30 1
-			background		"line_horizontal"
-			forecolor		OBJECTIVE_COLOR_MARINES
-			visible			1
-			decoration	}
-		itemDef	{
-			style			WINDOW_STYLE_SHADER
-			rect			580 200 120 0.5 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			origin			0 12
-			background		"line_horizontal"
-			forecolor		1 1 1 0.85
-			visible			1	decoration	
-			}
-		itemDef
-		{
-			type			ITEM_TYPE_TEXT
-			rect			660 200 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
-			exp      		text (dvarString( ui_item3_name ) );
-			textfont		UI_FONT_NORMAL
-			textscale		TEXTSIZE_TITLE
-			style			WINDOW_STYLE_FILLED
-			textstyle		ITEM_TEXTSTYLE_SHADOWED
-			textAlign		ITEM_ALIGN_MIDDLE_CENTER
-			forecolor		MENU_FONT_GRAY
-			visible			when ( dvarString( ui_item3_name ) != undefined )
-			decoration	
-		}
+		// Items
+		ITEM_CSD(20, 180, ui_item1_name, ui_item1_image, ui_item1_cost, ui_item1_cost_color);
+		ITEM_CSD(270, 180, ui_item2_name, ui_item2_image, ui_item2_cost, ui_item2_cost_color);
+		ITEM_CSD(520, 180, ui_item3_name, ui_item3_image, ui_item3_cost, ui_item3_cost_color);
+		ITEM_CSD(135, 380, ui_item4_name, ui_item4_image, ui_item4_cost, ui_item4_cost_color);
+		ITEM_CSD(385, 380, ui_item5_name, ui_item5_image, ui_item5_cost, ui_item5_cost_color);
 		
 		execKey "1" { scriptMenuResponse "1"; }
 		execKey "2" { scriptMenuResponse "2"; }
@@ -154,5 +142,20 @@
 		execKey "4" { scriptMenuResponse "4"; }
 		execKey "5" { scriptMenuResponse "5"; }
 		execKey "6" { scriptMenuResponse "6"; }
+		
+		// Go back info
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			0 455 640 0 HORIZONTAL_ALIGN_DEFAULT VERTICAL_ALIGN_DEFAULT
+			text			"@OW_AMVS_GO_BACK"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			when (dvarString( ui_buyloadout_step ) != "base" )
+			decoration		
+		}
 	}
 }

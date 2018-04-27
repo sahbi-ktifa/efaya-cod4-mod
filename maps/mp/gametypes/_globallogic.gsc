@@ -2384,6 +2384,7 @@ beginClassChoice( forceNewChoice )
 
 	team = self.pers["team"];
 
+	//if ( level.oldschool || level.gameType == "csd")
 	if ( level.oldschool )
 	{
 		// skip class choice and just spawn.
@@ -2400,6 +2401,8 @@ beginClassChoice( forceNewChoice )
 		self thread maps\mp\gametypes\_spectating::setSpectatePermissions();
 
 		return;
+	} else if (level.gameType == "csd") {
+		//TODO: Disable opening chooseclass menu ASAP
 	}
 
 	// menu_changeclass_team is the one where you choose one of the n classes to play as.

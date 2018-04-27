@@ -125,25 +125,63 @@ main()
 	level.scr_csd_planting_reward = getdvard( "scr_csd_planting_reward", "int", 200 );
 	level.scr_csd_defusing_reward = getdvard( "scr_csd_defusing_reward", "int", 400 );
 	
-	level.assault_allies_weapons = [];
-	level.assault_axis_weapons = [];
 	level.pistol_allies_weapons = [];
 	level.pistol_axis_weapons = [];
 	level.sniper_allies_weapons = [];
 	level.sniper_axis_weapons = [];
-	level.smg_shotgun_allies_weapons = [];
-	level.smg_shotgun_axis_weapons = [];
 	level.grenade_weapons = [];
-	loadDefaultArray(level.assault_allies_weapons, "scr_csd_assault_allies_weapons", "m16_silencer_mp:M16:weapon_m16:650;m14_reflex_mp:Famas:weapon_m14:750;m4_reflex_mp:Remington R5:weapon_m4carbine:800");
-	loadDefaultArray(level.assault_axis_weapons, "scr_csd_assault_axis_weapons", "ak47_silencer_mp:AK-47:weapon_ak47:550;g36c_reflex_mp:Commando:weapon_g36c:800;g3_reflex_mp:Honey Badger:weapon_g3:720");
-	loadDefaultArray(level.pistol_allies_weapons, "scr_csd_pistol_allies_weapons", "usp_mp:RE45:weapon_usp_45:250;colt45_silencer_mp:RK5 Silencer:weapon_colt_45:310;deserteaglegold_mp:Desert Eagle:weapon_desert_eagle_gold:390");
-	loadDefaultArray(level.pistol_axis_weapons, "scr_csd_pistol_axis_weapons", "usp_mp:RE45:weapon_usp_45:250;colt45_silencer_mp:RK5 Silencer:weapon_colt_45:310;deserteagle_mp:.44 Magnum:weapon_desert_eagle:390");
-	loadDefaultArray(level.sniper_allies_weapons, "scr_csd_sniper_allies_weapons", "m40a3_mp:L96:weapon_m40a3:950;barrett_mp:Barrett:weapon_barrett50cal:1200;rpd_mp:M1 Garand:weapon_rpd:570;saw_mp:Mosin Nagant:weapon_m249saw:650");
-	loadDefaultArray(level.sniper_axis_weapons, "scr_csd_sniper_axis_weapons", "remington700_mp:Ballista:weapon_remington700:950;m21_mp:M21:weapon_m14_scoped:1170;rpd_mp:M1 Garand:weapon_rpd:570;m60e4_mp:Kark98:weapon_m60e4:700");
-	loadDefaultArray(level.smg_shotgun_allies_weapons, "scr_csd_smg_shotgun_allies_weapons", "mp5_silencer_mp:MP5 Silencer:weapon_mp5:630;p90_reflex_mp:P90:weapon_p90:720;m1014_mp:Brecci:weapon_benelli_m4:430");
-	loadDefaultArray(level.smg_shotgun_axis_weapons, "scr_csd_smg_shotgun_axis_weapons", "uzi_mp:Uzi:weapon_mini_uzi:500;ak74u_reflex_mp:AK-74u:weapon_aks74u:630;winchester1200_mp:M133:weapon_winchester1200:350");
-	loadDefaultArray(level.grenade_weapons, "scr_csd_grenade_weapons", "frag_grenade_mp:Frag grenade:weapon_fraggrenade:250;flash_grenade_mp:Flash grenade:weapon_flashbang:200;smoke_grenade_mp:Smoke grenade:weapon_smokegrenade:150;concussion_grenade_mp:Stun grenade:weapon_concgrenade:150");
-
+	
+	//Assault loading
+	tmp_value = getdvard( "scr_csd_assault_allies_weapons", "string", "m16_silencer_mp:M16:weapon_m16:650;m14_reflex_mp:Famas:weapon_m14:750;m4_reflex_mp:Remington R5:weapon_m4carbine:800" );
+	tmp_values = strtok(tmp_value, ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.assault_allies_weapons[i] = strtok(tmp_values[i], ":");		
+	}
+	tmp_value = getdvard( "scr_csd_assault_axis_weapons", "string", "ak47_silencer_mp:AK-47:weapon_ak47:550;g36c_reflex_mp:Commando:weapon_g36c:800;g3_reflex_mp:Honey Badger:weapon_g3:720" );
+	tmp_values = strtok(tmp_value, ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.assault_axis_weapons[i] = strtok(tmp_values[i], ":");		
+	}
+	//SMG / Shotguns loading
+	tmp_value = getdvard( "scr_csd_smg_shotgun_allies_weapons", "string", "mp5_silencer_mp:MP5 Silencer:weapon_mp5:630;p90_reflex_mp:P90:weapon_p90:720;m1014_mp:Brecci:weapon_benelli_m4:430" );
+	tmp_values = strtok(tmp_value, ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.smg_shotgun_allies_weapons[i] = strtok(tmp_values[i], ":");	
+	}
+	tmp_value = getdvard( "scr_csd_smg_shotgun_axis_weapons", "string", "uzi_mp:Uzi:weapon_mini_uzi:500;ak74u_reflex_mp:AK-74u:weapon_aks74u:630;winchester1200_mp:M133:weapon_winchester1200:350" );
+	tmp_values = strtok(tmp_value, ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.smg_shotgun_axis_weapons[i] = strtok(tmp_values[i], ":");	
+	}
+	//Snipers loading
+	tmp_value = getdvard( "scr_csd_sniper_allies_weapons", "string", "m40a3_mp:L96:weapon_m40a3:950;barrett_mp:Barrett:weapon_barrett50cal:1200;rpd_mp:M1 Garand:weapon_rpd:570;saw_mp:Mosin Nagant:weapon_m249saw:650" );
+	tmp_values = strtok(tmp_value, ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.sniper_allies_weapons[i] = strtok(tmp_values[i], ":");	
+	}
+	tmp_value = getdvard( "scr_csd_sniper_axis_weapons", "string", "remington700_mp:Ballista:weapon_remington700:950;m21_mp:M21:weapon_m14_scoped:1170;rpd_mp:M1 Garand:weapon_rpd:570;m60e4_mp:Kark98:weapon_m60e4:700" );
+	tmp_values = strtok(tmp_value, ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.sniper_axis_weapons[i] = strtok(tmp_values[i], ":");	
+	}
+	//Pistols loading
+	tmp_value = getdvard( "scr_csd_pistol_allies_weapons", "string", "usp_mp:RE45:weapon_usp_45:250;colt45_silencer_mp:RK5 Silencer:weapon_colt_45:310;deserteaglegold_mp:Desert Eagle:weapon_desert_eagle_gold:390" );
+	tmp_values = strtok(tmp_value, ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.pistol_allies_weapons[i] = strtok(tmp_values[i], ":");	
+	}
+	tmp_value = getdvard( "scr_csd_pistol_axis_weapons", "string", "usp_mp:RE45:weapon_usp_45:250;colt45_silencer_mp:RK5 Silencer:weapon_colt_45:310;deserteagle_mp:.44 Magnum:weapon_desert_eagle:390" );
+	tmp_values = strtok(tmp_value, ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.pistol_axis_weapons[i] = strtok(tmp_values[i], ":");	
+	}
+	//Grenades loading
+	tmp_value = getdvard( "scr_csd_grenade_weapons", "string", "frag_grenade_mp:Frag grenade:weapon_fraggrenade:250;flash_grenade_mp:Flash grenade:weapon_flashbang:200;smoke_grenade_mp:Smoke grenade:weapon_smokegrenade:150;concussion_grenade_mp:Stun grenade:weapon_concgrenade:150" );
+	tmp_values = strtok(tmp_value, ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.grenade_weapons[i] = strtok(tmp_values[i], ":");	
+	}
+	
 	maps\mp\gametypes\_globallogic::registerNumLivesDvar( level.gameType, 1, 1, 1 );
 	maps\mp\gametypes\_globallogic::registerRoundLimitDvar( level.gameType, 5, 0, 500 );
 	maps\mp\gametypes\_globallogic::registerRoundSwitchDvar( level.gameType, 2, 0, 500 );
@@ -173,14 +211,6 @@ main()
 	game["dialog"]["defense_obj"] = "obj_defend";
 	
 	game["buy"] = "ok";
-}
-
-loadDefaultArray(array, key, _default) {
-	tmp_value = getdvard( key, "string", _default );
-	tmp_values = strtok(tmp_value, ";");
-	for (i = 0; i < tmp_values.size; i++) {
-		array[i] = strtok(tmp_values[i], ":");
-	}
 }
 
 onPrecacheGameType()
@@ -231,7 +261,7 @@ onPrecacheGameType()
 
 	precacheModel( "prop_suitcase_bomb" );
 	game["startWeapon"] = "beretta_mp";
-	precacheShader( "weapon_m9beretta" );
+
 	
 	thread onPlayerConnect();
 }
@@ -244,42 +274,92 @@ onPlayerConnect() {
 		game[player.name] = [];
 		game[player.name]["money"] = level.scr_csd_minimum_wage;	
 		game[player.name]["menu_step"] = "base";	
-
-		player thread onMenuResponse();		
 	}	
 	
+}
+
+
+loadItemMenu(array) {
+	for (i = 0; i < 5; i++) {
+		if (i < array.size) {
+			cost_color = "OK";
+			if (int(array[i][3]) > int(game[self.name]["money"])) {
+				cost_color = "NOK";	
+			}
+			self setClientDvars(
+				"ui_item" + (i + 1) + "_name", array[i][1],
+				"ui_item" + (i + 1) + "_image", array[i][2],
+				"ui_item" + (i + 1) + "_cost", array[i][3] + " $",
+				"ui_item" + (i + 1) + "_cost_color", cost_color
+			);			
+		} else {
+			self setClientDvars(
+				"ui_item" + (i + 1) + "_name", "",
+				"ui_item" + (i + 1) + "_image", "",
+				"ui_item" + (i + 1) + "_cost", "",
+				"ui_item" + (i + 1) + "_cost_color", ""
+			);
+		}
+	}
 }
 
 resetClientVariables(step)
 {
 	// Reset all the variables used in the menu 
 	self setClientDvars(
-		"ui_buyloadout_step", game[self.name]["menu_step"]
+		"ui_buyloadout_step", step
 	);
+	ClientPrint(self, "Menu on step : " + step);
 	switch ( step ) {
 		case "base":
 			self setClientDvars(
 				"ui_item1_name", "1. Assault weapons",
+				"ui_item1_image", "",
+				"ui_item1_cost", "",
 				"ui_item2_name", "2. SMG / Shotguns weapons",
+				"ui_item2_image", "",
+				"ui_item2_cost", "",
 				"ui_item3_name", "3. Sniper weapons",
+				"ui_item3_image", "",
+				"ui_item3_cost", "",
 				"ui_item4_name", "4. Pistols",
-				"ui_item5_name", "5. Grenades"
+				"ui_item4_image", "",
+				"ui_item4_cost", "",
+				"ui_item5_name", "5. Grenades",
+				"ui_item5_image", "",
+				"ui_item5_cost", ""			
 			);		
 			break;
 		case "assault":
 			if (self.pers["team"] == "axis") {
-				self setClientDvars(
-					"ui_item1_name", "1. Assault weapons",
-					"ui_item1_image", "1. Assault weapons",
-					"ui_item1_cost", "1. Assault weapons"
-				);		
+				loadItemMenu(level.assault_axis_weapons);
 			} else {
-				self setClientDvars(
-					"ui_item1_name", "1. Assault weapons",
-					"ui_item1_image", "1. Assault weapons",
-					"ui_item1_cost", "1. Assault weapons"
-				);		
+				loadItemMenu(level.assault_allies_weapons);
 			}
+			break;
+		case "smg":
+			if (self.pers["team"] == "axis") {
+				loadItemMenu(level.smg_shotgun_axis_weapons);
+			} else {
+				loadItemMenu(level.smg_shotgun_allies_weapons);
+			}
+			break;
+		case "sniper":
+			if (self.pers["team"] == "axis") {
+				loadItemMenu(level.sniper_axis_weapons);
+			} else {
+				loadItemMenu(level.sniper_allies_weapons);
+			}
+			break;
+		case "pistol":
+			if (self.pers["team"] == "axis") {
+				loadItemMenu(level.pistol_axis_weapons);
+			} else {
+				loadItemMenu(level.pistol_allies_weapons);
+			}
+			break;
+		case "grenade":
+			loadItemMenu(level.grenade_weapons);
 			break;
 	}
 }
@@ -293,7 +373,9 @@ onMenuResponse()
 		self waittill("menuresponse", menu, response);
 		
 		println( self getEntityNumber() + " menuresponse: " + menu + " " + response );
-					
+		ClientPrint(self, "menu : " + menu + ", onMenuResponse : " + response);
+		
+		
 		if (isDefined(game["menu_buyloadout"]) && response == game["menu_buyloadout"]) {
 			if (game["buy"] == "NOK") {
 				ClientPrint(self, "Buying time is over (25s)");
@@ -312,10 +394,6 @@ onMenuResponse()
 		
 		if( menu == game["menu_buyloadout"] )
 		{
-			//self closeMenu();
-			//self closeInGameMenu();
-			
-			ClientPrint(self, response);
 			if (game[self.name]["menu_step"] == "base") {
 				if (response == "1") {
 					game[self.name]["menu_step"] = "assault";
@@ -331,12 +409,64 @@ onMenuResponse()
 			} else if (response == "6") { //Back to the menu
 				game[self.name]["menu_step"] = "base";			
 			} else { //I'm gonna buy something...
-				ClientPrint(self, response);	
+				doBuy(response);			
 			}
 			
 			self resetClientVariables(game[self.name]["menu_step"]);		
 		}
 	}
+}
+
+doBuy(response) {
+	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
+		return;
+	
+	cost = 0;
+	weapon = "";
+	switch(game[self.name]["menu_step"])
+	{
+		case "assault":
+			if (self.pers["team"] == "allies") {
+				weapon = level.assault_allies_weapons[int(response) - 1][0];
+				cost = level.assault_allies_weapons[int(response) - 1][3];
+			} else if (self.pers["team"] == "axis") {
+				weapon = level.assault_axis_weapons[int(response) - 1][0];
+				cost = level.assault_axis_weapons[int(response) - 1][3];
+			}
+			break;
+		case "smg":
+			if (self.pers["team"] == "allies") {
+				weapon = level.smg_shotgun_allies_weapons[int(response) - 1][0];
+				cost = level.smg_shotgun_allies_weapons[int(response) - 1][3];
+			} else if (self.pers["team"] == "axis") {
+				weapon = level.smg_shotgun_axis_weapons[int(response) - 1][0];
+				cost = level.smg_shotgun_axis_weapons[int(response) - 1][3];
+			}
+			break;
+		case "sniper":
+			if (self.pers["team"] == "allies") {
+				weapon = level.sniper_allies_weapons[int(response) - 1][0];
+				cost = level.sniper_allies_weapons[int(response) - 1][3];
+			} else if (self.pers["team"] == "axis") {
+				weapon = level.sniper_axis_weapons[int(response) - 1][0];
+				cost = level.sniper_axis_weapons[int(response) - 1][3];
+			}
+			break;
+		case "pistol":
+			if (self.pers["team"] == "allies") {
+				weapon = level.pistol_allies_weapons[int(response) - 1][0];
+				cost = level.pistol_allies_weapons[int(response) - 1][3];
+			} else if (self.pers["team"] == "axis") {
+				weapon = level.pistol_axis_weapons[int(response) - 1][0];
+				cost = level.pistol_axis_weapons[int(response) - 1][3];
+			}
+			break;
+		case "grenade":
+			weapon = level.grenade_weapons[int(response) - 1][0];
+			cost = level.grenade_weapons[int(response) - 1][3];
+			break;
+	}
+	self buyWeaponAction(weapon, cost, game[self.name]["menu_step"]);
 }
 
 sd_getTeamKillPenalty( eInflictor, attacker, sMeansOfDeath, sWeapon )
@@ -363,180 +493,14 @@ sd_getTeamKillScore( eInflictor, attacker, sMeansOfDeath, sWeapon )
 	return int(teamkill_score);
 }
 
-buyAxisAssault(response)
-{
-	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
-		return;
-
-	cost = 0;
-	weapon = "";
-	switch(response)
-	{
-		case "1":
-			weapon = "m16_reflex_mp";
-			cost = 850;
-			break;
-
-		case "2":
-			weapon = "ak47_reflex_mp";
-			cost = 750;
-			break;
-		case "3":
-			weapon = "g36c_reflex_mp";
-			cost = 800;
-			break;
-		case "4":
-			weapon = "mp44_mp";
-			cost = 600;
-			break;
-	}
-	self buyWeaponAction(weapon, cost);
-}
-
-buyAlliesAssault(response)
-{
-	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
-		return;
-
-	cost = 0;
-	weapon = "";
-	switch(response)
-	{
-		case "1":
-			weapon = "m4_reflex_mp";
-			cost = 850;
-			break;
-
-		case "2":
-			weapon = "g3_reflex_mp";
-			cost = 700;
-			break;
-		case "3":
-			weapon = "commando_reflex_mp";
-			cost = 1000;
-			break;
-		case "4":
-			weapon = "m14_reflex_mp";
-			cost = 700;
-			break;
-	}
-	self buyWeaponAction(weapon, cost);
-}
-
-buyAxisSmg(response)
-{
-	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
-		return;
-
-	cost = 0;
-	weapon = "";
-	switch(response)
-	{
-		case "1":
-			weapon = "ak74u_mp";
-			cost = 500;
-			break;
-
-		case "2":
-			weapon = "uzi_mp";
-			cost = 450;
-			break;
-		case "3":
-			weapon = "skorpion_mp";
-			cost = 400;
-			break;	
-		case "4":
-			weapon = "winchester1200_mp";
-			cost = 350;
-			break;			
-	}
-	self buyWeaponAction(weapon, cost);
-}
-
-buyAlliesSmg(response)
-{
-	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
-		return;
-
-	cost = 0;
-	weapon = "";
-	switch(response)
-	{
-		case "1":
-			weapon = "mp5_mp";
-			cost = 450;
-			break;
-
-		case "2":
-			weapon = "p90_mp";
-			cost = 550;
-			break;	
-		case "3":
-			weapon = "m1014_mp";
-			cost = 300;
-			break;			
-	}
-	self buyWeaponAction(weapon, cost);
-}
-
-buyAxisSniper(response)
-{
-	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
-		return;
-
-	cost = 0;
-	weapon = "";
-	switch(response)
-	{
-		case "1":
-			weapon = "m21_mp";
-			cost = 400;
-			break;
-
-		case "2":
-			weapon = "dragunov_mp";
-			cost = 450;
-			break;	
-		case "3":
-			weapon = "kark98_mp";
-			cost = 250;
-			break;			
-	}
-	self buyWeaponAction(weapon, cost);
-}
-
-buyAlliesSniper(response)
-{
-	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
-		return;
-
-	cost = 0;
-	weapon = "";
-	switch(response)
-	{
-		case "1":
-			weapon = "barrett_mp";
-			cost = 400;
-			break;
-
-		case "2":
-			weapon = "remington700_mp";
-			cost = 450;
-			break;	
-		case "3":
-			weapon = "mosin_mp";
-			cost = 250;
-			break;			
-	}
-	
-	self buyWeaponAction(weapon, cost);
-}
-
-buyWeaponAction(weapon, cost) {
-	if (game[self.name]["money"] < cost) {
+buyWeaponAction(weapon, cost, type) {
+	ClientPrint(self, "My money : " + game[self.name]["money"]);
+	ClientPrint(self, "I try to buy : " + weapon + ", for : " +  cost);
+	if (int(game[self.name]["money"]) < int(cost)) {
 		ClientPrint(self, "Not enough money to purchase this weapon");
+		self playLocalSound( "error_csd" );
 	} else {
-		if (game[self.name]["weapon"] != game["startWeapon"]) {
+		if (game[self.name]["weapon"] != undefined && game[self.name]["weapon"] != weapon) {
 			ClientPrint(self, "Dropping : " + game[self.name]["weapon"]);
 			currentWeapon = self getCurrentWeapon();
 			self dropItem( currentWeapon );
@@ -544,113 +508,50 @@ buyWeaponAction(weapon, cost) {
 		ClientPrint(self, "Buying : " + weapon);
 		self giveWeapon( weapon );
 		self giveMaxAmmo( weapon );
-		self setSpawnWeapon( weapon );
-		self switchToWeapon( weapon );
-		game[self.name]["weapon"] = weapon;
-		game[self.name]["money"] -= cost;
-		self thread displayBuying(cost);
-		self playLocalSound( "cash" );
-	}
-}
-
-buyNadePistol(response)
-{
-	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
-		return;
-
-	cost = 0;
-	weapon = "";
-	nade = false;
-	switch(response)
-	{
-		case "1":
-			weapon = "colt45_mp";
-			cost = 150;
-			break;
-
-		case "2":
-			weapon = "usp_silencer_mp";
-			cost = 250;
-			break;	
-		case "3":
-			weapon = "deserteagle_mp";
-			cost = 300;
-			break;
-		case "4":
-			weapon = "frag_grenade_mp";
-			cost = 200;
-			nade = true;
-			break;			
-		case "5":
-			weapon = "flash_grenade_mp";
-			cost = 100;
-			nade = true;
-			break;			
-		case "6":
-			weapon = "smoke_grenade_mp";
-			cost = 150;
-			nade = true;
-			break;			
-		case "7":
-			weapon = "concussion_grenade_mp";
-			cost = 100;
-			nade = true;
-			break;			
-	}
-
-	if (game[self.name]["money"] < cost) {
-		ClientPrint(self, "Not enough money to purchase this weapon");
-	} else {
-		ClientPrint(self, "Buying : " + weapon);
-		self giveWeapon( weapon );
-		self giveMaxAmmo( weapon );
-		if (nade) {
+		if (type == "grenade") {
 			self SwitchToOffhand( weapon );
 		} else {
-			self switchToWeapon( weapon );
+			self setSpawnWeapon( weapon );
+			self switchToWeapon( weapon );		
 		}
-		game[self.name]["money"] -= cost;
+		game[self.name]["weapon"] = weapon;
+		game[self.name]["money"] -= int(cost);
 		self thread displayBuying(cost);
 		self playLocalSound( "cash" );
 	}
 }
 
 displayBuying(price) {
-
-	moneyBuy = self createFontString( "objective", 1.8 );
+	
+	moneyBuy = self createFontString( "objective", 1.4 );
 	moneyBuy.archived = true;
-	moneyBuy.hideWhenInMenu = true;
-	moneyBuy setPoint( "CENTER", "CENTER", 250, -150 );
+	moneyBuy.hideWhenInMenu = false;
+	moneyBuy setPoint( "CENTER", "CENTER", -320, 170 );
 	moneyBuy.alignX = "left";
 	moneyBuy.sort = -1;
 	moneyBuy.alpha = 0.75;
-	moneyBuy.color = ( 0.8, 0.8, 0 );
+	moneyBuy.color = ( 0.49, 0.12, 0.05);
 	moneyBuy setText("-" + price + " $");
 	
 	wait 2;
 	moneyBuy destroy();	
 }
 
-displayGaining(price) {
+displayGaining(price, type) {
 
-	moneyGain = self createFontString( "objective", 1.8 );
-	moneyGain.archived = true;
-	moneyGain.hideWhenInMenu = true;
-	moneyGain setPoint( "CENTER", "CENTER", 250, -150 );
-	moneyGain.alignX = "left";
-	moneyGain.sort = -1;
-	moneyGain.alpha = 0.75;
-	moneyGain.color = ( 0.8, 0.8, 0 );
-	moneyGain setText("+" + price + " $");
-	
-	wait 2;
-	moneyGain destroy();	
+	if (type == "+") {
+		ClientPrint(self, "^2" + type  + price + " $");
+	} else if (type == "-") {		
+		ClientPrint(self, "^1" + type + price + " $");
+	}
 }
 
 onLoadoutGiven()
 {
 	// Give player CSGO loadouts
 	self giveCSGOLevelLoadout();
+	
+	thread updateBuyTime();
 }
 
 giveCSGOLevelLoadout()
@@ -822,7 +723,6 @@ onStartGameType()
 	thread updateGametypeDvars();
 
 	thread bombs();
-	thread updateBuyTime();
 }
 
 
@@ -861,6 +761,10 @@ onSpawnPlayer()
 	self thread showMoney(self.name);
 	self giveCSGOLevelLoadout();
 	level notify ( "spawned_player" );
+	
+	game[self.name]["menu_step"] = "base";	
+
+	self thread onMenuResponse();		
 }
 
 showMoney(name)
@@ -868,14 +772,14 @@ showMoney(name)
 	self endon("disconnect");	
 	
 	// Create the money left
-	moneyLeft = self createFontString( "objective", 1.8 );
+	moneyLeft = self createFontString( "objective", 1.4 );
 	moneyLeft.archived = true;
-	moneyLeft.hideWhenInMenu = true;
-	moneyLeft setPoint( "CENTER", "CENTER", 250, -200 );
+	moneyLeft.hideWhenInMenu = false;
+	moneyLeft setPoint( "CENTER", "CENTER", -390, 170 );
 	moneyLeft.alignX = "left";
 	moneyLeft.sort = -1;
 	moneyLeft.alpha = 0.75;
-	moneyLeft.color = ( 1, 1, 0 );
+	moneyLeft.color = ( 0, 0.49, 0.05 );
 	moneyLeft setText("0 $");	
 	
 	oldMoney = 0;
@@ -887,6 +791,10 @@ showMoney(name)
 		if ( IsDefined(game[name]) && game[name]["money"] != oldMoney ) {
 			moneyLeft setText( game[name]["money"] + " $");
 			oldMoney = game[name]["money"];
+			moneyLeft.color = ( 0, 0.49, 0.05 );
+			if (game[name]["money"] < 0) {
+				moneyLeft.color = ( 0.49, 0.12, 0.05 );
+			}
 		}		
 	}
 	
@@ -897,10 +805,13 @@ showMoney(name)
 
 onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration)
 {
-	if ( isPlayer( attacker ) ) {
+	if ( isPlayer( attacker ) && self.pers["team"] != attacker.pers["team"]) {
 		game[attacker.name]["money"] += level.scr_csd_enemy_killed_reward;
-		attacker thread displayGaining(level.scr_csd_enemy_killed_reward);
-	}
+		attacker thread displayGaining(level.scr_csd_enemy_killed_reward, "+");
+	} else if ( isPlayer( attacker ) && self.pers["team"] == attacker.pers["team"]) {
+		game[attacker.name]["money"] -= level.scr_csd_enemy_killed_reward;
+		attacker thread displayGaining(level.scr_csd_enemy_killed_reward, "-");
+	} 
 	game[self.name]["weapon"] = undefined;
 	thread checkAllowSpectating();
 }
@@ -935,14 +846,15 @@ sd_endGame( winningTeam, endReasonText )
 	{
 		if ( level.players[index].pers["team"] ==  winningTeam) {
 			game[level.players[index].name]["money"] += level.scr_csd_winning_round_reward;
-			level.players[index] thread displayGaining(level.scr_csd_winning_round_reward);
+			level.players[index] thread displayGaining(level.scr_csd_winning_round_reward, "+");
 			level.players[index] playLocalSound( "cash" );
 		} else {
 			game[level.players[index].name]["money"] += level.scr_csd_loosing_round_reward;
-			level.players[index] thread displayGaining(level.scr_csd_loosing_round_reward);
+			level.players[index] thread displayGaining(level.scr_csd_loosing_round_reward, "+");
 			level.players[index] playLocalSound( "cash" );
 		}
 	}
+	game["buy"] = "ok";
 	
 	thread maps\mp\gametypes\_globallogic::endGame( winningTeam, endReasonText );
 }
@@ -1405,7 +1317,7 @@ bombPlanted( destroyedObj, player )
 	level.bombPlanted = true;
 	
 	game[player.name]["money"] += level.scr_csd_planting_reward;
-	player thread displayGaining(level.scr_csd_planting_reward);
+	player thread displayGaining(level.scr_csd_planting_reward, "+");
 	player playLocalSound( "cash" );
 	
 	if ( level.scr_csd_bomb_notification_enable == 1 )
@@ -1554,7 +1466,7 @@ bombDefused(player)
 	level.bombDefused = true;
 	
 	game[player.name]["money"] += level.scr_csd_defusing_reward;
-	player thread displayGaining(level.scr_csd_defusing_reward);
+	player thread displayGaining(level.scr_csd_defusing_reward, "+");
 	player playLocalSound( "cash" );
 	
 	setDvar( "ui_bomb_timer", 0 );

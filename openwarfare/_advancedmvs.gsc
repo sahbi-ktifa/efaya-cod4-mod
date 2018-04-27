@@ -48,7 +48,6 @@ init()
 
 	//Load custom loadscreens
 	level.scr_amvs_loadscreens = [];
-	level.scr_amvs_loadscreens[0] = getdvard( "scr_amvs_loadscreen1", "string", "" );
 	level.scr_amvs_loadscreens[1] = getdvard( "scr_amvs_loadscreen2", "string", "" );
 	level.scr_amvs_loadscreens[2] = getdvard( "scr_amvs_loadscreen3", "string", "" );
 	level.scr_amvs_loadscreens[3] = getdvard( "scr_amvs_loadscreen4", "string", "" );
@@ -58,6 +57,16 @@ init()
 	level.scr_amvs_loadscreens[7] = getdvard( "scr_amvs_loadscreen8", "string", "" );
 	level.scr_amvs_loadscreens[8] = getdvard( "scr_amvs_loadscreen9", "string", "" );
 	level.scr_amvs_loadscreens[9] = getdvard( "scr_amvs_loadscreen10", "string", "" );
+	level.scr_amvs_loadscreens[10] = getdvard( "scr_amvs_loadscreen11", "string", "" );
+	level.scr_amvs_loadscreens[11] = getdvard( "scr_amvs_loadscreen12", "string", "" );
+	level.scr_amvs_loadscreens[12] = getdvard( "scr_amvs_loadscreen13", "string", "" );
+	level.scr_amvs_loadscreens[13] = getdvard( "scr_amvs_loadscreen14", "string", "" );
+	level.scr_amvs_loadscreens[14] = getdvard( "scr_amvs_loadscreen15", "string", "" );
+	level.scr_amvs_loadscreens[15] = getdvard( "scr_amvs_loadscreen16", "string", "" );
+	level.scr_amvs_loadscreens[16] = getdvard( "scr_amvs_loadscreen17", "string", "" );
+	level.scr_amvs_loadscreens[17] = getdvard( "scr_amvs_loadscreen18", "string", "" );
+	level.scr_amvs_loadscreens[18] = getdvard( "scr_amvs_loadscreen19", "string", "" );
+	level.scr_amvs_loadscreens[19] = getdvard( "scr_amvs_loadscreen20", "string", "" );
 	
 	// Load allowed gametypes
 	level.scr_amvs_gametypes = getdvard( "scr_amvs_gametypes", "string", level.defaultGametypeList );
@@ -407,7 +416,7 @@ sendPlayerMapVariables()
 	level.ui_amvs_map_vote_previous = "";
 	level.ui_amvs_map_vote_loadscreen = "";
 	level.ui_amvs_map_vote_next = "";
-	for (idx = 0; idx < 10; idx++) {
+	for (idx = 1; idx < 20; idx++) {
 		if (level.scr_amvs_loadscreens[idx] == level.scr_amvs_maps[level.amvsWinnerGametype][previousMap]) {
 			level.ui_amvs_map_vote_previous = "amvs_loadscreen" + (idx + 1);
 		}
@@ -460,12 +469,20 @@ determineMapWinner()
 		level.amvsWinnerMap = voteWinner;
 	}
 	
+	level.ui_amvs_map_winner_vote_loadscreen = "";
+	for (idx = 1; idx < 20; idx++) {
+		if (level.scr_amvs_loadscreens[idx] == level.amvsWinnerMap) {
+			level.ui_amvs_map_winner_vote_loadscreen = "amvs_loadscreen" + (idx + 1);
+		}
+		
+	}
 	// Send the map winner to all the players
 	for ( index = 0; index < level.players.size; index++ ) {
 		player = level.players[index];
 		if ( isDefined( player ) ) {
 			player setClientDvars( 
 				"ui_amvs_map_winner", level.amvsWinnerMap,
+				"ui_amvs_map_winner_vote_loadscreen", level.ui_amvs_map_winner_vote_loadscreen,
 				"ui_amvs_map_vote", getMapName( level.amvsWinnerMap ) );
 		}
 	}		

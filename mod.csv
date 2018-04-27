@@ -413,6 +413,7 @@ sound,bf4_m416,,all_mp
 sound,bo_commando,,all_mp
 sound,tf_re45,,all_mp
 sound,l96,,all_mp
+sound,csd,,all_mp
 
 xanim,viewmodel_binoculars_idle
 xanim,viewmodel_mw2_m16m203_ADS_fire
@@ -939,7 +940,7 @@ xmodel,viewmodel_bo2_ballista
 xmodel,worldmodel_bo2_ballista
 
 #AMVS
-material,amvs_loadscreen1
+material,amvs_loadscreen
 material,amvs_loadscreen2
 material,amvs_loadscreen3
 material,amvs_loadscreen4
@@ -949,3 +950,15 @@ material,amvs_loadscreen7
 material,amvs_loadscreen8
 material,amvs_loadscreen9
 material,amvs_loadscreen10
+material,amvs_loadscreen11
+material,amvs_loadscreen12
+material,amvs_loadscreen13
+material,amvs_loadscreen14
+material,amvs_loadscreen15
+material,amvs_loadscreen16
+material,amvs_loadscreen17
+material,amvs_loadscreen18
+material,amvs_loadscreen19
+material,amvs_loadscreen20
+
+

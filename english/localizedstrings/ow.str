@@ -470,6 +470,9 @@ LANG_ENGLISH "Loading Gametype/Map In..."
 REFERENCE	AMVS_LEAVE_GAME
 LANG_ENGLISH "^7Press ^3ESC ^7to leave the game"
 
+REFERENCE	AMVS_GO_BACK
+LANG_ENGLISH "^7Press ^36 ^7to go back to the menu"
+
 REFERENCE AMVS_CASTVOTE
 LANG_ENGLISH "Cast Vote"
 
