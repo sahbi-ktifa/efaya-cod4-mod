@@ -123,11 +123,19 @@ onMenuResponse()
 						self iprintln( &"OW_AACP_NOTENABLED" );
 					}
 					break;		
-												
+				case "buyloadout":
+					if (level.gametype == "csd") {
+						self thread maps\mp\gametypes\csd::buyLoadoutMenu();						
+					}
+					break;
 				default:
 					break;
 			}
 			continue;
+		} else if( menu == "buyloadout" ) {
+			if (level.gametype == "csd") {
+				self thread maps\mp\gametypes\csd::buyLoadoutMenuNav(response);						
+			}
 		}
 	}
 }

@@ -19,6 +19,7 @@ localize,menu
 localize,perks
 localize,mp
 localize,mpui
+localize,challenge
 
 rawfile,maps/createfx/mp_backlot_fx.gsc
 rawfile,maps/createfx/mp_bloc_fx.gsc

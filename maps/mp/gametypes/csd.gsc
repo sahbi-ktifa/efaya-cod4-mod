@@ -132,7 +132,7 @@ main()
 	level.grenade_weapons = [];
 	
 	//Assault loading
-	tmp_value = getdvard( "scr_csd_assault_allies_weapons", "string", "m16_silencer_mp:M16:weapon_m16:650;m14_reflex_mp:Famas:weapon_m14:750;m4_reflex_mp:Remington R5:weapon_m4carbine:800" );
+	tmp_value = getdvard( "scr_csd_assault_allies_weapons", "string", "m16_silencer_mp:M16:weapon_m16a4:650;m14_reflex_mp:Famas:weapon_m14:750;m4_reflex_mp:Remington R5:weapon_m4carbine:800" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
 		level.assault_allies_weapons[i] = strtok(tmp_values[i], ":");		
@@ -287,7 +287,7 @@ loadItemMenu(array) {
 				cost_color = "NOK";	
 			}
 			self setClientDvars(
-				"ui_item" + (i + 1) + "_name", array[i][1],
+				"ui_item" + (i + 1) + "_name", (i + 1) + ". " + array[i][1],
 				"ui_item" + (i + 1) + "_image", array[i][2],
 				"ui_item" + (i + 1) + "_cost", array[i][3] + " $",
 				"ui_item" + (i + 1) + "_cost_color", cost_color
@@ -364,7 +364,40 @@ resetClientVariables(step)
 	}
 }
 
-onMenuResponse()
+buyLoadoutMenu() {
+	if (game["buy"] == "NOK") {
+		ClientPrint(self, "Buying time is over (25s)");
+	} else {
+		self closeMenu();
+		self closeInGameMenu();
+		self resetClientVariables("base");
+		self openMenu(game["menu_buyloadout"]);			
+	}
+}
+
+buyLoadoutMenuNav(response) {
+	if (game[self.name]["menu_step"] == "base") {
+		if (response == "1") {
+			game[self.name]["menu_step"] = "assault";
+		} else if (response == "2") {
+			game[self.name]["menu_step"] = "smg";
+		} else if (response == "3") {
+			game[self.name]["menu_step"] = "sniper";
+		} else if (response == "4") {
+			game[self.name]["menu_step"] = "pistol";
+		} else if (response == "5") {
+			game[self.name]["menu_step"] = "grenade";
+		}
+	} else if (response == "6") { //Back to the menu
+		game[self.name]["menu_step"] = "base";			
+	} else { //I'm gonna buy something...
+		doBuy(response);			
+	}
+	
+	self resetClientVariables(game[self.name]["menu_step"]);
+}
+
+/*onMenuResponse()
 {
 	self endon("disconnect");
 	
@@ -415,7 +448,7 @@ onMenuResponse()
 			self resetClientVariables(game[self.name]["menu_step"]);		
 		}
 	}
-}
+}*/
 
 doBuy(response) {
 	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
@@ -494,15 +527,14 @@ sd_getTeamKillScore( eInflictor, attacker, sMeansOfDeath, sWeapon )
 }
 
 buyWeaponAction(weapon, cost, type) {
-	ClientPrint(self, "My money : " + game[self.name]["money"]);
-	ClientPrint(self, "I try to buy : " + weapon + ", for : " +  cost);
 	if (int(game[self.name]["money"]) < int(cost)) {
 		ClientPrint(self, "Not enough money to purchase this weapon");
 		self playLocalSound( "error_csd" );
 	} else {
 		if (game[self.name]["weapon"] != undefined && game[self.name]["weapon"] != weapon) {
-			ClientPrint(self, "Dropping : " + game[self.name]["weapon"]);
-			currentWeapon = self getCurrentWeapon();
+			ClientPrint(self, "Dropping 1 : " + game[self.name]["weapon"]);
+			currentWeapon = self getCurrentWeapon();		
+			ClientPrint(self, "Dropping 2 : " + currentWeapon);
 			self dropItem( currentWeapon );
 		}
 		ClientPrint(self, "Buying : " + weapon);
@@ -626,6 +658,12 @@ onRoundSwitch()
 	{
 		level.halftimeType = "halftime";
 		game["switchedsides"] = !game["switchedsides"];
+	}
+	
+	for ( i = 0; i < level.players.size; i++ ) {
+		if (isDefined(game[level.players[i].name]["weapon"])) {
+			game[level.players[i].name]["weapon"] = undefined;
+		}
 	}
 }
 
@@ -764,7 +802,7 @@ onSpawnPlayer()
 	
 	game[self.name]["menu_step"] = "base";	
 
-	self thread onMenuResponse();		
+	//self thread onMenuResponse();		
 }
 
 showMoney(name)
@@ -813,6 +851,10 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 		attacker thread displayGaining(level.scr_csd_enemy_killed_reward, "-");
 	} 
 	game[self.name]["weapon"] = undefined;
+	
+	currentWeapon = self getCurrentWeapon();		
+	self dropItem( currentWeapon );
+	
 	thread checkAllowSpectating();
 }
 
@@ -852,6 +894,10 @@ sd_endGame( winningTeam, endReasonText )
 			game[level.players[index].name]["money"] += level.scr_csd_loosing_round_reward;
 			level.players[index] thread displayGaining(level.scr_csd_loosing_round_reward, "+");
 			level.players[index] playLocalSound( "cash" );
+		}
+		weap = level.players[index] getCurrentWeapon();
+		if (weap && weap != "none" && (game[level.players[index].name]["weapon"] == undefined || game[level.players[index].name]["weapon"] != weap)) {
+			game[level.players[index].name]["weapon"] = weap;
 		}
 	}
 	game["buy"] = "ok";

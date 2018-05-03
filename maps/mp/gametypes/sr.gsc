@@ -434,10 +434,10 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 		} else if (sHitLoc == "head" || sHitLoc == "helmet") {
 			// Send notice to players 
 			iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a headshot by ^3" + attacker.name + "^7!");
-		}  else if (sHitLoc == "MOD_MELEE") {
+		}  else if (sMeansOfDeath == "MOD_MELEE") {
 			// Send notice to players 
 			iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a knife melee by ^3" + attacker.name + "^7!");
-		} else if (attacker == self) {
+		} else if ( sMeansOfDeath == "MOD_SUICIDE" ) {
 			// Send notice to players 
 			iprintln("^3" + self.name + " ^7.... has been ELIMINATED by ... himself... commiting suicide");
 		}
@@ -1646,7 +1646,15 @@ spawnTags( attacker )
         enemyTag endon( "picked_up" );
         enemyTag endon( "timed_out" );
 	enemyTag setModel( "skull_ddogtag" );
-	enemyTag.team = attacker.pers["team"];
+	if (attacker.pers["team"] != self.pers["team"]) {
+		enemyTag.team = attacker.pers["team"];
+	} else {
+		if (self.pers["team"] == "axis") {
+			enemyTag.team = "allies";
+		} else {
+			enemyTag.team = "axis";
+		}
+	}
         enemyTag.owner = self;
 
         //Delete on disconnect
