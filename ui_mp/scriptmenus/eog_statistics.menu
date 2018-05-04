@@ -36,7 +36,7 @@
 
 	// main frame position/size
 	#define WIDTH_MAINFRAME			WIDTH_TOPBAR
-	#define HEIGHT_MAINFRAME		345
+	#define HEIGHT_MAINFRAME		365
 	#define ORIGIN_MAINFRAME_X		ORIGIN_TOPBAR_X
 	#define ORIGIN_MAINFRAME_Y		(ORIGIN_TOPBAR_Y+HEIGHT_TOPBAR+6)
 	#define ORIGIN_MAINFRAME		ORIGIN_MAINFRAME_X ORIGIN_MAINFRAME_Y
@@ -149,7 +149,9 @@
 		#define ORIGIN_PLAYER_SLOT16		14 (290+10)
 		#define ORIGIN_PLAYER_SLOT17		14 (306+10)
 		
-		#define ORIGIN_PLAYER_SLOT18		14 (337+10)
+		#define ORIGIN_PLAYER_SLOT18		14 (325+10)
+		#define ORIGIN_PLAYER_SLOT19		14 (340+10)
+		#define ORIGIN_PLAYER_SLOT20		14 (355+10)
 		
 		#define ALIGNED_IN_X_KILLSTREAK			14
 		#define ALIGNED_IN_Y_KILLSTREAK			116
@@ -210,6 +212,12 @@
 
 		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT18, exp text( "@OW_EOG_DISTANCE" ), TEXTSIZE_SMALL, 0, -10, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( dvarString( gs_pg ) == "1" ) ) 
 		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT18, exp text( dvarString( ps_dt ) ), TEXTSIZE_SMALL, ALIGNED_IN_X_PLAYER_STATS, -10, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR visible when( dvarString( gs_pg ) == "1" ) ) 
+		
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT19, exp text( "@OW_EOG_HITMAN" ), TEXTSIZE_SMALL, 0, -10, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( dvarString( gs_pg ) == "1" ) ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT19, exp text( dvarString( ps_hitman ) ), TEXTSIZE_SMALL, ALIGNED_IN_X_PLAYER_STATS, -10, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR visible when( dvarString( gs_pg ) == "1" ) ) 
+		
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT20, exp text( "@OW_EOG_MEDIC" ), TEXTSIZE_SMALL, 0, -10, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( dvarString( gs_pg ) == "1" ) ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT20, exp text( dvarString( ps_medic ) ), TEXTSIZE_SMALL, ALIGNED_IN_X_PLAYER_STATS, -10, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR visible when( dvarString( gs_pg ) == "1" ) ) 
 		
 		// Best/Worst Statistics
 		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT1, exp text( "@OW_EOG_BESTPLAYER" ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5), -15, ITEM_ALIGN_LEFT, COLOR_INFO_YELLOW ) 
@@ -295,6 +303,16 @@
 		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT18, exp text( dvarString( gs_dt ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5+ALIGNED_IN_X_PLAYER_STATS), -10, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR visible when( dvarString( gs_dtn ) != dvarString( ps_n ) && dvarString( gs_dt ) != "0 m" && dvarString( gs_dt ) != "0 yd" && dvarString( gs_pg ) == "1" ) ) 			
 		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT18, exp text( dvarString( gs_dtn ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5), -10, ITEM_ALIGN_LEFT, COLOR_INFO_ORANGE visible when( dvarString( gs_dtn ) == dvarString( ps_n ) && dvarString( gs_dt ) != "0 m" && dvarString( gs_dt ) != "0 yd" && dvarString( gs_pg ) == "1" ) ) 
 		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT18, exp text( dvarString( gs_dt ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5+ALIGNED_IN_X_PLAYER_STATS), -10, ITEM_ALIGN_RIGHT, COLOR_INFO_ORANGE visible when( dvarString( gs_dtn ) == dvarString( ps_n ) && dvarString( gs_dt ) != "0 m" && dvarString( gs_dt ) != "0 yd" && dvarString( gs_pg ) == "1" ) ) 			
+		
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT19, exp text( dvarString( gs_hitmann ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5), -10, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( dvarString( gs_hitmann ) != dvarString( ps_n ) && dvarString( gs_hitman ) != "0 m" && dvarString( gs_hitman ) != "0 yd" && dvarString( gs_pg ) == "1" ) ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT19, exp text( dvarString( gs_hitman ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5+ALIGNED_IN_X_PLAYER_STATS), -10, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR visible when( dvarString( gs_hitmann ) != dvarString( ps_n ) && dvarString( gs_hitman ) != "0 m" && dvarString( gs_hitman ) != "0 yd" && dvarString( gs_pg ) == "1" ) ) 			
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT19, exp text( dvarString( gs_hitmann ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5), -10, ITEM_ALIGN_LEFT, COLOR_INFO_ORANGE visible when( dvarString( gs_hitmann ) == dvarString( ps_n ) && dvarString( gs_hitman ) != "0 m" && dvarString( gs_hitman ) != "0 yd" && dvarString( gs_pg ) == "1" ) ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT19, exp text( dvarString( gs_hitman ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5+ALIGNED_IN_X_PLAYER_STATS), -10, ITEM_ALIGN_RIGHT, COLOR_INFO_ORANGE visible when( dvarString( gs_hitmann ) == dvarString( ps_n ) && dvarString( gs_hitman ) != "0 m" && dvarString( gs_hitman ) != "0 yd" && dvarString( gs_pg ) == "1" ) )
+
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT20, exp text( dvarString( gs_medicn ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5), -10, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( dvarString( gs_medicn ) != dvarString( ps_n ) && dvarString( gs_medic ) != "0 m" && dvarString( gs_medic ) != "0 yd" && dvarString( gs_pg ) == "1" ) ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT20, exp text( dvarString( gs_medic ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5+ALIGNED_IN_X_PLAYER_STATS), -10, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR visible when( dvarString( gs_medicn ) != dvarString( ps_n ) && dvarString( gs_medic ) != "0 m" && dvarString( gs_medic ) != "0 yd" && dvarString( gs_pg ) == "1" ) ) 			
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT20, exp text( dvarString( gs_medicn ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5), -10, ITEM_ALIGN_LEFT, COLOR_INFO_ORANGE visible when( dvarString( gs_medicn ) == dvarString( ps_n ) && dvarString( gs_medic ) != "0 m" && dvarString( gs_medic ) != "0 yd" && dvarString( gs_pg ) == "1" ) ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_PLAYER_SLOT20, exp text( dvarString( gs_medic ) ), TEXTSIZE_SMALL, (((WIDTH_MAINFRAME-18)/2)+5+ALIGNED_IN_X_PLAYER_STATS), -10, ITEM_ALIGN_RIGHT, COLOR_INFO_ORANGE visible when( dvarString( gs_medicn ) == dvarString( ps_n ) && dvarString( gs_medic ) != "0 m" && dvarString( gs_medic ) != "0 yd" && dvarString( gs_pg ) == "1" ) )		
 		
 		PC_BUTTON("@MENU_GOTO_NEXT", ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_Y+HEIGHT_TOPBAR+6+HEIGHT_MAINFRAME) WIDTH_TOPBAR HEIGHT_TOPBAR, close self;, 1 )
 	}

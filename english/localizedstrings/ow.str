@@ -1163,6 +1163,12 @@ LANG_ENGLISH "Weakest Player"
 REFERENCE EOG_DISTANCE
 LANG_ENGLISH "Maximum Distance Traveled"
 
+REFERENCE EOG_HITMAN
+LANG_ENGLISH "The Hitman (SR: Enemies eliminated)"
+
+REFERENCE EOG_MEDIC
+LANG_ENGLISH "The Medic (SR: Friends revived)"
+
 
 //******************************************************************************
 // ui_mp/scriptmenus/ow_cac_editor.menu

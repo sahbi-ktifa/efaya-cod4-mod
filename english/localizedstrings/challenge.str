@@ -128,76 +128,76 @@ REFERENCE           AK47_EXPERT_III
 LANG_ENGLISH        "AK47 Expert III"
 
 REFERENCE           G3_MARKSMAN_I
-LANG_ENGLISH        "G3 Marksman I"
+LANG_ENGLISH        "Honey Badger Marksman I"
 
 REFERENCE           G3_MARKSMAN_II
-LANG_ENGLISH        "G3  Marksman II"
+LANG_ENGLISH        "Honey Badger  Marksman II"
 
 REFERENCE           G3_MARKSMAN_III
-LANG_ENGLISH        "G3  Marksman III"
+LANG_ENGLISH        "Honey Badger  Marksman III"
 
 REFERENCE           G3_EXPERT_I
-LANG_ENGLISH        "G3  Expert I"
+LANG_ENGLISH        "Honey Badger  Expert I"
 
 REFERENCE           G3_EXPERT_II
-LANG_ENGLISH        "G3  Expert II"
+LANG_ENGLISH        "Honey Badger  Expert II"
 
 REFERENCE           G3_EXPERT_III
-LANG_ENGLISH        "G3  Expert III"
+LANG_ENGLISH        "Honey Badger  Expert III"
 
 REFERENCE           M4_MARKSMAN_I
-LANG_ENGLISH        "M4 Marksman I"
+LANG_ENGLISH        "Remington R5 Marksman I"
 
 REFERENCE           M4_MARKSMAN_II
-LANG_ENGLISH        "M4 Marksman II"
+LANG_ENGLISH        "Remington R5 Marksman II"
 
 REFERENCE           M4_MARKSMAN_III
-LANG_ENGLISH        "M4 Marksman III"
+LANG_ENGLISH        "Remington R5 Marksman III"
 
 REFERENCE           M4_EXPERT_I
-LANG_ENGLISH        "M4 Expert I"
+LANG_ENGLISH        "Remington R5 Expert I"
 
 REFERENCE           M4_EXPERT_II
-LANG_ENGLISH        "M4 Expert II"
+LANG_ENGLISH        "Remington R5 Expert II"
 
 REFERENCE           M4_EXPERT_III
-LANG_ENGLISH        "M4 Expert III"
+LANG_ENGLISH        "Remington R5 Expert III"
 
 REFERENCE           M14_MARKSMAN_I
-LANG_ENGLISH        "M14 Marksman I"
+LANG_ENGLISH        "Famas Marksman I"
 
 REFERENCE           M14_MARKSMAN_II
-LANG_ENGLISH        "M14 Marksman II"
+LANG_ENGLISH        "Famas Marksman II"
 
 REFERENCE           M14_MARKSMAN_III
-LANG_ENGLISH        "M14 Marksman III"
+LANG_ENGLISH        "Famas Marksman III"
 
 REFERENCE           M14_EXPERT_I
-LANG_ENGLISH        "M14 Expert I"
+LANG_ENGLISH        "Famas Expert I"
 
 REFERENCE           M14_EXPERT_II
-LANG_ENGLISH        "M14 Expert II"
+LANG_ENGLISH        "Famas Expert II"
 
 REFERENCE           M14_EXPERT_III
-LANG_ENGLISH        "M14 Expert III"
+LANG_ENGLISH        "Famas Expert III"
 
 REFERENCE           G36C_MARKSMAN_II
-LANG_ENGLISH        "G36c Marksman II"
+LANG_ENGLISH        "Commando Marksman II"
 
 REFERENCE           G36C_MARKSMAN_III
-LANG_ENGLISH        "G36c Marksman III"
+LANG_ENGLISH        "Commando Marksman III"
 
 REFERENCE           G36C_MARKSMAN_I
-LANG_ENGLISH        "G36c Marksman I"
+LANG_ENGLISH        "Commando Marksman I"
 
 REFERENCE           G36C_EXPERT_I
-LANG_ENGLISH        "G36c Expert I"
+LANG_ENGLISH        "Commando Expert I"
 
 REFERENCE           G36C_EXPERT_II
-LANG_ENGLISH        "G36c Expert II"
+LANG_ENGLISH        "Commando Expert II"
 
 REFERENCE           G36C_EXPERT_III
-LANG_ENGLISH        "G36c Expert III"
+LANG_ENGLISH        "Commando Expert III"
 
 REFERENCE           MP44_EXPERT_I
 LANG_ENGLISH        "MP44 Expert I"
@@ -263,76 +263,76 @@ REFERENCE           UNLOCK_AK47_RED_TIGER
 LANG_ENGLISH        "UNLOCK: AK47 Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_G3_RED_DOT_SIGHT
-LANG_ENGLISH        "UNLOCK: G3 Red Dot Sight"
+LANG_ENGLISH        "UNLOCK: Honey Badger Red Dot Sight"
 
 REFERENCE           UNLOCK_G3_SILENCER
-LANG_ENGLISH        "UNLOCK: G3 Silencer"
+LANG_ENGLISH        "UNLOCK: Honey Badger Silencer"
 
 REFERENCE           UNLOCK_G3_ACOG_SCOPE
-LANG_ENGLISH        "UNLOCK: G3 ACOG Scope"
+LANG_ENGLISH        "UNLOCK: Honey Badger ACOG Scope"
 
 REFERENCE           UNLOCK_G3_DIGITAL_CAMOUFLAGE
-LANG_ENGLISH        "UNLOCK: G3 Digital Camouflage"
+LANG_ENGLISH        "UNLOCK: Honey Badger Digital Camouflage"
 
 REFERENCE           UNLOCK_G3_BLUE_TIGER
-LANG_ENGLISH        "UNLOCK: G3 Blue Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Honey Badger Blue Tiger Camouflage"
 
 REFERENCE           UNLOCK_G3_RED_TIGER_CAMOUFLAGE
-LANG_ENGLISH        "UNLOCK: G3 Red Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Honey Badger Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_M4_RED_DOT_SIGHT
-LANG_ENGLISH        "UNLOCK: M4 Red Dot Sight"
+LANG_ENGLISH        "UNLOCK: Remington R5 Red Dot Sight"
 
 REFERENCE           UNLOCK_M4_SILENCER
-LANG_ENGLISH        "UNLOCK: M4 Silencer"
+LANG_ENGLISH        "UNLOCK: Remington R5 Silencer"
 
 REFERENCE           UNLOCK_M4_ACOG_SCOPE
-LANG_ENGLISH        "UNLOCK: M4 ACOG Scope"
+LANG_ENGLISH        "UNLOCK: Remington R5 ACOG Scope"
 
 REFERENCE           UNLOCK_M4_DIGITAL_CAMOUFLAGE
-LANG_ENGLISH        "UNLOCK: M4 Digital Camouflage"
+LANG_ENGLISH        "UNLOCK: Remington R5 Digital Camouflage"
 
 REFERENCE           UNLOCK_M4_BLUE_TIGER
-LANG_ENGLISH        "UNLOCK: M4 Blue Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Remington R5 Blue Tiger Camouflage"
 
 REFERENCE           UNLOCK_M4_RED_TIGER_CAMOUFLAGE
-LANG_ENGLISH        "UNLOCK: M4 Red Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Remington R5 Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_M14_RED_DOT_SIGHT
-LANG_ENGLISH        "UNLOCK: M14 Red Dot Sight"
+LANG_ENGLISH        "UNLOCK: Famas Red Dot Sight"
 
 REFERENCE           UNLOCK_M14_SILENCER
-LANG_ENGLISH        "UNLOCK: M14 Silencer"
+LANG_ENGLISH        "UNLOCK: Famas Silencer"
 
 REFERENCE           UNLOCK_M14_ACOG_SCOPE
-LANG_ENGLISH        "UNLOCK: M14 ACOG Scope"
+LANG_ENGLISH        "UNLOCK: Famas ACOG Scope"
 
 REFERENCE           UNLOCK_M14_DIGITAL_CAMOUFLAGE
-LANG_ENGLISH        "UNLOCK: M14 Digital Camouflage"
+LANG_ENGLISH        "UNLOCK: Famas Digital Camouflage"
 
 REFERENCE           UNLOCK_M14_BLUE_TIGER
-LANG_ENGLISH        "UNLOCK: M14 Blue Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Famas Blue Tiger Camouflage"
 
 REFERENCE           UNLOCK_M14_RED_TIGER
-LANG_ENGLISH        "UNLOCK: M14 Red Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Famas Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_G36C_RED_DOT_SIGHT
-LANG_ENGLISH        "UNLOCK: G36c Red Dot Sight"
+LANG_ENGLISH        "UNLOCK: Commando Red Dot Sight"
 
 REFERENCE           UNLOCK_G36C_SILENCER
-LANG_ENGLISH        "UNLOCK: G36c Silencer"
+LANG_ENGLISH        "UNLOCK: Commando Silencer"
 
 REFERENCE           UNLOCK_G36C_ACOG_SCOPE
-LANG_ENGLISH        "UNLOCK: G36c ACOG Scope"
+LANG_ENGLISH        "UNLOCK: Commando ACOG Scope"
 
 REFERENCE           UNLOCK_G36C_DIGITAL_CAMOUFLAGE
-LANG_ENGLISH        "UNLOCK: G36c Digital Camouflage"
+LANG_ENGLISH        "UNLOCK: Commando Digital Camouflage"
 
 REFERENCE           UNLOCK_G36C_BLUE_TIGER
-LANG_ENGLISH        "UNLOCK: G36c Blue Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Commando Blue Tiger Camouflage"
 
 REFERENCE           UNLOCK_G36C_RED_TIGER
-LANG_ENGLISH        "UNLOCK: G36c Red Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Commando Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_MP44_DIGITAL_CAMOUFLAGE
 LANG_ENGLISH        "UNLOCK: MP44 Digital Camouflage"
@@ -704,16 +704,16 @@ REFERENCE           GET_100_KILLS_WITH_THIS
 LANG_ENGLISH        "Get 100 kills with this weapon."
 
 REFERENCE           UNLOCK_M40A3_ACOG_SCOPE
-LANG_ENGLISH        "UNLOCK: M40A3 ACOG Scope"
+LANG_ENGLISH        "UNLOCK: L96 ACOG Scope"
 
 REFERENCE           UNLOCK_M40A3_DIGITAL
-LANG_ENGLISH        "UNLOCK: M40A3 Digital Camouflage\n"
+LANG_ENGLISH        "UNLOCK: L96 Digital Camouflage\n"
 
 REFERENCE           UNLOCK_M40A3_BLUE_TIGER
-LANG_ENGLISH        "UNLOCK: M40A3 Blue Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: L96 Blue Tiger Camouflage"
 
 REFERENCE           UNLOCK_M40A3_RED_TIGER
-LANG_ENGLISH        "UNLOCK: M40A3 Red Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: L96 Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_M21_ACOG_SCOPE
 LANG_ENGLISH        "UNLOCK: M21 ACOG Scope"
@@ -740,16 +740,16 @@ REFERENCE           UNLOCK_DRAGUNOV_RED_TIGER
 LANG_ENGLISH        "UNLOCK: Dragunov Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_R700_ACOG_SCOPE
-LANG_ENGLISH        "UNLOCK: R700 ACOG Scope"
+LANG_ENGLISH        "UNLOCK: Ballista ACOG Scope"
 
 REFERENCE           UNLOCK_R700_DIGITAL_CAMOUFLAGE
-LANG_ENGLISH        "UNLOCK: R700 Digital Camouflage"
+LANG_ENGLISH        "UNLOCK: Ballista Digital Camouflage"
 
 REFERENCE           UNLOCK_R700_BLUE_TIGER
-LANG_ENGLISH        "UNLOCK: R700 Blue Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Ballista Blue Tiger Camouflage"
 
 REFERENCE           UNLOCK_R700_RED_TIGER
-LANG_ENGLISH        "UNLOCK: R700 Red Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: Ballista Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_BARRETT_50_CAL
 LANG_ENGLISH        "UNLOCK: Barrett .50 Cal ACOG Scope"
@@ -764,16 +764,16 @@ REFERENCE           UNLOCK_BARRETT_50_CAL3
 LANG_ENGLISH        "UNLOCK: Barrett .50 Cal Red Tiger Camouflage"
 
 REFERENCE           M40A3_MARKSMAN
-LANG_ENGLISH        "M40A3 Marksman"
+LANG_ENGLISH        "L96 Marksman"
 
 REFERENCE           M40A3_EXPERT_I
-LANG_ENGLISH        "M40A3 Expert I"
+LANG_ENGLISH        "L96 Expert I"
 
 REFERENCE           M40A3_EXPERT_II
-LANG_ENGLISH        "M40A3 Expert II"
+LANG_ENGLISH        "L96 Expert II"
 
 REFERENCE           M40A3_EXPERT_III
-LANG_ENGLISH        "M40A3 Expert III"
+LANG_ENGLISH        "L96 Expert III"
 
 REFERENCE           M21_MARKSMAN
 LANG_ENGLISH        "M21 Marksman"
@@ -800,16 +800,16 @@ REFERENCE           DRAGUNOV_EXPERT_III
 LANG_ENGLISH        "Dragunov Expert III"
 
 REFERENCE           R700_MARKSMAN
-LANG_ENGLISH        "R700 Marksman"
+LANG_ENGLISH        "Ballista Marksman"
 
 REFERENCE           R700_EXPERT_I
-LANG_ENGLISH        "R700 Expert I"
+LANG_ENGLISH        "Ballista Expert I"
 
 REFERENCE           R700_EXPERT_II
-LANG_ENGLISH        "R700 Expert II"
+LANG_ENGLISH        "Ballista Expert II"
 
 REFERENCE           R700_EXPERT_III
-LANG_ENGLISH        "R700 Expert III"
+LANG_ENGLISH        "Ballista Expert III"
 
 REFERENCE           BARRETT_50_CAL_MARKSMAN
 LANG_ENGLISH        "Barrett .50 Cal Marksman"

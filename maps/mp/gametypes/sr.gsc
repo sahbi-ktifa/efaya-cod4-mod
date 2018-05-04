@@ -418,6 +418,9 @@ onSpawnPlayer()
 	
 	if ( level.scr_sr_allow_defender_explosivepickup && level.scr_sr_allow_defender_explosivedestroy && self.pers["team"] == game["defenders"] && getDvar( "g_gametype" ) == "sr" )
 		self thread allowDefenderExplosiveDestroy();
+	
+	self.pers["stats"]["misc"]["hitman"] = 0;		
+	self.pers["stats"]["misc"]["medic"] = 0;	
 }
 
 
@@ -437,12 +440,12 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 		}  else if (sMeansOfDeath == "MOD_MELEE") {
 			// Send notice to players 
 			iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a knife melee by ^3" + attacker.name + "^7!");
-		} else if ( sMeansOfDeath == "MOD_SUICIDE" ) {
+		} else if ( sMeansOfDeath == "MOD_FALLING" || ( isPlayer( attacker ) && attacker == self ) ) {
 			// Send notice to players 
 			iprintln("^3" + self.name + " ^7.... has been ELIMINATED by ... himself... commiting suicide");
 		}
         if( isDefined( self.destroyingExplosive ) && self.destroyingExplosive == true ) {
-                self updateSecondaryProgressBar( undefined, undefined, true, undefined );
+             self updateSecondaryProgressBar( undefined, undefined, true, undefined );
         }
 }
 
@@ -1779,6 +1782,11 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
                         if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" ) 
                                 iprintln("^1" + player.name + "^7.... Revived^1 " + friendlyTag.owner.name );
 
+						//Update stat
+						player.pers["stats"]["misc"]["medic"] += 1;		
+						player setClientDvar( "ps_medic", player.pers["stats"]["misc"]["medic"] );
+							
+							
                         //Respawn tag owner
                         friendlyTag.owner clearLowerMessage();
                         friendlyTag.owner thread [[level.spawnPlayer]]();
@@ -1819,6 +1827,10 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
                         // Give player a score 
                         player thread givePlayerScore( "take", level.scr_sr_enemy_dogtag_score );
 
+						//Update stat
+						player.pers["stats"]["misc"]["hitman"] += 1;		
+						player setClientDvar( "ps_hitman", player.pers["stats"]["misc"]["hitman"] );
+						
                         // Send notice to players according to team
                         if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" ) 
                                 iprintln("^1" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");

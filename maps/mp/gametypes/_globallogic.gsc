@@ -2383,7 +2383,8 @@ beginClassChoice( forceNewChoice )
 	assert( self.pers["team"] == "axis" || self.pers["team"] == "allies" );
 
 	team = self.pers["team"];
-
+	ClientPrint(self, "Begin class choice ");
+	
 	//if ( level.oldschool || level.gameType == "csd")
 	if ( level.oldschool )
 	{
@@ -2403,6 +2404,15 @@ beginClassChoice( forceNewChoice )
 		return;
 	} else if (level.gameType == "csd") {
 		//TODO: Disable opening chooseclass menu ASAP
+		
+		//Works on first round but not after
+		/*self notify( "menuresponse", game["menu_changeclass_" + self.pers["team"] ], "assault" );
+		wait(1);
+		self notify( "menuresponse", game["menu_changeclass"] , "go" );
+		
+		if ( self.sessionstate != "playing" && game["state"] == "playing" )
+			self thread [[level.spawnClient]]();
+		return;*/
 	}
 
 	// menu_changeclass_team is the one where you choose one of the n classes to play as.

@@ -101,6 +101,12 @@ onGameEnded()
 	
 	level.eogBest["distance"]["name"] = "";
 	level.eogBest["distance"]["value"] = 0;	
+	
+	level.eogBest["medic"]["name"] = "";
+	level.eogBest["medic"]["value"] = 0;	
+	
+	level.eogBest["hitman"]["name"] = "";
+	level.eogBest["hitman"]["value"] = 0;	
 				
 	// Get all the best/worst players for each stat item we monitor and display at the end of the game
 	for ( index = 0; index < level.players.size; index++ )
@@ -133,6 +139,8 @@ onGameEnded()
 			player checkStatItem( player.pers["stats"]["hardpoints"]["helicopter_kills"], "helicopter_kills" );
 			
 			player checkStatItem( player.pers["stats"]["misc"]["distance"], "distance" );
+			player checkStatItem( player.pers["stats"]["misc"]["hitman"], "hitman" );
+			player checkStatItem( player.pers["stats"]["misc"]["medic"], "medic" );
 		}
 	}
 	
@@ -186,7 +194,11 @@ onGameEnded()
 				"gs_h3n", level.eogBest["helicopters"]["name"],
 				"gs_h3", level.eogBest["helicopters"]["value"],
 				"gs_h3kn", level.eogBest["helicopter_kills"]["name"],
-				"gs_h3k", level.eogBest["helicopter_kills"]["value"]
+				"gs_h3k", level.eogBest["helicopter_kills"]["value"],
+				"gs_medicn", level.eogBest["medic"]["name"],
+				"gs_medic", level.eogBest["medic"]["value"],
+				"gs_hitmann", level.eogBest["hitman"]["name"],
+				"gs_hitman", level.eogBest["hitman"]["value"]
 			);
 			player setClientDvars(
 				"gs_dtn", level.eogBest["distance"]["name"],
@@ -243,7 +255,9 @@ onPlayerConnected()
 			"ps_ks", 0, 											// Highest Killstreak
 			"ps_l", longestDefault,						// Longest Kill
 			"ps_mk", 0,												// Melee Kills
-			"ps_dt", longestDefault						// Distance Travelled
+			"ps_dt", longestDefault,						// Distance Travelled
+			"ps_hitman", 0,						// Hitman
+			"ps_medic", 0						// Medic
 		);
 		self setClientDvars(
 			"ps_h", 0,												// Headshots
@@ -297,6 +311,9 @@ onPlayerConnected()
 		// Misc
 		self.pers["stats"]["misc"] = [];
 		self.pers["stats"]["misc"]["distance"] = 0;		
+		self.pers["stats"]["misc"]["hitman"] = 0;		
+		self.pers["stats"]["misc"]["medic"] = 0;		
+		
 	}	
 }
 

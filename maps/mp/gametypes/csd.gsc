@@ -309,7 +309,6 @@ resetClientVariables(step)
 	self setClientDvars(
 		"ui_buyloadout_step", step
 	);
-	ClientPrint(self, "Menu on step : " + step);
 	switch ( step ) {
 		case "base":
 			self setClientDvars(
@@ -850,10 +849,10 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 		game[attacker.name]["money"] -= level.scr_csd_enemy_killed_reward;
 		attacker thread displayGaining(level.scr_csd_enemy_killed_reward, "-");
 	} 
+	if (game[self.name]["weapon"] != undefined) {
+		self dropItem( game[self.name]["weapon"] );
+	}
 	game[self.name]["weapon"] = undefined;
-	
-	currentWeapon = self getCurrentWeapon();		
-	self dropItem( currentWeapon );
 	
 	thread checkAllowSpectating();
 }
