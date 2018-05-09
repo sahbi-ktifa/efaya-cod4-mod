@@ -447,6 +447,8 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
         if( isDefined( self.destroyingExplosive ) && self.destroyingExplosive == true ) {
              self updateSecondaryProgressBar( undefined, undefined, true, undefined );
         }
+		
+	thread maps\mp\gametypes\_finalkillcam::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 }
 
 
@@ -475,7 +477,7 @@ sr_endGame( winningTeam, endReasonText )
 	if ( isdefined( winningTeam ) )
 		[[level._setTeamScore]]( winningTeam, [[level._getTeamScore]]( winningTeam ) + 1 );
 
-	thread maps\mp\gametypes\_globallogic::endGame( winningTeam, endReasonText );
+	thread maps\mp\gametypes\_finalkillcam::endGame( winningTeam, endReasonText );
 }
 
 

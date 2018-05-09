@@ -2383,7 +2383,6 @@ beginClassChoice( forceNewChoice )
 	assert( self.pers["team"] == "axis" || self.pers["team"] == "allies" );
 
 	team = self.pers["team"];
-	ClientPrint(self, "Begin class choice ");
 	
 	//if ( level.oldschool || level.gameType == "csd")
 	if ( level.oldschool )

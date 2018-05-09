@@ -855,6 +855,7 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 	game[self.name]["weapon"] = undefined;
 	
 	thread checkAllowSpectating();
+	thread maps\mp\gametypes\_finalkillcam::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 }
 
 
@@ -901,7 +902,8 @@ sd_endGame( winningTeam, endReasonText )
 	}
 	game["buy"] = "ok";
 	
-	thread maps\mp\gametypes\_globallogic::endGame( winningTeam, endReasonText );
+	//thread maps\mp\gametypes\_globallogic::endGame( winningTeam, endReasonText );
+	thread maps\mp\gametypes\_finalkillcam::endGame( winningTeam, endReasonText );
 }
 
 

@@ -130,6 +130,7 @@ rawfile,maps/mp/gametypes/_battlechatter_mp.gsc
 rawfile,maps/mp/gametypes/_class.gsc
 rawfile,maps/mp/gametypes/_class_unranked.gsc
 rawfile,maps/mp/gametypes/_damagefeedback.gsc
+rawfile,maps/mp/gametypes/_finalkillcam.gsc
 rawfile,maps/mp/gametypes/_friendicons.gsc
 rawfile,maps/mp/gametypes/_gameobjects.gsc
 rawfile,maps/mp/gametypes/_gametypes.txt
@@ -139,6 +140,7 @@ rawfile,maps/mp/gametypes/_healthoverlay.gsc
 rawfile,maps/mp/gametypes/_hud.gsc
 rawfile,maps/mp/gametypes/_hud_message.gsc
 rawfile,maps/mp/gametypes/_hud_util.gsc
+rawfile,maps/mp/gametypes/_killcam.gsc
 rawfile,maps/mp/gametypes/_menus.gsc
 rawfile,maps/mp/gametypes/_menus_unranked.gsc
 rawfile,maps/mp/gametypes/_missions.gsc

@@ -377,6 +377,7 @@ onSpawnPlayer()
 onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration)
 {
 	thread checkAllowSpectating();
+	thread maps\mp\gametypes\_finalkillcam::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 }
 
 
@@ -405,7 +406,8 @@ sd_endGame( winningTeam, endReasonText )
 	if ( isdefined( winningTeam ) )
 		[[level._setTeamScore]]( winningTeam, [[level._getTeamScore]]( winningTeam ) + 1 );
 
-	thread maps\mp\gametypes\_globallogic::endGame( winningTeam, endReasonText );
+	//thread maps\mp\gametypes\_globallogic::endGame( winningTeam, endReasonText );
+	thread maps\mp\gametypes\_finalkillcam::endGame( winningTeam, endReasonText );
 }
 
 
