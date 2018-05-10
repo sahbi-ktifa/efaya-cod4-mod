@@ -158,6 +158,32 @@ onGameEnded()
 		player = level.players[index];	
 		
 		if ( isDefined( player ) ) {
+			//Calc Nemesis stats
+			nemesis_target = undefined;
+			nemesis_target_count = 0;
+			nemesis_killer = undefined;
+			nemesis_killer_count = 0;
+			for ( j = 0; j < level.players.size; j++ ) {
+				player_ref = level.players[j];	
+				if (isDefined(player.pers["stats"]["nemesis"]["targets"][player_ref.name]) && player.pers["stats"]["nemesis"]["targets"][player_ref.name] > nemesis_target_count) {
+					nemesis_target_count = player.pers["stats"]["nemesis"]["targets"][player_ref.name];
+					nemesis_target = player_ref.name;
+				}
+			}
+			if (nemesis_target) {
+				player setClientDvar("ps_nemesis_target", nemesis_target + " (" + nemesis_target_count + ")");			
+			}
+			for ( j = 0; j < level.players.size; j++ ) {
+				player_ref = level.players[j];	
+				if (isDefined(player.pers["stats"]["nemesis"]["killers"][player_ref.name]) && player.pers["stats"]["nemesis"]["killers"][player_ref.name] > nemesis_killer_count) {				
+					nemesis_killer_count = player.pers["stats"]["nemesis"]["killers"][player_ref.name];
+					nemesis_killer = player_ref.name;
+				}
+			}
+			if (nemesis_killer) {
+				player setClientDvar("ps_nemesis_killer", nemesis_killer + " (" + nemesis_killer_count + ")");			
+			}
+			
 			player setClientDvars(
 				"ps_n", player.name,
 				"gs_pg", 1,
@@ -312,8 +338,11 @@ onPlayerConnected()
 		self.pers["stats"]["misc"] = [];
 		self.pers["stats"]["misc"]["distance"] = 0;		
 		self.pers["stats"]["misc"]["hitman"] = 0;		
-		self.pers["stats"]["misc"]["medic"] = 0;		
-		
+		self.pers["stats"]["misc"]["medic"] = 0;	
+
+		// Nemesis
+		self.pers["stats"]["nemesis"]["killers"] = [];	
+		self.pers["stats"]["nemesis"]["targets"] = [];	
 	}	
 }
 
@@ -429,6 +458,20 @@ onPlayerKilled()
 			"ps_ds", self.pers["stats"]["deaths"]["deathstreak"]
 		);
 
+		//Update Nemesis stats
+		if ( sMeansOfDeath != "MOD_FALLING" && isPlayer( attacker ) && attacker != self )  {
+			if (!isDefined(self.pers["stats"]["nemesis"]["killers"][attacker.name])) {
+				self.pers["stats"]["nemesis"]["killers"][attacker.name] = 0;
+			}
+			self.pers["stats"]["nemesis"]["killers"][attacker.name] += 1;
+			
+			if (!isDefined(attacker.pers["stats"]["nemesis"]["targets"][self.name])) {
+				attacker.pers["stats"]["nemesis"]["targets"][self.name] = 0;
+			}
+			attacker.pers["stats"]["nemesis"]["targets"][self.name] += 1;		
+		}
+		
+		
 		// Handle the stats for the attacker
 		if ( isPlayer( attacker ) && attacker != self ) {
 			// Check if it was a team kill (team kills don't count towards K/D ratio or total kills, headshots, distances, etc)

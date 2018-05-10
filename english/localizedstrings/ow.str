@@ -1169,6 +1169,12 @@ LANG_ENGLISH "The Hitman (SR: Enemies eliminated)"
 REFERENCE EOG_MEDIC
 LANG_ENGLISH "The Medic (SR: Friends revived)"
 
+REFERENCE EOG_NEMESIS_TARGET
+LANG_ENGLISH "Favorite target"
+
+REFERENCE EOG_NEMESIS_KILLER
+LANG_ENGLISH "My Nemesis..."
+
 
 //******************************************************************************
 // ui_mp/scriptmenus/ow_cac_editor.menu
