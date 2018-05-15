@@ -161,19 +161,19 @@ echo _________________________________________________________________
 echo.
 echo  Building z_openwarfare.iwd:
 echo    Deleting old z_openwarfare.iwd file...
-del z_openwarfare.iwd
+del me_openwarfare.iwd
 echo    Adding images...
-7za a -r -tzip z_openwarfare.iwd images\*.iwi > NUL
+7za a -r -tzip me_openwarfare.iwd images\*.iwi > NUL
 echo    Adding sounds...
-7za a -r -tzip z_openwarfare.iwd sound\*.mp3 > NUL
+7za a -r -tzip me_openwarfare.iwd sound\*.mp3 > NUL
 echo    Adding weapons...
-7za a -r -tzip z_openwarfare.iwd weapons\mp\*_mp > NUL
+7za a -r -tzip me_openwarfare.iwd weapons\mp\*_mp > NUL
 echo    Adding OpenWarfare standard rulesets...
-7za a -r -tzip z_openwarfare.iwd rulesets\openwarfare\*.gsc > NUL
-7za a -r -tzip z_openwarfare.iwd rulesets\leagues.gsc > NUL
+7za a -r -tzip me_openwarfare.iwd rulesets\openwarfare\*.gsc > NUL
+7za a -r -tzip me_openwarfare.iwd rulesets\leagues.gsc > NUL
 echo    Adding empty mod.arena file...
-7za a -r -tzip z_openwarfare.iwd mod.arena > NUL
-echo  New z_openwarfare.iwd file successfully built!
+7za a -r -tzip me_openwarfare.iwd mod.arena > NUL
+echo  New me_openwarfare.iwd file successfully built!
 del /f /q weapons\mp\* >NUL
 rmdir weapons\mp >NUL
 if "%make_option%"=="1" goto MAKE_MOD_FF

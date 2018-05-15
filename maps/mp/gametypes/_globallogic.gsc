@@ -773,6 +773,7 @@ spawnPlayer()
 	[[level.onSpawnPlayer]]();
 
 	self maps\mp\gametypes\_missions::playerSpawned();
+	self maps\mp\gametypes\_dailychallenges::playerSpawned();
 
 	prof_end( "spawnPlayer_preUTS" );
 
@@ -921,6 +922,8 @@ spawnPlayer()
 		self showPerk( 2, perks[2], -50 );
 		self thread hidePerksAfterTime( 3.0 );
 		self thread hidePerksOnDeath();
+		
+		self thread maps\mp\gametypes\_dailychallenges::showDailyChallenges();
 	}
 
 	prof_end( "spawnPlayer_postUTS" );
@@ -4117,6 +4120,7 @@ Callback_StartGameType()
 		thread maps\mp\gametypes\_menus::init();
 	}
 
+	thread maps\mp\gametypes\_dailychallenges::init();
 	thread maps\mp\gametypes\_hud::init();
 	thread maps\mp\gametypes\_serversettings::init();
 	thread maps\mp\gametypes\_clientids::init();
@@ -5766,6 +5770,7 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 	self.leaving_team = undefined;
 
 	self thread [[level.onPlayerKilled]](eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
+	self thread maps\mp\gametypes\_dailychallenges::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 
 	if ( sWeapon == "artillery_mp" || sWeapon == "claymore_mp" || sWeapon == "frag_grenade_short_mp" || sWeapon == "none" || isSubStr( sWeapon, "cobra" ) )
 		doKillcam = false;
@@ -6010,6 +6015,7 @@ processAssist( killedplayer, damagedone )
 	givePlayerScore( "assist", self, killedplayer );
 
 	self thread maps\mp\gametypes\_missions::playerAssist();
+	self thread maps\mp\gametypes\_dailychallenges::playerAssist();
 }
 
 Callback_PlayerLastStand( eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration )

@@ -648,7 +648,7 @@ timeLimitClock_Intermission( waitTime )
 		
 	for ( ;; )
 	{
-		clockObject playSound( "ui_mp_timer_countdown" );
+		//clockObject playSound( "ui_mp_timer_countdown" );
 		wait ( 1.0 );
 	}	
 }

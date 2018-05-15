@@ -1,6 +1,13 @@
 # BootifulWarfare Mod Source
 ## Custom COD4 Mod based on OpenWarfare.
 
+### Special Features
+
+* Advanced Map Voting System Enhanced : With custom map loadscreen configurable.
+* Nemesis system : Identify favorite target and your nemesis. Will be display in end of game statistics.
+* Final Killcam : In some gametypes (dm, sd, sr, csd), a final kill cam will be played for winning round/game kill.
+* Daily Challenges : Randomly picked challenges at startup for player to perform.
+
 ### Weapons matching
 
 * Assault:

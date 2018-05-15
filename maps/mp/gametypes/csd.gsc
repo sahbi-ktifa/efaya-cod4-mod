@@ -662,6 +662,7 @@ onRoundSwitch()
 	for ( i = 0; i < level.players.size; i++ ) {
 		if (isDefined(game[level.players[i].name]["weapon"])) {
 			game[level.players[i].name]["weapon"] = undefined;
+			game[level.players[i].name]["money"] = level.scr_csd_minimum_wage;
 		}
 	}
 }
@@ -881,8 +882,8 @@ checkAllowSpectating()
 
 sd_endGame( winningTeam, endReasonText )
 {
-	if ( isdefined( winningTeam ) )
-		[[level._setTeamScore]]( winningTeam, [[level._getTeamScore]]( winningTeam ) + 1 );
+	//if ( isdefined( winningTeam ) )
+	//	[[level._setTeamScore]]( winningTeam, [[level._getTeamScore]]( winningTeam ) + 1 );
 
 	for ( index = 0; index < level.players.size; index++ )
 	{

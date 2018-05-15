@@ -130,6 +130,7 @@ rawfile,maps/mp/gametypes/_battlechatter_mp.gsc
 rawfile,maps/mp/gametypes/_class.gsc
 rawfile,maps/mp/gametypes/_class_unranked.gsc
 rawfile,maps/mp/gametypes/_damagefeedback.gsc
+rawfile,maps/mp/gametypes/_dailychallenges.gsc
 rawfile,maps/mp/gametypes/_finalkillcam.gsc
 rawfile,maps/mp/gametypes/_friendicons.gsc
 rawfile,maps/mp/gametypes/_gameobjects.gsc
