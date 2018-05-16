@@ -16,12 +16,12 @@
 init()
 {
 	// Overall admin GUIDs
-	level.scr_server_overall_admin_guids = getdvarx( "scr_server_overall_admin_guids", "string", "" );	
+	level.scr_server_overall_admin_guids = getdvarx( "scr_server_overall_admin_guids", "string", "" );
 
 	// Gametype objective variables
 	level.scr_gametype_objectives_sound = getdvarx( "scr_gametype_objectives_sound", "int", 1, 0, 1 );
 	level.scr_gametype_objectives_print = getdvarx( "scr_gametype_objectives_print", "int", 1, 0, 1 );
-	
+
 	// Special FXs
 	level.scr_map_special_fx_enable = getdvarx( "scr_map_special_fx_enable", "int", 1, 0, 2 );
 
@@ -33,9 +33,9 @@ init()
 		level.scr_jump_height = getdvarx( "scr_jump_height", "int", 39, 0, 1000 );
 		level.scr_jump_slowdown_enable = getdvarx( "scr_jump_slowdown_enable", "int", 1, 0, 1 );
 	}
-	
+
 	level thread onPrematchStart();
-	
+
 	setDvar( "scr_game_allowkillcam", getdvarx( "scr_game_allow_killcam", "int", 0, 0, 1 ) );
 
 	level.scr_game_playerwaittime = getdvarx( "scr_game_playerwaittime", "int", 15, 1, 120 );
@@ -44,11 +44,11 @@ init()
 
 	level.scr_allow_thirdperson = getdvarx( "scr_allow_thirdperson", "int", 0, 0, 1 );
 	level.scr_allow_thirdperson_guids = getdvarx( "scr_allow_thirdperson_guids", "string", "" );
-	
+
 	level.scr_enable_nightvision = getdvarx( "scr_enable_nightvision", "int", 1, 0, 1 );
-	
+
 	level.scr_player_forcerespawn = getdvarx( "scr_player_forcerespawn", "int", 1, 0, 1 );
-	
+
 	level.scr_forfeit_enable = getdvarx( "scr_forfeit_enable", "int", 1, 0, 1 );
 
 	// Used to disable the GL in ranked mode
@@ -189,7 +189,7 @@ init()
 onPrematchStart()
 {
 	level waittill( "prematch_start" );
-	
+
 	setDvar( "g_gravity", getdvarx( "scr_g_gravity", "int", 800, 0, 1000 ) );
 	setDvar( "jump_height", level.scr_jump_height );
 	setDvar( "jump_slowdownEnable", level.scr_jump_slowdown_enable );
@@ -197,5 +197,5 @@ onPrematchStart()
 	// If special effects are disable make sure we disable ambient sound (for custom maps)
 	if ( level.scr_map_special_fx_enable == 0 ) {
 		ambientStop();
-	}	
+	}
 }

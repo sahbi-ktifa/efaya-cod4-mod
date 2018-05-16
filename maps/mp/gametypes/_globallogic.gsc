@@ -19,6 +19,23 @@
 
 init()
 {
+	//Custom quote
+	customQuotesList = getdvarlistx( "scr_custom_quotes_", "string", "" );
+
+		// Load the quotes into an array
+		level.customQuotes = [];
+
+		for ( i=0; i < customQuotesList.size; i++ ) {
+			// Split the quotes
+			customQuotes = strtok( customQuotesList[i], ";" );
+			for (j = level.customQuotes.size; j < customQuotes.size; j++) {
+				level.customQuotes[j] = customQuotes[j];
+			}
+
+		}
+	//setDvar( "ui_custom_quote", "Do or do not, there is no try. ^3Master Yoda" );
+	setDvar( "ui_custom_quote", level.customQuotes[RandomInt( level.customQuotes.size )] );
+
 	// Initialize server load variables (do not thread)
 	openwarfare\_serverload::init();
 
@@ -39,11 +56,11 @@ init()
 			if ( isDefined( level.matchRules[ level.cod_mode ][ level.gametype ] ) ) {
 				[[ level.matchRules[ level.cod_mode ][ level.gametype ] ]]();
 				logPrint( "RSM;Ruleset " + level.cod_mode + " loaded.\n" );
-				
+
 			} else if ( isDefined( level.matchRules[ level.cod_mode ]["all"] ) ) {
 				[[ level.matchRules[ level.cod_mode ][ "all" ] ]]();
 				logPrint( "RSM;Ruleset " + level.cod_mode + " loaded.\n" );
-				
+
 			} else {
 				// Rule is not valid or doesn't support the current gametype
 				setDvar( "cod_mode", "" );
@@ -60,20 +77,20 @@ init()
 	level.scr_eog_fastrestart = getdvarx( "scr_eog_fastrestart", "int", 0, 0, 500 );
 	level.scr_show_player_assignment = getdvarx( "scr_show_player_assignment", "int", 0, 0, 1 );
 
-	// Get the amount of health we'll be using for players	
-	if ( level.hardcoreMode )		
-		level.maxhealth = getdvarx( "scr_player_maxhealth", "int", 30, 1, 500 );	
-	else if ( level.oldschool )		
-		level.maxhealth = getdvarx( "scr_player_maxhealth", "int", 200, 1, 500 );	
-	else		
-		level.maxhealth = getdvarx( "scr_player_maxhealth", "int", 100, 1, 500 );	
+	// Get the amount of health we'll be using for players
+	if ( level.hardcoreMode )
+		level.maxhealth = getdvarx( "scr_player_maxhealth", "int", 30, 1, 500 );
+	else if ( level.oldschool )
+		level.maxhealth = getdvarx( "scr_player_maxhealth", "int", 200, 1, 500 );
+	else
+		level.maxhealth = getdvarx( "scr_player_maxhealth", "int", 100, 1, 500 );
 
 	// Reset certain values no matter what the setting in the server
 	setDvar( "sv_fps", "20" );
 	setDvar( "ui_hud_obituaries", "1" );
 	setDvar( "ui_hud_showobjicons", "1" );
 	setDvar( "g_antilag", getdvarx( "scr_antilag", "int", 0, 0, 1 ) );
-	
+
 	// Set mod name and version
 	setDvar( "_Mod", "OpenWarfare", true );
 	setDvar( "_ModVer", "v4.180.2482", true );
@@ -87,23 +104,23 @@ init()
 
 	// We do this for compatibility with previous variable
 	level.scr_server_rank_type = getdvarx( "scr_server_rank_type", "int", getdvarx( "scr_forceunrankedmatch", "int", 0, 0, 1 ), 0, 2 );
-	
+
 	// Make the game unranked in case is being forced by the new dvar
 	if ( level.scr_server_rank_type != 0 ) {
 		level.rankedMatch = false;
 	} else {
 		level.rankedMatch = true;
 	}
-	
+
 	// Initialize variables used by OpenWarfare
 	openwarfare\_registerdvars::init();
 
 	level.splitscreen = isSplitScreen();
 	level.xenon = (getdvar("xenonGame") == "true");
 	level.ps3 = (getdvar("ps3Game") == "true");
-	
+
 	level.console = (level.xenon || level.ps3);
-	
+
 	// If the server is not running in the standard directory then we declare an unranked match
 	/*if ( !isSubStr( toLower(getDvar("sv_referencedFFNames")), "mods/openwarfare/mod" ) ) {
 		level.scr_server_rank_type = 1;
@@ -194,16 +211,16 @@ registerDvars()
 
 	setDvar( "ui_hud_hardcore", 1 );
 	makeDvarServerInfo( "ui_hud_hardcore", 1 );
-	
+
 	setDvar( "ui_hud_hardcore_show_minimap", 0 );
 	makeDvarServerInfo( "ui_hud_hardcore_show_minimap", 0 );
-	
+
 	setDvar( "ui_hud_hardcore_show_compass", 0 );
 	makeDvarServerInfo( "ui_hud_hardcore_show_compass", 0 );
-	
-	setDvar( "ui_hud_show_inventory", 0 );		
+
+	setDvar( "ui_hud_show_inventory", 0 );
 	makeDvarServerInfo( "ui_hud_show_inventory", 0 );
-	
+
 	setDvar( "ui_bomb_timer", 0 );
 	makeDvarServerInfo( "ui_bomb_timer" );
 
@@ -673,10 +690,10 @@ matchStartTimer()
 			messageFlag = false;
 			nextSwitch = gettime() + 2000;
 			gameStarts = gettime() + 1000 * level.prematchPeriodEnd;
-			
+
 			while ( gettime() < gameStarts ) {
 				wait (0.05);
-				
+
 				// Check if it's time to change the message
 				if ( gettime() > nextSwitch ) {
 					game["matchReadyUpText"] fadeOverTime( 0.25 );
@@ -695,8 +712,8 @@ matchStartTimer()
 					game["matchReadyUpText"].alpha = 1;
 					messageFlag = !messageFlag;
 					nextSwitch = gettime() + 2000;
-				}				
-			}			
+				}
+			}
 		} else {
 			wait level.prematchPeriodEnd;
 		}
@@ -804,7 +821,7 @@ spawnPlayer()
 			}
 		}
 	}
-	
+
 	if ( level.inReadyUpPeriod ) {
 		// Check if we need to disable the weapons
 		if ( level.scr_match_readyup_disable_weapons == 1 ) {
@@ -877,8 +894,8 @@ spawnPlayer()
 			self freezeControls( true );
 		} else {
 			self freezeControls( false );
-		}		
-		
+		}
+
 		self thread maps\mp\gametypes\_gameobjects::_enableWeapon();
 		if ( !hadSpawned && game["state"] == "playing" )
 		{
@@ -894,7 +911,7 @@ spawnPlayer()
 			}
 
 			thread maps\mp\gametypes\_hud_message::oldNotifyMessage( game["strings"][team + "_name"], undefined, game["icons"][team], game["colors"][team], music );
-				
+
 			if ( level.gametype != "hns" ) {
 				if ( isDefined( game["dialog"]["gametype"] ) && (!level.splitscreen || self == level.players[0]) )
 				{
@@ -922,7 +939,7 @@ spawnPlayer()
 		self showPerk( 2, perks[2], -50 );
 		self thread hidePerksAfterTime( 3.0 );
 		self thread hidePerksOnDeath();
-		
+
 		self thread maps\mp\gametypes\_dailychallenges::showDailyChallenges();
 	}
 
@@ -1363,15 +1380,15 @@ endGame( winner, endReasonText )
 
 	if ( isDefined( level.onEndGame ) )
 		[[level.onEndGame]]( winner );
-	
+
 	visionSetNaked( "mpOutro", 2.0 );
-		
+
 	game["state"] = "postgame";
 	level.gameEndTime = getTime();
 	level.gameEnded = true;
 	level.inGracePeriod = false;
 	level notify ( "game_ended" );
-	
+
 	setGameEndTime( 0 ); // stop/hide the timers
 
 	if ( level.rankedMatch || level.scr_server_rank_type == 2 )
@@ -1421,7 +1438,7 @@ endGame( winner, endReasonText )
 
     // end round
     game["roundsplayed"]++;
-    
+
     // See if we need to perform a check for the game
     if ( level.scr_overtime_enable == 1 && !isDefined( game["_overtime"] ) ) {
     	openwarfare\_overtime::checkGameState();
@@ -1455,10 +1472,10 @@ endGame( winner, endReasonText )
 
 		if ( !hitRoundLimit() && !hitScoreLimit() )
 			roundSwitching = checkRoundSwitch();
-			
+
 		if ( isDefined( game["_overtime"] ) ) {
 			level.halftimeType = "overtime";
-			level.halftimeSubCaption = &"OW_LAST_ROUND";			
+			level.halftimeSubCaption = &"OW_LAST_ROUND";
 		}
 
 		if ( roundSwitching && level.teamBased )
@@ -1576,9 +1593,9 @@ endGame( winner, endReasonText )
 			{
 				level notify ( "roundSwitching" );
 				wait 1;
-			}               	
+			}
     	level notify ( "restarting" );
-      
+
       map_restart( true );
       return;
     }
@@ -1678,11 +1695,11 @@ endGame( winner, endReasonText )
 		player closeInGameMenu();
 		player notify ( "reset_outcome" );
 		player thread spawnIntermission();
-		
+
 		if ( isDefined( game["menu_eog_main"] ) )
 			player setClientDvar( "g_scriptMainMenu", game["menu_eog_main"] );
 	}
-	
+
 	logString( "game ended" );
 	wait getDvarFloat( "scr_show_unlock_wait" );
 
@@ -1696,13 +1713,13 @@ endGame( winner, endReasonText )
 		if ( level.scr_endofgame_stats_enable == 1 ) {
 			wait (1.0);
 		}
-		
+
 		// popup for game summary
 		players = level.players;
 		for ( index = 0; index < players.size; index++ )
 		{
 			player = players[index];
-			
+
 			if ( level.scr_endofgame_stats_enable == 1 ) {
 				player openMenu( game["menu_eog_stats"] );
 			} else {
@@ -1714,9 +1731,9 @@ endGame( winner, endReasonText )
 	thread timeLimitClock_Intermission( level.scr_intermission_time, ( level.scr_amvs_enable == 0 || game["amvs_skip_voting"] ) );
 	wait (level.scr_intermission_time);
 
-	if ( level.scr_eog_fastrestart != 0 ) {	
+	if ( level.scr_eog_fastrestart != 0 ) {
 		fastRestarts = getDvarInt( "ow_fastrestarts" );
-		
+
 		if ( fastRestarts == level.scr_eog_fastrestart ) {
 			setDvar("ow_fastrestarts", 0 );
 		} else {
@@ -1724,9 +1741,9 @@ endGame( winner, endReasonText )
 			map_restart( false );
 		}
 	}
-	
+
 	openwarfare\_advancedmvs::mapVoting_Intermission();
-	
+
 	players = level.players;
 	for ( index = 0; index < players.size; index++ )
 	{
@@ -1748,7 +1765,7 @@ getWinningTeam()
 		winner = "allies";
 	else
 		winner = "axis";
-		
+
 	return winner;
 }
 
@@ -2126,7 +2143,7 @@ registerRoundLimitDvar( dvarString, defaultValue, minValue, maxValue )
 	level.roundlimitMin = minValue;
 	level.roundlimitMax = maxValue;
 	level.roundLimit = getdvarx( dvarString, "int", defaultValue, minValue, maxValue );
-	
+
 	// Check if we need to increase the number of rounds due to overtime
 	if ( isDefined( game["_overtime"] ) )
 		level.roundLimit++;
@@ -2196,7 +2213,7 @@ updateGameTypeDvars()
 
 	while ( game["state"] == "playing" )
 	{
-		
+
 		if ( !isDefined( game["_overtime"] ) ) {
 			roundlimit = getdvarx( level.roundLimitDvar, "int", level.roundlimit, level.roundLimitMin, level.roundLimitMax );
 			if ( roundlimit != level.roundlimit )
@@ -2204,7 +2221,7 @@ updateGameTypeDvars()
 				level.roundlimit = roundlimit;
 				level notify ( "update_roundlimit" );
 			}
-	
+
 			timeLimit = getdvarx( level.timeLimitDvar, "float", level.timeLimit, level.timeLimitMin, level.timeLimitMax );
 			if ( timeLimit != level.timeLimit )
 			{
@@ -2246,7 +2263,7 @@ menuAutoAssign()
 
 	self closeMenus();
 
-	// Ignore auto-assign request if the player is already assigned to a team (prevent people 
+	// Ignore auto-assign request if the player is already assigned to a team (prevent people
 	// from switching sides in gametypes where this can give a personal advantage to the player)
 	if ( isDefined( self.pers ) && isDefined( self.pers["team"] ) && self.pers["team"] != "spectator" )
 		return;
@@ -2386,7 +2403,7 @@ beginClassChoice( forceNewChoice )
 	assert( self.pers["team"] == "axis" || self.pers["team"] == "allies" );
 
 	team = self.pers["team"];
-	
+
 	//if ( level.oldschool || level.gameType == "csd")
 	if ( level.oldschool )
 	{
@@ -2406,12 +2423,12 @@ beginClassChoice( forceNewChoice )
 		return;
 	} else if (level.gameType == "csd") {
 		//TODO: Disable opening chooseclass menu ASAP
-		
+
 		//Works on first round but not after
 		/*self notify( "menuresponse", game["menu_changeclass_" + self.pers["team"] ], "assault" );
 		wait(1);
 		self notify( "menuresponse", game["menu_changeclass"] , "go" );
-		
+
 		if ( self.sessionstate != "playing" && game["state"] == "playing" )
 			self thread [[level.spawnClient]]();
 		return;*/
@@ -2443,8 +2460,8 @@ menuAllies()
 		if (level.allow_teamchange == "0" && (isdefined(self.hasDoneCombat) && self.hasDoneCombat) )
 		{
 			return;
-		}		
-		
+		}
+
 		if( level.teamBased && !maps\mp\gametypes\_teams::getJoinTeamPermissions( "allies" ) )
 		{
 			self openMenu(game["menu_team"]);
@@ -2460,7 +2477,7 @@ menuAllies()
 			self.switching_teams = true;
 			self.joining_team = "allies";
 			self.leaving_team = self.pers["team"];
-			
+
 			self suicidePlayer();
 		}
 
@@ -2486,9 +2503,9 @@ menuAllies()
 		lpselfname = self.name;
 		lpselfteam = self.pers["team"];
 		lpselfguid = self getGuid();
-	
+
 		logPrint( "JT;" + lpselfguid + ";" + lpselfnum + ";" + lpselfteam + ";" + lpselfname + ";" + "\n" );
-	
+
 		self notify("joined_team");
 		self thread showPlayerJoinedTeam();
 		self notify("end_respawn");
@@ -2507,8 +2524,8 @@ menuAxis()
 		if (level.allow_teamchange == "0" && (isdefined(self.hasDoneCombat) && self.hasDoneCombat) )
 		{
 			return;
-		}		
-		
+		}
+
 		if( level.teamBased && !maps\mp\gametypes\_teams::getJoinTeamPermissions( "axis" ) )
 		{
 			self openMenu(game["menu_team"]);
@@ -2524,7 +2541,7 @@ menuAxis()
 			self.switching_teams = true;
 			self.joining_team = "axis";
 			self.leaving_team = self.pers["team"];
-			
+
 			self suicidePlayer();
 		}
 
@@ -2550,7 +2567,7 @@ menuAxis()
 		lpselfname = self.name;
 		lpselfteam = self.pers["team"];
 		lpselfguid = self getGuid();
-	
+
 		logPrint( "JT;" + lpselfguid + ";" + lpselfnum + ";" + lpselfteam + ";" + lpselfname + ";" + "\n" );
 
 		self notify("joined_team");
@@ -3094,7 +3111,7 @@ isValidClass( class )
 		assert( !isdefined( class ) );
 		return true;
 	}
-	
+
 	if ( level.gametype == "hns" && self.pers["team"] == game["defenders"] ) {
 		return isdefined( self.pers["prop"] ) && self.pers["prop"] != "";
 	} else {
@@ -3168,12 +3185,12 @@ timeLimitClock_Intermission( waitTime, playSound )
 
 	while ( waitTime > 0 ) {
 		if ( playSound && waitTime <= 11 ) {
-			clockObject playSound( "ui_mp_timer_countdown" );			
+			clockObject playSound( "ui_mp_timer_countdown" );
 		}
 		wait ( 1.0 );
 		waitTime -= 1.0;
 	}
-	
+
 	clockObject delete();
 }
 
@@ -3248,10 +3265,10 @@ startGame()
 	for ( index = 0; index < level.players.size; index++ ) {
 		if ( !isDefined( level.players[index] ) )
 			continue;
-			
+
 		level.players[index] hideHUD();
-	}	
-	
+	}
+
 	thread gameTimer();
 	level.timerStopped = false;
 	thread maps\mp\gametypes\_spawnlogic::spawnPerFrameUpdate();
@@ -3379,8 +3396,8 @@ prematchPeriod()
 	{
 		if ( !isDefined( level.players[index] ) )
 			continue;
-			
-		level.players[index] showHUD();		
+
+		level.players[index] showHUD();
 		level.players[index] freezeControls( false );
 		level.players[index] thread maps\mp\gametypes\_gameobjects::_enableWeapon();
 
@@ -3507,7 +3524,7 @@ updateWinStats( winner )
 
 	lpselfnum = winner getEntityNumber();
 	lpGuid = winner getGuid();
-	logPrint("W;" + lpGuid + ";" + lpselfnum + ";" + winner.name + "\n");	
+	logPrint("W;" + lpGuid + ";" + lpselfnum + ";" + winner.name + "\n");
 }
 
 
@@ -3657,7 +3674,7 @@ maySpawn()
 
 	if ( level.inHidingPeriod )
 		return true;
-		
+
 	if ( level.numLives )
 	{
 		if ( level.teamBased )
@@ -4147,11 +4164,11 @@ Callback_StartGameType()
 	if ( !level.console )
 		thread maps\mp\gametypes\_quickmessages::init();
 
-	thread maps\mp\_explosive_barrels::main();			
+	thread maps\mp\_explosive_barrels::main();
 
 	// Do not thread this initialization
 	openwarfare\_globalinit::init();
-	
+
 	// Check which regen method we should load depending on the dvar
 	switch ( level.scr_healthregen_method )
 	{
@@ -4163,7 +4180,7 @@ Callback_StartGameType()
 			thread openwarfare\_healthsystem::init_healthOverlay();
 			break;
 	}
-			
+
 	stringNames = getArrayKeys( game["strings"] );
 	for ( index = 0; index < stringNames.size; index++ ) {
 		if ( !isString( game["strings"][stringNames[index]] ) ) {
@@ -4309,11 +4326,11 @@ checkRoundSwitch()
 		if( level.scr_switch_teams_at_halftime == 1  )
 		{
 			game["switchedteams"] = !game["switchedteams"];
-			
+
 			if ( level.scr_custom_teams_enable == 1 ) {
 				maps\mp\gametypes\_scoreboard::setTeamResources();
 			}
-		
+
 			tempscores = game["teamScores"]["allies"];
 			game["teamScores"]["allies"] = game["teamScores"]["axis"];
 			game["teamScores"]["axis"] = tempscores;
@@ -4328,14 +4345,14 @@ checkRoundSwitch()
 					player switchPlayerTeam( level.otherTeam[ player.pers["team"] ], true );
 				}
 			}
-			
+
 			level.ignoreUpdateClassLimit = false;
-			
+
 			// If we are running unranked then update the class limits
 			if ( !level.rankedMatch ) {
 				level thread maps\mp\gametypes\_modwarfare::updateClassLimits();
 			}
-			
+
 		} else {
 			[[level.onRoundSwitch]]();
 		}
@@ -4403,7 +4420,7 @@ Callback_PlayerConnect()
 		"ui_favoriteAddress", level.ui_favoriteAddress,
 		"ui_server_info", ( level.scr_welcome_enable > 0 ),
 		"bg_fallDamageMinHeight", level.scr_fallDamageMinHeight,
-		"bg_fallDamageMaxHeight", level.scr_fallDamageMaxHeight		
+		"bg_fallDamageMaxHeight", level.scr_fallDamageMaxHeight
 	);
 
 	if ( level.hardcoreMode )
@@ -4432,7 +4449,7 @@ Callback_PlayerConnect()
 
 	if ( level.oldschool )
 	{
-		self setClientDvars( 
+		self setClientDvars(
 			"ragdoll_explode_force", 60000,
 			"ragdoll_explode_upbias", 0.8,
 			"player_sprintUnlimited", 1,
@@ -4539,7 +4556,7 @@ Callback_PlayerConnect()
 
 		return;
 	}
-	
+
 	updateLossStats( self );
 
 	level endon( "game_ended" );
@@ -4849,7 +4866,7 @@ Callback_PlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, s
 
 	if ( level.gametype == "ftag" && self.freezeTag["frozen"] )
 		return;
-		
+
 	if ( level.scr_bullet_penetration_enabled == 0 && iDFlags & level.iDFLAGS_PENETRATION )
 		return;
 
@@ -4866,7 +4883,7 @@ Callback_PlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, s
 			eAttacker.hud_damagefeedback.x = -12;
 			eAttacker.hud_damagefeedback.y = -12;
 		}
-		
+
 		// Check if we need to punish the attacker
 		if ( level.scr_spawn_protection_punishment_time > 0 ) {
 			eAttacker openwarfare\_spawnprotection::punishSpawnCamper();
@@ -4880,15 +4897,15 @@ Callback_PlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, s
 		if ( isDefined( eInflictor.targetname ) && eInflictor.targetname == "explodable_barrel" )	{
 			if ( level.scr_barrel_damage_enable == 0 )
 				return;
-				
+
 			sWeaponHack = "explodable_barrel";
 	    sWeapon = "destructible_car";
-	    sMeansOfDeath = "MOD_IMPACT";		
-	    	
+	    sMeansOfDeath = "MOD_IMPACT";
+
 		} else if ( isDefined( eInflictor.destructible_type ) && isSubStr( eInflictor.destructible_type, "vehicle_" ) ) 	{
 			if ( level.scr_vehicle_damage_enable == 0 )
 				return;
-				
+
 			sWeapon = "destructible_car";
 		}
 	}
@@ -4901,29 +4918,29 @@ Callback_PlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, s
 			iDamage = openwarfare\_weapondamagemodifier::wdmDamage( iDamage, sWeapon, sHitLoc, sMeansOfDeath );
 		}
 		if ( iDamage == 0 )
-				return;			
+				return;
 	}
 
 	// Check if we need to modify the damage done
 	if ( level.scr_wlm_enabled == 1 ) {
 		iDamage = openwarfare\_weaponlocationmodifier::wlmDamage( iDamage, sHitLoc, sMeansOfDeath );
 		if ( iDamage == 0 )
-				return;			
+				return;
 	}
 
 	if ( level.scr_wrm_enabled == 1 ) {
 		iDamage = openwarfare\_weaponrangemodifier::wrmDamage( eAttacker, iDamage, sWeapon, sHitLoc, sMeansOfDeath );
 		if ( iDamage == 0 )
-				return;			
+				return;
 	}
 
 	// Check if rng is enabled.
 	if( level.scr_rng_enabled != 0 ) {
 		iDamage = self openwarfare\_rng::rngDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc, psOffsetTime );
 		if ( iDamage == 0 )
-				return;			
+				return;
 	}
-		
+
 	// create a class specialty checks; CAC:bulletdamage, CAC:armorvest
 	if ( sWeapon != "concussion_grenade_mp" ) {
 		if ( !level.rankedMatch ) {
@@ -4941,24 +4958,24 @@ Callback_PlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, s
         // Stun Grenade, Claymore, Frag, Hardpoint and C4 Armor
         if( isDefined( level.fieldOrders ) && level.fieldOrders == true ) {
                 if( isDefined( self.concussionProtected ) && self.concussionProtected == true ) {
-                        if( sWeapon == "concussion_grenade_mp" ) 
-                                return;  
-                } 
+                        if( sWeapon == "concussion_grenade_mp" )
+                                return;
+                }
 
                 if( isDefined( self.claymoreProtected ) && self.claymoreProtected == true ) {
-                        if( sWeapon == "claymore_mp" ) 
-                                return;  
-                } 
+                        if( sWeapon == "claymore_mp" )
+                                return;
+                }
 
                 if( isDefined( self.c4Protected ) && self.c4Protected == true ) {
-                        if( sWeapon == "c4_mp" ) 
-                                return;  
-                } 
+                        if( sWeapon == "c4_mp" )
+                                return;
+                }
 
                 if( isDefined( self.fragProtected ) && self.fragProtected == true ) {
                           if( isSubStr( sWeapon, "frag_" ) )
-                                return;  
-                } 
+                                return;
+                }
         }
 
 //**********************************************************************
@@ -5006,12 +5023,12 @@ Callback_PlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, s
 
 		if ( (isSubStr( sMeansOfDeath, "MOD_GRENADE" ) || isSubStr( sMeansOfDeath, "MOD_EXPLOSIVE" ) || isSubStr( sMeansOfDeath, "MOD_PROJECTILE" )) && isDefined( eInflictor ) )
 		{
-			// protect players from spectators 
+			// protect players from spectators
 			if ( eInflictor.classname == "grenade" && ( !isDefined( eAttacker ) || eAttacker isSpectating() ) ) {
 				prof_end( "Callback_PlayerDamage player" );
-				return;				
+				return;
 			}
-			
+
 			// protect players from spawnkill grenades
 			if ( eInflictor.classname == "grenade" && (self.lastSpawnTime + 3500) > getTime() && distance( eInflictor.origin, self.lastSpawnPoint.origin ) < 250 )
 			{
@@ -5095,7 +5112,7 @@ Callback_PlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, s
 				eAttacker.friendlydamage = true;
 				eAttacker finishPlayerDamageWrapper(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc, psOffsetTime);
 				eAttacker.friendlydamage = undefined;
-				
+
 				iDamage = 0;
 			}
 			else if ( level.friendlyfire == 3 && isAlive( eAttacker ) ) // both friendly and attacker take damage
@@ -5335,7 +5352,7 @@ damageShellshockAndRumble( eInflictor, sWeapon, sMeansOfDeath, iDamage )
 default_getTeamKillPenalty( eInflictor, attacker, sMeansOfDeath, sWeapon )
 {
 	teamkill_penalty = 1;
-	
+
 	if ( sWeapon == "airstrike_mp" )
 	{
 		teamkill_penalty = maps\mp\gametypes\_tweakables::getTweakableValue( "team", "airstrikeTeamKillPenalty" );
@@ -5489,8 +5506,8 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 		if( isdefined( attacker.pers["team"] ) )
 			lpattackerteam = attacker.pers["team"];
 		else
-			lpattackerteam = "";		
-			
+			lpattackerteam = "";
+
 		if ( attacker == self ) // killed himself
 		{
 			doKillcam = false;
@@ -5645,16 +5662,16 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 				if ( attacker.pers["team"] != "spectator" && ScoreOfPlayer["score"] != 0 ) {
 					// Give player the score points
 					givePlayerScore( ScoreOfPlayer["type"], attacker, self );
-				
+
 					// Give player's team score
 					if ( level.teamBased ) {
 						giveTeamScore( ScoreOfPlayer["type"], attacker.pers["team"],  attacker, self );
 					}
-					
+
 					// Give XP points to the player
 					attacker thread maps\mp\gametypes\_rank::giveRankXP( ScoreOfPlayer["type"],  ScoreOfPlayer["score"] );
-				}				
-					
+				}
+
 				name = ""+self.clientid;
 				if ( !isDefined( attacker.killedPlayers[name] ) )
 					attacker.killedPlayers[name] = 0;
@@ -5751,20 +5768,20 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 	if ( level.gametype != "hns" || self.pers["team"] == game["attackers"] || self.pers["team"] == game["defenders"] ) {
 //***************************************************************************************************************
 		self maps\mp\gametypes\_gameobjects::detachUseModels(); // want them detached before we create our corpse
-	
+
 		body = self clonePlayer( deathAnimDuration );
 		if ( self isOnLadder() || self isMantling() )
 			body startRagDoll();
-	
+
 		thread delayStartRagdoll( body, sHitLoc, vDir, sWeapon, eInflictor, sMeansOfDeath );
-	
+
 		self.body = body;
 		self notify("player_body");
-	
+
 		if ( !isDefined( self.switching_teams ) && level.scr_hud_show_death_icons == 1 )
 			thread maps\mp\gametypes\_deathicons::addDeathicon( body, self, self.pers["team"], 5.0 );
 	}
-	
+
 	self.switching_teams = undefined;
 	self.joining_team = undefined;
 	self.leaving_team = undefined;
@@ -5814,14 +5831,14 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 		timeUntilSpawn = self TimeUntilSpawn( true );
 		willRespawnImmediately = livesLeft && (timeUntilSpawn <= 0);
 		perks = getPerks( attacker );
-		
+
 		if ( level.gametype == "hns" && self.pers["team"] == game["defenders"] ) {
 			self setClientDvar( "cg_thirdPerson", "0" );
-		}		
+		}
 		self maps\mp\gametypes\_killcam::killcam( lpattacknum, killcamentity, sWeapon, postDeathDelay + deathTimeOffset, psOffsetTime, willRespawnImmediately, timeUntilRoundEnd(), perks, attacker );
 		if ( level.gametype == "hns" && self.pers["team"] == game["defenders"] ) {
 			self setClientDvar( "cg_thirdPerson", "1" );
-		}		
+		}
 	}
 
 	if ( sMeansOfDeath == "MOD_TRIGGER_HURT" ) {
@@ -5936,7 +5953,7 @@ getPerks( player )
 	perks[0] = "specialty_null";
 	perks[1] = "specialty_null";
 	perks[2] = "specialty_null";
-	
+
 	if ( level.gametype == "hns" && player.pers["team"] == game["defenders"] )
 		return perks;
 
@@ -5996,9 +6013,9 @@ processAssist( killedplayer, damagedone )
 		return;
 
 	assist_level = "assist";
-	
+
 	assist_level_value = int( floor( damagedone / 25 ) );
-	
+
 	if ( assist_level_value > 0 )
 	{
 		if ( assist_level_value > 3 )
@@ -6007,7 +6024,7 @@ processAssist( killedplayer, damagedone )
 		}
 		assist_level = assist_level + "_" + ( assist_level_value * 25 );
 	}
-	
+
 	self thread [[level.onXPEvent]]( "assist" );
 	self incPersStat( "assists", 1 );
 	self.assists = self getPersStat( "assists" );
@@ -6627,10 +6644,10 @@ showPlayerJoinedTeam()
 	// Check if we should display these messages
 	if ( level.scr_show_player_assignment == 0 )
 		return;
-	
+
 	// Initialize variable
 	teamJoined = &"";
-	
+
 	// Get what team the player has joined
 	if ( self.pers["team"] == "spectator" ) {
 		teamJoined = &"GAME_SPECTATOR";
@@ -6640,7 +6657,7 @@ showPlayerJoinedTeam()
 			case "marines":
 				teamJoined = level.scr_team_allies_name;
 				break;
-				
+
 			case "russian":
 			case "opfor":
 			case "arab":
@@ -6648,8 +6665,8 @@ showPlayerJoinedTeam()
 				break;
 		}
 	}
-	
+
 	// Display a message to all the players in the server
 	iprintln( &"OW_JOINED_TEAM", self.name, teamJoined );
-	
+
 }

@@ -23,14 +23,14 @@ init()
 	game["menu_class"] = "class";
 	game["menu_changeclass"] = "changeclass";
 	game["menu_changeclass_offline"] = "changeclass_offline";
-	
+
 	if ( !level.console )
 	{
 		game["menu_callvote"] = "callvote";
 		game["menu_muteplayer"] = "muteplayer";
 		precacheMenu(game["menu_callvote"]);
 		precacheMenu(game["menu_muteplayer"]);
-				
+
 		// ---- back up one folder to access game_summary.menu ----
 		// game summary menu file precache
 		game["menu_eog_main"] = "endofgame";
@@ -86,7 +86,7 @@ init()
 	precacheMenu(game["menu_changeclass_offline"]);
 	precacheString( &"MP_HOST_ENDED_GAME" );
 	precacheString( &"MP_HOST_ENDGAME_RESPONSE" );
-	
+
 	level thread onPlayerConnect();
 }
 
@@ -132,14 +132,14 @@ onMenuResponse()
 			}
 			continue;
 		}
-		
+
 		/*if ( menu == "changeclass_props" ) {
 			self closeMenu();
 			self closeInGameMenu();
 			self thread maps\mp\gametypes\hns::choosePropClass( response );
-			continue;			
+			continue;
 		}*/
-
+		
 		if(response == "changeteam")
 		{
 			self closeMenu();
