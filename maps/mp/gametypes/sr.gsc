@@ -1,15 +1,15 @@
 //**********************************************************************************
-//                                                                                  
-//        _   _       _        ___  ___      _        ___  ___          _             
-//       | | | |     | |       |  \/  |     | |       |  \/  |         | |            
-//       | |_| | ___ | |_   _  | .  . | ___ | |_   _  | .  . | ___   __| |___       
-//       |  _  |/ _ \| | | | | | |\/| |/ _ \| | | | | | |\/| |/ _ \ / _` / __|      
-//       | | | | (_) | | |_| | | |  | | (_) | | |_| | | |  | | (_) | (_| \__ \      
-//       \_| |_/\___/|_|\__, | \_|  |_/\___/|_|\__, | \_|  |_/\___/ \__,_|___/      
-//                       __/ |                  __/ |                               
-//                      |___/                  |___/                                
-//                                                                                  
-//                       Website: http://www.holymolymods.com                       
+//
+//        _   _       _        ___  ___      _        ___  ___          _
+//       | | | |     | |       |  \/  |     | |       |  \/  |         | |
+//       | |_| | ___ | |_   _  | .  . | ___ | |_   _  | .  . | ___   __| |___
+//       |  _  |/ _ \| | | | | | |\/| |/ _ \| | | | | | |\/| |/ _ \ / _` / __|
+//       | | | | (_) | | |_| | | |  | | (_) | | |_| | | |  | | (_) | (_| \__ \
+//       \_| |_/\___/|_|\__, | \_|  |_/\___/|_|\__, | \_|  |_/\___/ \__,_|___/
+//                       __/ |                  __/ |
+//                      |___/                  |___/
+//
+//                       Website: http://www.holymolymods.com
 //*********************************************************************************
 // Coded for Openwarfare Mod by [105]HolyMoly  Nov.06/2013
 // V.5.0 Final
@@ -125,8 +125,8 @@ main()
                 level.scr_sr_objective_takedamage_health = getdvarx( "scr_sr_objective_takedamage_health", "int", 500, 1, 2000 );
         else
                 level.scr_sr_objective_takedamage_counter = getdvarx( "scr_sr_objective_takedamage_counter", "int", 5, 1, 20 );
-	
-        level.scr_sr_allow_defender_explosivepickup = getdvarx( "scr_sr_allow_defender_explosivepickup", "int", 0, 0, 1 );  
+
+        level.scr_sr_allow_defender_explosivepickup = getdvarx( "scr_sr_allow_defender_explosivepickup", "int", 0, 0, 1 );
         level.scr_sr_allow_defender_explosivedestroy = getdvarx( "scr_sr_allow_defender_explosivedestroy", "int", 0, 0, 1 );
         level.scr_sr_allow_defender_explosivedestroy_time = getdvarx( "scr_sr_allow_defender_explosivedestroy_time", "int", 10, 1, 60 );
         level.scr_sr_allow_defender_explosivedestroy_sound = getdvarx( "scr_sr_allow_defender_explosivedestroy_sound", "int", 0, 0, 1 );
@@ -163,7 +163,7 @@ main()
 	level.onTimeLimit = ::onTimeLimit;
 	level.onRoundSwitch = ::onRoundSwitch;
 	level.getTeamKillPenalty = ::sr_getTeamKillPenalty;
-	level.getTeamKillScore = ::sr_getTeamKillScore;				
+	level.getTeamKillScore = ::sr_getTeamKillScore;
 
 	level.endGameOnScoreLimit = false;
 
@@ -236,19 +236,19 @@ sr_getTeamKillPenalty( eInflictor, attacker, sMeansOfDeath, sWeapon )
 	{
 		teamkill_penalty = teamkill_penalty * level.teamKillPenaltyMultiplier;
 	}
-	
+
 	return teamkill_penalty;
 }
 
 sr_getTeamKillScore( eInflictor, attacker, sMeansOfDeath, sWeapon )
 {
 	teamkill_score = maps\mp\gametypes\_rank::getScoreInfoValue( "kill" );
-	
+
 	if ( ( isdefined( self.isDefusing ) && self.isDefusing ) || ( isdefined( self.isPlanting ) && self.isPlanting ) )
 	{
 		teamkill_score = teamkill_score * level.teamKillScoreMultiplier;
 	}
-	
+
 	return int(teamkill_score);
 }
 
@@ -374,7 +374,7 @@ onStartGameType()
 	thread bombs();
 
         //Dogtag ObjIds
-        level.dogtagObjIds = 0;     
+        level.dogtagObjIds = 0;
 
 }
 
@@ -415,12 +415,19 @@ onSpawnPlayer()
 
 	if ( level.scr_sr_allow_quickdefuse == 1 )
 		self.didQuickDefuse = false;
-	
+
 	if ( level.scr_sr_allow_defender_explosivepickup && level.scr_sr_allow_defender_explosivedestroy && self.pers["team"] == game["defenders"] && getDvar( "g_gametype" ) == "sr" )
 		self thread allowDefenderExplosiveDestroy();
-	
-	self.pers["stats"]["misc"]["hitman"] = 0;		
-	self.pers["stats"]["misc"]["medic"] = 0;	
+
+		if (self.toBeRespawned != undefined && self.toBeRespawned == true) {
+			self.toBeRespawned = false;
+			self setOrigin( self.toBeRespawnedOrigin );
+			self ExecClientCommand("gocrouch");
+			self ExecClientCommand("goprone");
+		} else {
+			self.pers["stats"]["misc"]["hitman"] = 0;
+			self.pers["stats"]["misc"]["medic"] = 0;
+		}
 }
 
 
@@ -429,25 +436,25 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 	thread checkAllowSpectating();
 
         // No tags for falling, suicides or team kills
-        //if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self ) 
-        if( isPlayer( attacker ) && attacker != self && sHitLoc != "head" && sHitLoc != "helmet" && sMeansOfDeath != "MOD_MELEE") { 
-            // Send notice to players 
-			iprintln("^3" + attacker.name + " ^7shot down ^3" + self.name + "^7!");			
-			self thread spawnTags( attacker );				
+        //if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self )
+        if( isPlayer( attacker ) && attacker != self && sHitLoc != "head" && sHitLoc != "helmet" && sMeansOfDeath != "MOD_MELEE") {
+            // Send notice to players
+			iprintln("^3" + attacker.name + " ^7shot down ^3" + self.name + "^7!");
+			self thread spawnTags( attacker );
 		} else if (sHitLoc == "head" || sHitLoc == "helmet") {
-			// Send notice to players 
+			// Send notice to players
 			iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a headshot by ^3" + attacker.name + "^7!");
 		}  else if (sMeansOfDeath == "MOD_MELEE") {
-			// Send notice to players 
+			// Send notice to players
 			iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a knife melee by ^3" + attacker.name + "^7!");
 		} else if ( sMeansOfDeath == "MOD_FALLING" || ( isPlayer( attacker ) && attacker == self ) ) {
-			// Send notice to players 
+			// Send notice to players
 			iprintln("^3" + self.name + " ^7.... has been ELIMINATED by ... himself... commiting suicide");
 		}
         if( isDefined( self.destroyingExplosive ) && self.destroyingExplosive == true ) {
              self updateSecondaryProgressBar( undefined, undefined, true, undefined );
         }
-		
+
 	thread maps\mp\gametypes\_finalkillcam::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 }
 
@@ -589,17 +596,17 @@ updateGametypeDvars()
 	level.defuseTime = getdvarx( "scr_sr_defusetime", "float", 8, 0, 20 );
 	level.bombTimer = getdvarx( "scr_sr_bombtimer", "float", 60, 1, 300 );
 	level.multiBomb = getdvarx( "scr_sr_multibomb", "int", 0, 0, 1 );
-	
+
 	// Calculate the bomb timer with the random modifier
 	maxModifier = level.bombTimer - 5;
 	if ( maxModifier < 0 ) {
 		maxModifier = 0;
 	}
 	level.scr_sr_bombtimer_modifier = getdvarx( "scr_sr_bombtimer_modifier", "int", 0, 0, maxModifier );
-	level.bombTimer = randomFloatRange( level.bombTimer - level.scr_sr_bombtimer_modifier, level.bombTimer + level.scr_sr_bombtimer_modifier + 1 );	
-	
+	level.bombTimer = randomFloatRange( level.bombTimer - level.scr_sr_bombtimer_modifier, level.bombTimer + level.scr_sr_bombtimer_modifier + 1 );
+
 	level.teamKillPenaltyMultiplier = dvarFloatValue( "teamkillpenalty", 2, 0, 10 );
-	level.teamKillScoreMultiplier = dvarFloatValue( "teamkillscore", 4, 0, 40 );		
+	level.teamKillScoreMultiplier = dvarFloatValue( "teamkillscore", 4, 0, 40 );
 }
 
 
@@ -761,7 +768,7 @@ onBeginUse( player )
 
 		if ( level.scr_sr_allow_quickdefuse )
  	      player thread openwarfare\_objoptions::quickDefuse();
- 	      
+
 		if ( isDefined( level.sdBombModel ) )
 			level.sdBombModel hide();
 	}
@@ -825,7 +832,7 @@ onUsePlantObject( player )
 		lpselfnum = player getEntityNumber();
 		lpGuid = player getGuid();
 		logPrint("BP;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
-		
+
 		// disable all bomb zones except this one
 		for ( index = 0; index < level.bombZones.size; index++ )
 		{
@@ -835,7 +842,7 @@ onUsePlantObject( player )
 			if ( level.scr_sr_sdmode == 0 ) {
 				level.bombZones[index] maps\mp\gametypes\_gameobjects::disableObject();
 			} else {
-				level.bombZones[index] maps\mp\gametypes\_gameobjects::allowUse( "none" );			
+				level.bombZones[index] maps\mp\gametypes\_gameobjects::allowUse( "none" );
 			}
 		}
 
@@ -867,7 +874,7 @@ onUseDefuseObject( player )
 	lpselfnum = player getEntityNumber();
 	lpGuid = player getGuid();
 	logPrint("BD;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
-	
+
 	// disable this bomb zone
 	self maps\mp\gametypes\_gameobjects::disableObject();
 
@@ -903,7 +910,7 @@ onDrop( player )
 		 	        logString( "bomb dropped" );
 
 	                self maps\mp\gametypes\_gameobjects::set3DIcon( "friendly", "waypoint_bomb" );
-        
+
 		        maps\mp\_utility::playSoundOnPlayers( game["bomb_dropped_sound"], game["attackers"] );
 
                 } else if( isDefined( player ) &&  player.pers["team"] == game["defenders"] ) {
@@ -948,7 +955,7 @@ onDrop( player )
 onPickup( player )
 {
 
-	if ( !level.bombDefused ) 
+	if ( !level.bombDefused )
         {
 
 	        if ( isDefined( player ) && player.pers["team"] == game["defenders"] && level.scr_sr_allow_defender_explosivedestroy ) {
@@ -964,7 +971,7 @@ onPickup( player )
                         self maps\mp\gametypes\_gameobjects::set3DIcon( "enemy", "waypoint_defend" );
 
                         self maps\mp\gametypes\_gameobjects::setVisibleTeam( "enemy" );
-                
+
 		        if ( isDefined( player ) && isDefined( player.name ) ) {
 			        printOnTeamArg( &"MP_EXPLOSIVES_RECOVERED_BY", game["defenders"], player );
                         }
@@ -974,7 +981,7 @@ onPickup( player )
 
 		        player logString( "bomb taken" );
                 }
- 	 
+
 	        if ( isDefined( player ) && player.pers["team"] == game["attackers"] ) {
 
                         player.isBombCarrier = true;
@@ -1014,9 +1021,9 @@ bombPlanted( destroyedObj, player )
 	level.tickingObject = destroyedObj.visuals[0];
 
 	level.timeLimitOverride = true;
-	
+
 	setGameEndTime( int( gettime() + (level.bombTimer * 1000) ) );
-	
+
 	if ( level.scr_sr_bombtimer_show == 1 )
 		setDvar( "ui_bomb_timer", 1 );
 
@@ -1048,12 +1055,12 @@ bombPlanted( destroyedObj, player )
 		level.sdBombModel setModel( "prop_suitcase_bomb" );
 	}
 	destroyedObj maps\mp\gametypes\_gameobjects::allowUse( "none" );
-		
+
 	// Check if we need to hide the bomb site in the radar
 	if ( level.scr_sr_sdmode == 0 ) {
 		destroyedObj maps\mp\gametypes\_gameobjects::setVisibleTeam( "none" );
 	}
-	
+
 	label = destroyedObj maps\mp\gametypes\_gameobjects::getLabel();
 
 	// create a new object to defuse with.
@@ -1066,7 +1073,7 @@ bombPlanted( destroyedObj, player )
 	defuseObject maps\mp\gametypes\_gameobjects::setUseText( &"MP_DEFUSING_EXPLOSIVE" );
 	defuseObject maps\mp\gametypes\_gameobjects::setUseHintText( &"PLATFORM_HOLD_TO_DEFUSE_EXPLOSIVES" );
 	defuseObject maps\mp\gametypes\_gameobjects::setVisibleTeam( "any" );
-		
+
 	// Check if we need to show the defuse/defend icons
 	if ( level.scr_sr_sdmode == 0 ) {
 		defuseObject maps\mp\gametypes\_gameobjects::set2DIcon( "friendly", "compass_waypoint_defuse" + label );
@@ -1080,10 +1087,10 @@ bombPlanted( destroyedObj, player )
 			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set2DIcon( "friendly", "compass_waypoint_defuse" + label );
 			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set2DIcon( "enemy", "compass_waypoint_defend" + label );
 			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set3DIcon( "friendly", "waypoint_defuse" + label );
-			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set3DIcon( "enemy", "waypoint_defend" + label );				
-		}		
+			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set3DIcon( "enemy", "waypoint_defend" + label );
+		}
 	}
-	
+
 	defuseObject.label = label;
 	defuseObject.onBeginUse = ::onBeginUse;
 	defuseObject.onEndUse = ::onEndUse;
@@ -1174,17 +1181,17 @@ disableObject()
 		self maps\mp\gametypes\_gameobjects::allowUse( "none" );
 	} else {
 		self maps\mp\gametypes\_gameobjects::disableObject();
-	}	
+	}
 }
 
 createDamageArea()
 {
         if ( getDvar( "g_gametype" ) != "sr" )
                 return;
-    
+
         while ( !isDefined( level.bombZones ) )
                 wait( 0.5 );
-      
+
         bombZones = getEntArray( "bombzone", "targetname" );
         level.damageArea = [];
         level.damageArea2 = [];
@@ -1194,17 +1201,17 @@ createDamageArea()
         {
                 visuals = getEntArray( bombZones[index].target, "targetname" );
                 if ( index == 0 )
-                {      
-                        if ( level.scr_sr_objective_takedamage_option )    
-                                level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;     
+                {
+                        if ( level.scr_sr_objective_takedamage_option )
+                                level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;
                         else
                                 level.objectiveHealth[index] = level.scr_sr_objective_takedamage_counter;
-        
+
                         level.objDamageCounter[index] = 0;
                         level.objDamageTotal[index] = 0;
                         level.isLosingHealth[index] = false;
 
-                        //Script models with no setModel used to check for damage. 
+                        //Script models with no setModel used to check for damage.
                         for ( i = 0; i < 5; i++ )
                         {
                                 switch( i )
@@ -1223,9 +1230,9 @@ createDamageArea()
                                                 break;
                                         case 4:
                                                 level.damageArea[index] = spawn( "script_model", bombZones[index].origin + ( 0, -75, 10 ) );
-                                                break;  
-                                }  
-             
+                                                break;
+                                }
+
                                 level.damageArea[index] setcandamage( true ); //Allows the script_model to receive damage
                                 level.damageArea[index].health = 100000; //A high value is all we need
                                 level.damageArea[index] thread waitForDamage( index, bombZones[index], visuals );
@@ -1233,15 +1240,15 @@ createDamageArea()
                }
 
                else {
-                       if ( level.scr_sr_objective_takedamage_option )    
-                               level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;     
+                       if ( level.scr_sr_objective_takedamage_option )
+                               level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;
                        else
                                level.objectiveHealth[index] = level.scr_sr_objective_takedamage_counter;
-           
+
                        level.objDamageCounter[index] = 0;
                        level.objDamageTotal[index] = 0;
                        level.isLosingHealth[index] = false;
-      
+
                                for ( i = 0; i < 5; i++ )
                                {
                                        switch( i )
@@ -1260,12 +1267,12 @@ createDamageArea()
                                                        break;
                                                case 4:
                                                        level.damageArea2[index] = spawn( "script_model", bombZones[index].origin + ( 0, -75, 10 ) );
-                                                       break;  
-                                       }  
-             
+                                                       break;
+                                       }
+
                                        level.damageArea2[index] setcandamage( true );
                                        level.damageArea2[index].health = 100000;
-                                       level.damageArea2[index] thread waitForDamage( index, bombZones[index], visuals );    
+                                       level.damageArea2[index] thread waitForDamage( index, bombZones[index], visuals );
                                }
 
 
@@ -1274,7 +1281,7 @@ createDamageArea()
         }
 
 }
-  
+
 waitForDamage( index, object, visuals )
 {
         attacker = undefined;
@@ -1283,7 +1290,7 @@ waitForDamage( index, object, visuals )
         {
                 if ( level.objectiveHealth[index] <= 0 )
                         break;
-  
+
                 self waittill( "damage", damage, attacker );
 
                 if ( level.scr_sr_objective_takedamage_option )
@@ -1291,11 +1298,11 @@ waitForDamage( index, object, visuals )
                         level.objDamageCounter[index]++;
                         level.objDamageTotal[index] += damage;
                 }
-    
+
                 wait( 0.1 );
-    
+
                 if ( isDefined( attacker ) && isPlayer( attacker ) )
-                {  
+                {
                         if ( attacker.pers["team"] == game["defenders"] )
                         {
                                 if ( !level.isLosingHealth[index] )
@@ -1320,24 +1327,24 @@ waitForDamage( index, object, visuals )
                         }
                 }
 
-                wait( 0.1 ); 
-        } 
+                wait( 0.1 );
+        }
 
         if ( !level.objectiveTakeDamage )
         {
                 level.objectiveTakeDamage = true;
                 self thread destroyObjective( object, visuals, attacker );
-        } 
-}  
-  
+        }
+}
+
 destroyObjective( object, visuals, attacker )
 {
 
         if ( isDefined( level.bombExploded ) && !level.bombExploded )
                 level.bombExploded = true;
-        else 
+        else
                 return;
-      
+
         for ( i = 0; i < visuals.size; i++ )
         {
 		if ( isDefined( visuals[i].script_exploder ) )
@@ -1345,31 +1352,31 @@ destroyObjective( object, visuals, attacker )
 			object.exploderIndex = visuals[i].script_exploder;
 			break;
 		}
-	}  
-      
+	}
+
         visuals[0] radiusDamage( object.origin, 512, 200, 20, attacker, "MOD_EXPLOSIVE", "briefcase_bomb_mp" );
-    
+
         rot = randomfloat(360);
 	explosionEffect = spawnFx( level._effect["bombexplosion"], object.origin + ( 0, 0, 50 ), ( 0, 0, 1 ), ( cos( rot ),sin( rot ),0 ) );
 	triggerFx( explosionEffect );
-	  
+
 	exploder( object.exploderIndex );
-	  
+
 	thread playSoundinSpace( "exp_suitcase_bomb_main", object.origin );
-	  
+
 	setGameEndTime( 0 );
-	  
+
 	wait( 3.0 );
-	
+
 	sr_endGame( game["attackers"], game["strings"]["target_destroyed"] );
 
-} 
+}
 
 allowDefenderExplosiveDestroy() // Finally fixed animation issue
 {
         self endon( "disconnect" );
         self endon( "death" );
-  
+
         self.destroyingExplosive = false;
         self.explosiveDestroyed = false;
         lastWeapon = self getCurrentWeapon();
@@ -1377,7 +1384,7 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
         destroyTime = level.scr_sr_allow_defender_explosivedestroy_time;
 
         while ( isAlive( self ) && !level.bombPlanted && !level.gameEnded && !self.explosiveDestroyed )
-        {     
+        {
                 while ( isAlive( self ) && self meleeButtonPressed() && self.isBombCarrier && !level.gameEnded )
                 {
                         if ( startTime == 0 )
@@ -1428,20 +1435,20 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
 
                                         break;
                                 }
-   
+
                         }
 
                         wait( 0.05 );
 
-                        timeHack = ( openwarfare\_timer::getTimePassed() - startTime ) / 1000; 
+                        timeHack = ( openwarfare\_timer::getTimePassed() - startTime ) / 1000;
                         self updateSecondaryProgressBar( timeHack, destroyTime, false, &"OW_DESTROYING_EXPLOSIVES" );
-        
+
                         if ( timeHack >= destroyTime )
                         {
-                                self.explosiveDestroyed = true; 
+                                self.explosiveDestroyed = true;
                                 break;
                         }
-      
+
                         if( level.scr_sr_show_briefcase && self getCurrentWeapon() != "briefcase_bomb_mp" )
       	                        break;
 
@@ -1488,18 +1495,18 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
                         }
                 }
 
-                
+
                 self updateSecondaryProgressBar( undefined, undefined, true, undefined );
                 self.destroyingExplosive = false;
 
                 self maps\mp\gametypes\_gameobjects::detachUseModels();
 
-                startTime = 0;  
+                startTime = 0;
 
                 wait( 0.50 );
 
         }
-  
+
         if ( !level.bombPlanted && !level.gameEnded && level.scr_sr_allow_defender_explosivedestroy_win )
         {
                 setGameEndTime( 0 );
@@ -1528,7 +1535,7 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
                         wait( 0.50 );
                         self thread openwarfare\_speedcontrol::setModifierSpeed( "_objpoints", 0 );
                 }
-              
+
                 else
 
                 {
@@ -1544,13 +1551,13 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
 	        if ( isDefined( level.sdBomb ) )
 		        level.sdBomb maps\mp\gametypes\_gameobjects::disableObject();
         }
-   
+
         else
 
         {
                 // Finish animation if trying to Destroy Explosives
                 if( level.gameEnded && self meleeButtonPressed() && self hasWeapon( "briefcase_bomb_mp") ) {
-                        if( level.scr_sr_show_briefcase ) { 
+                        if( level.scr_sr_show_briefcase ) {
                                 self freezeControls( false );
                                 self execClientCommand( "weapprev" );
                                 wait( 0.50 );
@@ -1565,19 +1572,19 @@ quickDefuse()
 {
         self endon( "disconnect" );
         self endon( "death" );
-  
+
         if ( self.didQuickDefuse )
   	        return;
-  
+
         self.isChangingWire = false;
-  
+
         if ( isAlive( self ) && self.isDefusing && !level.gameEnded && !level.bombExploded )
         {
                 bombwire[0] = &"OW_RED_WIRE";
                 bombwire[1] = &"OW_GREEN_WIRE";
                 bombwire[2] = &"OW_YELLOW_WIRE";
-                bombwire[3] = &"OW_BLUE_WIRE"; 
-    
+                bombwire[3] = &"OW_BLUE_WIRE";
+
                 correctWire = randomIntRange( 0, 4 );
                 playerChoice = 0;
 
@@ -1589,7 +1596,7 @@ quickDefuse()
                         if ( self attackButtonPressed() ) {
       	                        self.didQuickDefuse = true;
 				self thread quickDefuseResults( playerChoice, correctWire );
-				
+
                         } else if ( self adsButtonPressed() && !self.isChangingWire ) {
                                 self.isChangingWire = true;
                                 self allowAds( false );
@@ -1597,28 +1604,28 @@ quickDefuse()
                                 if ( playerChoice == 3 )
                                         playerChoice = 0;
                                 else
-                                        playerChoice++;     
-   
-                                self iprintlnbold( bombwire[playerChoice] );  
-                                wait( 0.1 );  
+                                        playerChoice++;
+
+                                self iprintlnbold( bombwire[playerChoice] );
+                                wait( 0.1 );
                                 self.isChangingWire = false;
                                 self allowAds( true );
                         }
-      
+
                         wait( 0.05 );
                 }
 
         }
 
-}  
+}
 
 quickDefuseResults( playerChoice, correctWire )
 {
         level endon ( "game_ended" );
-  
+
         if ( playerChoice == correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level.defuseObject thread onUseDefuseObject( self );
-  		
+
         } else if ( playerChoice != correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level notify( "wrong_wire" );
         }
@@ -1628,7 +1635,7 @@ quickDefuseResults( playerChoice, correctWire )
 spawnTags( attacker )
 {
 
-        // Place spawnpoint on the ground based on player box size 
+        // Place spawnpoint on the ground based on player box size
         basePosition = playerPhysicsTrace( self.origin, self.origin + ( 0, 0, -99999 ) );
 
         // Create pickup trigger
@@ -1723,11 +1730,11 @@ onJoinedDisconnect( enemyTag, friendlyTag, trigger )
 	enemyTag notify( "timed_out" );
 
         // Delete Trigger and Model
-        if( isDefined( trigger ) ) { 
+        if( isDefined( trigger ) ) {
                 trigger delete();
         }
 
-	if( isDefined( friendlyTag ) ) { 
+	if( isDefined( friendlyTag ) ) {
                 friendlyTag delete();
         }
 
@@ -1739,15 +1746,15 @@ onJoinedDisconnect( enemyTag, friendlyTag, trigger )
 }
 
 removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
-{ 
-           
+{
+
         trigger endon( "timed_out" );
         friendlyTag endon( "timed_out" );
         enemyTag endon( "timed_out" );
 
 
         trigger waittill( "trigger", player );
-        
+
         // If by some chance a dead player activates the trigger, the dogtag will simply be deleted!
         if ( isAlive( player ) ) {
 
@@ -1760,38 +1767,40 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
                 // Friendly team picks up Dogtag
                 if( player.pers["team"] == friendlyTag.team ) {
 
-                        if ( level.scr_sr_denied_player_sound == 1 ) 
+                        if ( level.scr_sr_denied_player_sound == 1 )
                                 player playLocalSound( "denied_sr" );
-          
+
                         //Play sound to other team
-                        if ( level.scr_sr_denied_team_sound == 1 && friendlyTag.team == "allies" ) 
+                        if ( level.scr_sr_denied_team_sound == 1 && friendlyTag.team == "allies" )
                                 playSoundOnPlayers( "denied_sr", "axis" );
 
-                        if ( level.scr_sr_denied_team_sound ==1  && friendlyTag.team == "axis" ) 
+                        if ( level.scr_sr_denied_team_sound ==1  && friendlyTag.team == "axis" )
                                 playSoundOnPlayers( "denied_sr", "allies" );
 
-                        // Give player a score 
+                        // Give player a score
                         player thread givePlayerScore( "take", level.scr_sr_team_dogtag_score );
-               
+
                         // Show assist point for saving friendly
 			player maps\mp\gametypes\_globallogic::incPersStat( "assists", 1 );
 			player.assists = player maps\mp\gametypes\_globallogic::getPersStat( "assists" );
 
                         // Send notice to players according to team
-                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" ) 
+                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" )
                                 iprintln("^3" + player.name + "^7.... Revived^3 " + friendlyTag.owner.name );
 
-                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" ) 
+                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" )
                                 iprintln("^1" + player.name + "^7.... Revived^1 " + friendlyTag.owner.name );
 
 						//Update stat
-						player.pers["stats"]["misc"]["medic"] += 1;		
+						player.pers["stats"]["misc"]["medic"] += 1;
 						player setClientDvar( "ps_medic", player.pers["stats"]["misc"]["medic"] );
-							
-							
+
+
                         //Respawn tag owner
                         friendlyTag.owner clearLowerMessage();
-                        friendlyTag.owner thread [[level.spawnPlayer]]();
+												friendlyTag.owner.toBeRespawned = true;
+												friendlyTag.owner.toBeRespawnedOrigin = player.origin;
+                        friendlyTag.owner thread revivePlayer();
 
                         // Send owner notification
 	                notifyData = spawnStruct();
@@ -1811,33 +1820,33 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 	                notifyData.duration = 4.0;
 
                         friendlyTag.owner thread maps\mp\gametypes\_hud_message::notifyMessage( notifyData );
-                        
+
 	                player logString( player.pers["team"] + " " + "kill denied" );
 	                lpselfnum = player getEntityNumber();
 	                lpGuid = player getGuid();
 	                logPrint("SRKD;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
 
                 }
-   
-                // Enemy team picks up DogTag 
+
+                // Enemy team picks up DogTag
                 if ( player.pers["team"] == enemyTag.team ) {
-                        
+
                         if( isDefined( player ) && isAlive( player ) ) {
                                 sayTeamVoice( player, "1mc_confirmedkill", true );
                         }
 
-                        // Give player a score 
+                        // Give player a score
                         player thread givePlayerScore( "take", level.scr_sr_enemy_dogtag_score );
 
 						//Update stat
-						player.pers["stats"]["misc"]["hitman"] += 1;		
+						player.pers["stats"]["misc"]["hitman"] += 1;
 						player setClientDvar( "ps_hitman", player.pers["stats"]["misc"]["hitman"] );
-						
+
                         // Send notice to players according to team
-                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" ) 
+                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" )
                                 iprintln("^1" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
 
-                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" ) 
+                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" )
                                 iprintln("^3" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
 
                         // Send owner notification
@@ -1865,7 +1874,7 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 
                         // Points for retrieving dogtags from the enemy the attacker killed
                         if( trigger.owner == player ) {
-                                // Give player a score 
+                                // Give player a score
                                 player thread givePlayerScore( "take", level.scr_sr_dogtag_attacker_owner_score - level.scr_sr_enemy_dogtag_score );
                         }
 
@@ -1887,13 +1896,20 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 
 }
 
+revivePlayer() {
+	wait(1.0);
+
+	self thread [[level.spawnPlayer]]();
+
+}
+
 removeTriggerOnTimeout( friendlyTag, enemyTag, trigger, attacker )
 {
 
 	trigger endon( "picked_up" );
 	friendlyTag endon( "picked_up" );
 	enemyTag endon( "picked_up" );
-	
+
 	// Wait for this tag to timeout
 	wait( level.scr_sr_dogtag_autoremoval_time );
 
@@ -1914,7 +1930,7 @@ removeTriggerOnTimeout( friendlyTag, enemyTag, trigger, attacker )
                 triggerFx( friendlyTag.fx );
                 friendlyTag.fx thread showFxToTeam( level.otherTeam[ team ] );
 
-                
+
         }
 
         // Second chance to spawn on expired Tags
@@ -1929,7 +1945,7 @@ removeTriggerOnTimeout( friendlyTag, enemyTag, trigger, attacker )
 	                        notifyData.notifyText ="Keep on Fighting!";
 	                        notifyData.iconName = "cross_hud";
                                 notifyData.sound = sayTeamVoice( enemyTag.owner, "1mc_goodtogo" );
-                                
+
 
 	                        if( enemyTag.team == "axis" ) {
                                         notifyData.glowColor = ( 1, 0.7, 0 ); // Yellow
@@ -1944,10 +1960,10 @@ removeTriggerOnTimeout( friendlyTag, enemyTag, trigger, attacker )
                                 enemyTag.owner thread maps\mp\gametypes\_hud_message::notifyMessage( notifyData );
 
                                 // Send notice to players according to team
-                                if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "allies" ) 
+                                if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "allies" )
                                         iprintln("^1" + enemyTag.owner.name + " ^7.... got a Second Chance!");
 
-                                if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "axis" ) 
+                                if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "axis" )
                                         iprintln("^3" + enemyTag.owner.name + " ^7.... got a Second Chance!");
 
                                 //Respawn tag owner
@@ -1960,7 +1976,7 @@ removeTriggerOnTimeout( friendlyTag, enemyTag, trigger, attacker )
                 }  else {
 
                         if( !level.gameEnded ) {
-                          
+
                                 // Send owner notification
 	                        notifyData = spawnStruct();
 	                        notifyData.titleText = "TIME EXPIRED";
@@ -1979,10 +1995,10 @@ removeTriggerOnTimeout( friendlyTag, enemyTag, trigger, attacker )
                                 enemyTag.owner thread maps\mp\gametypes\_hud_message::notifyMessage( notifyData );
 
                                 // Send notice to players according to team
-                                if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "allies" ) 
+                                if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "allies" )
                                         iprintln("^1" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
 
-                                if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "axis" ) 
+                                if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "axis" )
                                         iprintln("^3" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
 
                         }
@@ -1990,9 +2006,9 @@ removeTriggerOnTimeout( friendlyTag, enemyTag, trigger, attacker )
                 }
 
         } else {
-                
+
                 if( !level.gameEnded ) {
-                          
+
                         // Send owner notification
 	                notifyData = spawnStruct();
 	                notifyData.titleText = "TIME EXPIRED";
@@ -2011,10 +2027,10 @@ removeTriggerOnTimeout( friendlyTag, enemyTag, trigger, attacker )
                         enemyTag.owner thread maps\mp\gametypes\_hud_message::notifyMessage( notifyData );
 
                         // Send notice to players according to team
-                        if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "allies" ) 
+                        if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "allies" )
                                 iprintln("^1" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
 
-                        if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "axis" ) 
+                        if ( level.scr_sr_dogtag_obits == 1 && attacker.pers["team"] == "axis" )
                                 iprintln("^3" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
                 }
 
@@ -2026,10 +2042,10 @@ removeTriggerOnTimeout( friendlyTag, enemyTag, trigger, attacker )
 	enemyTag notify( "timed_out" );
 
         // Delete Trigger and Model
-	trigger delete();	
+	trigger delete();
 	friendlyTag delete();
 	enemyTag delete();
-	
+
 }
 
 showTagToTeam()
@@ -2049,7 +2065,7 @@ showTagToTeam()
                }
 
                wait( 0.05 );
-         
+
         }
 
 }
@@ -2069,7 +2085,7 @@ showFxToTeam( team )
                                self showToPlayer( player );
 
                }
-         
+
         }
 
 }
@@ -2077,7 +2093,7 @@ showFxToTeam( team )
 givePlayerScore( event, score )
 {
 	self maps\mp\gametypes\_rank::giveRankXP( event, score );
-		
+
 	self.pers["score"] += score;
 	self maps\mp\gametypes\_persistence::statAdd( "score", ( self.pers["score"] - score ) );
 	self.score = self.pers["score"];
@@ -2096,9 +2112,9 @@ showOnMinimap( position )
                 level.dogtagObjIds++;
 
 	}
-	
+
 	self waittill( "death" );
-	
+
 	// Delete the objective
 	if ( objCompass != -1 ) {
 		objective_delete( objCompass );
@@ -2107,4 +2123,4 @@ showOnMinimap( position )
                 level.dogtagObjIds--;
 	}
 
-} 
+}

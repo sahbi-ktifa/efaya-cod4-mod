@@ -84,7 +84,7 @@
 		{
 			type			ITEM_TYPE_TEXT
 			visible			1
-			rect			 50 -50 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+			rect			 50 -75 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
 			forecolor		1 1 0 1
 			exp				text(dvarString(ui_custom_quote));
 			textfont		UI_FONT_NORMAL

@@ -97,24 +97,24 @@ onPlayerConnected() {
 	for(;;)
 	{
 		level waittill("connected", player);
-		player.daily_challenges = [];
-		player.daily_challenges["challenge1"] = 0;
-		player.daily_challenges["challenge2"] = 0;
-		player.daily_challenges["challenge3"] = 0;
+		//player.daily_challenges = [];
+		level.daily_challenges["challenge1_" + player.name] = 0;
+		level.daily_challenges["challenge2_" + player.name] = 0;
+		level.daily_challenges["challenge3_" + player.name] = 0;
 	}
 }
 
-showDailyChallenges() {
+showDailyChallenges(challenges) {
 	if (getDvar("scr_allow_daily_challenges") == "1") {
 		wait(6.0);
 
-		showDailyChallenge(0);
-		showDailyChallenge(1);
-		showDailyChallenge(2);
+		showDailyChallenge(0, challenges["challenge1_" + self.name]);
+		showDailyChallenge(1, challenges["challenge2_" + self.name]);
+		showDailyChallenge(2, challenges["challenge3_" + self.name]);
 	}
 }
 
-showDailyChallenge( index )
+showDailyChallenge( index , challengeScore)
 {
 	if ( level.inReadyUpPeriod )
 		return;
@@ -177,14 +177,21 @@ showDailyChallenge( index )
 
 	if ( isDefined( text ) ) {
 		completion.alpha = 0.75;
-		completion setText(" : " + self.daily_challenges["challenge" + (index + 1)] + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
+		completion setText(" : " + challengeScore + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
 		text.alpha = 0.75;
 		text setText(level.daily_challenges["challenge" + (index + 1)]["label"]);
 	}
 }
 
+hideDailyChallenges() {
+	for (index = 0; index < 3; index++) {
+		self.daily_challenges_names[ index ].alpha = 0;
+		self.daily_challenges_icons[ index ].alpha = 0;
+		self.daily_challenges_completions[ index ].alpha = 0;
+	}
+}
+
 getChallengeIcon(key) {
-	ClientPrint(self, key);
 	label = "";
 	switch( key ) {
 		case "DC_HEADSHOTS":
@@ -236,49 +243,49 @@ getChallengeIcon(key) {
 
 onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration)
 {
-	if (getDvar("scr_allow_daily_challenges") == "1") {
+	if (getDvar("scr_allow_daily_challenges") == "1" && isPlayer(attacker)) {
 		for (index = 1; index < 4; index++) {
 			match = false;
-			if (attacker.daily_challenges["challenge" + index] < level.daily_challenges["challenge" + index]["amount"]) {
-				if ((sHitLoc == "head" || sHitLoc == "helmet") && level.daily_challenges["challenge" + index]["ref"] == "DC_HEADSHOTS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+			if (isDefined(level.daily_challenges["challenge" + index + "_" + attacker.name]) && int(level.daily_challenges["challenge" + index + "_" + attacker.name]) < int(level.daily_challenges["challenge" + index]["amount"])) {
+				if ((sHitLoc == "head" || sHitLoc == "helmet") && level.daily_challenges["challenge" + index]["ref"] == "DC_HEADSHOTS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
 				} else if (sMeansOfDeath == "MOD_MELEE" && level.daily_challenges["challenge" + index]["ref"] == "DC_KNIFE_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && sWeapon == "claymore_mp" && level.daily_challenges["challenge" + index]["ref"] == "DC_CLAYMORE_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && sWeapon == "claymore_mp" && level.daily_challenges["challenge" + index]["ref"] == "DC_CLAYMORE_KILLS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && level.daily_challenges["challenge" + index]["ref"] == "DC_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && level.daily_challenges["challenge" + index]["ref"] == "DC_KILLS") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && sWeapon == "c4_mp" && level.daily_challenges["challenge" + index]["ref"] == "DC_C4_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && sWeapon == "c4_mp" && level.daily_challenges["challenge" + index]["ref"] == "DC_C4_KILLS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && sWeapon == "rpg_mp" && level.daily_challenges["challenge" + index]["ref"] == "DC_RPG_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && sWeapon == "rpg_mp" && level.daily_challenges["challenge" + index]["ref"] == "DC_RPG_KILLS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && isSubStr( sWeapon, "frag_" ) && level.daily_challenges["challenge" + index]["ref"] == "DC_GRENADE_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && isSubStr( sWeapon, "frag_" ) && level.daily_challenges["challenge" + index]["ref"] == "DC_GRENADE_KILLS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && (isSubStr( sWeapon, "m16_" ) || isSubStr( sWeapon, "m14_" ) || isSubStr( sWeapon, "ak47_" ) || isSubStr( sWeapon, "g3_" ) || isSubStr( sWeapon, "g36c_" ) || isSubStr( sWeapon, "m4_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_ASSAULT_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && (isSubStr( sWeapon, "m16_" ) || isSubStr( sWeapon, "m14_" ) || isSubStr( sWeapon, "ak47_" ) || isSubStr( sWeapon, "g3_" ) || isSubStr( sWeapon, "g36c_" ) || isSubStr( sWeapon, "m4_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_ASSAULT_KILLS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && (isSubStr( sWeapon, "mp5_" ) || isSubStr( sWeapon, "skorpion_" ) || isSubStr( sWeapon, "uzi_" ) || isSubStr( sWeapon, "ak74u_" ) || isSubStr( sWeapon, "p90_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_SMG_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && (isSubStr( sWeapon, "mp5_" ) || isSubStr( sWeapon, "skorpion_" ) || isSubStr( sWeapon, "uzi_" ) || isSubStr( sWeapon, "ak74u_" ) || isSubStr( sWeapon, "p90_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_SMG_KILLS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && (isSubStr( sWeapon, "m1014_" ) || isSubStr( sWeapon, "winchester1200_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_SHOTGUN_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && (isSubStr( sWeapon, "m1014_" ) || isSubStr( sWeapon, "winchester1200_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_SHOTGUN_KILLS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && (isSubStr( sWeapon, "rpd_" ) || isSubStr( sWeapon, "saw_" ) || isSubStr( sWeapon, "m60e4_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_CLASSIC_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && (isSubStr( sWeapon, "rpd_" ) || isSubStr( sWeapon, "saw_" ) || isSubStr( sWeapon, "m60e4_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_CLASSIC_KILLS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
-				} else if ( isPlayer( attacker ) && attacker != self && (isSubStr( sWeapon, "dragunov_" ) || isSubStr( sWeapon, "m40a3_" ) || isSubStr( sWeapon, "barrett_" ) || isSubStr( sWeapon, "remington700_" ) || isSubStr( sWeapon, "m21_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_SNIPER_KILLS") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				} else if (attacker != self && (isSubStr( sWeapon, "dragunov_" ) || isSubStr( sWeapon, "m40a3_" ) || isSubStr( sWeapon, "barrett_" ) || isSubStr( sWeapon, "remington700_" ) || isSubStr( sWeapon, "m21_" )) && level.daily_challenges["challenge" + index]["ref"] == "DC_SNIPER_KILLS" && sMeansOfDeath != "MOD_MELEE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
 				}
-				if (( sMeansOfDeath == "MOD_FALLING" || ( isPlayer( attacker ) && attacker == self ) ) && level.daily_challenges["challenge" + index]["ref"] == "DC_SUICIDE") {
-					attacker.daily_challenges["challenge" + index] += 1;
+				if (( sMeansOfDeath == "MOD_FALLING" || (attacker == self ) ) && level.daily_challenges["challenge" + index]["ref"] == "DC_SUICIDE") {
+					level.daily_challenges["challenge" + index + "_" + attacker.name] += 1;
 					match = true;
 				}
 			}
@@ -291,11 +298,11 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 }
 
 playerAssist() {
-	if (getDvar("scr_allow_daily_challenges") == "1") {
+	if (getDvar("scr_allow_daily_challenges") == "1" && isPlayer(self)) {
 		for (index = 1; index < 4; index++) {
 			match = false;
-			if (level.daily_challenges["challenge" + index]["ref"] == "DC_ASSISTS" && self.daily_challenges["challenge" + index]  < level.daily_challenges["challenge" + index]["amount"]) {
-				self.daily_challenges["challenge" + index] += 1;
+			if (level.daily_challenges["challenge" + index]["ref"] == "DC_ASSISTS" && isDefined(level.daily_challenges["challenge" + index + "_" + self.name]) && int(level.daily_challenges["challenge" + index + "_" + self.name])  < int(level.daily_challenges["challenge" + index]["amount"])) {
+				level.daily_challenges["challenge" + index + "_" + self.name] += 1;
 				match = true;
 			}
 
@@ -307,36 +314,38 @@ playerAssist() {
 }
 
 updateCompletion(attacker, index) {
-	if (attacker.daily_challenges["challenge" + (index + 1)]  <= level.daily_challenges["challenge" + (index + 1)]["amount"]) {
-		if (int(attacker.daily_challenges["challenge" + (index + 1)]) == int(level.daily_challenges["challenge" + (index + 1)]["amount"])) {
+	if (int(level.daily_challenges["challenge" + (index + 1) + "_" + attacker.name])  <= int(level.daily_challenges["challenge" + (index + 1)]["amount"])) {
+		if (int(level.daily_challenges["challenge" + (index + 1) + "_" + attacker.name]) == int(level.daily_challenges["challenge" + (index + 1)]["amount"])) {
 			attacker.daily_challenges_names[ index ].color = ( 0.14, 0.49, 0 );
 			attacker.daily_challenges_completions[ index ].color = ( 0.14, 0.49, 0 );
 		}
-		attacker.daily_challenges_completions[ index ] setText(" : " + attacker.daily_challenges["challenge" + (index + 1)] + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
+		attacker.daily_challenges_completions[ index ] setText(" : " + level.daily_challenges["challenge" + (index + 1) + "_" + attacker.name] + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
 
-		setDvar("scr_daily_challenge" + (index + 1) + "_" + attacker.name, attacker.daily_challenges["challenge" + (index + 1)]);
+		setDvar("scr_daily_challenge" + (index + 1) + "_" + attacker.name, level.daily_challenges["challenge" + (index + 1) + "_" + attacker.name]);
 	}
 }
 
 playerSpawned() {
 	if (getDvar("scr_allow_daily_challenges") == "1") {
-		self.daily_challenges = [];
-		self.daily_challenges["challenge1"] = getDvard("scr_daily_challenge1_" + self.name, "int", 0);
-		self.daily_challenges["challenge2"] = getDvard("scr_daily_challenge2_" + self.name, "int", 0);
-		self.daily_challenges["challenge3"] = getDvard("scr_daily_challenge3_" + self.name, "int", 0);
 		for (index = 0; index < 3; index++) {
-			if (isPlayer( self ) && int(self.daily_challenges["challenge" + (index + 1)]) == int(level.daily_challenges["challenge" + (index + 1)]["amount"])) {
+			info = getDvard("scr_daily_challenge" + (index + 1) + "_" + self.name, "int", 0);
+			level.daily_challenges["challenge" + (index + 1) + "_" + self.name] = info;
+			if (isPlayer( self ) && int(level.daily_challenges["challenge" + (index + 1) + "_" + self.name]) == int(level.daily_challenges["challenge" + (index + 1)]["amount"])) {
+				ClientPrint(self, "RAZ");
 				self.daily_challenges_names[ (index + 1) ].color = ( 1, 1, 1 );
 				self.daily_challenges_completions[ (index + 1) ].color = ( 1, 1, 1 );
-				self.daily_challenges["challenge" + (index + 1)] = 0;
-				self.daily_challenges_completions[ (index + 1) ] setText(" : " + self.daily_challenges["challenge" + (index + 1)] + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
+				level.daily_challenges["challenge" + (index + 1) + "_" + self.name] = 0;
+				self.daily_challenges_completions[ (index + 1) ] setText(" : " + level.daily_challenges["challenge" + (index + 1) + "_" + self.name] + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
 
-				//TODO : Give Reward
+				setDvar("scr_daily_challenge" + (index + 1) + "_" + self.name, level.daily_challenges["challenge" + (index + 1) + "_" + self.name]);
+				//TODO : Give Reward + score
 				self giveMaxAmmo("frag_grenade_mp");
 				currentWeapon = self getCurrentWeapon();
 				self giveMaxAmmo(currentWeapon);
 				self thread openwarfare\_speedcontrol::setModifierSpeed( "_daily_challenges", 120 );
 			}
+
 		}
+		self thread maps\mp\gametypes\_dailychallenges::showDailyChallenges(level.daily_challenges);
 	}
 }

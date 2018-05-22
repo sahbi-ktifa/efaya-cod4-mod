@@ -24,18 +24,18 @@ init()
 
 	// Variable to be used to know if the admin has set the next gametype/map manually
 	if ( !isDefined( game["amvs_skip_voting"] ) )
-		game["amvs_skip_voting"] = false;	
-		
+		game["amvs_skip_voting"] = false;
+
 	// If the advanced map voting system is not enabled then there's nothing else to do here
 	if ( level.scr_amvs_enable == 0 )
 		return;
 
-	// Initialize the variables for this AMV session		
+	// Initialize the variables for this AMV session
 	level.amvsWinnerGametype = "";
 	level.amvsWinnerMap = "";
 	level.scr_amvs_gametypes_votes = [];
 	level.scr_amvs_maps_votes = [];
-	
+
 	level.mapVoteFirstPlace = " (0)";
 	level.mapVoteSecondPlace = " (0)";
 	level.mapVoteThirdPlace = " (0)";
@@ -45,6 +45,12 @@ init()
 	level.scr_amvs_map_time = getdvard( "scr_amvs_map_time", "float", 15, 5, 45 );
 	level.scr_amvs_winner_time = getdvard( "scr_amvs_winner_time", "float", 5, 5, 45 );
 	level.scr_amvs_can_repeat_map = getdvard( "scr_amvs_can_repeat_map", "int", 0, 0, 1 );
+
+	//Precache stock loadscreens
+	precacheShader("loadscreen_mp_bog");
+	precacheShader("loadscreen_mp_vacant");
+	precacheShader("loadscreen_mp_showdown");
+	precacheShader("loadscreen_mp_crossfire");
 
 	//Load custom loadscreens
 	level.scr_amvs_loadscreens = [];
@@ -67,7 +73,7 @@ init()
 	level.scr_amvs_loadscreens[17] = getdvard( "scr_amvs_loadscreen18", "string", "" );
 	level.scr_amvs_loadscreens[18] = getdvard( "scr_amvs_loadscreen19", "string", "" );
 	level.scr_amvs_loadscreens[19] = getdvard( "scr_amvs_loadscreen20", "string", "" );
-	
+
 	// Load allowed gametypes
 	level.scr_amvs_gametypes = getdvard( "scr_amvs_gametypes", "string", level.defaultGametypeList );
 	if ( level.scr_amvs_gametypes == "" )
@@ -91,17 +97,17 @@ mapVoting_Intermission()
 	level.mapVoteNextMap = level.nextMapInfo["mapname"];
 
 	logPrint( "MVS;D;" + level.mapVoteNextGametype + ";" + level.mapVoteNextMap + "\n" );
-	
+
 	if ( level.scr_amvs_enable == 1 ) {
 		// Make sure we have the next gametype in the rotation in the array
 		type = 0;
 		while ( type < level.scr_amvs_gametypes.size && level.scr_amvs_gametypes[type] != level.mapVoteNextGametype ) {
 			type++;
-		}		
+		}
 		if ( type == level.scr_amvs_gametypes.size ) {
 			level.scr_amvs_gametypes[ level.scr_amvs_gametypes.size ] = level.mapVoteNextGametype;
 		}
-	
+
 		// Load maps for each gametype
 		level.scr_amvs_maps = [];
 		for (type=0; type < level.scr_amvs_gametypes.size; type++ ) {
@@ -121,9 +127,9 @@ mapVoting_Intermission()
 					}
 				}
 				// Process next line
-				lineNumber++;				
+				lineNumber++;
 			}
-			
+
 			// Check if we found maps just for that gametype
 			if ( thisGameType.size == 0 ) {
 				// Check if we have maps just for this gametype first
@@ -143,41 +149,41 @@ mapVoting_Intermission()
 						}
 					}
 					// Process next line
-					lineNumber++;				
-				}				
+					lineNumber++;
+				}
 			}
-			
+
 			// Add the maps for this gametype
 			level.scr_amvs_maps[ level.scr_amvs_gametypes[type] ] = thisGameType;
 		}
-		
+
 	} else {
 		// Get the current map/gametypes combinations and build the arrays
 		mgCombinations = openwarfare\_maprotationcs::getMapGametypeCombinations();
 		level.scr_amvs_gametypes = [];
 		level.scr_amvs_maps = [];
 		auxVar = [];
-		
+
 		for ( mg=0; mg < mgCombinations.size; mg++ ) {
 			// Check if we have this gametype already
 			if ( !isDefined( auxVar[ mgCombinations[mg]["gametype"] ] ) ) {
 				auxVar[ mgCombinations[mg]["gametype"] ] = [];
 				level.scr_amvs_gametypes[ level.scr_amvs_gametypes.size ] = mgCombinations[mg]["gametype"];
 			}
-			
+
 			// Check if this is the first time we have this gametype
 			if ( !isDefined( level.scr_amvs_maps[ mgCombinations[mg]["gametype"] ] ) ) {
 				level.scr_amvs_maps[ mgCombinations[mg]["gametype"] ] = [];
 			}
-			
+
 			// Check if we have this map already for the gametype
 			if ( !isDefined( auxVar[ mgCombinations[mg]["gametype"] ][ mgCombinations[mg]["mapname"] ] ) ) {
 				auxVar[ mgCombinations[mg]["gametype"] ][ mgCombinations[mg]["mapname"] ] = true;
-				
+
 				if ( level.scr_amvs_can_repeat_map == 1 || mgCombinations[mg]["mapname"] != level.script ) {
 					level.scr_amvs_maps[ mgCombinations[mg]["gametype"] ][ level.scr_amvs_maps[ mgCombinations[mg]["gametype"] ].size ] = mgCombinations[mg]["mapname"];
 				}
-			}			
+			}
 		}
 	}
 
@@ -189,42 +195,42 @@ mapVoting_Intermission()
 
 	// Check if there's only one gametype allowed to vote for gametype
 	if ( level.scr_amvs_gametypes.size > 1 ) {
-		level thread setGametypeVariables();		
+		level thread setGametypeVariables();
 		// Reset voting clock and wait for the time to be over
 		thread maps\mp\gametypes\_globallogic::timeLimitClock_Intermission( level.scr_amvs_gametype_time, false );
 		wait ( level.scr_amvs_gametype_time );
 	}
-	
+
 	// Determine the gametype winner and send map variables to the players
 	determineGametypeWinner();
 	level thread setMapVariables();
-	
+
 	// Reset voting clock and wait for the time to be over
 	thread maps\mp\gametypes\_globallogic::timeLimitClock_Intermission( level.scr_amvs_map_time, false );
 	wait ( level.scr_amvs_map_time );
-	
+
 	// Determine the map winner and send the winner variables to the players
 	determineMapWinner();
-	
+
 	logPrint( "MVS;W;" + level.amvsWinnerGametype + ";" + level.amvsWinnerMap + "\n" );
-		
+
 	// Check if we need to add the win combination to the map rotation
 	if ( ( level.amvsWinnerGametype != "" && level.amvsWinnerGametype != level.mapVoteNextGametype ) || ( level.amvsWinnerMap != "" && level.amvsWinnerMap != level.mapVoteNextMap ) ) {
 		nextRotation = " " + getDvar( "sv_mapRotationCurrent" );
-		setDvar( "sv_mapRotationCurrent", "gametype " + level.amvsWinnerGametype + " map " + level.amvsWinnerMap + nextRotation );		
+		setDvar( "sv_mapRotationCurrent", "gametype " + level.amvsWinnerGametype + " map " + level.amvsWinnerMap + nextRotation );
 	}
-	
+
 	// Reset loading clock and wait for the time to be over
 	thread maps\mp\gametypes\_globallogic::timeLimitClock_Intermission( level.scr_amvs_winner_time, true );
 	wait ( level.scr_amvs_winner_time );
-	
+
 	level thread closeMapVotingMenu();
 }
 
 
 resetClientVariables()
 {
-	// Reset all the variables used in the menu 
+	// Reset all the variables used in the menu
 	self setClientDvars(
 		"ui_amvs_gametype_winner", level.amvsWinnerGametype,
 		"ui_amvs_map_winner", level.amvsWinnerMap,
@@ -242,18 +248,18 @@ onPlayerConnected()
 
 	// Reset player variables
 	self resetClientVariables();
-			
+
 	if ( level.mapVotingInProgress ) {
 
-			
+
 		// Check which variables we should be sending to the player
 		if ( level.amvsWinnerGametype == "" ) {
 			self sendPlayerGametypeVariables();
-			
+
 		} else if ( level.amvsWinnerMap == "" ) {
 			self sendPlayerWinnerVariables();
 			self sendPlayerMapVariables();
-			
+
 		} else {
 			self sendPlayerWinnerVariables();
 		}
@@ -299,7 +305,7 @@ setGametypeVariables()
 		if ( isDefined( player ) ) {
 			player thread sendPlayerGametypeVariables();
 		}
-	}	
+	}
 }
 
 sendPlayerGametypeVariables()
@@ -307,25 +313,25 @@ sendPlayerGametypeVariables()
 	// Check if we should initialize the player's next gametype
 	if ( !isDefined( self.mapVote ) || !isDefined( self.mapVote["gametype"] ) ) {
 		self.mapVote["vote"] = "";
-		
+
 		// Set the initial gametype for this player
 		// Search for the position of the next gametype
 		newPosition = 0;
 		while ( newPosition < level.scr_amvs_gametypes.size && level.scr_amvs_gametypes[newPosition] != level.mapVoteNextGametype )
 			newPosition++;
-			
+
 		// If we couldn't find the position then we use the first element
 		if ( newPosition == level.scr_amvs_gametypes.size )
 			newPosition = 0;
-			
+
 		self.mapVote["gametype"] = newPosition;
 	}
-	
+
 	// Get the previous gametype
 	previousGametype = self.mapVote["gametype"] - 1;
 	if ( previousGametype < 0 )
 		previousGametype = level.scr_amvs_gametypes.size - 1;
-	
+
 	// Get the next gametype
 	nextGametype = self.mapVote["gametype"] + 1;
 	if ( nextGametype == level.scr_amvs_gametypes.size )
@@ -344,23 +350,23 @@ determineGametypeWinner()
 {
 	// Count the votes
 	voteWinner = countPlayerVotes();
-	
+
 	// Make sure we have a winner
 	if ( voteWinner == "" ) {
 		level.amvsWinnerGametype = level.mapVoteNextGametype;
 	} else {
 		level.amvsWinnerGametype = voteWinner;
 	}
-	
+
 	// Send the gametype winner to all the players
 	for ( index = 0; index < level.players.size; index++ ) {
 		player = level.players[index];
 		if ( isDefined( player ) ) {
-			player setClientDvars( 
+			player setClientDvars(
 				"ui_amvs_gametype_winner", level.amvsWinnerGametype,
 				"ui_amvs_gametype_vote", getGametype( level.amvsWinnerGametype ) );
 		}
-	}		
+	}
 }
 
 
@@ -369,7 +375,7 @@ setMapVariables()
 	level.mapVoteFirstPlace = " (0)";
 	level.mapVoteSecondPlace = " (0)";
 	level.mapVoteThirdPlace = " (0)";
-		
+
 	for ( index = 0; index < level.players.size; index++ ) {
 		player = level.players[index];
 		if ( isDefined( player ) ) {
@@ -380,34 +386,49 @@ setMapVariables()
 				"ui_amvs_thirdplace", level.mapVoteThirdPlace
 			);
 		}
-	}	
+	}
 }
 
+retrieveStockMap(ref) {
+	if (ref == "mp_cgc_crossfire") {
+		return "mp_crossfire";
+	}
+	if (ref == "mp_cgc_citystreets") {
+		return "mp_citystreets";
+	}
+	stockMaps = strtok("mp_bog;mp_showdown;mp_vacant;mp_backlot;mp_bloc;mp_broadcast;mp_cargoship;mp_citystreets;mp_crossfire;mp_convoy;mp_countdown;mp_crash;mp_dusk;mp_farm;mp_hill;mp_overgrown;mp_pipeline;mp_shipment;mp_strike", ";");
+	for (i = 0; i < stockMaps.size; i++) {
+		if (ref == stockMaps[i]) {
+			return ref;
+		}
+	}
+	return undefined;
+}
 
 sendPlayerMapVariables()
 {
 	// Check if we should initialize the player's current map
 	if ( !isDefined( self.mapVote ) || !isDefined( self.mapVote["map"] ) ) {
 		self.mapVote["vote"] = "";
-	
+
 		// Set the initial map for this player
 		// Search for the position of the next map
 		newPosition = 0;
 		while ( newPosition < level.scr_amvs_maps[level.amvsWinnerGametype].size && level.scr_amvs_maps[level.amvsWinnerGametype][newPosition] != level.mapVoteNextMap )
 			newPosition++;
-			
+
 		// If we couldn't find the position then we use the first element
 		if ( newPosition == level.scr_amvs_maps[level.amvsWinnerGametype].size )
 			newPosition = 0;
-			
+
 		self.mapVote["map"] = newPosition;
 	}
-	
+
 	// Get the previous map
 	previousMap = self.mapVote["map"] - 1;
 	if ( previousMap < 0 )
 		previousMap = level.scr_amvs_maps[level.amvsWinnerGametype].size - 1;
-	
+
 	// Get the next map
 	nextMap = self.mapVote["map"] + 1;
 	if ( nextMap == level.scr_amvs_maps[level.amvsWinnerGametype].size )
@@ -416,16 +437,40 @@ sendPlayerMapVariables()
 	level.ui_amvs_map_vote_previous = "";
 	level.ui_amvs_map_vote_loadscreen = "";
 	level.ui_amvs_map_vote_next = "";
+	found1 = false;
+	found2 = false;
+	found3 = false;
 	for (idx = 1; idx < 20; idx++) {
 		if (level.scr_amvs_loadscreens[idx] == level.scr_amvs_maps[level.amvsWinnerGametype][previousMap]) {
 			level.ui_amvs_map_vote_previous = "amvs_loadscreen" + (idx + 1);
+			found1 = true;
 		}
 		else if (level.scr_amvs_loadscreens[idx] == level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]]) {
 			level.ui_amvs_map_vote_loadscreen = "amvs_loadscreen" + (idx + 1);
+			found2 = true;
 		}
 		else if (level.scr_amvs_loadscreens[idx] == level.scr_amvs_maps[level.amvsWinnerGametype][nextMap]) {
 			level.ui_amvs_map_vote_next = "amvs_loadscreen" + (idx + 1);
+			found3 = true;
 		}
+	}
+	if (found1 == false) {
+			stockMap = retrieveStockMap(level.scr_amvs_maps[level.amvsWinnerGametype][previousMap]);
+			if (stockMap != undefined) {
+				level.ui_amvs_map_vote_previous = "loadscreen_" + stockMap;
+			}
+	}
+	if (found2 == false) {
+			stockMap = retrieveStockMap(level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]]);
+			if (stockMap != undefined) {
+				level.ui_amvs_map_vote_loadscreen = "loadscreen_" + stockMap;
+			}
+	}
+	if (found3 == false) {
+			stockMap = retrieveStockMap(level.scr_amvs_maps[level.amvsWinnerGametype][nextMap]);
+			if (stockMap != undefined) {
+				level.ui_amvs_map_vote_next = "loadscreen_" + stockMap;
+			}
 	}
 	// Set the previous, current, and next maps for this player
 	self setClientDvars(
@@ -435,7 +480,7 @@ sendPlayerMapVariables()
 		"ui_amvs_map_vote_previous", level.ui_amvs_map_vote_previous,
 		"ui_amvs_map_vote_loadscreen", level.ui_amvs_map_vote_loadscreen,
 		"ui_amvs_map_vote_next", level.ui_amvs_map_vote_next
-	);	
+	);
 }
 
 
@@ -449,43 +494,51 @@ determineMapWinner()
 	if ( voteWinner == "" ) {
 		// Check if the winner gametype was the next one
 		if ( level.mapVoteNextGametype != level.amvsWinnerGametype ) {
-			
+
 			// Make sure this map is allowed for the gametype winner
 			newPosition = 0;
 			while ( newPosition < level.scr_amvs_maps[level.amvsWinnerGametype].size && level.scr_amvs_maps[level.amvsWinnerGametype][newPosition] != level.mapVoteNextMap )
 				newPosition++;
-			
+
 			// If we couldn't find the position then we use the first element as long as the winner gametype is different from the default gametype
 			if ( newPosition == level.scr_amvs_maps[level.amvsWinnerGametype].size ) {
 				level.amvsWinnerMap = level.scr_amvs_maps[level.amvsWinnerGametype][0];
 			} else {
-				level.amvsWinnerMap = level.mapVoteNextMap;	
+				level.amvsWinnerMap = level.mapVoteNextMap;
 			}
 		} else {
-			level.amvsWinnerMap = level.mapVoteNextMap;	
+			level.amvsWinnerMap = level.mapVoteNextMap;
 		}
-		
+
 	} else {
 		level.amvsWinnerMap = voteWinner;
 	}
-	
+
 	level.ui_amvs_map_winner_vote_loadscreen = "";
+	found = false;
 	for (idx = 1; idx < 20; idx++) {
 		if (level.scr_amvs_loadscreens[idx] == level.amvsWinnerMap) {
 			level.ui_amvs_map_winner_vote_loadscreen = "amvs_loadscreen" + (idx + 1);
+			found = true;
 		}
-		
+
+	}
+	if (found == false) {
+			stockMap = retrieveStockMap(level.amvsWinnerMap);
+			if (stockMap != undefined) {
+				level.ui_amvs_map_winner_vote_loadscreen = "loadscreen_" + stockMap;
+			}
 	}
 	// Send the map winner to all the players
 	for ( index = 0; index < level.players.size; index++ ) {
 		player = level.players[index];
 		if ( isDefined( player ) ) {
-			player setClientDvars( 
+			player setClientDvars(
 				"ui_amvs_map_winner", level.amvsWinnerMap,
 				"ui_amvs_map_winner_vote_loadscreen", level.ui_amvs_map_winner_vote_loadscreen,
 				"ui_amvs_map_vote", getMapName( level.amvsWinnerMap ) );
 		}
-	}		
+	}
 }
 
 
@@ -494,7 +547,7 @@ sendPlayerWinnerVariables()
 	self setClientDvars(
 		"ui_amvs_gametype_vote", getGameType( level.amvsWinnerGametype ),
 		"ui_amvs_map_vote", getMapName( level.amvsWinnerMap ),
-	
+
 		"ui_amvs_gametype_winner", level.amvsWinnerGametype,
 		"ui_amvs_map_winner", level.amvsWinnerMap
 	);
@@ -504,11 +557,11 @@ sendPlayerWinnerVariables()
 onMenuResponse()
 {
 	self endon("disconnect");
-	
+
 	for(;;)
 	{
 		self waittill( "menuresponse", menuName, menuOption );
-		
+
 		// Make sure we handle only responses coming from the Advanced MVS menu
 		if ( menuName == "advancedmvs" ) {
 			switch ( menuOption ) {
@@ -532,12 +585,12 @@ onMenuResponse()
 						if ( self.mapVote["vote"] != "" ) {
 							level.scr_amvs_gametypes_votes[ self.mapVote["vote"] ]--;
 						}
-						
+
 						// Check if this is the first vote against this gametype
 						if ( !isDefined( level.scr_amvs_gametypes_votes[ level.scr_amvs_gametypes[self.mapVote["gametype"]] ] ) ) {
-							level.scr_amvs_gametypes_votes[ level.scr_amvs_gametypes[self.mapVote["gametype"]] ] = 0;							
+							level.scr_amvs_gametypes_votes[ level.scr_amvs_gametypes[self.mapVote["gametype"]] ] = 0;
 						}
-						
+
 						// Add the new vote
 						self.mapVote["vote"] = level.scr_amvs_gametypes[self.mapVote["gametype"]];
 						level.scr_amvs_gametypes_votes[ self.mapVote["vote"] ]++;
@@ -549,7 +602,7 @@ onMenuResponse()
 					self.mapVote["map"] = self.mapVote["map"] - 1;
 					if ( self.mapVote["map"] < 0 )
 						self.mapVote["map"] = level.scr_amvs_maps[level.amvsWinnerGametype].size - 1;
-					self thread sendPlayerMapVariables();	
+					self thread sendPlayerMapVariables();
 					break;
 
 				case "nextmap":
@@ -565,12 +618,12 @@ onMenuResponse()
 						if ( self.mapVote["vote"] != "" ) {
 							level.scr_amvs_maps_votes[ self.mapVote["vote"] ]--;
 						}
-						
+
 						// Check if this is the first vote against this map
 						if ( !isDefined( level.scr_amvs_maps_votes[ level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]] ] ) ) {
-							level.scr_amvs_maps_votes[ level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]] ] = 0;							
+							level.scr_amvs_maps_votes[ level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]] ] = 0;
 						}
-						
+
 						// Add the new vote
 						self.mapVote["vote"] = level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]];
 						level.scr_amvs_maps_votes[ self.mapVote["vote"] ]++;
@@ -588,7 +641,7 @@ monitorPlayerVotes()
 	for (;;)
 	{
 		level waittill( "vote_casted" );
-		
+
 		// Check which votes we should count
 		if ( level.amvsWinnerGametype == "" ) {
 			ballotsBox = level.scr_amvs_gametypes_votes;
@@ -597,12 +650,12 @@ monitorPlayerVotes()
 			ballotsBox = level.scr_amvs_maps_votes;
 			translationFunction = ::getMapName;
 		}
-	
+
 		// Reset places variables
 		votes1stPlace = "";	votes1stPlaceQty = 0;
 		votes2ndPlace = "";	votes2ndPlaceQty = 0;
 		votes3rdPlace = "";	votes3rdPlaceQty = 0;
-		
+
 		// Get the array keys from the ballots box and start counting
 		ballotKeys = getArrayKeys( ballotsBox );
 		for ( key=0; key < ballotKeys.size; key++ ) {
@@ -611,37 +664,37 @@ monitorPlayerVotes()
 				// Move 2nd place to 3rd place
 				votes3rdPlace = votes2ndPlace;
 				votes3rdPlaceQty = votes3rdPlaceQty;
-				
+
 				// Move 1st place to 2nd place
 				votes2ndPlace = votes1stPlace;
 				votes2ndPlaceQty = votes1stPlaceQty;
-				
+
 				// Set the new 1st place
 				votes1stPlace = ballotKeys[key];
 				votes1stPlaceQty = ballotsBox[ ballotKeys[key] ];
-				
+
 			} else 	if ( ballotsBox[ ballotKeys[key] ] > votes2ndPlaceQty ) {
 				// Move 2nd place to 3rd place
 				votes3rdPlace = votes2ndPlace;
 				votes3rdPlaceQty = votes3rdPlaceQty;
-				
+
 				// Set the second place
 				votes2ndPlace = ballotKeys[key];
 				votes2ndPlaceQty = ballotsBox[ ballotKeys[key] ];
-			
+
 			}	else if ( ballotsBox[ ballotKeys[key] ] > votes3rdPlaceQty ) {
 				// Set the new 3rd place
 				votes3rdPlace = ballotKeys[key];
 				votes3rdPlaceQty = ballotsBox[ ballotKeys[key] ];
-			}									
-			
+			}
+
 		}
-		
+
 		// Update players' temporary results
 		level.mapVoteFirstPlace = [[translationFunction]]( votes1stPlace ) + " (" + votes1stPlaceQty + ")";
 		level.mapVoteSecondPlace = [[translationFunction]]( votes2ndPlace ) + " (" + votes2ndPlaceQty + ")";
 		level.mapVoteThirdPlace = [[translationFunction]]( votes3rdPlace ) + " (" + votes3rdPlaceQty + ")";
-	
+
 		for ( index = 0; index < level.players.size; index++ ) {
 			player = level.players[index];
 			if ( isDefined( player ) ) {
@@ -664,11 +717,11 @@ countPlayerVotes()
 	} else {
 		ballotsBox = level.scr_amvs_maps_votes;
 	}
-	
+
 	// Reset first place array
 	winnerOptions = [];
 	winnerVotes = 0;
-		
+
 	// Get the array keys from the ballots box and start counting
 	ballotKeys = getArrayKeys( ballotsBox );
 	for ( key=0; key < ballotKeys.size; key++ ) {
@@ -677,23 +730,23 @@ countPlayerVotes()
 			winnerOptions = [];
 			winnerOptions[0] = ballotKeys[key];
 			winnerVotes = ballotsBox[ ballotKeys[key] ];
-			
+
 		} else if ( ballotsBox[ ballotKeys[key] ] > 0 && ballotsBox[ ballotKeys[key] ] == winnerVotes ) {
 			winnerOptions[ winnerOptions.size ] = ballotKeys[key];
 		}
 	}
-	
+
 	// If we have more than one winner we'll randomly pick one
 	if ( winnerOptions.size == 0 ) {
 		voteWinner = "";
-		
+
 	} else if ( winnerOptions.size == 1 ) {
 		voteWinner = winnerOptions[0];
-		
+
 	} else {
 		randomPick = randomIntRange( 0, winnerOptions.size );
-		voteWinner = winnerOptions[randomPick];		
+		voteWinner = winnerOptions[randomPick];
 	}
-	
+
 	return (voteWinner);
 }

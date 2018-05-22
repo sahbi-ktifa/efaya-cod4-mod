@@ -116,72 +116,72 @@ main()
 	level.scr_csd_bombsites_enabled = getdvarx( "scr_csd_bombsites_enabled", "int", 0, 0, 4 );
 	level.scr_csd_bombtimer_show = getdvarx( "scr_csd_bombtimer_show", "int", 1, 0, 1 );
 	level.scr_csd_defenders_show_both = getdvarx( "scr_csd_defenders_show_both", "int", 0, 0, 1 );
-	level.scr_csd_allow_defender_explosivepickup = getdvarx( "scr_csd_allow_defender_explosivepickup", "int", 0, 0, 1 );  
-	
+	level.scr_csd_allow_defender_explosivepickup = getdvarx( "scr_csd_allow_defender_explosivepickup", "int", 0, 0, 1 );
+
 	level.scr_csd_minimum_wage = getdvard( "scr_csd_minimum_wage", "int", 200 );
 	level.scr_csd_enemy_killed_reward = getdvard( "scr_csd_enemy_killed_reward", "int", 250 );
 	level.scr_csd_winning_round_reward = getdvard( "scr_csd_winning_round_reward", "int", 500 );
 	level.scr_csd_loosing_round_reward = getdvard( "scr_csd_loosing_round_reward", "int", 150 );
 	level.scr_csd_planting_reward = getdvard( "scr_csd_planting_reward", "int", 200 );
 	level.scr_csd_defusing_reward = getdvard( "scr_csd_defusing_reward", "int", 400 );
-	
+
 	level.pistol_allies_weapons = [];
 	level.pistol_axis_weapons = [];
 	level.sniper_allies_weapons = [];
 	level.sniper_axis_weapons = [];
 	level.grenade_weapons = [];
-	
+
 	//Assault loading
 	tmp_value = getdvard( "scr_csd_assault_allies_weapons", "string", "m16_silencer_mp:M16:weapon_m16a4:650;m14_reflex_mp:Famas:weapon_m14:750;m4_reflex_mp:Remington R5:weapon_m4carbine:800" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.assault_allies_weapons[i] = strtok(tmp_values[i], ":");		
+		level.assault_allies_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	tmp_value = getdvard( "scr_csd_assault_axis_weapons", "string", "ak47_silencer_mp:AK-47:weapon_ak47:550;g36c_reflex_mp:Commando:weapon_g36c:800;g3_reflex_mp:Honey Badger:weapon_g3:720" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.assault_axis_weapons[i] = strtok(tmp_values[i], ":");		
+		level.assault_axis_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	//SMG / Shotguns loading
 	tmp_value = getdvard( "scr_csd_smg_shotgun_allies_weapons", "string", "mp5_silencer_mp:MP5 Silencer:weapon_mp5:630;p90_reflex_mp:P90:weapon_p90:720;m1014_mp:Brecci:weapon_benelli_m4:430" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.smg_shotgun_allies_weapons[i] = strtok(tmp_values[i], ":");	
+		level.smg_shotgun_allies_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	tmp_value = getdvard( "scr_csd_smg_shotgun_axis_weapons", "string", "uzi_mp:Uzi:weapon_mini_uzi:500;ak74u_reflex_mp:AK-74u:weapon_aks74u:630;winchester1200_mp:M133:weapon_winchester1200:350" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.smg_shotgun_axis_weapons[i] = strtok(tmp_values[i], ":");	
+		level.smg_shotgun_axis_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	//Snipers loading
 	tmp_value = getdvard( "scr_csd_sniper_allies_weapons", "string", "m40a3_mp:L96:weapon_m40a3:950;barrett_mp:Barrett:weapon_barrett50cal:1200;rpd_mp:M1 Garand:weapon_rpd:570;saw_mp:Mosin Nagant:weapon_m249saw:650" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.sniper_allies_weapons[i] = strtok(tmp_values[i], ":");	
+		level.sniper_allies_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	tmp_value = getdvard( "scr_csd_sniper_axis_weapons", "string", "remington700_mp:Ballista:weapon_remington700:950;m21_mp:M21:weapon_m14_scoped:1170;rpd_mp:M1 Garand:weapon_rpd:570;m60e4_mp:Kark98:weapon_m60e4:700" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.sniper_axis_weapons[i] = strtok(tmp_values[i], ":");	
+		level.sniper_axis_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	//Pistols loading
 	tmp_value = getdvard( "scr_csd_pistol_allies_weapons", "string", "usp_mp:RE45:weapon_usp_45:250;colt45_silencer_mp:RK5 Silencer:weapon_colt_45:310;deserteaglegold_mp:Desert Eagle:weapon_desert_eagle_gold:390" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.pistol_allies_weapons[i] = strtok(tmp_values[i], ":");	
+		level.pistol_allies_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	tmp_value = getdvard( "scr_csd_pistol_axis_weapons", "string", "usp_mp:RE45:weapon_usp_45:250;colt45_silencer_mp:RK5 Silencer:weapon_colt_45:310;deserteagle_mp:.44 Magnum:weapon_desert_eagle:390" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.pistol_axis_weapons[i] = strtok(tmp_values[i], ":");	
+		level.pistol_axis_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	//Grenades loading
 	tmp_value = getdvard( "scr_csd_grenade_weapons", "string", "frag_grenade_mp:Frag grenade:weapon_fraggrenade:250;flash_grenade_mp:Flash grenade:weapon_flashbang:200;smoke_grenade_mp:Smoke grenade:weapon_smokegrenade:150;concussion_grenade_mp:Stun grenade:weapon_concgrenade:150" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.grenade_weapons[i] = strtok(tmp_values[i], ":");	
+		level.grenade_weapons[i] = strtok(tmp_values[i], ":");
 	}
-	
+
 	maps\mp\gametypes\_globallogic::registerNumLivesDvar( level.gameType, 1, 1, 1 );
 	maps\mp\gametypes\_globallogic::registerRoundLimitDvar( level.gameType, 5, 0, 500 );
 	maps\mp\gametypes\_globallogic::registerRoundSwitchDvar( level.gameType, 2, 0, 500 );
@@ -200,7 +200,7 @@ main()
 	level.onTimeLimit = ::onTimeLimit;
 	level.onRoundSwitch = ::onRoundSwitch;
 	level.getTeamKillPenalty = ::sd_getTeamKillPenalty;
-	level.getTeamKillScore = ::sd_getTeamKillScore;				
+	level.getTeamKillScore = ::sd_getTeamKillScore;
 	level.onLoadoutGiven = ::onLoadoutGiven;
 	level.onPlayerConnect = ::onPlayerConnect;
 
@@ -209,7 +209,7 @@ main()
 	//game["dialog"]["gametype"] = gameTypeDialog( "csgo" );
 	game["dialog"]["offense_obj"] = "obj_destroy";
 	game["dialog"]["defense_obj"] = "obj_defend";
-	
+
 	game["buy"] = "ok";
 }
 
@@ -224,7 +224,7 @@ onPrecacheGameType()
 
 	game["menu_buyloadout"] = "buyloadout";
 	precacheMenu(game["menu_buyloadout"]);
-	
+
 	precacheShader("waypoint_bomb");
 	precacheShader("hud_suitcase_bomb");
 	precacheShader("waypoint_target");
@@ -262,7 +262,7 @@ onPrecacheGameType()
 	precacheModel( "prop_suitcase_bomb" );
 	game["startWeapon"] = "beretta_mp";
 
-	
+
 	thread onPlayerConnect();
 }
 
@@ -270,12 +270,12 @@ onPlayerConnect() {
 	while(true)
 	{
 		self waittill("connected", player);
-				
+
 		game[player.name] = [];
-		game[player.name]["money"] = level.scr_csd_minimum_wage;	
-		game[player.name]["menu_step"] = "base";	
-	}	
-	
+		game[player.name]["money"] = level.scr_csd_minimum_wage;
+		game[player.name]["menu_step"] = "base";
+	}
+
 }
 
 
@@ -284,14 +284,14 @@ loadItemMenu(array) {
 		if (i < array.size) {
 			cost_color = "OK";
 			if (int(array[i][3]) > int(game[self.name]["money"])) {
-				cost_color = "NOK";	
+				cost_color = "NOK";
 			}
 			self setClientDvars(
 				"ui_item" + (i + 1) + "_name", (i + 1) + ". " + array[i][1],
 				"ui_item" + (i + 1) + "_image", array[i][2],
 				"ui_item" + (i + 1) + "_cost", array[i][3] + " $",
 				"ui_item" + (i + 1) + "_cost_color", cost_color
-			);			
+			);
 		} else {
 			self setClientDvars(
 				"ui_item" + (i + 1) + "_name", "",
@@ -305,7 +305,7 @@ loadItemMenu(array) {
 
 resetClientVariables(step)
 {
-	// Reset all the variables used in the menu 
+	// Reset all the variables used in the menu
 	self setClientDvars(
 		"ui_buyloadout_step", step
 	);
@@ -326,8 +326,8 @@ resetClientVariables(step)
 				"ui_item4_cost", "",
 				"ui_item5_name", "5. Grenades",
 				"ui_item5_image", "",
-				"ui_item5_cost", ""			
-			);		
+				"ui_item5_cost", ""
+			);
 			break;
 		case "assault":
 			if (self.pers["team"] == "axis") {
@@ -370,7 +370,7 @@ buyLoadoutMenu() {
 		self closeMenu();
 		self closeInGameMenu();
 		self resetClientVariables("base");
-		self openMenu(game["menu_buyloadout"]);			
+		self openMenu(game["menu_buyloadout"]);
 	}
 }
 
@@ -388,71 +388,18 @@ buyLoadoutMenuNav(response) {
 			game[self.name]["menu_step"] = "grenade";
 		}
 	} else if (response == "6") { //Back to the menu
-		game[self.name]["menu_step"] = "base";			
+		game[self.name]["menu_step"] = "base";
 	} else { //I'm gonna buy something...
-		doBuy(response);			
+		doBuy(response);
 	}
-	
+
 	self resetClientVariables(game[self.name]["menu_step"]);
 }
-
-/*onMenuResponse()
-{
-	self endon("disconnect");
-	
-	for(;;)
-	{
-		self waittill("menuresponse", menu, response);
-		
-		println( self getEntityNumber() + " menuresponse: " + menu + " " + response );
-		ClientPrint(self, "menu : " + menu + ", onMenuResponse : " + response);
-		
-		
-		if (isDefined(game["menu_buyloadout"]) && response == game["menu_buyloadout"]) {
-			if (game["buy"] == "NOK") {
-				ClientPrint(self, "Buying time is over (25s)");
-			} else {
-				self closeMenu();
-				self closeInGameMenu();
-				self resetClientVariables("base");
-				self openMenu(game["menu_buyloadout"]);			
-			}
-		}
-		
-		if( response == "endgame" )
-		{
-			continue;
-		}
-		
-		if( menu == game["menu_buyloadout"] )
-		{
-			if (game[self.name]["menu_step"] == "base") {
-				if (response == "1") {
-					game[self.name]["menu_step"] = "assault";
-				} else if (response == "2") {
-					game[self.name]["menu_step"] = "smg";
-				} else if (response == "3") {
-					game[self.name]["menu_step"] = "sniper";
-				} else if (response == "4") {
-					game[self.name]["menu_step"] = "pistol";
-				} else if (response == "5") {
-					game[self.name]["menu_step"] = "grenade";
-				}
-			} else if (response == "6") { //Back to the menu
-				game[self.name]["menu_step"] = "base";			
-			} else { //I'm gonna buy something...
-				doBuy(response);			
-			}
-			
-			self resetClientVariables(game[self.name]["menu_step"]);		
-		}
-	}
-}*/
 
 doBuy(response) {
 	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
 		return;
-	
+
 	cost = 0;
 	weapon = "";
 	switch(game[self.name]["menu_step"])
@@ -509,41 +456,41 @@ sd_getTeamKillPenalty( eInflictor, attacker, sMeansOfDeath, sWeapon )
 	{
 		teamkill_penalty = teamkill_penalty * level.teamKillPenaltyMultiplier;
 	}
-	
+
 	return teamkill_penalty;
 }
 
 sd_getTeamKillScore( eInflictor, attacker, sMeansOfDeath, sWeapon )
 {
 	teamkill_score = maps\mp\gametypes\_rank::getScoreInfoValue( "kill" );
-	
+
 	if ( ( isdefined( self.isDefusing ) && self.isDefusing ) || ( isdefined( self.isPlanting ) && self.isPlanting ) )
 	{
 		teamkill_score = teamkill_score * level.teamKillScoreMultiplier;
 	}
-	
+
 	return int(teamkill_score);
 }
 
 buyWeaponAction(weapon, cost, type) {
 	if (int(game[self.name]["money"]) < int(cost)) {
-		ClientPrint(self, "Not enough money to purchase this weapon");
+		//ClientPrint(self, "Not enough money to purchase this weapon");
 		self playLocalSound( "error_csd" );
 	} else {
 		if (game[self.name]["weapon"] != undefined && game[self.name]["weapon"] != weapon) {
 			ClientPrint(self, "Dropping 1 : " + game[self.name]["weapon"]);
-			currentWeapon = self getCurrentWeapon();		
+			currentWeapon = self getCurrentWeapon();
 			ClientPrint(self, "Dropping 2 : " + currentWeapon);
 			self dropItem( currentWeapon );
 		}
-		ClientPrint(self, "Buying : " + weapon);
+		//ClientPrint(self, "Buying : " + weapon);
 		self giveWeapon( weapon );
 		self giveMaxAmmo( weapon );
 		if (type == "grenade") {
 			self SwitchToOffhand( weapon );
 		} else {
 			self setSpawnWeapon( weapon );
-			self switchToWeapon( weapon );		
+			self switchToWeapon( weapon );
 		}
 		game[self.name]["weapon"] = weapon;
 		game[self.name]["money"] -= int(cost);
@@ -553,7 +500,7 @@ buyWeaponAction(weapon, cost, type) {
 }
 
 displayBuying(price) {
-	
+
 	moneyBuy = self createFontString( "objective", 1.4 );
 	moneyBuy.archived = true;
 	moneyBuy.hideWhenInMenu = false;
@@ -563,16 +510,16 @@ displayBuying(price) {
 	moneyBuy.alpha = 0.75;
 	moneyBuy.color = ( 0.49, 0.12, 0.05);
 	moneyBuy setText("-" + price + " $");
-	
+
 	wait 2;
-	moneyBuy destroy();	
+	moneyBuy destroy();
 }
 
 displayGaining(price, type) {
 
 	if (type == "+") {
 		ClientPrint(self, "^2" + type  + price + " $");
-	} else if (type == "-") {		
+	} else if (type == "-") {
 		ClientPrint(self, "^1" + type + price + " $");
 	}
 }
@@ -581,7 +528,7 @@ onLoadoutGiven()
 {
 	// Give player CSGO loadouts
 	self giveCSGOLevelLoadout();
-	
+
 	thread updateBuyTime();
 }
 
@@ -591,13 +538,13 @@ giveCSGOLevelLoadout()
 	// Remove all weapons and perks from the player
 	self thread maps\mp\gametypes\_gameobjects::_disableWeapon();
 	self takeAllWeapons();
-	self clearPerks();	
-	
+	self clearPerks();
+
 	// Make sure the player gets any hardpoint that he/she already had
 	if ( isDefined( self.pers["hardPointItem"] ) ) {
 		self maps\mp\gametypes\_hardpoints::giveHardpointItem( self.pers["hardPointItem"] );
 	}
-	
+
 	self.specialty = [];
 	self.specialty[0] = "specialty_null";
 	//self setPerk( self.specialty[0] );
@@ -605,7 +552,7 @@ giveCSGOLevelLoadout()
 	self setPerk( self.specialty[1] );
 	self.specialty[2] = "specialty_bulletpenetration";
 	self setPerk( self.specialty[2] );
-	
+
 	self giveWeapon( game["startWeapon"] );
 	self giveMaxAmmo( game["startWeapon"] );
 	self setSpawnWeapon( game["startWeapon"] );
@@ -615,8 +562,8 @@ giveCSGOLevelLoadout()
 		self giveMaxAmmo( game[self.name]["weapon"] );
 		self setSpawnWeapon( game[self.name]["weapon"] );
 		self switchToWeapon( game[self.name]["weapon"] );
-	} 	
-	
+	}
+
 	// Enable the new weapon
 	self thread maps\mp\gametypes\_gameobjects::_enableWeapon();
 }
@@ -625,8 +572,8 @@ updateBuyTime() {
 	count = 0;
 	while (1) {
 		count++;
-		wait 1;		
-		
+		wait 1;
+
 		if (count > 25) {
 			game["buy"] = "NOK";
 			break;
@@ -658,12 +605,12 @@ onRoundSwitch()
 		level.halftimeType = "halftime";
 		game["switchedsides"] = !game["switchedsides"];
 	}
-	
+
 	for ( i = 0; i < level.players.size; i++ ) {
 		if (isDefined(game[level.players[i].name]["weapon"])) {
 			game[level.players[i].name]["weapon"] = undefined;
-			game[level.players[i].name]["money"] = level.scr_csd_minimum_wage;
 		}
+		game[level.players[i].name]["money"] = level.scr_csd_minimum_wage;
 	}
 }
 
@@ -799,16 +746,16 @@ onSpawnPlayer()
 	self thread showMoney(self.name);
 	self giveCSGOLevelLoadout();
 	level notify ( "spawned_player" );
-	
-	game[self.name]["menu_step"] = "base";	
 
-	//self thread onMenuResponse();		
+	game[self.name]["menu_step"] = "base";
+
+	//self thread onMenuResponse();
 }
 
 showMoney(name)
 {
-	self endon("disconnect");	
-	
+	self endon("disconnect");
+
 	// Create the money left
 	moneyLeft = self createFontString( "objective", 1.4 );
 	moneyLeft.archived = true;
@@ -818,13 +765,13 @@ showMoney(name)
 	moneyLeft.sort = -1;
 	moneyLeft.alpha = 0.75;
 	moneyLeft.color = ( 0, 0.49, 0.05 );
-	moneyLeft setText("0 $");	
-	
+	moneyLeft setText("0 $");
+
 	oldMoney = 0;
 	// Update the level and kills info until the player dies
 	while ( isDefined( self ) && isAlive( self ) ) {
 		wait (0.05);
-		
+
 		// Check if money has changed
 		if ( IsDefined(game[name]) && game[name]["money"] != oldMoney ) {
 			moneyLeft setText( game[name]["money"] + " $");
@@ -833,11 +780,11 @@ showMoney(name)
 			if (game[name]["money"] < 0) {
 				moneyLeft.color = ( 0.49, 0.12, 0.05 );
 			}
-		}		
+		}
 	}
-	
+
 	// Destroy the HUD elements
-	moneyLeft destroy();	
+	moneyLeft destroy();
 
 }
 
@@ -849,12 +796,12 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 	} else if ( isPlayer( attacker ) && self.pers["team"] == attacker.pers["team"]) {
 		game[attacker.name]["money"] -= level.scr_csd_enemy_killed_reward;
 		attacker thread displayGaining(level.scr_csd_enemy_killed_reward, "-");
-	} 
+	}
 	if (game[self.name]["weapon"] != undefined) {
 		self dropItem( game[self.name]["weapon"] );
 	}
 	game[self.name]["weapon"] = undefined;
-	
+
 	thread checkAllowSpectating();
 	thread maps\mp\gametypes\_finalkillcam::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 }
@@ -882,8 +829,8 @@ checkAllowSpectating()
 
 sd_endGame( winningTeam, endReasonText )
 {
-	//if ( isdefined( winningTeam ) )
-	//	[[level._setTeamScore]]( winningTeam, [[level._getTeamScore]]( winningTeam ) + 1 );
+	if ( isdefined( winningTeam ) )
+		[[level._setTeamScore]]( winningTeam, [[level._getTeamScore]]( winningTeam ) + 1 );
 
 	for ( index = 0; index < level.players.size; index++ )
 	{
@@ -902,7 +849,7 @@ sd_endGame( winningTeam, endReasonText )
 		}
 	}
 	game["buy"] = "ok";
-	
+
 	//thread maps\mp\gametypes\_globallogic::endGame( winningTeam, endReasonText );
 	thread maps\mp\gametypes\_finalkillcam::endGame( winningTeam, endReasonText );
 }
@@ -1016,17 +963,17 @@ updateGametypeDvars()
 	level.defuseTime = getdvarx( "scr_csd_defusetime", "float", 8, 0, 20 );
 	level.bombTimer = getdvarx( "scr_csd_bombtimer", "float", 60, 1, 300 );
 	level.multiBomb = getdvarx( "scr_csd_multibomb", "int", 0, 0, 1 );
-	
+
 	// Calculate the bomb timer with the random modifier
 	maxModifier = level.bombTimer - 5;
 	if ( maxModifier < 0 ) {
 		maxModifier = 0;
 	}
 	level.scr_csd_bombtimer_modifier = getdvarx( "scr_csd_bombtimer_modifier", "int", 0, 0, maxModifier );
-	level.bombTimer = randomFloatRange( level.bombTimer - level.scr_csd_bombtimer_modifier, level.bombTimer + level.scr_csd_bombtimer_modifier + 1 );	
-	
+	level.bombTimer = randomFloatRange( level.bombTimer - level.scr_csd_bombtimer_modifier, level.bombTimer + level.scr_csd_bombtimer_modifier + 1 );
+
 	level.teamKillPenaltyMultiplier = dvarFloatValue( "teamkillpenalty", 2, 0, 10 );
-	level.teamKillScoreMultiplier = dvarFloatValue( "teamkillscore", 4, 0, 40 );		
+	level.teamKillScoreMultiplier = dvarFloatValue( "teamkillscore", 4, 0, 40 );
 }
 
 
@@ -1179,7 +1126,7 @@ onBeginUse( player )
 
 		if ( level.scr_csd_allow_quickdefuse )
  	      player thread openwarfare\_objoptions::quickDefuse();
- 	      
+
 		if ( isDefined( level.sdBombModel ) )
 			level.sdBombModel hide();
 	}
@@ -1243,7 +1190,7 @@ onUsePlantObject( player )
 		lpselfnum = player getEntityNumber();
 		lpGuid = player getGuid();
 		logPrint("BP;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
-		
+
 		// disable all bomb zones except this one
 		for ( index = 0; index < level.bombZones.size; index++ )
 		{
@@ -1253,7 +1200,7 @@ onUsePlantObject( player )
 			if ( level.scr_csd_sdmode == 0 ) {
 				level.bombZones[index] maps\mp\gametypes\_gameobjects::disableObject();
 			} else {
-				level.bombZones[index] maps\mp\gametypes\_gameobjects::allowUse( "none" );			
+				level.bombZones[index] maps\mp\gametypes\_gameobjects::allowUse( "none" );
 			}
 		}
 
@@ -1282,7 +1229,7 @@ onUseDefuseObject( player )
 	lpselfnum = player getEntityNumber();
 	lpGuid = player getGuid();
 	logPrint("BD;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
-	
+
 	// disable this bomb zone
 	self maps\mp\gametypes\_gameobjects::disableObject();
 
@@ -1301,7 +1248,7 @@ onDrop( player )
 	{
 		if ( isDefined( player ) && isDefined( player.name ) && player.pers["team"] == game["attackers"] ) {
 			player.isBombCarrier = false;
-			
+
 			printOnTeamArg( &"MP_EXPLOSIVES_DROPPED_BY", game["attackers"], player );
 
 			if ( level.scr_csd_scoreboard_bomb_carrier == 1 && isAlive( player ) ) {
@@ -1317,7 +1264,7 @@ onDrop( player )
 	}
 
 	self maps\mp\gametypes\_gameobjects::set3DIcon( "friendly", "waypoint_bomb" );
-	
+
 	if ( isDefined( player ) && player.pers["team"] == game["attackers"] )
 		maps\mp\_utility::playSoundOnPlayers( game["bomb_dropped_sound"], game["attackers"] );
 	else if ( isDefined( player ) )
@@ -1335,7 +1282,7 @@ onPickup( player )
 
 	if ( isDefined( player ) && player.pers["team"] == game["defenders"] && level.scr_csd_allow_defender_explosivedestroy )
 		player iprintln( &"OW_DESTROY_EXPLOSIVES" );
- 	 
+
 	if ( isDefined( player ) && player.pers["team"] == game["attackers"] )
 		self maps\mp\gametypes\_gameobjects::set3DIcon( "friendly", "waypoint_defend" );
 
@@ -1363,19 +1310,19 @@ bombPlanted( destroyedObj, player )
 {
 	maps\mp\gametypes\_globallogic::pauseTimer();
 	level.bombPlanted = true;
-	
+
 	game[player.name]["money"] += level.scr_csd_planting_reward;
 	player thread displayGaining(level.scr_csd_planting_reward, "+");
 	player playLocalSound( "cash" );
-	
+
 	if ( level.scr_csd_bomb_notification_enable == 1 )
 		destroyedObj.visuals[0] thread maps\mp\gametypes\_globallogic::playTickingSound();
 	level.tickingObject = destroyedObj.visuals[0];
 
 	level.timeLimitOverride = true;
-	
+
 	setGameEndTime( int( gettime() + (level.bombTimer * 1000) ) );
-	
+
 	if ( level.scr_csd_bombtimer_show == 1 )
 		setDvar( "ui_bomb_timer", 1 );
 
@@ -1407,12 +1354,12 @@ bombPlanted( destroyedObj, player )
 		level.sdBombModel setModel( "prop_suitcase_bomb" );
 	}
 	destroyedObj maps\mp\gametypes\_gameobjects::allowUse( "none" );
-		
+
 	// Check if we need to hide the bomb site in the radar
 	if ( level.scr_csd_sdmode == 0 ) {
 		destroyedObj maps\mp\gametypes\_gameobjects::setVisibleTeam( "none" );
 	}
-	
+
 	label = destroyedObj maps\mp\gametypes\_gameobjects::getLabel();
 
 	// create a new object to defuse with.
@@ -1425,7 +1372,7 @@ bombPlanted( destroyedObj, player )
 	defuseObject maps\mp\gametypes\_gameobjects::setUseText( &"MP_DEFUSING_EXPLOSIVE" );
 	defuseObject maps\mp\gametypes\_gameobjects::setUseHintText( &"PLATFORM_HOLD_TO_DEFUSE_EXPLOSIVES" );
 	defuseObject maps\mp\gametypes\_gameobjects::setVisibleTeam( "any" );
-		
+
 	// Check if we need to show the defuse/defend icons
 	if ( level.scr_csd_sdmode == 0 ) {
 		defuseObject maps\mp\gametypes\_gameobjects::set2DIcon( "friendly", "compass_waypoint_defuse" + label );
@@ -1439,10 +1386,10 @@ bombPlanted( destroyedObj, player )
 			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set2DIcon( "friendly", "compass_waypoint_defuse" + label );
 			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set2DIcon( "enemy", "compass_waypoint_defend" + label );
 			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set3DIcon( "friendly", "waypoint_defuse" + label );
-			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set3DIcon( "enemy", "waypoint_defend" + label );				
-		}		
+			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set3DIcon( "enemy", "waypoint_defend" + label );
+		}
 	}
-	
+
 	defuseObject.label = label;
 	defuseObject.onBeginUse = ::onBeginUse;
 	defuseObject.onEndUse = ::onEndUse;
@@ -1512,11 +1459,11 @@ bombDefused(player)
 {
 	level.tickingObject maps\mp\gametypes\_globallogic::stopTickingSound();
 	level.bombDefused = true;
-	
+
 	game[player.name]["money"] += level.scr_csd_defusing_reward;
 	player thread displayGaining(level.scr_csd_defusing_reward, "+");
 	player playLocalSound( "cash" );
-	
+
 	setDvar( "ui_bomb_timer", 0 );
 
 	level notify("bomb_defused");
@@ -1537,5 +1484,5 @@ disableObject()
 		self maps\mp\gametypes\_gameobjects::allowUse( "none" );
 	} else {
 		self maps\mp\gametypes\_gameobjects::disableObject();
-	}	
+	}
 }

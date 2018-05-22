@@ -33,8 +33,7 @@ init()
 			}
 
 		}
-	//setDvar( "ui_custom_quote", "Do or do not, there is no try. ^3Master Yoda" );
-	setDvar( "ui_custom_quote", level.customQuotes[RandomInt( level.customQuotes.size )] );
+	//setDvar( "ui_custom_quote", level.customQuotes[RandomInt( level.customQuotes.size )] );
 
 	// Initialize server load variables (do not thread)
 	openwarfare\_serverload::init();
@@ -791,6 +790,8 @@ spawnPlayer()
 
 	self maps\mp\gametypes\_missions::playerSpawned();
 	self maps\mp\gametypes\_dailychallenges::playerSpawned();
+	//Set custom quote
+	self setClientDvar( "ui_custom_quote", level.customQuotes[RandomInt( level.customQuotes.size )] );
 
 	prof_end( "spawnPlayer_preUTS" );
 
@@ -939,8 +940,6 @@ spawnPlayer()
 		self showPerk( 2, perks[2], -50 );
 		self thread hidePerksAfterTime( 3.0 );
 		self thread hidePerksOnDeath();
-
-		self thread maps\mp\gametypes\_dailychallenges::showDailyChallenges();
 	}
 
 	prof_end( "spawnPlayer_postUTS" );
@@ -5786,8 +5785,9 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
 	self.joining_team = undefined;
 	self.leaving_team = undefined;
 
-	self thread [[level.onPlayerKilled]](eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 	self thread maps\mp\gametypes\_dailychallenges::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
+
+	self thread [[level.onPlayerKilled]](eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 
 	if ( sWeapon == "artillery_mp" || sWeapon == "claymore_mp" || sWeapon == "frag_grenade_short_mp" || sWeapon == "none" || isSubStr( sWeapon, "cobra" ) )
 		doKillcam = false;
