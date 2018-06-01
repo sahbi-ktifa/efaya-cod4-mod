@@ -35,6 +35,11 @@ init()
 		}
 	//setDvar( "ui_custom_quote", level.customQuotes[RandomInt( level.customQuotes.size )] );
 
+//Prematch custom sounds !
+	level.prematchSound = [];
+	level.prematchSound["defender"] = "defradio" + (RandomInt( 12 ) + 1);
+	level.prematchSound["attacker"] = "attradio" + (RandomInt( 12 ) + 1);
+
 	// Initialize server load variables (do not thread)
 	openwarfare\_serverload::init();
 
@@ -3410,9 +3415,19 @@ prematchPeriod()
 			level.players[index] thread maps\mp\gametypes\_hud_message::hintMessage( hintMessage );
 	}
 
-	if ( level.gametype != "hns" ) {
+	if ( level.gametype != "hns" && level.gametype != "sr" && level.gametype != "csd" ) {
 		leaderDialog( "offense_obj", game["attackers"], "introboost" );
 		leaderDialog( "defense_obj", game["defenders"], "introboost" );
+	} else if ( level.gametype == "sr" || level.gametype == "csd" ) {
+		for ( i = 0; i < level.players.size; i++ ) {
+			ClientPrint(level.players[i], level.prematchSound["defender"] );
+			ClientPrint(level.players[i], level.prematchSound["attacker"] );
+			if (level.players[i].pers["team"] == "allies") {
+				level.players[i]  playLocalSound( level.prematchSound["defender"] );
+			} else {
+				level.players[i]  playLocalSound( level.prematchSound["attacker"] );
+			}
+		}
 	}
 
 	if ( game["state"] != "playing" )

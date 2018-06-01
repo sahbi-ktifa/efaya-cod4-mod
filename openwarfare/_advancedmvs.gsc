@@ -46,12 +46,6 @@ init()
 	level.scr_amvs_winner_time = getdvard( "scr_amvs_winner_time", "float", 5, 5, 45 );
 	level.scr_amvs_can_repeat_map = getdvard( "scr_amvs_can_repeat_map", "int", 0, 0, 1 );
 
-	//Precache stock loadscreens
-	precacheShader("loadscreen_mp_bog");
-	precacheShader("loadscreen_mp_vacant");
-	precacheShader("loadscreen_mp_showdown");
-	precacheShader("loadscreen_mp_crossfire");
-
 	//Load custom loadscreens
 	level.scr_amvs_loadscreens = [];
 	level.scr_amvs_loadscreens[1] = getdvard( "scr_amvs_loadscreen2", "string", "" );
@@ -390,12 +384,12 @@ setMapVariables()
 }
 
 retrieveStockMap(ref) {
-	if (ref == "mp_cgc_crossfire") {
+	/*if (ref == "mp_cgc_crossfire") {
 		return "mp_crossfire";
 	}
 	if (ref == "mp_cgc_citystreets") {
 		return "mp_citystreets";
-	}
+	}*/
 	stockMaps = strtok("mp_bog;mp_showdown;mp_vacant;mp_backlot;mp_bloc;mp_broadcast;mp_cargoship;mp_citystreets;mp_crossfire;mp_convoy;mp_countdown;mp_crash;mp_dusk;mp_farm;mp_hill;mp_overgrown;mp_pipeline;mp_shipment;mp_strike", ";");
 	for (i = 0; i < stockMaps.size; i++) {
 		if (ref == stockMaps[i]) {

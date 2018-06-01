@@ -184,10 +184,12 @@ showDailyChallenge( index , challengeScore)
 }
 
 hideDailyChallenges() {
-	for (index = 0; index < 3; index++) {
-		self.daily_challenges_names[ index ].alpha = 0;
-		self.daily_challenges_icons[ index ].alpha = 0;
-		self.daily_challenges_completions[ index ].alpha = 0;
+	if (getDvar("scr_allow_daily_challenges") == "1" ) {
+		for (index = 0; index < 3; index++) {
+			self.daily_challenges_names[ index ].alpha = 0;
+			self.daily_challenges_icons[ index ].alpha = 0;
+			self.daily_challenges_completions[ index ].alpha = 0;
+		}
 	}
 }
 
@@ -243,6 +245,9 @@ getChallengeIcon(key) {
 
 onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration)
 {
+	if (isPlayer(attacker) && attacker != self && attacker.pers["team"] == self.pers["team"]) {
+		return;
+	}
 	if (getDvar("scr_allow_daily_challenges") == "1" && isPlayer(attacker)) {
 		for (index = 1; index < 4; index++) {
 			match = false;

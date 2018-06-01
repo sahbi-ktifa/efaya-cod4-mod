@@ -428,6 +428,7 @@ onSpawnPlayer()
 			self.pers["stats"]["misc"]["hitman"] = 0;
 			self.pers["stats"]["misc"]["medic"] = 0;
 		}
+
 }
 
 
@@ -435,29 +436,97 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 {
 	thread checkAllowSpectating();
 
-        // No tags for falling, suicides or team kills
-        //if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self )
-        if( isPlayer( attacker ) && attacker != self && sHitLoc != "head" && sHitLoc != "helmet" && sMeansOfDeath != "MOD_MELEE") {
-            // Send notice to players
-			iprintln("^3" + attacker.name + " ^7shot down ^3" + self.name + "^7!");
-			self thread spawnTags( attacker );
-		} else if (sHitLoc == "head" || sHitLoc == "helmet") {
-			// Send notice to players
-			iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a headshot by ^3" + attacker.name + "^7!");
-		}  else if (sMeansOfDeath == "MOD_MELEE") {
-			// Send notice to players
-			iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a knife melee by ^3" + attacker.name + "^7!");
-		} else if ( sMeansOfDeath == "MOD_FALLING" || ( isPlayer( attacker ) && attacker == self ) ) {
-			// Send notice to players
-			iprintln("^3" + self.name + " ^7.... has been ELIMINATED by ... himself... commiting suicide");
-		}
-        if( isDefined( self.destroyingExplosive ) && self.destroyingExplosive == true ) {
-             self updateSecondaryProgressBar( undefined, undefined, true, undefined );
-        }
+	// No tags for falling, suicides or team kills
+	//if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self )
+	if( isPlayer( attacker ) && attacker != self && sHitLoc != "head" && sHitLoc != "helmet" && sMeansOfDeath != "MOD_MELEE") {
+		// Send notice to players
+		//iprintln("^3" + attacker.name + " ^7shot down ^3" + self.name + "^7!");
+		broadcastInfo("shot", attacker, self);
+		self thread spawnTags( attacker );
+	} else if (sHitLoc == "head" || sHitLoc == "helmet") {
+		// Send notice to players
+		//iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a headshot by ^3" + attacker.name + "^7!");
+		broadcastInfo("hs", attacker, self);
+	}  else if (sMeansOfDeath == "MOD_MELEE") {
+		// Send notice to players
+		broadcastInfo("knife", attacker, self);
+		//iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a knife melee by ^3" + attacker.name + "^7!");
+	} else if ( sMeansOfDeath == "MOD_FALLING" || ( isPlayer( attacker ) && attacker == self ) ) {
+		// Send notice to players
+		//iprintln("^3" + self.name + " ^7.... has been ELIMINATED by ... himself... commiting suicide");
+		broadcastInfo("suicide", attacker, self);
+	}
+	if( isDefined( self.destroyingExplosive ) && self.destroyingExplosive == true ) {
+		self updateSecondaryProgressBar( undefined, undefined, true, undefined );
+	}
 
 	thread maps\mp\gametypes\_finalkillcam::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 }
 
+broadcastInfo(type, attacker, victim) {
+	for ( i = 0; i < level.players.size; i++ ) {
+		msg = "";
+		if (type == "shot") {
+			if (level.players[i].pers["team"] == victim.pers["team"]) {
+				msg += "^2" + victim.name + "^7 has been shot down by ";
+			} else {
+				msg += "^1" + victim.name + "^7 has been shot down by ";
+			}
+			if (level.players[i].pers["team"] == attacker.pers["team"]) {
+				msg += "^2" + attacker.name + " ^7!";
+			} else {
+				msg += "^1" + attacker.name + " ^7!";
+			}
+		} else if (type == "hs") {
+			if (level.players[i].pers["team"] == victim.pers["team"]) {
+				msg += "^2" + victim.name + " ^7.... has been ELIMINATED with a headshot by ";
+			} else {
+				msg += "^1" + victim.name + " ^7.... has been ELIMINATED with a headshot by ";
+			}
+			if (level.players[i].pers["team"] == attacker.pers["team"]) {
+				msg += "^2" + attacker.name + "^7!";
+			} else {
+				msg += "^1" + attacker.name + "^7!";
+			}
+		} else if (type == "knife") {
+			if (level.players[i].pers["team"] == victim.pers["team"]) {
+				msg += "^2" + victim.name + " ^7.... has been ELIMINATED with a knife melee by ";
+			} else {
+				msg += "^1" + victim.name + " ^7.... has been ELIMINATED with a knife melee by ";
+			}
+			if (level.players[i].pers["team"] == attacker.pers["team"]) {
+				msg += "^2" + attacker.name + "^7!";
+			} else {
+				msg += "^1" + attacker.name + "^7!";
+			}
+		} else if (type == "suicide") {
+			if (level.players[i].pers["team"] == victim.pers["team"]) {
+				msg += "^2" + victim.name + " ^7.... has been ELIMINATED by ... himself... commiting suicide!";
+			} else {
+				msg += "^1" + victim.name + " ^7.... has been ELIMINATED by ... himself... commiting suicide!";
+			}
+		} else if (type == "revive") {
+			if (level.players[i].pers["team"] == attacker.pers["team"]) {
+				msg += "^2" + attacker.name + "^7.... Revived ";
+			} else {
+				msg += "^1" + attacker.name + "^7.... Revived ";
+			}
+			if (level.players[i].pers["team"] == victim.pers["team"]) {
+				msg += "^2" + victim.name + " ^7!";
+			} else {
+				msg += "^1" + victim.name + " ^7!";
+			}
+		} else if (type == "eliminate") {
+			if (level.players[i].pers["team"] == victim.pers["team"]) {
+				msg += "^2" + victim.name + " ^7.... has been ELIMINATED!";
+			} else {
+				msg += "^1" + victim.name + " ^7.... has been ELIMINATED!";
+			}
+		}
+		ClientPrint(level.players[i], msg);
+	}
+
+}
 
 checkAllowSpectating()
 {
@@ -1634,7 +1703,7 @@ quickDefuseResults( playerChoice, correctWire )
 
 spawnTags( attacker )
 {
-
+		wait(1.0);
         // Place spawnpoint on the ground based on player box size
         basePosition = playerPhysicsTrace( self.origin, self.origin + ( 0, 0, -99999 ) );
 
@@ -1786,10 +1855,12 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 
                         // Send notice to players according to team
                         if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" )
-                                iprintln("^3" + player.name + "^7.... Revived^3 " + friendlyTag.owner.name );
+													broadcastInfo("revive", player, friendlyTag.owner);
+													      //iprintln("^3" + player.name + "^7.... Revived^3 " + friendlyTag.owner.name );
 
                         if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" )
-                                iprintln("^1" + player.name + "^7.... Revived^1 " + friendlyTag.owner.name );
+													broadcastInfo("revive", player, friendlyTag.owner);
+                                //iprintln("^1" + player.name + "^7.... Revived^1 " + friendlyTag.owner.name );
 
 						//Update stat
 						player.pers["stats"]["misc"]["medic"] += 1;
@@ -1844,10 +1915,12 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 
                         // Send notice to players according to team
                         if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" )
-                                iprintln("^1" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
+													broadcastInfo("eliminate", player, enemyTag.owner);
+                          //      iprintln("^1" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
 
                         if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" )
-                                iprintln("^3" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
+													broadcastInfo("eliminate", player, enemyTag.owner);
+                                //iprintln("^3" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
 
                         // Send owner notification
 	                notifyData = spawnStruct();
@@ -1897,9 +1970,12 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 }
 
 revivePlayer() {
-	wait(1.0);
+	self endon("game_ended");
 
-	self thread [[level.spawnPlayer]]();
+	wait(1.0);
+	if (!level.gameEnded) {
+		self thread [[level.spawnPlayer]]();
+	}
 
 }
 

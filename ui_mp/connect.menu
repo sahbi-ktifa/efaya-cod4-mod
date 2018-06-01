@@ -66,11 +66,11 @@
 			decoration
 		}
 
-		/*itemDef
+		itemDef
 		{
 
 			style			WINDOW_STYLE_SHADER
-			rect			10 20 220 140 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_CENTER
+			rect			40 -85 620 20 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 			origin			WIDESCREEN_OFFSET
 			background		"white"
 			forecolor		.2 .2 .2 0.8
@@ -78,7 +78,7 @@
 			bordersize		1
 			bordercolor		0.5 0.5 0.5 0.8
 			visible			1	decoration
-		}*/
+		}
 
 		itemDef
 		{
@@ -123,7 +123,7 @@
 		{
 
 			style			WINDOW_STYLE_SHADER
-			rect			-230 20 220 140 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_CENTER
+			rect			-230 10 220 140 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_CENTER
 			origin			WIDESCREEN_OFFSET
 			background		"white"
 			forecolor		.2 .2 .2 0.8
@@ -137,7 +137,7 @@
 		{
 			type			ITEM_TYPE_TEXT
 			visible			1
-			rect			 -220 42 0 0 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_CENTER
+			rect			 -220 32 0 0 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_CENTER
 			origin			WIDESCREEN_OFFSET
 			forecolor		1 1 0 1
 			text			"@OW_SERVERPOWEREDBY"
@@ -148,7 +148,7 @@
 
 		itemDef
 		{
-			rect			-112 50 200 100 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_CENTER
+			rect			-112 40 200 100 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_CENTER
 			forecolor		1 1 1 1
 			style			WINDOW_STYLE_SHADER
 			background		"openwarfare"
