@@ -37,7 +37,7 @@ init()
 
 //Prematch custom sounds !
 	level.prematchSound = [];
-	level.prematchSound["defender"] = "defradio" + (RandomInt( 12 ) + 1);
+	level.prematchSound["defender"] = "defradio" + (RandomInt( 13 ) + 1);
 	level.prematchSound["attacker"] = "attradio" + (RandomInt( 12 ) + 1);
 
 	// Initialize server load variables (do not thread)
