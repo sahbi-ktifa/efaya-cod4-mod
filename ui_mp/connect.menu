@@ -70,7 +70,7 @@
 		{
 
 			style			WINDOW_STYLE_SHADER
-			rect			40 -85 620 20 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			rect			40 -85 720 20 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 			origin			WIDESCREEN_OFFSET
 			background		"white"
 			forecolor		.2 .2 .2 0.8

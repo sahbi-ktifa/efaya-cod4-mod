@@ -467,37 +467,38 @@ broadcastInfo(type, attacker, victim) {
 	for ( i = 0; i < level.players.size; i++ ) {
 		msg = "";
 		if (type == "shot") {
-			if (level.players[i].pers["team"] == victim.pers["team"]) {
-				msg += "^2" + victim.name + "^7 has been shot down by ";
-			} else {
-				msg += "^1" + victim.name + "^7 has been shot down by ";
-			}
 			if (level.players[i].pers["team"] == attacker.pers["team"]) {
-				msg += "^2" + attacker.name + " ^7!";
+				msg += "^2" + attacker.name + " ^7shot down ";
 			} else {
-				msg += "^1" + attacker.name + " ^7!";
+				msg += "^1" + attacker.name + " ^7shot down ";
 			}
+			if (level.players[i].pers["team"] == victim.pers["team"]) {
+				msg += "^2" + victim.name + "^7!";
+			} else {
+				msg += "^1" + victim.name + "^7!";
+			}
+
 		} else if (type == "hs") {
-			if (level.players[i].pers["team"] == victim.pers["team"]) {
-				msg += "^2" + victim.name + " ^7.... has been ELIMINATED with a headshot by ";
-			} else {
-				msg += "^1" + victim.name + " ^7.... has been ELIMINATED with a headshot by ";
-			}
 			if (level.players[i].pers["team"] == attacker.pers["team"]) {
-				msg += "^2" + attacker.name + "^7!";
+				msg += "^2" + attacker.name + " ^7has eliminated with a headshot ";
 			} else {
-				msg += "^1" + attacker.name + "^7!";
+				msg += "^1" + attacker.name + " ^7has eliminated with a headshot ";
+			}
+			if (level.players[i].pers["team"] == victim.pers["team"]) {
+				msg += "^2" + victim.name + "^7!";
+			} else {
+				msg += "^1" + victim.name + "^7!";
 			}
 		} else if (type == "knife") {
-			if (level.players[i].pers["team"] == victim.pers["team"]) {
-				msg += "^2" + victim.name + " ^7.... has been ELIMINATED with a knife melee by ";
-			} else {
-				msg += "^1" + victim.name + " ^7.... has been ELIMINATED with a knife melee by ";
-			}
 			if (level.players[i].pers["team"] == attacker.pers["team"]) {
-				msg += "^2" + attacker.name + "^7!";
+				msg += "^2" + attacker.name + " ^7has eliminated with a knife melee ";
 			} else {
-				msg += "^1" + attacker.name + "^7!";
+				msg += "^1" + attacker.name + " ^7has eliminated with a knife melee ";
+			}
+			if (level.players[i].pers["team"] == victim.pers["team"]) {
+				msg += "^2" + victim.name + "^7!";
+			} else {
+				msg += "^1" + victim.name + "^7!";
 			}
 		} else if (type == "suicide") {
 			if (level.players[i].pers["team"] == victim.pers["team"]) {

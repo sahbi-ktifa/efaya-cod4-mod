@@ -3420,8 +3420,6 @@ prematchPeriod()
 		leaderDialog( "defense_obj", game["defenders"], "introboost" );
 	} else if ( level.gametype == "sr" || level.gametype == "csd" ) {
 		for ( i = 0; i < level.players.size; i++ ) {
-			ClientPrint(level.players[i], level.prematchSound["defender"] );
-			ClientPrint(level.players[i], level.prematchSound["attacker"] );
 			if (level.players[i].pers["team"] == "allies") {
 				level.players[i]  playLocalSound( level.prematchSound["defender"] );
 			} else {
