@@ -117,7 +117,7 @@
 		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
 		fullScreen		0
 		visible			1
-		
+
 		//PEL VISUAL GUIDE INFO FRAME
 		itemDef
 		{
@@ -132,7 +132,7 @@
 			visible 		when( dvarString( "g_gametype" ) == "vg" )
 			decoration
 		}
-		
+
 		itemDef
 		{
 			name			"title"
@@ -141,9 +141,9 @@
 			text      		"VISUAL GUIDE"
 			textfont		UI_FONT_NORMAL
 			forecolor		0 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" )
-			decoration	
+			decoration
 		}
 		//CATEGORIES
 		itemDef
@@ -154,9 +154,9 @@
 			text      		"@OW_MOVER_CAT"
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 1 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -166,9 +166,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "allies_spawns" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -178,9 +178,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "allies_start_spawns" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -190,9 +190,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "axis_spawns" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -202,9 +202,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "axis_start_spawns" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -214,9 +214,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "attacker_spawns" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -226,9 +226,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "defender_spawns" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -238,9 +238,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "spawns" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -250,9 +250,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "objectives" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -262,9 +262,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "explosive" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -274,9 +274,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "flags" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -286,9 +286,9 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "extract_zone" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -298,11 +298,11 @@
 			rect			280 350 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when ( dvarString( "g_gametype" ) == "vg" && dvarString( cat_info ) == "radios" )
-			decoration	
+			decoration
 		}
-		
+
 		//ITEMS
 		itemDef
 		{
@@ -312,9 +312,9 @@
 			text      		"Item #:"
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 1 1
-			textscale		.30	
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -324,9 +324,9 @@
 			dvar			item_index;
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -336,9 +336,9 @@
 			text      		"@OW_MOVER_CMD"
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 1 1
-			textscale		.30	
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -348,9 +348,9 @@
 			rect			280 380 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" && dvarString( cmd_info ) == "next_category" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -360,9 +360,9 @@
 			rect			280 380 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" && dvarString( cmd_info ) == "prev_category" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -372,9 +372,9 @@
 			rect			280 380 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" && dvarString( cmd_info ) == "next_item" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -384,9 +384,9 @@
 			rect			280 380 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" && dvarString( cmd_info ) == "prev_item" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -396,9 +396,9 @@
 			rect			280 380 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" && dvarString( cmd_info ) == "location" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -408,9 +408,9 @@
 			rect			280 380 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" && dvarString( cmd_info ) == "reset_item_loc" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -420,9 +420,9 @@
 			rect			280 380 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" && dvarString( cmd_info ) == "reset_all_loc" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -432,9 +432,9 @@
 			rect			280 380 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" && dvarString( cmd_info ) == "write_item_log" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -444,9 +444,9 @@
 			rect			280 380 0 0
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( "g_gametype" ) == "vg" && dvarString( cmd_info ) == "write_all_log" )
-			decoration	
+			decoration
 		}
 		//END VISUAL GUIDE
 
@@ -459,9 +459,9 @@
 			text			"@OW_CAP_OPEN"
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( cap_info ) == "open" && dvarString( cap_enable ) == "true" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -471,9 +471,9 @@
 			text			"@OW_CAP_INITIALIZING"
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( cap_info ) == "init" && dvarString( cap_enable ) == "true" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -483,9 +483,9 @@
 			exp				text( "@OW_CAP_CYCLE_AND_CLOSE" )
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.30		
+			textscale		.30
 			visible			when( dvarString( cap_info ) == "cycle_close" && dvarString( cap_enable ) == "true" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -495,9 +495,9 @@
 			dvar			cap_time
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.35		
+			textscale		.35
 			visible			when( dvarString( "cap_time" ) > 0 && dvarString( cap_enable ) == "true" && dvarString( cap_info ) == "cycle_close" )
-			decoration	
+			decoration
 		}
 		itemDef
 		{
@@ -507,12 +507,12 @@
 			rect			55 20 0 0 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_CENTER_SAFEAREA
 			textfont		UI_FONT_NORMAL
 			forecolor		1 1 0 1
-			textscale		.35		
+			textscale		.35
 			visible			when( dvarString( "cap_time" ) > 0 && dvarString( cap_enable ) == "true" && dvarString( cap_info ) == "cycle_close" )
-			decoration	
+			decoration
 		}
 		//END CAP INFO
-		
+
 		itemDef
 		{
 			name			"healthoverlay"
@@ -657,7 +657,7 @@
     	// place this offscreen so it doesn't show the stance indicator but only shows the "prone blocked"
 		rect			0 -93 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
     	fullScreen		0
-		visible			when( !flashbanged() && !ui_active() && NOT_SPECTATING && team( name ) != "TEAM_SPECTATOR" );
+		visible			when( !flashbanged() && !ui_active() && NOT_SPECTATING && team( name ) != "TEAM_SPECTATOR");
 
 		itemDef
 		{
@@ -665,7 +665,7 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 0 );
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 0 && gametype() != "sr" );
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		1 1 1 HUD_ALPHA
@@ -678,7 +678,7 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 1 );
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 1 && gametype() != "sr" );
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		0 0.5 0 HUD_ALPHA
@@ -691,7 +691,7 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 2 );
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 2 && gametype() != "sr" );
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		1 1 0 HUD_ALPHA
@@ -704,7 +704,7 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 3 );
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 3 && gametype() != "sr" );
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		1 0.5 0 HUD_ALPHA
@@ -717,13 +717,78 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 4 );
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 4 && gametype() != "sr" );
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		1 0 0 HUD_ALPHA
 			decoration
 		}
-										
+
+		itemDef
+		{
+			name			"chRect"
+			rect			-2 45 48 48 // 64x64
+			ownerdraw		CG_PLAYER_STANCE
+			textfont		UI_FONT_OBJECTIVE
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 0 && gametype() == "sr" );
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			forecolor		1 1 1 HUD_ALPHA
+			decoration
+		}
+
+		itemDef
+		{
+			name			"chRect"
+			rect			-2 45 48 48 // 64x64
+			ownerdraw		CG_PLAYER_STANCE
+			textfont		UI_FONT_OBJECTIVE
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 1 && gametype() == "sr" );
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			forecolor		0 0.5 0 HUD_ALPHA
+			decoration
+		}
+
+		itemDef
+		{
+			name			"chRect"
+			rect			-2 45 48 48 // 64x64
+			ownerdraw		CG_PLAYER_STANCE
+			textfont		UI_FONT_OBJECTIVE
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 2 && gametype() == "sr" );
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			forecolor		1 1 0 HUD_ALPHA
+			decoration
+		}
+
+		itemDef
+		{
+			name			"chRect"
+			rect			-2 45 48 48 // 64x64
+			ownerdraw		CG_PLAYER_STANCE
+			textfont		UI_FONT_OBJECTIVE
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 3 && gametype() == "sr" );
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			forecolor		1 0.5 0 HUD_ALPHA
+			decoration
+		}
+
+		itemDef
+		{
+			name			"chRect"
+			rect			-2 45 48 48 // 64x64
+			ownerdraw		CG_PLAYER_STANCE
+			textfont		UI_FONT_OBJECTIVE
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 4 && gametype() == "sr" );
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			forecolor		1 0 0 HUD_ALPHA
+			decoration
+		}
+
 	}
 
 	#define ALLIES_HAVE_UAV (dvarint( ui_uav_allies ) && team( name ) == "TEAM_ALLIES" )
@@ -904,8 +969,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -917,8 +982,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}	
+			decoration
+		}
 
 		// Kills/Deaths Ratio
 		itemDef
@@ -931,8 +996,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -944,8 +1009,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}	
+			decoration
+		}
 
 		// Total Kills
 		itemDef
@@ -958,8 +1023,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -971,8 +1036,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}	
+			decoration
+		}
 
 		// Current Killstreak
 		itemDef
@@ -985,8 +1050,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -998,8 +1063,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}			
+			decoration
+		}
 
 		// Highest Killstreak
 		itemDef
@@ -1012,8 +1077,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1025,9 +1090,9 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
-						
+			decoration
+		}
+
 		// Longest shot
 		itemDef
 		{
@@ -1039,8 +1104,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1052,8 +1117,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}			
+			decoration
+		}
 
 		// Melee Kills
 		itemDef
@@ -1066,8 +1131,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1079,8 +1144,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}			
+			decoration
+		}
 
 		// Headshots
 		itemDef
@@ -1093,8 +1158,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1106,7 +1171,7 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
+			decoration
 		}
 
 		// Longest Headshots
@@ -1120,8 +1185,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1133,7 +1198,7 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
+			decoration
 		}
 		// Teamkills
 		itemDef
@@ -1146,8 +1211,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1159,8 +1224,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}	
+			decoration
+		}
 		// Deaths
 		itemDef
 		{
@@ -1172,8 +1237,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1185,7 +1250,7 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
+			decoration
 		}
 
 		// Suicides
@@ -1199,8 +1264,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1212,7 +1277,7 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
+			decoration
 		}
 
 		// Current Deathstreak
@@ -1226,8 +1291,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1239,7 +1304,7 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
+			decoration
 		}
 
 
@@ -1254,8 +1319,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1267,7 +1332,7 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
+			decoration
 		}
 
 		// Distance travelled
@@ -1281,8 +1346,8 @@
 			textAlign		ITEM_ALIGN_MIDDLE_LEFT
 			forecolor		1 1 1 STATS_TRANSPARENCY
 			visible			1
-			decoration	
-		}		
+			decoration
+		}
 
 		itemDef
 		{
@@ -1294,10 +1359,10 @@
 			textAlign		ITEM_ALIGN_MIDDLE_RIGHT
 			forecolor		1 1 0 STATS_TRANSPARENCY
 			visible			1
-			decoration	
+			decoration
 		}
 	}
-	
+
 	#define SCOREBAR_ORIGIN 0 -7
 	#define ESCOREBAR_ORIGIN 8 -6
 
@@ -1331,10 +1396,10 @@
 			exp				rect H( 64 - (TEAM_IS_LOSING*128) );
 			forecolor		1 1 1 HUD_ALPHA
 			background		"scorebar_backdrop"
-			visible			when( ( team( name ) != "TEAM_FREE" && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR )
+			visible			when( ( team( name ) != "TEAM_FREE" && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		itemDef
+		/*itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			0 -45 128 64 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1344,14 +1409,14 @@
 			background		"scorebar_backdrop"
 			visible			when( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}
+		}*/
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			0 -36 36 36 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 			origin			5 -5
 			exp				material( dvarString( "g_TeamIcon_Allies" ) );
-			visible			when ( ( team( name ) == "TEAM_ALLIES" && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR );
+			visible			when ( ( team( name ) == "TEAM_ALLIES" && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR );
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
 			decoration
 		}
@@ -1371,11 +1436,11 @@
 			rect			0 -36 36 36 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 			origin			5 -5
 			exp				material( dvarString( "g_TeamIcon_Axis" ) );
-			visible			when ( ( team( name ) == "TEAM_AXIS" && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR );
+			visible			when ( ( team( name ) == "TEAM_AXIS" && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR );
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
 			decoration
 		}
-		itemDef
+		/*itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			0 -36 36 36 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1394,7 +1459,7 @@
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
 			visible			when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && TEAM_IS_OPFOR && SHOULD_DISPLAY_SCOREBAR );
 			decoration
-		}
+		}*/
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1402,10 +1467,10 @@
 			exp				rect Y( -41 + 0-(TEAM_IS_LOSING*24) );
 			background		"white"
 			forecolor		1 1 1 0.25
-			visible			when ( ( team( name ) != "TEAM_FREE" && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR );
+			visible			when ( ( team( name ) != "TEAM_FREE" && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR );
 			decoration
 		}
-		itemDef
+		/*itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			46 -41 80 12 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1414,7 +1479,7 @@
 			forecolor		1 1 1 0.25
 			visible			when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR );
 			decoration
-		}
+		}*/
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1422,10 +1487,10 @@
 			exp				rect Y( -47 + 0-(TEAM_IS_LOSING*24) );
 			background		"hud_arrow_left"
 			forecolor		1 1 1 HUD_ALPHA
-			visible			when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR );
+			visible			when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR );
 			decoration
 		}
-		itemDef
+		/*itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			128 -47 24 24 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1434,7 +1499,7 @@
 			forecolor		1 1 1 HUD_ALPHA
 			visible			when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR );
 			decoration
-		}
+		}*/
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1443,7 +1508,7 @@
 			exp				rect W( 76 * (team( score ) / dvarInt( "ui_scorelimit" ) ) );
 			exp				material( "scorebar_" + dvarString( "scr_allies" ) );
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
-			visible 		when ( ( ( team( name ) == "TEAM_ALLIES" && gametype() != "bel" ) || team( name ) == "TEAM_SPECTATOR" ) && SHOULD_DISPLAY_SCOREBAR )
+			visible 		when ( ( ( team( name ) == "TEAM_ALLIES" && gametype() != "sr" ) || team( name ) == "TEAM_SPECTATOR" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
 		itemDef
@@ -1454,10 +1519,10 @@
 			exp				rect W( 76 * (team( score ) / dvarInt( "ui_scorelimit" ) ) );
 			exp				material( "scorebar_" + dvarString( "scr_axis" ) );
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
-			visible 		when ( ( team( name ) == "TEAM_AXIS" && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR )
+			visible 		when ( ( team( name ) == "TEAM_AXIS" && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		itemDef
+		/*itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			48 -39 76 8 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1479,7 +1544,7 @@
 			visible 		when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && TEAM_IS_MARINES && SHOULD_DISPLAY_SCOREBAR )
 			visible	0
 			decoration
-		}
+		}*/
 		itemDef
 		{
 			rect		50 -27 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1490,10 +1555,34 @@
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
-			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR )
+			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
 		itemDef
+		{
+			rect		-10 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			exp text	( team( score ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.30
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	0.07 0.69 0.26 HUD_FOREGROUND_ALPHA
+			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" ) && gametype() == "sr" ) && SHOULD_DISPLAY_SCOREBAR && NOT_SPECTATING )
+			decoration
+		}
+		itemDef
+		{
+			rect		5 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			exp text	( team( score ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.30
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	0.07 0.69 0.26 HUD_FOREGROUND_ALPHA
+			visible 	when ( ( ( team( name ) == "TEAM_AXIS" ) && gametype() == "sr" ) && SHOULD_DISPLAY_SCOREBAR && NOT_SPECTATING )
+			decoration
+		}
+		/*itemDef
 		{
 			rect		50 -27 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 			exp			rect Y( -27 + 0-(PLAYER_IS_LOSING*24) );
@@ -1505,7 +1594,7 @@
 			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
 			visible 	when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}
+		}*/
 
 		itemDef
 		{
@@ -1514,10 +1603,10 @@
 			exp				rect Y( -22 + (TEAM_IS_LOSING*12) );
 			background		"white"
 			forecolor		1 1 1 0.25
-			visible			when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR )
+			visible			when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		itemDef
+		/*itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			46 -22 80 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1526,7 +1615,7 @@
 			forecolor		1 1 1 0.25
 			visible			when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}
+		}*/
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1535,7 +1624,7 @@
 			exp				rect W( 76 * (otherteam( score ) / dvarInt( "ui_scorelimit" ) ) );
 			exp				material( "scorebar_" + dvarString( "scr_allies" ) );
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
-			visible 		when ( ( team( name ) == "TEAM_AXIS" && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR )
+			visible 		when ( ( team( name ) == "TEAM_AXIS" && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
 		itemDef
@@ -1546,10 +1635,10 @@
 			exp				rect W( 76 * (otherteam( score ) / dvarInt( "ui_scorelimit" ) ) );
 			exp				material( "scorebar_" + dvarString( "scr_axis" ) );
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
-			visible 		when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_SPECTATOR" ) && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR )
+			visible 		when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_SPECTATOR" ) && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		itemDef
+		/*itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			48 -20 76 6 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1570,7 +1659,7 @@
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
 			visible 		when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && TEAM_IS_MARINES && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}
+		}*/
 		itemDef
 		{
 			rect		50 -8 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1581,10 +1670,36 @@
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
-			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "bel" ) && SHOULD_DISPLAY_SCOREBAR )
+			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "sr" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
+
 		itemDef
+		{
+			rect		5 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			exp text	( otherteam( score ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.30
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	0.694 0.220 0.114 HUD_FOREGROUND_ALPHA
+			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" ) && gametype() == "sr" ) && SHOULD_DISPLAY_SCOREBAR && NOT_SPECTATING )
+			decoration
+		}
+
+		itemDef
+		{
+			rect		-10 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			exp text	( otherteam( score ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.30
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	0.694 0.220 0.114 HUD_FOREGROUND_ALPHA
+			visible 	when ( ( ( team( name ) == "TEAM_AXIS" ) && gametype() == "sr" ) && SHOULD_DISPLAY_SCOREBAR && NOT_SPECTATING )
+			decoration
+		}
+		/*itemDef
 		{
 			rect		50 -8 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 			exp			rect Y( -8 + (PLAYER_IS_LOSING*12) );
@@ -1609,7 +1724,7 @@
 			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
 			visible 	when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && player( score ) != scoreatrank( 1 ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}
+		}*/
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1620,6 +1735,7 @@
 			forecolor		1 1 1 0.25
 			decoration
 		}
+		//Default timer
 		itemDef
 		{
 			rect		134 -2 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1629,7 +1745,7 @@
 			textscale	0.35
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
-			visible 	when ( timeLeft() >= 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) );
+			visible 	when ( gametype() != "sr" && timeLeft() >= 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) );
 			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
 			decoration
 		}
@@ -1643,7 +1759,7 @@
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	1 0.75 0 HUD_FOREGROUND_ALPHA
-			visible 	when ( timeLeft() >= 30 && timeLeft() < 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) );
+			visible 	when ( gametype() != "sr" && timeLeft() >= 30 && timeLeft() < 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) );
 			decoration
 		}
 		itemDef
@@ -1656,7 +1772,48 @@
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	1 0.5 0 1
-			visible 	when ( ( (timeLeft() >= 0 && timeLeft() < 30) || dvarBool( ui_bomb_timer ) ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) );
+			visible 	when ( gametype() != "sr" && ( (timeLeft() >= 0 && timeLeft() < 30) || dvarBool( ui_bomb_timer ) ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) );
+			decoration
+		}
+
+		//Search & Rescue timer
+		itemDef
+		{
+			rect		-20 25 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			origin		6 0
+			exp text	( secondsAsCountdown( timeLeft() ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.25
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			visible 	when ( gametype() == "sr" && timeLeft() >= 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) && NOT_SPECTATING );
+			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
+			decoration
+		}
+		itemDef
+		{
+			rect		-20 25 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			origin		6 0
+			exp text	( secondsAsCountdown( timeLeft() ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.25
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 0.75 0 HUD_FOREGROUND_ALPHA
+			visible 	when ( gametype() == "sr" && timeLeft() >= 30 && timeLeft() < 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) && NOT_SPECTATING );
+			decoration
+		}
+		itemDef
+		{
+			rect		-25 25 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			origin		6 0
+			exp text	( secondsAsCountdown( timeLeft() ) + "." + (9 - int( (milliseconds() / 100)%10 )) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.25
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 0.5 0 1
+			visible 	when ( gametype() == "sr" && ( (timeLeft() >= 0 && timeLeft() < 30) || dvarBool( ui_bomb_timer ) ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) && NOT_SPECTATING );
 			decoration
 		}
 
@@ -1755,7 +1912,7 @@
 			visible			when ( dvarint( ui_hud_hardcore ) == 0 || dvarint( ui_hud_show_inventory ) > 0 );
 			decoration
 		}
-		
+
 		itemDef
 		{
 			name			"bandagesIcon"
@@ -1766,7 +1923,7 @@
 			visible			when ( dvarint( ui_bandages ) == 1 && ( dvarint( ui_hud_hardcore ) == 0 || dvarint( ui_hud_show_inventory ) > 0 ) );
 			decoration
 		}
-				
+
 		itemDef
 		{
 			name			"offHandFragAmmo"
@@ -1977,7 +2134,7 @@
 			visible			when ( dvarint( ui_hud_hardcore ) == 0 || dvarint( ui_hud_show_inventory ) > 0 );
 			decoration
 		}
-		
+
 //		itemDef // Left
 //        {
 //            name			"slot3"
@@ -2049,7 +2206,7 @@
     }
 
 	//	Local Talking Status
-	
+
 	menuDef
 	{
 		name				"amitalking"
@@ -2176,7 +2333,7 @@
 			forecolor		1 1 1 .8
 			visible			1
 			decoration
-		}		
+		}
 
 
 		#define 	SCOREBAR_OFFSET 0 40
@@ -2228,7 +2385,7 @@
 			forecolor	1 0.5 0 1
 			visible 	when ( (timeLeft() >= 0 && timeLeft() < 30) || dvarBool( ui_bomb_timer ) );
 			decoration
-		}		
+		}
 
 
 		#undef SCOREBAR_OFFSET
@@ -2243,7 +2400,7 @@
 			visible			1
 			decoration
 		}
-		itemDef	
+		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			0 -1 640 1 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_BOTTOM
@@ -2252,7 +2409,7 @@
 			forecolor		0 0 0 0.5
 			visible			1
 			decoration
-		}	
+		}
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -2273,7 +2430,7 @@
 			visible			1
 			decoration
 		}
-		itemDef	
+		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			0 -41 640 1 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_BOTTOM
@@ -2284,7 +2441,7 @@
 			decoration
 		}
 
-		itemDef 
+		itemDef
 		{
 			rect		0 -25 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
 			origin		SCOREBAR_OFFSET
@@ -2294,10 +2451,10 @@
 			textalign	ITEM_ALIGN_CENTER
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			visible 	1
-			decoration 
+			decoration
 		}
 
-		itemDef 
+		itemDef
 		{
 			rect		0 -7 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
 			origin		SCOREBAR_OFFSET
@@ -2307,10 +2464,10 @@
 			textalign	ITEM_ALIGN_CENTER
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			visible 	1
-			decoration 
+			decoration
 		}
-				
-		// ALLIES ICON AND SCORE		
+
+		// ALLIES ICON AND SCORE
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -2321,7 +2478,7 @@
 			decoration
 		}
 
-		itemDef 
+		itemDef
 		{
 			rect		60 -0 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 			origin		SCOREBAR_OFFSET
@@ -2331,7 +2488,7 @@
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			visible 	1
-			decoration 
+			decoration
 		}
 
 
@@ -2344,9 +2501,9 @@
 			exp				material( dvarString( "g_TeamIcon_Axis" ) );
 			visible			1
 			decoration
-		}		
+		}
 
-		itemDef 
+		itemDef
 		{
 			rect		-60 0 1 1 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_BOTTOM
 			origin		SCOREBAR_OFFSET
@@ -2356,7 +2513,7 @@
 			textalign	ITEM_ALIGN_RIGHT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			visible 	1
-			decoration 
+			decoration
 		}
 
 
@@ -2446,7 +2603,7 @@
 			visible			when (dvarString(lb_allies_p1)=="");
 			decoration
 		}
-			
+
 		LB_ALLIES_PLAYER( 1, "lb_allies_p1", "lb_allies_h1" )
 		LB_ALLIES_PLAYER( 2, "lb_allies_p2", "lb_allies_h2" )
 		LB_ALLIES_PLAYER( 3, "lb_allies_p3", "lb_allies_h3" )
@@ -2459,7 +2616,7 @@
 		LB_ALLIES_PLAYER( 10, "lb_allies_p10", "lb_allies_h10" )
 		LB_ALLIES_PLAYER( 11, "lb_allies_p11", "lb_allies_h11" )
 		LB_ALLIES_PLAYER( 12, "lb_allies_p12", "lb_allies_h12" )
-		
+
 		// AXIS PLAYERS
 		#define LB_AXIS_OFFSET (-LB_HEALTHBAR_WIDTH) -165
 		#define LB_AXIS_PLAYER( playerItem, playerName, playerHealth ) \
@@ -2469,7 +2626,7 @@
 				rect				0 (-((playerItem-1)*(LB_HEALTHBAR_HEIGHT+1))) 256 LB_HEALTHBAR_HEIGHT HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_BOTTOM \
 				origin			LB_AXIS_OFFSET \
 				background	"lb_healthbar" \
-				forecolor		.3 .3 .3 .4 \				
+				forecolor		.3 .3 .3 .4 \
 				border			0 \
 				visible			when (dvarString(playerName)!=""); \
 				decoration \
@@ -2540,7 +2697,7 @@
 			visible			when (dvarString(lb_axis_p1)=="");
 			decoration
 		}
-			
+
 		LB_AXIS_PLAYER( 1, "lb_axis_p1", "lb_axis_h1" )
 		LB_AXIS_PLAYER( 2, "lb_axis_p2", "lb_axis_h2" )
 		LB_AXIS_PLAYER( 3, "lb_axis_p3", "lb_axis_h3" )
@@ -2574,7 +2731,7 @@
 			visible			1
 			decoration
 		}
-		
+
 		itemDef
 		{
 			name			"talker1Rect"
@@ -2691,7 +2848,7 @@
 		name			"scorebar"
 		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
 		fullScreen		0
-		visible 		when ( ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "bel" ) && !inkillcam() && NOT_SPECTATING && !menuisopen( background_main ) && !menuisopen( background_systemlink ) && !menuisopen( scoreboard )) && dvarInt( ui_hud_hardcore ) == 0 && (dvarInt( "ui_score_bar" ) || team( name ) == "TEAM_SPECTATOR" || (dvarInt( "ui_timelimit" ) > 0 && timeLeft() < 0) || (timeLeft() >= 0 && (timeLeft() % 60 < 5 || timeLeft() < 60)) || (timeLeft() < 0 && (timeLeft() % 60 > (0-5))) || (dvarInt( "ui_scorelimit" ) > 0 && max( marinesfield( score ), opforfield( score ) ) / dvarInt( "ui_scorelimit" ) > 0.75 ) ) );
+		visible 		when ( ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "sr" ) && !inkillcam() && NOT_SPECTATING && !menuisopen( background_main ) && !menuisopen( background_systemlink ) && !menuisopen( scoreboard )) && dvarInt( ui_hud_hardcore ) == 0 && (dvarInt( "ui_score_bar" ) || team( name ) == "TEAM_SPECTATOR" || (dvarInt( "ui_timelimit" ) > 0 && timeLeft() < 0) || (timeLeft() >= 0 && (timeLeft() % 60 < 5 || timeLeft() < 60)) || (timeLeft() < 0 && (timeLeft() % 60 > (0-5))) || (dvarInt( "ui_scorelimit" ) > 0 && max( marinesfield( score ), opforfield( score ) ) / dvarInt( "ui_scorelimit" ) > 0.75 ) ) );
 
 		#define BARWIDTH	400
 
@@ -2751,7 +2908,7 @@
 	{
 		name			"gamemessages"
 		// (todo: use VERTICAL_ALIGN_TOP in SP)
-		rect			6 -65 10 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+		rect			6 -70 10 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 		fullScreen		0
 		visible			when( !inkillcam() );
 
@@ -2765,7 +2922,20 @@
 			textstyle			ITEM_TEXTSTYLE_SHADOWED
 			textalign			ITEM_ALIGN_LEFT
 			textscale			(TEXTSIZE_SMALL*0.75)
-			visible				when ( dvarstring( "g_gametype" ) != "vg" && dvarint( ui_hud_obituaries ) == 1 && !ui_active() );
+			visible				when ( dvarstring( "g_gametype" ) != "sr" && dvarint( ui_hud_obituaries ) == 1 && !ui_active() );
+		}
+
+		itemDef
+		{
+			origin				0 50
+			type				ITEM_TYPE_GAME_MESSAGE_WINDOW
+			gamemsgwindowindex	0
+			gamemsgwindowmode	MODE_BOTTOMUP_ALIGN_BOTTOM
+			textfont			UI_FONT_DEFAULT
+			textstyle			ITEM_TEXTSTYLE_SHADOWED
+			textalign			ITEM_ALIGN_LEFT
+			textscale			(TEXTSIZE_SMALL*0.75)
+			visible				when ( dvarstring( "g_gametype" ) == "sr" && dvarint( ui_hud_obituaries ) == 1 && !ui_active() );
 		}
 	}
 	menuDef
@@ -2813,7 +2983,7 @@
 
 	// Hold breath hint
 	//Pel - Removed to allow CAC Class in
-	menuDef
+	/*menuDef
 	{
 		name			"HoldBreathHint"
 		rect			0 -130 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
@@ -2831,10 +3001,10 @@
 			visible			1
 			decoration
 		}
-	}
+	}*/
 
 	// Safe area
-	menuDef
+	/*menuDef
 	{
 		name			"safeareaa"
 		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
@@ -2843,4 +3013,4 @@
 
 		#include "ui/safearea.menu"
 	}
-}
+}*/

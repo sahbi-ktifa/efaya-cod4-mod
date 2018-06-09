@@ -220,6 +220,7 @@ onPrecacheGameType()
 
 	precacheShader( "cross_hud" );
 	precacheShader( "skull_hud" );
+	precacheShader("hud_status_dead");
         precacheModel( "skull_ddogtag" );
         precacheModel( "cross_ddogtag" );
 
@@ -435,6 +436,7 @@ onSpawnPlayer()
 onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration)
 {
 	thread checkAllowSpectating();
+
 
 	// No tags for falling, suicides or team kills
 	//if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self )
@@ -1704,6 +1706,8 @@ quickDefuseResults( playerChoice, correctWire )
 
 spawnTags( attacker )
 {
+
+		self.pers["tag"] = true;
 		wait(1.0);
         // Place spawnpoint on the ground based on player box size
         basePosition = playerPhysicsTrace( self.origin, self.origin + ( 0, 0, -99999 ) );
@@ -1872,7 +1876,7 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
                         friendlyTag.owner clearLowerMessage();
 												friendlyTag.owner.toBeRespawned = true;
 												friendlyTag.owner.toBeRespawnedOrigin = player.origin;
-                        friendlyTag.owner thread revivePlayer();
+                        trigger thread revivePlayer(friendlyTag.owner);
 
                         // Send owner notification
 	                notifyData = spawnStruct();
@@ -1952,6 +1956,7 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
                                 player thread givePlayerScore( "take", level.scr_sr_dogtag_attacker_owner_score - level.scr_sr_enemy_dogtag_score );
                         }
 
+									enemyTag.owner.pers["tag"] = false;
                 }
 
         }
@@ -1970,12 +1975,12 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 
 }
 
-revivePlayer() {
-	self endon("game_ended");
+revivePlayer(player) {
 
 	wait(1.0);
 	if (!level.gameEnded) {
-		self thread [[level.spawnPlayer]]();
+		player.pers["tag"] = false;
+		player thread [[level.spawnPlayer]]();
 	}
 
 }
