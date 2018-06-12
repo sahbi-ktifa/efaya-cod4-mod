@@ -33,7 +33,7 @@ init()
 
 onPrematchOver()
 {
-	if (level.gametype != "sr") {
+	if (level.gametype != "sr" && level.gametype != "csd") {
 		self waittill( "prematch_over" );
 		createHudElements();
 		self startTeamStatusRefresh();
@@ -46,7 +46,7 @@ onPrematchOver()
 
 onGameEnded()
 {
-		if (level.gametype != "sr") {
+		if (level.gametype != "sr" && level.gametype != "csd") {
 			self waittill("game_ended");
 			wait (2.0);
 			destroyHudElements();
@@ -361,7 +361,7 @@ createSRHudElements() {
 		game["playerStatusIcon_" + player.name].y = 5;
 
 		game["playerStatusText_" + player.name] = createServerFontString( "default", 1.4 );
-		game["playerStatusText_" + player.name] setPoint( "CENTER", "TOP", game["playerStatusIcon_" + player.name].x, 32 );
+		game["playerStatusText_" + player.name] setPoint( "CENTER", "TOP", game["playerStatusIcon_" + player.name].x, 34 );
 		game["playerStatusText_" + player.name] setText( getSubstr(player.name, 0, 5) );
 		game["playerStatusText_" + player.name].archived = false;
 		game["playerStatusText_" + player.name].foreground = true;

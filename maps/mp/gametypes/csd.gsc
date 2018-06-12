@@ -760,7 +760,7 @@ showMoney(name)
 	moneyLeft = self createFontString( "objective", 1.4 );
 	moneyLeft.archived = true;
 	moneyLeft.hideWhenInMenu = false;
-	moneyLeft setPoint( "CENTER", "CENTER", -390, 170 );
+	moneyLeft setPoint( "CENTER", "CENTER", -390, 215 );
 	moneyLeft.alignX = "left";
 	moneyLeft.sort = -1;
 	moneyLeft.alpha = 0.75;
