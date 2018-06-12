@@ -358,10 +358,10 @@ createSRHudElements() {
 		game["playerStatusIcon_" + player.name].alpha = 0.9;
 		game["playerStatusIcon_" + player.name].horzAlign = "center";
 		game["playerStatusIcon_" + player.name].vertAlign = "top";
-		game["playerStatusIcon_" + player.name].y = 10;
+		game["playerStatusIcon_" + player.name].y = 5;
 
 		game["playerStatusText_" + player.name] = createServerFontString( "default", 1.4 );
-		game["playerStatusText_" + player.name] setPoint( "CENTER", "TOP", game["playerStatusIcon_" + player.name].x, 45 );
+		game["playerStatusText_" + player.name] setPoint( "CENTER", "TOP", game["playerStatusIcon_" + player.name].x, 32 );
 		game["playerStatusText_" + player.name] setText( getSubstr(player.name, 0, 5) );
 		game["playerStatusText_" + player.name].archived = false;
 		game["playerStatusText_" + player.name].foreground = true;
@@ -377,7 +377,7 @@ createSRHudElements() {
 		game["playerStatusDeadIcon_" + player.name].alpha = 0;
 		game["playerStatusDeadIcon_" + player.name].horzAlign = "center";
 		game["playerStatusDeadIcon_" + player.name].vertAlign = "top";
-		game["playerStatusDeadIcon_" + player.name].y = 14;
+		game["playerStatusDeadIcon_" + player.name].y = 9;
 
 		game["playerStatusCrossAlliesIcon_" + player.name] = createServerIcon( "cross_hud", 16, 16, "allies" );
 		game["playerStatusCrossAlliesIcon_" + player.name].x = game["playerStatusIcon_" + player.name].x;
@@ -389,7 +389,7 @@ createSRHudElements() {
 		game["playerStatusCrossAlliesIcon_" + player.name].alpha = 0;
 		game["playerStatusCrossAlliesIcon_" + player.name].horzAlign = "center";
 		game["playerStatusCrossAlliesIcon_" + player.name].vertAlign = "top";
-		game["playerStatusCrossAlliesIcon_" + player.name].y = 14;
+		game["playerStatusCrossAlliesIcon_" + player.name].y = 9;
 
 		game["playerStatusSkullAlliesIcon_" + player.name] = createServerIcon( "skull_hud", 16, 16, "allies" );
 		game["playerStatusSkullAlliesIcon_" + player.name].x = game["playerStatusIcon_" + player.name].x;
@@ -401,7 +401,7 @@ createSRHudElements() {
 		game["playerStatusSkullAlliesIcon_" + player.name].alpha = 0;
 		game["playerStatusSkullAlliesIcon_" + player.name].horzAlign = "center";
 		game["playerStatusSkullAlliesIcon_" + player.name].vertAlign = "top";
-		game["playerStatusSkullAlliesIcon_" + player.name].y = 14;
+		game["playerStatusSkullAlliesIcon_" + player.name].y = 9;
 
 		game["playerStatusCrossAxisIcon_" + player.name] = createServerIcon( "cross_hud", 16, 16, "axis" );
 		game["playerStatusCrossAxisIcon_" + player.name].x = game["playerStatusIcon_" + player.name].x;
@@ -413,7 +413,7 @@ createSRHudElements() {
 		game["playerStatusCrossAxisIcon_" + player.name].alpha = 0;
 		game["playerStatusCrossAxisIcon_" + player.name].horzAlign = "center";
 		game["playerStatusCrossAxisIcon_" + player.name].vertAlign = "top";
-		game["playerStatusCrossAxisIcon_" + player.name].y = 14;
+		game["playerStatusCrossAxisIcon_" + player.name].y = 9;
 
 		game["playerStatusSkullAxisIcon_" + player.name] = createServerIcon( "skull_hud", 16, 16, "axis" );
 		game["playerStatusSkullAxisIcon_" + player.name].x = game["playerStatusIcon_" + player.name].x;
@@ -425,7 +425,7 @@ createSRHudElements() {
 		game["playerStatusSkullAxisIcon_" + player.name].alpha = 0;
 		game["playerStatusSkullAxisIcon_" + player.name].horzAlign = "center";
 		game["playerStatusSkullAxisIcon_" + player.name].vertAlign = "top";
-		game["playerStatusSkullAxisIcon_" + player.name].y = 14;
+		game["playerStatusSkullAxisIcon_" + player.name].y = 9;
 
 
 	}

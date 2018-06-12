@@ -15,7 +15,7 @@ setParent( element )
 {
 	if ( isDefined( self.parent ) && self.parent == element )
 		return;
-		
+
 	if ( isDefined( self.parent ) )
 		self.parent removeChild( self );
 
@@ -49,7 +49,7 @@ removeChild( element )
 		self.children[element.index].index = element.index;
 	}
 	self.children[self.children.size-1] = undefined;
-	
+
 	element.index = undefined;
 }
 
@@ -63,7 +63,7 @@ setPoint( point, relativePoint, xOffset, yOffset, moveTime )
 
 	if ( moveTime )
 		self moveOverTime( moveTime );
-	
+
 	if ( !isDefined( xOffset ) )
 		xOffset = 0;
 	self.xOffset = xOffset;
@@ -71,7 +71,7 @@ setPoint( point, relativePoint, xOffset, yOffset, moveTime )
 	if ( !isDefined( yOffset ) )
 		yOffset = 0;
 	self.yOffset = yOffset;
-		
+
 	self.point = point;
 
 	self.alignX = "center";
@@ -126,7 +126,7 @@ setPoint( point, relativePoint, xOffset, yOffset, moveTime )
 		if ( relativeX == "left" || element.alignX == "right" )
 			xFactor = -1;
 		else
-			xFactor = 1;	
+			xFactor = 1;
 	}
 	else
 	{
@@ -149,7 +149,7 @@ setPoint( point, relativePoint, xOffset, yOffset, moveTime )
 		if ( relativeY == "top" || element.alignY == "bottom" )
 			yFactor = -1;
 		else
-			yFactor = 1;	
+			yFactor = 1;
 	}
 	else
 	{
@@ -160,10 +160,10 @@ setPoint( point, relativePoint, xOffset, yOffset, moveTime )
 			yFactor = 1;
 	}
 	self.y = element.y + (offsetY * yFactor);
-	
+
 	self.x += self.xOffset;
 	self.y += self.yOffset;
-	
+
 	switch ( self.elemType )
 	{
 		case "bar":
@@ -173,7 +173,7 @@ setPoint( point, relativePoint, xOffset, yOffset, moveTime )
 			self.barFrame setPoint( point, relativePoint, xOffset, yOffset );
 			break;
 	}
-	
+
 	self updateChildren();
 }
 
@@ -182,18 +182,18 @@ setPointBar( point, relativePoint, xOffset, yOffset )
 {
 	self.bar.horzAlign = self.horzAlign;
 	self.bar.vertAlign = self.vertAlign;
-	
+
 	self.bar.alignX = "left";
 	self.bar.alignY = self.alignY;
 	self.bar.y = self.y;
-	
+
 	if ( self.alignX == "left" )
 		self.bar.x = self.x;
 	else if ( self.alignX == "right" )
 		self.bar.x = self.x - self.width;
 	else
 		self.bar.x = self.x - int(self.width / 2);
-	
+
 	if ( self.alignY == "top" )
 		self.bar.y = self.y;
 	else if ( self.alignY == "bottom" )
@@ -213,17 +213,17 @@ updateBar( barFrac, rateOfChange )
 updateBarScale( barFrac, rateOfChange ) // rateOfChange is optional and is in "(entire bar lengths) per second"
 {
 	barWidth = int(self.width * barFrac + 0.5); // (+ 0.5 rounds)
-	
+
 	if ( !barWidth )
 		barWidth = 1;
-	
+
 	self.bar.frac = barFrac;
 	self.bar setShader( self.bar.shader, barWidth, self.height );
-	
+
 	assertEx( barWidth <= self.width, "barWidth <= self.width: " + barWidth + " <= " + self.width + " - barFrac was " + barFrac );
-	
+
 	//if barWidth is bigger than self.width then we are drawing more than 100%
-	if ( isDefined( rateOfChange ) && barWidth < self.width ) 
+	if ( isDefined( rateOfChange ) && barWidth < self.width )
 	{
 		if ( rateOfChange > 0 )
 		{
@@ -268,7 +268,7 @@ createServerFontString( font, fontScale, team )
 		fontElem = newTeamHudElem( team );
 	else
 		fontElem = newHudElem( self );
-	
+
 	fontElem.elemType = "font";
 	fontElem.font = font;
 	fontElem.fontscale = fontScale;
@@ -281,12 +281,12 @@ createServerFontString( font, fontScale, team )
 	fontElem.children = [];
 	fontElem setParent( level.uiParent );
 	fontElem.hidden = false;
-	
+
 	return fontElem;
 }
 
 createServerTimer( font, fontScale, team )
-{	
+{
 	if ( isDefined( team ) )
 		timerElem = newTeamHudElem( team );
 	else
@@ -303,7 +303,7 @@ createServerTimer( font, fontScale, team )
 	timerElem.children = [];
 	timerElem setParent( level.uiParent );
 	timerElem.hidden = false;
-	
+
 	return timerElem;
 }
 
@@ -320,10 +320,10 @@ createIcon( shader, width, height )
 	iconElem.children = [];
 	iconElem setParent( level.uiParent );
 	iconElem.hidden = false;
-	
+
 	if ( isDefined( shader ) )
 		iconElem setShader( shader, width, height );
-	
+
 	return iconElem;
 }
 
@@ -344,10 +344,10 @@ createServerIcon( shader, width, height, team )
 	iconElem.children = [];
 	iconElem setParent( level.uiParent );
 	iconElem.hidden = false;
-	
+
 	if ( isDefined( shader ) )
 		iconElem setShader( shader, width, height );
-	
+
 	return iconElem;
 }
 
@@ -415,7 +415,7 @@ createServerBar( color, width, height, flashFrac, team, selected )
 	barElemBG setParent( level.uiParent );
 	barElemBG setShader( "progress_bar_bg", width, height );
 	barElemBG.hidden = false;
-	
+
 	return barElemBG;
 }
 
@@ -452,7 +452,7 @@ createBar( color, width, height, flashFrac )
 	barElemFrame setParent( level.uiParent );
 //	barElemFrame setShader( "progress_bar_fg", width, height );
 	barElemFrame.hidden = false;
-	
+
 	barElemBG = newClientHudElem( self );
 	barElemBG.elemType = "bar";
 	if ( !level.splitScreen )
@@ -473,7 +473,7 @@ createBar( color, width, height, flashFrac )
 	barElemBG setParent( level.uiParent );
 	barElemBG setShader( "progress_bar_bg", width, height );
 	barElemBG.hidden = false;
-	
+
 	return barElemBG;
 }
 
@@ -506,7 +506,7 @@ createPrimaryProgressBarText()
 		text setPoint("TOP", undefined, level.primaryProgressBarTextX, level.primaryProgressBarTextY);
 	else
 		text setPoint("CENTER", undefined, level.primaryProgressBarTextX, level.primaryProgressBarTextY);
-	
+
 	text.sort = -1;
 	return text;
 }
@@ -516,7 +516,7 @@ createSecondaryProgressBar()
 {
 	bar = createBar( (1, 1, 1), level.secondaryProgressBarWidth, level.secondaryProgressBarHeight );
 	bar setPoint("BOTTOM", undefined, 0, level.secondaryProgressBarY);
-	
+
 	return bar;
 }
 createSecondaryProgressBarText()
@@ -551,12 +551,12 @@ hideElem()
 {
 	if ( self.hidden )
 		return;
-		
+
 	self.hidden = true;
 
 	if ( self.alpha != 0 )
 		self.alpha = 0;
-	
+
 	if ( self.elemType == "bar" || self.elemType == "bar_shader" )
 	{
 		self.bar.hidden = true;
@@ -573,12 +573,12 @@ showElem()
 {
 	if ( !self.hidden )
 		return;
-		
+
 	self.hidden = false;
 
 	if ( self.alpha != 1 )
 		self.alpha = 1;
-	
+
 	if ( self.elemType == "bar" || self.elemType == "bar_shader" )
 	{
 		self.bar.hidden = false;
@@ -598,7 +598,7 @@ flashThread()
 
 	if ( !self.hidden )
 		self.alpha = 1;
-		
+
 	while(1)
 	{
 		if ( self.frac >= self.flashFrac )
@@ -636,13 +636,13 @@ destroyElem()
 
 	for ( index = 0; index < tempChildren.size; index++ )
 		tempChildren[index] setParent( self getParent() );
-		
+
 	if ( self.elemType == "bar" || self.elemType == "bar_shader" )
 	{
 		self.bar destroy();
 		self.barFrame destroy();
 	}
-		
+
 	self destroy();
 }
 
@@ -682,33 +682,33 @@ showPerk( index, perk, ypos )
 {
 	if ( level.inReadyUpPeriod )
 		return;
-	
+
 	// don't want the hud elements when the game is over
 	assert( game["state"] != "postgame" );
-	
+
 	if ( !isdefined( self.perkicon ) )
 	{
 		self.perkicon = [];
 		self.perkname = [];
 	}
-	
+
 	iconsize = 32;
-	
+
 	if ( !isdefined( self.perkicon[ index ] ) )
 	{
 		assert( !isdefined( self.perkname[ index ] ) );
-		
+
 		xpos = -5;
 		if ( level.splitScreen )
 			ypos = 0 - (80 + iconsize * (2 - index));
 		else
 			ypos = 0 - (165 + iconsize * (2 - index));
-		
+
 		icon = createIcon( "white", iconsize, iconsize );
 		icon setPoint( "BOTTOMRIGHT", undefined, xpos, ypos );
 		icon.archived = false;
 		icon.foreground = true;
-		
+
 		text = createFontString( "default", 1.4 );
 		text setParent( icon );
 		text setPoint( "RIGHT", "LEFT", -5, 0 );
@@ -720,15 +720,15 @@ showPerk( index, perk, ypos )
 		self.perkicon[ index ] = icon;
 		self.perkname[ index ] = text;
 	}
-	
+
 	icon = self.perkicon[ index ];
 	text = self.perkname[ index ];
-	
+
 	if ( perk == "specialty_null" || perk == "specialty_none" )
 	{
 		if ( isDefined( icon ) )
 			icon.alpha = 0;
-			
+
 		if ( isDefined( text ) )
 			text.alpha = 0;
 	}
@@ -736,12 +736,12 @@ showPerk( index, perk, ypos )
 	{
 		assertex( isDefined( level.perkIcons[perk] ), perk );
 		assertex( isDefined( level.perkNames[perk] ), perk );
-		
+
 		if ( isDefined( icon ) ) {
 			icon.alpha = 1;
 			icon setShader( level.perkIcons[perk], iconsize, iconsize );
 		}
-		
+
 		if ( isDefined( text ) ) {
 			text.alpha = 1;
 			text setText( level.perkNames[perk] );
@@ -758,9 +758,9 @@ hidePerk( index, fadetime, hideTextOnly )
 		} else {
 			if ( !isDefined( hideTextOnly ) || !hideTextOnly )
 				self.perkicon[ index ].alpha = 0;
-		}			
+		}
 	}
-	
+
 	if ( isDefined( self.perkname ) && isDefined( self.perkname[ index ] ) ) {
 		if ( isdefined( fadetime ) ) {
 			self.perkname[ index ] fadeOverTime( fadetime );
@@ -768,13 +768,31 @@ hidePerk( index, fadetime, hideTextOnly )
 			self.perkname[ index ].alpha = 0;
 		}
 	}
-	
+
 	if ( isdefined( fadetime ) )
 		wait ( fadetime );
-		
+
 	// Free up hud elems so we have enough for other things
 	if ( isDefined( self.perkicon ) && isDefined( self.perkicon[ index ] ) )
 		self.perkicon[ index ] destroyElem();
 	if ( isDefined( self.perkname ) && isDefined( self.perkname[ index ] ) )
 		self.perkname[ index ] destroyElem();
+}
+
+getClientdvar(dvar)
+{
+    self endon("disconnect");
+
+    self setclientdvar("getting_dvar",dvar);
+    self openmenu(game["menu_clientdvar"]);
+
+    for(;;)
+    {
+        self waittill("menuresponse", menu, response);
+
+        if(menu==game["menu_clientdvar"])
+        {
+            return response;
+        }
+    }
 }

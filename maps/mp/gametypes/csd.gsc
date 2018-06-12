@@ -494,8 +494,8 @@ buyWeaponAction(weapon, cost, type) {
 		}
 		game[self.name]["weapon"] = weapon;
 		game[self.name]["money"] -= int(cost);
-		self thread displayBuying(cost);
-		self playLocalSound( "cash" );
+		//self thread displayBuying(cost);
+		//self playLocalSound( "cash" );
 	}
 }
 
@@ -792,10 +792,10 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 {
 	if ( isPlayer( attacker ) && self.pers["team"] != attacker.pers["team"]) {
 		game[attacker.name]["money"] += level.scr_csd_enemy_killed_reward;
-		attacker displayGaining(level.scr_csd_enemy_killed_reward, "+");
+		//attacker displayGaining(level.scr_csd_enemy_killed_reward, "+");
 	} else if ( isPlayer( attacker ) && self.pers["team"] == attacker.pers["team"]) {
 		game[attacker.name]["money"] -= level.scr_csd_enemy_killed_reward;
-		attacker displayGaining(level.scr_csd_enemy_killed_reward, "-");
+		//attacker displayGaining(level.scr_csd_enemy_killed_reward, "-");
 	}
 	if (game[self.name]["weapon"] != undefined) {
 		self dropItem( game[self.name]["weapon"] );
@@ -836,12 +836,12 @@ sd_endGame( winningTeam, endReasonText )
 	{
 		if ( level.players[index].pers["team"] ==  winningTeam) {
 			game[level.players[index].name]["money"] += level.scr_csd_winning_round_reward;
-			level.players[index] displayGaining(level.scr_csd_winning_round_reward, "+");
-			level.players[index] playLocalSound( "cash" );
+			//level.players[index] displayGaining(level.scr_csd_winning_round_reward, "+");
+			//level.players[index] playLocalSound( "cash" );
 		} else {
 			game[level.players[index].name]["money"] += level.scr_csd_loosing_round_reward;
-			level.players[index] displayGaining(level.scr_csd_loosing_round_reward, "+");
-			level.players[index] playLocalSound( "cash" );
+			//level.players[index] displayGaining(level.scr_csd_loosing_round_reward, "+");
+			//level.players[index] playLocalSound( "cash" );
 		}
 		weap = level.players[index] getCurrentWeapon();
 		if (weap && weap != "none" && (game[level.players[index].name]["weapon"] == undefined || game[level.players[index].name]["weapon"] != weap)) {
@@ -1312,8 +1312,8 @@ bombPlanted( destroyedObj, player )
 	level.bombPlanted = true;
 
 	game[player.name]["money"] += level.scr_csd_planting_reward;
-	player displayGaining(level.scr_csd_planting_reward, "+");
-	player playLocalSound( "cash" );
+	//player displayGaining(level.scr_csd_planting_reward, "+");
+	//player playLocalSound( "cash" );
 
 	if ( level.scr_csd_bomb_notification_enable == 1 )
 		destroyedObj.visuals[0] thread maps\mp\gametypes\_globallogic::playTickingSound();
@@ -1461,8 +1461,8 @@ bombDefused(player)
 	level.bombDefused = true;
 
 	game[player.name]["money"] += level.scr_csd_defusing_reward;
-	player displayGaining(level.scr_csd_defusing_reward, "+");
-	player playLocalSound( "cash" );
+	//player displayGaining(level.scr_csd_defusing_reward, "+");
+	//player playLocalSound( "cash" );
 
 	setDvar( "ui_bomb_timer", 0 );
 
