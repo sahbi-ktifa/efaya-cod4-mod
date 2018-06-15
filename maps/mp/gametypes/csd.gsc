@@ -798,7 +798,7 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 		//attacker displayGaining(level.scr_csd_enemy_killed_reward, "-");
 	}
 	if (game[self.name]["weapon"] != undefined) {
-		self dropItem( game[self.name]["weapon"] );
+		self thread dropItem( game[self.name]["weapon"] );
 	}
 	game[self.name]["weapon"] = undefined;
 

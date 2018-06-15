@@ -154,79 +154,67 @@ WaitEnd( killcamlength )
 
 CreateFKMenu( victim , attacker)
 {
-    self.top_fk_shader = newClientHudElem(self);
-    self.top_fk_shader.elemType = "shader";
-    self.top_fk_shader.archived = false;
-    self.top_fk_shader.horzAlign = "fullscreen";
-    self.top_fk_shader.vertAlign = "fullscreen";
-    self.top_fk_shader.sort = 0;
-    self.top_fk_shader.foreground = true;
-    self.top_fk_shader.color	= (.15, .15, .15);
-    self.top_fk_shader setShader("white",640,112);
+    if (isDefined(victim.name)) {
+      self.top_fk_shader = newClientHudElem(self);
+      self.top_fk_shader.elemType = "shader";
+      self.top_fk_shader.archived = false;
+      self.top_fk_shader.horzAlign = "fullscreen";
+      self.top_fk_shader.vertAlign = "fullscreen";
+      self.top_fk_shader.sort = 0;
+      self.top_fk_shader.foreground = true;
+      self.top_fk_shader.color	= (.15, .15, .15);
+      self.top_fk_shader setShader("white",640,112);
 
-    self.bottom_fk_shader = newClientHudElem(self);
-    self.bottom_fk_shader.elemType = "shader";
-    self.bottom_fk_shader.y = 368;
-    self.bottom_fk_shader.archived = false;
-    self.bottom_fk_shader.horzAlign = "fullscreen";
-    self.bottom_fk_shader.vertAlign = "fullscreen";
-    self.bottom_fk_shader.sort = 0;
-    self.bottom_fk_shader.foreground = true;
-    self.bottom_fk_shader.color	= (.15, .15, .15);
-    self.bottom_fk_shader setShader("white",640,112);
+      self.bottom_fk_shader = newClientHudElem(self);
+      self.bottom_fk_shader.elemType = "shader";
+      self.bottom_fk_shader.y = 368;
+      self.bottom_fk_shader.archived = false;
+      self.bottom_fk_shader.horzAlign = "fullscreen";
+      self.bottom_fk_shader.vertAlign = "fullscreen";
+      self.bottom_fk_shader.sort = 0;
+      self.bottom_fk_shader.foreground = true;
+      self.bottom_fk_shader.color	= (.15, .15, .15);
+      self.bottom_fk_shader setShader("white",640,112);
 
-    self.fk_title = newClientHudElem(self);
-    self.fk_title.archived = false;
-    self.fk_title.y = 45;
-    self.fk_title.alignX = "center";
-    self.fk_title.alignY = "middle";
-    self.fk_title.horzAlign = "center";
-    self.fk_title.vertAlign = "top";
-    self.fk_title.sort = 1; // force to draw after the bars
-    self.fk_title.font = "objective";
-    self.fk_title.fontscale = 3.5;
-    self.fk_title.foreground = true;
-    self.fk_title.shadown = 1;
+      self.fk_title = newClientHudElem(self);
+      self.fk_title.archived = false;
+      self.fk_title.y = 45;
+      self.fk_title.alignX = "center";
+      self.fk_title.alignY = "middle";
+      self.fk_title.horzAlign = "center";
+      self.fk_title.vertAlign = "top";
+      self.fk_title.sort = 1; // force to draw after the bars
+      self.fk_title.font = "objective";
+      self.fk_title.fontscale = 3.5;
+      self.fk_title.foreground = true;
+      self.fk_title.shadown = 1;
 
-    self.fk_title_low = newClientHudElem(self);
-    self.fk_title_low.archived = false;
-    self.fk_title_low.x = 0;
-    self.fk_title_low.y = -85;
-    self.fk_title_low.alignX = "center";
-    self.fk_title_low.alignY = "bottom";
-    self.fk_title_low.horzAlign = "center_safearea";
-    self.fk_title_low.vertAlign = "bottom";
-    self.fk_title_low.sort = 1; // force to draw after the bars
-    self.fk_title_low.font = "objective";
-    self.fk_title_low.fontscale = 1.4;
-    self.fk_title_low.foreground = true;
+      self.fk_title_low = newClientHudElem(self);
+      self.fk_title_low.archived = false;
+      self.fk_title_low.x = 0;
+      self.fk_title_low.y = -85;
+      self.fk_title_low.alignX = "center";
+      self.fk_title_low.alignY = "bottom";
+      self.fk_title_low.horzAlign = "center_safearea";
+      self.fk_title_low.vertAlign = "bottom";
+      self.fk_title_low.sort = 1; // force to draw after the bars
+      self.fk_title_low.font = "objective";
+      self.fk_title_low.fontscale = 1.4;
+      self.fk_title_low.foreground = true;
 
-    self.credits = newClientHudElem(self);
-    self.credits.archived = false;
-    self.credits.x = 0;
-    self.credits.y = 0;
-    self.credits.alignX = "left";
-    self.credits.alignY = "bottom";
-    self.credits.horzAlign = "left";
-    self.credits.vertAlign = "bottom";
-    self.credits.sort = 1; // force to draw after the bars
-    self.credits.font = "default";
-    self.credits.fontscale = 1.4;
-    self.credits.foreground = true;
+      self.fk_title.alpha = 1;
+      self.fk_title_low.alpha = 1;
+      self.top_fk_shader.alpha = 0.5;
+      self.bottom_fk_shader.alpha = 0.5;
+      self.credits.alpha = 0.2;
 
-    self.fk_title.alpha = 1;
-    self.fk_title_low.alpha = 1;
-    self.top_fk_shader.alpha = 0.5;
-    self.bottom_fk_shader.alpha = 0.5;
-    self.credits.alpha = 0.2;
+      self.fk_title_low setText("^3" + attacker.name + " ^7killed ^1" + victim.name);
 
-    self.credits setText("^1Created by: ^2FzBr.^3d4rk");
-    self.fk_title_low setText("^3" + attacker.name + " ^7killed ^1" + victim.name);
-
-    if( !level.killcam_style )
-        self.fk_title setText("GAME WINNING KILL");
-    else
-        self.fk_title setText("ROUND WINNING KILL");
+      if( !level.killcam_style )
+          self.fk_title setText("GAME WINNING KILL");
+      else
+          self.fk_title setText("ROUND WINNING KILL");
+    }
 }
 
 onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration)
