@@ -552,7 +552,7 @@
 			forecolor 1.0 1.0 1.0 0.3
 			background "hud_healthbar_heart"
 			ownerdraw CG_PLAYER_BAR_HEALTH_BACK
-			visible when( !dvarInt( "wideScreen" ) && !flashbanged() && !ui_active() && NOT_SPECTATING && team( name ) != "TEAM_SPECTATOR" );
+			visible when( !dvarInt( "wideScreen" ) && !flashbanged() && gametype() != "sr" && gametype() != "csd" && !ui_active() && NOT_SPECTATING && team( name ) != "TEAM_SPECTATOR" );
 			decoration
 		}
 
@@ -584,7 +584,7 @@
 			forecolor 1.0 1.0 1.0 0.3
 			background "hud_healthbar_heart"
 			ownerdraw CG_PLAYER_BAR_HEALTH_BACK
-			visible when( dvarInt( "wideScreen" ) && !flashbanged() && !ui_active() && NOT_SPECTATING && team( name ) != "TEAM_SPECTATOR" );
+			visible when( dvarInt( "wideScreen" ) && !flashbanged() && !ui_active() && gametype() != "sr" && gametype() != "csd" && NOT_SPECTATING && team( name ) != "TEAM_SPECTATOR" );
 			decoration
 		}
 	}
@@ -718,71 +718,6 @@
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
 			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 4 && gametype() != "csd" && gametype() != "sr" );
-			textscale		TEXTSIZE_SMALL
-			textstyle		ITEM_TEXTSTYLE_SHADOWED
-			forecolor		1 0 0 HUD_ALPHA
-			decoration
-		}
-
-		itemDef
-		{
-			name			"chRect"
-			rect			-2 45 48 48 // 64x64
-			ownerdraw		CG_PLAYER_STANCE
-			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 0 && (gametype() == "sr" ||  gametype() == "csd" ));
-			textscale		TEXTSIZE_SMALL
-			textstyle		ITEM_TEXTSTYLE_SHADOWED
-			forecolor		1 1 1 HUD_ALPHA
-			decoration
-		}
-
-		itemDef
-		{
-			name			"chRect"
-			rect			-2 45 48 48 // 64x64
-			ownerdraw		CG_PLAYER_STANCE
-			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 1 && (gametype() == "sr" ||  gametype() == "csd" ) );
-			textscale		TEXTSIZE_SMALL
-			textstyle		ITEM_TEXTSTYLE_SHADOWED
-			forecolor		0 0.5 0 HUD_ALPHA
-			decoration
-		}
-
-		itemDef
-		{
-			name			"chRect"
-			rect			-2 45 48 48 // 64x64
-			ownerdraw		CG_PLAYER_STANCE
-			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 2 && (gametype() == "sr" ||  gametype() == "csd" )  );
-			textscale		TEXTSIZE_SMALL
-			textstyle		ITEM_TEXTSTYLE_SHADOWED
-			forecolor		1 1 0 HUD_ALPHA
-			decoration
-		}
-
-		itemDef
-		{
-			name			"chRect"
-			rect			-2 45 48 48 // 64x64
-			ownerdraw		CG_PLAYER_STANCE
-			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 3 && (gametype() == "sr" ||  gametype() == "csd" )  );
-			textscale		TEXTSIZE_SMALL
-			textstyle		ITEM_TEXTSTYLE_SHADOWED
-			forecolor		1 0.5 0 HUD_ALPHA
-			decoration
-		}
-
-		itemDef
-		{
-			name			"chRect"
-			rect			-2 45 48 48 // 64x64
-			ownerdraw		CG_PLAYER_STANCE
-			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 4 && (gametype() == "sr" ||  gametype() == "csd" )  );
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		1 0 0 HUD_ALPHA
