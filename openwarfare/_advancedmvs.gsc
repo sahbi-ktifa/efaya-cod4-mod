@@ -609,7 +609,7 @@ onMenuResponse()
 				case "votemap":
 					if ( self.mapVote["vote"] == "" || self.mapVote["vote"] != level.scr_amvs_maps[level.amvsWinnerGametype][self.mapVote["map"]] ) {
 						// Check if we need to remove previous vote
-						if ( self.mapVote["vote"] != "" ) {
+						if ( self.mapVote["vote"] != "" && isDefined(level.scr_amvs_maps_votes[ self.mapVote["vote"] ])) {
 							level.scr_amvs_maps_votes[ self.mapVote["vote"] ]--;
 						}
 

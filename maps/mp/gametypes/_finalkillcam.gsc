@@ -94,7 +94,6 @@ finalkillcam( attacker, attackerNum, deathtime, victim)
         self.fk_title_low.alpha = 1;
         self.top_fk_shader.alpha = 0.5;
         self.bottom_fk_shader.alpha = 0.5;
-        self.credits.alpha = 0.2;
     }
 
     self thread WaitEnd(killcamlength);
@@ -131,11 +130,18 @@ finalkillcam( attacker, attackerNum, deathtime, victim)
 
 CleanFK()
 {
-    self.fk_title.alpha = 0;
-    self.fk_title_low.alpha = 0;
-    self.top_fk_shader.alpha = 0;
-    self.bottom_fk_shader.alpha = 0;
-    self.credits.alpha = 0;
+    if (isDefined(self.fk_title)) {
+      self.fk_title.alpha = 0;
+    }
+    if (isDefined(self.fk_title_low)) {
+      self.fk_title_low.alpha = 0;
+    }
+    if (isDefined(self.top_fk_shader)) {
+      self.top_fk_shader.alpha = 0;
+    }
+    if (isDefined(self.bottom_fk_shader)) {
+      self.bottom_fk_shader.alpha = 0;
+    }
 
     self SetClientDvar("ui_ShowMenuOnly", "");
 
@@ -206,7 +212,6 @@ CreateFKMenu( victim , attacker)
       self.fk_title_low.alpha = 1;
       self.top_fk_shader.alpha = 0.5;
       self.bottom_fk_shader.alpha = 0.5;
-      self.credits.alpha = 0.2;
 
       self.fk_title_low setText("^3" + attacker.name + " ^7killed ^1" + victim.name);
 
@@ -599,7 +604,8 @@ endGame( winner, endReasonText )
 		}
 	}
 
-	thread timeLimitClock_Intermission( level.scr_intermission_time, ( level.scr_amvs_enable == 0 || game["amvs_skip_voting"] ) );
+	//thread timeLimitClock_Intermission( level.scr_intermission_time, ( level.scr_amvs_enable == 0 || game["amvs_skip_voting"] ) );
+	thread timeLimitClock_Intermission( level.scr_intermission_time);
 	wait (level.scr_intermission_time);
 
 	if ( level.scr_eog_fastrestart != 0 ) {

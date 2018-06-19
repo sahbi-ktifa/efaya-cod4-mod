@@ -420,7 +420,7 @@ onSpawnPlayer()
 	if ( level.scr_sr_allow_defender_explosivepickup && level.scr_sr_allow_defender_explosivedestroy && self.pers["team"] == game["defenders"] && getDvar( "g_gametype" ) == "sr" )
 		self thread allowDefenderExplosiveDestroy();
 
-		if (self.toBeRespawned != undefined && self.toBeRespawned == true) {
+		if (isDefined(self.toBeRespawned) && self.toBeRespawned == true) {
 			self.toBeRespawned = false;
 			self setOrigin( self.toBeRespawnedOrigin );
 			self ExecClientCommand("gocrouch");
