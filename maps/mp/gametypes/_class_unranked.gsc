@@ -167,6 +167,9 @@ getWeaponChoice( response )
 
 giveLoadout( team, class )
 {
+	if (isDefined(self.toBeRespawned) && self.toBeRespawned == true) {
+		return;
+	}
 	self takeAllWeapons();
 	self setClass( class );
 
@@ -192,7 +195,7 @@ giveLoadout( team, class )
 		self giveWeapon( sidearmWeapon );
 		if ( self maps\mp\gametypes\_class_unranked::cac_hasSpecialty( "specialty_extraammo" ) )
 			self giveMaxAmmo( sidearmWeapon );
-			
+
 		self setSpawnWeapon( sidearmWeapon );
 	}
 
@@ -318,7 +321,7 @@ giveLoadout( team, class )
 
 	// cac specialties that require loop threads
 	self maps\mp\gametypes\_class_unranked::cac_selector();
-		
+
 	[[level.onLoadoutGiven]]();
 }
 

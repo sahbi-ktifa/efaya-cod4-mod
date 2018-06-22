@@ -260,6 +260,9 @@ onPrecacheGameType()
 	precacheString( &"MP_DEFUSING_EXPLOSIVE" );
 
 	precacheModel( "prop_suitcase_bomb" );
+
+	precacheShader("hud_status_dead");
+
 	game["startWeapon"] = "beretta_mp";
 
 
@@ -473,14 +476,15 @@ sd_getTeamKillScore( eInflictor, attacker, sMeansOfDeath, sWeapon )
 }
 
 buyWeaponAction(weapon, cost, type) {
+	if (!isDefined(game[self.name]["money"])) {
+		return;
+	}
 	if (int(game[self.name]["money"]) < int(cost)) {
 		//ClientPrint(self, "Not enough money to purchase this weapon");
 		self playLocalSound( "error_csd" );
 	} else {
-		if (game[self.name]["weapon"] != undefined && game[self.name]["weapon"] != weapon) {
-			ClientPrint(self, "Dropping 1 : " + game[self.name]["weapon"]);
+		if (isDefined(game[self.name]["weapon"]) && game[self.name]["weapon"] != weapon) {
 			currentWeapon = self getCurrentWeapon();
-			ClientPrint(self, "Dropping 2 : " + currentWeapon);
 			self dropItem( currentWeapon );
 		}
 		//ClientPrint(self, "Buying : " + weapon);
@@ -797,7 +801,7 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 		game[attacker.name]["money"] -= level.scr_csd_enemy_killed_reward;
 		//attacker displayGaining(level.scr_csd_enemy_killed_reward, "-");
 	}
-	if (game[self.name]["weapon"] != undefined) {
+	if (isDefined(game[self.name]["weapon"])) {
 		currentWeapon = self getCurrentWeapon();
 		self dropItem( currentWeapon );
 	}
@@ -845,7 +849,7 @@ sd_endGame( winningTeam, endReasonText )
 			//level.players[index] playLocalSound( "cash" );
 		}
 		weap = level.players[index] getCurrentWeapon();
-		if (weap && weap != "none" && (game[level.players[index].name]["weapon"] == undefined || game[level.players[index].name]["weapon"] != weap)) {
+		if (isDefined(weap) && weap != "none" && weap != "briefcase_bomb_defuse_mp" && (!isDefined(game[level.players[index].name]["weapon"]) || game[level.players[index].name]["weapon"] != weap)) {
 			game[level.players[index].name]["weapon"] = weap;
 		}
 	}

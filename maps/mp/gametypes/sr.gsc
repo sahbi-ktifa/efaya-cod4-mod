@@ -1822,156 +1822,180 @@ onJoinedDisconnect( enemyTag, friendlyTag, trigger )
 removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 {
 
-        trigger endon( "timed_out" );
-        friendlyTag endon( "timed_out" );
-        enemyTag endon( "timed_out" );
+	trigger endon( "timed_out" );
+	friendlyTag endon( "timed_out" );
+	enemyTag endon( "timed_out" );
 
 
-        trigger waittill( "trigger", player );
+	trigger waittill( "trigger", player );
+	
+	// If by some chance a dead player activates the trigger, the dogtag will simply be deleted!
+	if ( isAlive( player ) ) {
 
-        // If by some chance a dead player activates the trigger, the dogtag will simply be deleted!
-        if ( isAlive( player ) ) {
+		// Cannot pick up dogtag if in spawn protection.......may be Invisible
+		if( isDefined( player.spawn_protected ) && player.spawn_protected == true ) {
+			player thread removeTriggerOnPickup( friendlyTag, enemyTag, trigger );
+			return;
+		}
 
-                // Cannot pick up dogtag if in spawn protection.......may be Invisible
-	        if( isDefined( player.spawn_protected ) && player.spawn_protected == true ) {
-                        player thread removeTriggerOnPickup( friendlyTag, enemyTag, trigger );
-                        return;
-                }
+		// Friendly team picks up Dogtag
+		if( player.pers["team"] == friendlyTag.team ) {
+			if (!isDefined(friendlyTag.reviveCounter) || friendlyTag.reviveCounter < 2) {
+				if (!isDefined(friendlyTag.reviveCounter)) {
+					friendlyTag.reviveCounter = 0;
+				}
+				friendlyTag.reviveCounter += 1;
+				player playLocalSound( "scramble" );
+				wait (0.5);
+				player thread removeTriggerOnPickup( friendlyTag, enemyTag, trigger );
+				return;
+			}
 
-                // Friendly team picks up Dogtag
-                if( player.pers["team"] == friendlyTag.team ) {
+			if ( level.scr_sr_denied_player_sound == 1 )
+			player playLocalSound( "denied_sr" );
 
-                        if ( level.scr_sr_denied_player_sound == 1 )
-                                player playLocalSound( "denied_sr" );
+			//Play sound to other team
+			if ( level.scr_sr_denied_team_sound == 1 && friendlyTag.team == "allies" )
+			playSoundOnPlayers( "denied_sr", "axis" );
 
-                        //Play sound to other team
-                        if ( level.scr_sr_denied_team_sound == 1 && friendlyTag.team == "allies" )
-                                playSoundOnPlayers( "denied_sr", "axis" );
+			if ( level.scr_sr_denied_team_sound ==1  && friendlyTag.team == "axis" )
+			playSoundOnPlayers( "denied_sr", "allies" );
 
-                        if ( level.scr_sr_denied_team_sound ==1  && friendlyTag.team == "axis" )
-                                playSoundOnPlayers( "denied_sr", "allies" );
+			// Give player a score
+			player thread givePlayerScore( "take", level.scr_sr_team_dogtag_score );
 
-                        // Give player a score
-                        player thread givePlayerScore( "take", level.scr_sr_team_dogtag_score );
-
-                        // Show assist point for saving friendly
+			// Show assist point for saving friendly
 			player maps\mp\gametypes\_globallogic::incPersStat( "assists", 1 );
 			player.assists = player maps\mp\gametypes\_globallogic::getPersStat( "assists" );
 
-                        // Send notice to players according to team
-                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" )
-													broadcastInfo("revive", player, friendlyTag.owner);
-													      //iprintln("^3" + player.name + "^7.... Revived^3 " + friendlyTag.owner.name );
+			// Send notice to players according to team
+			if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" )
+			broadcastInfo("revive", player, friendlyTag.owner);
+			//iprintln("^3" + player.name + "^7.... Revived^3 " + friendlyTag.owner.name );
 
-                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" )
-													broadcastInfo("revive", player, friendlyTag.owner);
-                                //iprintln("^1" + player.name + "^7.... Revived^1 " + friendlyTag.owner.name );
+			if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" )
+			broadcastInfo("revive", player, friendlyTag.owner);
+			//iprintln("^1" + player.name + "^7.... Revived^1 " + friendlyTag.owner.name );
 
-						//Update stat
-						player.pers["stats"]["misc"]["medic"] += 1;
-						player setClientDvar( "ps_medic", player.pers["stats"]["misc"]["medic"] );
-
-
-                        //Respawn tag owner
-                        friendlyTag.owner clearLowerMessage();
-												friendlyTag.owner.toBeRespawned = true;
-												friendlyTag.owner.toBeRespawnedOrigin = player.origin;
-                        trigger thread revivePlayer(friendlyTag.owner);
-
-                        // Send owner notification
-	                notifyData = spawnStruct();
-	                notifyData.titleText = "REVIVED";
-	                notifyData.notifyText ="by " + player.name;
-	                notifyData.iconName = "cross_hud";
-                        notifyData.sound = sayTeamVoice( friendlyTag.owner, "1mc_revived" );
-
-	                if( friendlyTag.team == "allies" ) {
-                                notifyData.glowColor = ( 1, 0.7, 0 ); // Yellow
-
-                        } else {
-                                notifyData.glowColor = ( 1, 0, 0 ); // Red
-
-                        }
-
-	                notifyData.duration = 4.0;
-
-                        friendlyTag.owner thread maps\mp\gametypes\_hud_message::notifyMessage( notifyData );
-
-	                player logString( player.pers["team"] + " " + "kill denied" );
-	                lpselfnum = player getEntityNumber();
-	                lpGuid = player getGuid();
-	                logPrint("SRKD;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
-
-                }
-
-                // Enemy team picks up DogTag
-                if ( player.pers["team"] == enemyTag.team ) {
-
-                        if( isDefined( player ) && isAlive( player ) ) {
-                                sayTeamVoice( player, "1mc_confirmedkill", true );
-                        }
-
-                        // Give player a score
-                        player thread givePlayerScore( "take", level.scr_sr_enemy_dogtag_score );
-
-						//Update stat
-						player.pers["stats"]["misc"]["hitman"] += 1;
-						player setClientDvar( "ps_hitman", player.pers["stats"]["misc"]["hitman"] );
-
-                        // Send notice to players according to team
-                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" )
-													broadcastInfo("eliminate", player, enemyTag.owner);
-                          //      iprintln("^1" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
-
-                        if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" )
-													broadcastInfo("eliminate", player, enemyTag.owner);
-                                //iprintln("^3" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
-
-                        // Send owner notification
-	                notifyData = spawnStruct();
-	                notifyData.titleText = "ENEMY CONFIRMED KILL";
-	                notifyData.notifyText ="by " + player.name;
-	                notifyData.iconName = "skull_hud";
-                        notifyData.sound = sayTeamVoice( enemyTag.owner, "1mc_mission_fail" );
+			//Update stat
+			player.pers["stats"]["misc"]["medic"] += 1;
+			player setClientDvar( "ps_medic", player.pers["stats"]["misc"]["medic"] );
 
 
-	                if( enemyTag.team == "axis" ) {
-                                notifyData.glowColor = ( 1, 0.7, 0 ); // Yellow
-                        } else {
-                                notifyData.glowColor = ( 1, 0, 0 ); // Red
-                        }
+			//Respawn tag owner
+			friendlyTag.owner clearLowerMessage();
+			friendlyTag.owner.toBeRespawned = true;
+			friendlyTag.owner.toBeRespawnedOrigin = player.origin;
+			trigger thread revivePlayer(friendlyTag.owner);
 
-	                notifyData.duration = 4.0;
+			// Send owner notification
+			notifyData = spawnStruct();
+			notifyData.titleText = "REVIVED";
+			notifyData.notifyText ="by " + player.name;
+			notifyData.iconName = "cross_hud";
+			notifyData.sound = sayTeamVoice( friendlyTag.owner, "1mc_revived" );
 
-                        enemyTag.owner thread maps\mp\gametypes\_hud_message::notifyMessage( notifyData );
+			if( friendlyTag.team == "allies" ) {
+				notifyData.glowColor = ( 1, 0.7, 0 ); // Yellow
 
-	                player logString( player.pers["team"] + " " + "kill confirmed" );
-	                lpselfnum = player getEntityNumber();
-	                lpGuid = player getGuid();
-	                logPrint("SRKC;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
+			} else {
+				notifyData.glowColor = ( 1, 0, 0 ); // Red
 
-                        // Points for retrieving dogtags from the enemy the attacker killed
-                        if( trigger.owner == player ) {
-                                // Give player a score
-                                player thread givePlayerScore( "take", level.scr_sr_dogtag_attacker_owner_score - level.scr_sr_enemy_dogtag_score );
-                        }
+			}
 
-									enemyTag.owner.pers["tag"] = false;
-                }
+			notifyData.duration = 4.0;
 
-        }
+			friendlyTag.owner thread maps\mp\gametypes\_hud_message::notifyMessage( notifyData );
 
-        trigger playSound( "dogtag_sr_pickup" );
+			player logString( player.pers["team"] + " " + "kill denied" );
+			lpselfnum = player getEntityNumber();
+			lpGuid = player getGuid();
+			logPrint("SRKD;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
 
-        // Notify trigger and model picked up
-        trigger notify( "picked_up" );
-        friendlyTag notify( "picked_up" );
-        enemyTag notify( "picked_up" );
+			trigger playSound( "dogtag_sr_pickup" );
 
-        // Delete Trigger and Model
-        trigger delete();
-	friendlyTag delete();
-        enemyTag delete ();
+			// Notify trigger and model picked up
+			trigger notify( "picked_up" );
+			friendlyTag notify( "picked_up" );
+			enemyTag notify( "picked_up" );
+
+			// Delete Trigger and Model
+			trigger delete();
+			friendlyTag delete();
+			enemyTag delete ();
+
+		}
+
+		// Enemy team picks up DogTag
+		if ( player.pers["team"] == enemyTag.team ) {
+
+			if( isDefined( player ) && isAlive( player ) ) {
+				sayTeamVoice( player, "1mc_confirmedkill", true );
+			}
+
+			// Give player a score
+			player thread givePlayerScore( "take", level.scr_sr_enemy_dogtag_score );
+
+			//Update stat
+			player.pers["stats"]["misc"]["hitman"] += 1;
+			player setClientDvar( "ps_hitman", player.pers["stats"]["misc"]["hitman"] );
+
+			// Send notice to players according to team
+			if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "allies" )
+			broadcastInfo("eliminate", player, enemyTag.owner);
+			//      iprintln("^1" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
+
+			if ( level.scr_sr_dogtag_obits == 1 && player.pers["team"] == "axis" )
+			broadcastInfo("eliminate", player, enemyTag.owner);
+			//iprintln("^3" + enemyTag.owner.name + " ^7.... has been ELIMINATED!");
+
+			// Send owner notification
+			notifyData = spawnStruct();
+			notifyData.titleText = "ENEMY CONFIRMED KILL";
+			notifyData.notifyText ="by " + player.name;
+			notifyData.iconName = "skull_hud";
+			notifyData.sound = sayTeamVoice( enemyTag.owner, "1mc_mission_fail" );
+
+
+			if( enemyTag.team == "axis" ) {
+				notifyData.glowColor = ( 1, 0.7, 0 ); // Yellow
+			} else {
+				notifyData.glowColor = ( 1, 0, 0 ); // Red
+			}
+
+			notifyData.duration = 4.0;
+
+			enemyTag.owner thread maps\mp\gametypes\_hud_message::notifyMessage( notifyData );
+
+			player logString( player.pers["team"] + " " + "kill confirmed" );
+			lpselfnum = player getEntityNumber();
+			lpGuid = player getGuid();
+			logPrint("SRKC;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
+
+			// Points for retrieving dogtags from the enemy the attacker killed
+			if( trigger.owner == player ) {
+				// Give player a score
+				player thread givePlayerScore( "take", level.scr_sr_dogtag_attacker_owner_score - level.scr_sr_enemy_dogtag_score );
+			}
+
+			enemyTag.owner.pers["tag"] = false;
+			trigger playSound( "dogtag_sr_pickup" );
+
+			// Notify trigger and model picked up
+			trigger notify( "picked_up" );
+			friendlyTag notify( "picked_up" );
+			enemyTag notify( "picked_up" );
+
+			// Delete Trigger and Model
+			trigger delete();
+			friendlyTag delete();
+			enemyTag delete ();
+		}
+	} else {
+		player thread removeTriggerOnPickup( friendlyTag, enemyTag, trigger );
+		return;
+	}
+
 
 }
 

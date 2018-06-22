@@ -1334,7 +1334,7 @@
 			visible			when( ( team( name ) != "TEAM_FREE" && gametype() != "sr" && gametype() != "csd" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		/*itemDef
+		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			0 -45 128 64 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1344,7 +1344,7 @@
 			background		"scorebar_backdrop"
 			visible			when( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}*/
+		}
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1375,7 +1375,7 @@
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
 			decoration
 		}
-		/*itemDef
+		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			0 -36 36 36 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1394,7 +1394,7 @@
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
 			visible			when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && TEAM_IS_OPFOR && SHOULD_DISPLAY_SCOREBAR );
 			decoration
-		}*/
+		}
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1405,7 +1405,7 @@
 			visible			when ( ( team( name ) != "TEAM_FREE" && gametype() != "sr" && gametype() != "csd" ) && SHOULD_DISPLAY_SCOREBAR );
 			decoration
 		}
-		/*itemDef
+		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			46 -41 80 12 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1414,7 +1414,7 @@
 			forecolor		1 1 1 0.25
 			visible			when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR );
 			decoration
-		}*/
+		}
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1425,7 +1425,7 @@
 			visible			when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "sr"  && gametype() != "csd") && SHOULD_DISPLAY_SCOREBAR );
 			decoration
 		}
-		/*itemDef
+		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			128 -47 24 24 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1434,7 +1434,7 @@
 			forecolor		1 1 1 HUD_ALPHA
 			visible			when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR );
 			decoration
-		}*/
+		}
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1457,7 +1457,7 @@
 			visible 		when ( ( team( name ) == "TEAM_AXIS" && gametype() != "sr" && gametype() != "csd" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		/*itemDef
+		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			48 -39 76 8 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1479,7 +1479,7 @@
 			visible 		when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && TEAM_IS_MARINES && SHOULD_DISPLAY_SCOREBAR )
 			visible	0
 			decoration
-		}*/
+		}
 		itemDef
 		{
 			rect		50 -27 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1498,26 +1498,26 @@
 			rect		-10 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			exp text	( team( score ) );
 			textfont	UI_FONT_OBJECTIVE
-			textscale	0.30
+			textscale	0.35
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	0.07 0.69 0.26 HUD_FOREGROUND_ALPHA
-			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" ) && (gametype() == "sr" || gametype() == "csd") ) && SHOULD_DISPLAY_SCOREBAR && NOT_SPECTATING )
+			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" ) && (gametype() == "sr" || gametype() == "csd") ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
 		itemDef
 		{
-			rect		5 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect		15 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			exp text	( team( score ) );
 			textfont	UI_FONT_OBJECTIVE
-			textscale	0.30
+			textscale	0.35
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	0.07 0.69 0.26 HUD_FOREGROUND_ALPHA
-			visible 	when ( ( ( team( name ) == "TEAM_AXIS" ) && (gametype() == "sr" || gametype() == "csd") ) && SHOULD_DISPLAY_SCOREBAR && NOT_SPECTATING )
+			visible 	when ( ( ( team( name ) == "TEAM_AXIS" ) && (gametype() == "sr" || gametype() == "csd") ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		/*itemDef
+		itemDef
 		{
 			rect		50 -27 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 			exp			rect Y( -27 + 0-(PLAYER_IS_LOSING*24) );
@@ -1529,7 +1529,7 @@
 			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
 			visible 	when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}*/
+		}
 
 		itemDef
 		{
@@ -1541,7 +1541,7 @@
 			visible			when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS" ) && gametype() != "sr" && gametype() != "csd") && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		/*itemDef
+		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			46 -22 80 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1550,7 +1550,7 @@
 			forecolor		1 1 1 0.25
 			visible			when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}*/
+		}
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1573,7 +1573,7 @@
 			visible 		when ( ( ( team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_SPECTATOR" ) && gametype() != "sr"  && gametype() != "csd") && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		/*itemDef
+		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
 			rect			48 -20 76 6 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1594,7 +1594,7 @@
 			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
 			visible 		when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && TEAM_IS_MARINES && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}*/
+		}
 		itemDef
 		{
 			rect		50 -8 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
@@ -1611,14 +1611,14 @@
 
 		itemDef
 		{
-			rect		5 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			rect		15 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			exp text	( otherteam( score ) );
 			textfont	UI_FONT_OBJECTIVE
-			textscale	0.30
+			textscale	0.35
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	0.694 0.220 0.114 HUD_FOREGROUND_ALPHA
-			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" ) && (gametype() == "sr" || gametype() == "csd") ) && SHOULD_DISPLAY_SCOREBAR && NOT_SPECTATING )
+			visible 	when ( ( ( team( name ) == "TEAM_ALLIES" ) && (gametype() == "sr" || gametype() == "csd") ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
 
@@ -1627,14 +1627,14 @@
 			rect		-10 40 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
 			exp text	( otherteam( score ) );
 			textfont	UI_FONT_OBJECTIVE
-			textscale	0.30
+			textscale	0.35
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	0.694 0.220 0.114 HUD_FOREGROUND_ALPHA
-			visible 	when ( ( ( team( name ) == "TEAM_AXIS" ) && (gametype() == "sr" || gametype() == "csd") ) && SHOULD_DISPLAY_SCOREBAR && NOT_SPECTATING )
+			visible 	when ( ( ( team( name ) == "TEAM_AXIS" ) && (gametype() == "sr" || gametype() == "csd") ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
 		}
-		/*itemDef
+		itemDef
 		{
 			rect		50 -8 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
 			exp			rect Y( -8 + (PLAYER_IS_LOSING*12) );
@@ -1659,7 +1659,7 @@
 			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
 			visible 	when ( ( team( name ) == "TEAM_FREE" || gametype() == "bel" ) && player( score ) != scoreatrank( 1 ) && SHOULD_DISPLAY_SCOREBAR )
 			decoration
-		}*/
+		}
 		itemDef
 		{
 			style			WINDOW_STYLE_SHADER
@@ -1718,10 +1718,10 @@
 			origin		6 0
 			exp text	( secondsAsCountdown( timeLeft() ) );
 			textfont	UI_FONT_OBJECTIVE
-			textscale	0.25
+			textscale	0.35
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
-			visible 	when ( (gametype() == "sr" || gametype() == "csd") && timeLeft() >= 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) && NOT_SPECTATING );
+			visible 	when ( (gametype() == "sr" || gametype() == "csd") && timeLeft() >= 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) );
 			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
 			decoration
 		}
@@ -1731,11 +1731,11 @@
 			origin		6 0
 			exp text	( secondsAsCountdown( timeLeft() ) );
 			textfont	UI_FONT_OBJECTIVE
-			textscale	0.25
+			textscale	0.35
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	1 0.75 0 HUD_FOREGROUND_ALPHA
-			visible 	when ( (gametype() == "sr" || gametype() == "csd") && timeLeft() >= 30 && timeLeft() < 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) && NOT_SPECTATING );
+			visible 	when ( (gametype() == "sr" || gametype() == "csd") && timeLeft() >= 30 && timeLeft() < 60 && !dvarBool( ui_bomb_timer ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) );
 			decoration
 		}
 		itemDef
@@ -1744,11 +1744,11 @@
 			origin		6 0
 			exp text	( secondsAsCountdown( timeLeft() ) + "." + (9 - int( (milliseconds() / 100)%10 )) );
 			textfont	UI_FONT_OBJECTIVE
-			textscale	0.25
+			textscale	0.35
 			textalign	ITEM_ALIGN_LEFT
 			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
 			forecolor	1 0.5 0 1
-			visible 	when ( (gametype() == "sr" || gametype() == "csd") && ( (timeLeft() >= 0 && timeLeft() < 30) || dvarBool( ui_bomb_timer ) ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) && NOT_SPECTATING );
+			visible 	when ( (gametype() == "sr" || gametype() == "csd") && ( (timeLeft() >= 0 && timeLeft() < 30) || dvarBool( ui_bomb_timer ) ) && ( team( name ) != "TEAM_SPECTATOR" || dvarInt( ui_broadcaster ) == 0 ) );
 			decoration
 		}
 

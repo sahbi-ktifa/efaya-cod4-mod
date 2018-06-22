@@ -11,6 +11,7 @@
 
 ignore,mod_ignore
 
+localize,cgame
 localize,ow
 localize,props
 localize,weapon

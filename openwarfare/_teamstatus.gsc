@@ -38,7 +38,7 @@ onPrematchOver()
 		createHudElements();
 		self startTeamStatusRefresh();
 	} else {
-		self waittill( "readyupperiod_ended" );
+		self waittill( "prematch_over" );
 		createSRHudElements();
 		self startSRTeamStatusRefresh();
 	}
@@ -335,100 +335,163 @@ startTeamStatusRefresh()
 }
 
 createSRHudElements() {
-	alliesPlayers = 0;
-	axisPlayers = 0;
-	for ( index = 0; index < level.players.size; index++ )
-	{
-		player = level.players[index];
 
-		if (player.pers["team"] == "allies" || player.pers["team"] == "axis") {
-			if (player.pers["team"] == "allies") {
-				game["playerStatusIcon_" + player.name] = createServerIcon( game["icons"]["allies"], 24, 24 );
-				game["playerStatusIcon_" + player.name].x = -35 + ((alliesPlayers * -35) - 5);
-				alliesPlayers += 1;
-			} else if (player.pers["team"] == "axis") {
-				game["playerStatusIcon_" + player.name] = createServerIcon( game["icons"]["axis"], 24, 24 );
-				game["playerStatusIcon_" + player.name].x = 35 + ((axisPlayers * 35) + 5);
-				axisPlayers += 1;
-			}
-			game["playerStatusIcon_" + player.name].archived = true;
-			game["playerStatusIcon_" + player.name].hideWhenInMenu = true;
-			game["playerStatusIcon_" + player.name].alignX = "center";
-			game["playerStatusIcon_" + player.name].alignY = "top";
-			game["playerStatusIcon_" + player.name].sort = -3;
-			game["playerStatusIcon_" + player.name].alpha = 0.9;
-			game["playerStatusIcon_" + player.name].horzAlign = "center";
-			game["playerStatusIcon_" + player.name].vertAlign = "top";
-			game["playerStatusIcon_" + player.name].y = 5;
+	game["playerStatusIconAllies"] = createServerIcon( game["icons"]["allies"], 24, 24 );
+	game["playerStatusIconAllies"].x = -35;
+	game["playerStatusIconAllies"].archived = true;
+	game["playerStatusIconAllies"].hideWhenInMenu = true;
+	game["playerStatusIconAllies"].alignX = "center";
+	game["playerStatusIconAllies"].alignY = "top";
+	game["playerStatusIconAllies"].sort = -3;
+	game["playerStatusIconAllies"].alpha = 0.9;
+	game["playerStatusIconAllies"].horzAlign = "center";
+	game["playerStatusIconAllies"].vertAlign = "top";
+	game["playerStatusIconAllies"].y = 5;
 
-			game["playerStatusText_" + player.name] = createServerFontString( "default", 1.4 );
-			game["playerStatusText_" + player.name] setPoint( "CENTER", "TOP", game["playerStatusIcon_" + player.name].x, 34 );
-			game["playerStatusText_" + player.name] setText( getSubstr(player.name, 0, 5) );
-			game["playerStatusText_" + player.name].archived = false;
-			game["playerStatusText_" + player.name].foreground = true;
-			game["playerStatusText_" + player.name].hidewheninmenu = true;
+	game["playerStatusIconAxis"] = createServerIcon( game["icons"]["axis"], 24, 24 );
+	game["playerStatusIconAxis"].x = 45;
+	game["playerStatusIconAxis"].archived = true;
+	game["playerStatusIconAxis"].hideWhenInMenu = true;
+	game["playerStatusIconAxis"].alignX = "center";
+	game["playerStatusIconAxis"].alignY = "top";
+	game["playerStatusIconAxis"].sort = -3;
+	game["playerStatusIconAxis"].alpha = 0.9;
+	game["playerStatusIconAxis"].horzAlign = "center";
+	game["playerStatusIconAxis"].vertAlign = "top";
+	game["playerStatusIconAxis"].y = 5;
 
-			game["playerStatusDeadIcon_" + player.name] = createServerIcon( "hud_status_dead", 16, 16 );
-			game["playerStatusDeadIcon_" + player.name].x = game["playerStatusIcon_" + player.name].x;
-			game["playerStatusDeadIcon_" + player.name].archived = true;
-			game["playerStatusDeadIcon_" + player.name].hideWhenInMenu = true;
-			game["playerStatusDeadIcon_" + player.name].alignX = "center";
-			game["playerStatusDeadIcon_" + player.name].alignY = "top";
-			game["playerStatusDeadIcon_" + player.name].sort = -3;
-			game["playerStatusDeadIcon_" + player.name].alpha = 0;
-			game["playerStatusDeadIcon_" + player.name].horzAlign = "center";
-			game["playerStatusDeadIcon_" + player.name].vertAlign = "top";
-			game["playerStatusDeadIcon_" + player.name].y = 9;
+	game["playerStatusAliveAllies"] = createServerFontString( "default", 1.4 );
+	game["playerStatusAliveAllies"] setPoint( "CENTER", "TOP", game["playerStatusIconAllies"].x + 10, 24 );
+	game["playerStatusAliveAllies"] setValue( 0 );
+	game["playerStatusAliveAllies"].info = 0;
+	game["playerStatusAliveAllies"].archived = false;
+	game["playerStatusAliveAllies"].foreground = true;
+	game["playerStatusAliveAllies"].hidewheninmenu = true;
+	game["playerStatusAliveAllies"].color = ( 0.694, 0.220, 0.114 );
+	game["playerStatusAliveAllies"] maps\mp\gametypes\_hud::fontPulseInit();
 
-			game["playerStatusCrossAlliesIcon_" + player.name] = createServerIcon( "cross_hud", 16, 16, "allies" );
-			game["playerStatusCrossAlliesIcon_" + player.name].x = game["playerStatusIcon_" + player.name].x;
-			game["playerStatusCrossAlliesIcon_" + player.name].archived = true;
-			game["playerStatusCrossAlliesIcon_" + player.name].hideWhenInMenu = true;
-			game["playerStatusCrossAlliesIcon_" + player.name].alignX = "center";
-			game["playerStatusCrossAlliesIcon_" + player.name].alignY = "top";
-			game["playerStatusCrossAlliesIcon_" + player.name].sort = -3;
-			game["playerStatusCrossAlliesIcon_" + player.name].alpha = 0;
-			game["playerStatusCrossAlliesIcon_" + player.name].horzAlign = "center";
-			game["playerStatusCrossAlliesIcon_" + player.name].vertAlign = "top";
-			game["playerStatusCrossAlliesIcon_" + player.name].y = 9;
+	game["playerStatusAliveAxis"] = createServerFontString( "default", 1.4 );
+	game["playerStatusAliveAxis"] setPoint( "CENTER", "TOP", game["playerStatusIconAxis"].x + 10, 24 );
+	game["playerStatusAliveAxis"] setValue( 0 );
+	game["playerStatusAliveAxis"].info = 0;
+	game["playerStatusAliveAxis"].archived = false;
+	game["playerStatusAliveAxis"].foreground = true;
+	game["playerStatusAliveAxis"].hidewheninmenu = true;
+	game["playerStatusAliveAxis"].color = ( 0.694, 0.220, 0.114 );
+	game["playerStatusAliveAxis"] maps\mp\gametypes\_hud::fontPulseInit();
 
-			game["playerStatusSkullAlliesIcon_" + player.name] = createServerIcon( "skull_hud", 16, 16, "allies" );
-			game["playerStatusSkullAlliesIcon_" + player.name].x = game["playerStatusIcon_" + player.name].x;
-			game["playerStatusSkullAlliesIcon_" + player.name].archived = true;
-			game["playerStatusSkullAlliesIcon_" + player.name].hideWhenInMenu = true;
-			game["playerStatusSkullAlliesIcon_" + player.name].alignX = "center";
-			game["playerStatusSkullAlliesIcon_" + player.name].alignY = "top";
-			game["playerStatusSkullAlliesIcon_" + player.name].sort = -3;
-			game["playerStatusSkullAlliesIcon_" + player.name].alpha = 0;
-			game["playerStatusSkullAlliesIcon_" + player.name].horzAlign = "center";
-			game["playerStatusSkullAlliesIcon_" + player.name].vertAlign = "top";
-			game["playerStatusSkullAlliesIcon_" + player.name].y = 9;
+	game["playerStatusDeadIconAllies"] = createServerIcon( "hud_status_dead", 16, 16 );
+	game["playerStatusDeadIconAllies"].x = game["playerStatusIconAllies"].x - 20;
+	game["playerStatusDeadIconAllies"].archived = true;
+	game["playerStatusDeadIconAllies"].hideWhenInMenu = true;
+	game["playerStatusDeadIconAllies"].alignX = "center";
+	game["playerStatusDeadIconAllies"].alignY = "top";
+	game["playerStatusDeadIconAllies"].sort = -3;
+	game["playerStatusDeadIconAllies"].horzAlign = "center";
+	game["playerStatusDeadIconAllies"].vertAlign = "top";
+	game["playerStatusDeadIconAllies"].y = 5;
 
-			game["playerStatusCrossAxisIcon_" + player.name] = createServerIcon( "cross_hud", 16, 16, "axis" );
-			game["playerStatusCrossAxisIcon_" + player.name].x = game["playerStatusIcon_" + player.name].x;
-			game["playerStatusCrossAxisIcon_" + player.name].archived = true;
-			game["playerStatusCrossAxisIcon_" + player.name].hideWhenInMenu = true;
-			game["playerStatusCrossAxisIcon_" + player.name].alignX = "center";
-			game["playerStatusCrossAxisIcon_" + player.name].alignY = "top";
-			game["playerStatusCrossAxisIcon_" + player.name].sort = -3;
-			game["playerStatusCrossAxisIcon_" + player.name].alpha = 0;
-			game["playerStatusCrossAxisIcon_" + player.name].horzAlign = "center";
-			game["playerStatusCrossAxisIcon_" + player.name].vertAlign = "top";
-			game["playerStatusCrossAxisIcon_" + player.name].y = 9;
+	if (level.gametype == "sr") {
+		game["playerStatusReviveIconAllies"] = createServerIcon( "cross_hud", 16, 16, "allies" );
+		game["playerStatusReviveIconAllies"].x = game["playerStatusIconAllies"].x - 20;
+		game["playerStatusReviveIconAllies"].archived = true;
+		game["playerStatusReviveIconAllies"].hideWhenInMenu = true;
+		game["playerStatusReviveIconAllies"].alignX = "center";
+		game["playerStatusReviveIconAllies"].alignY = "top";
+		game["playerStatusReviveIconAllies"].sort = -3;
+		game["playerStatusReviveIconAllies"].horzAlign = "center";
+		game["playerStatusReviveIconAllies"].vertAlign = "top";
+		game["playerStatusReviveIconAllies"].y = 20;
 
-			game["playerStatusSkullAxisIcon_" + player.name] = createServerIcon( "skull_hud", 16, 16, "axis" );
-			game["playerStatusSkullAxisIcon_" + player.name].x = game["playerStatusIcon_" + player.name].x;
-			game["playerStatusSkullAxisIcon_" + player.name].archived = true;
-			game["playerStatusSkullAxisIcon_" + player.name].hideWhenInMenu = true;
-			game["playerStatusSkullAxisIcon_" + player.name].alignX = "center";
-			game["playerStatusSkullAxisIcon_" + player.name].alignY = "top";
-			game["playerStatusSkullAxisIcon_" + player.name].sort = -3;
-			game["playerStatusSkullAxisIcon_" + player.name].alpha = 0;
-			game["playerStatusSkullAxisIcon_" + player.name].horzAlign = "center";
-			game["playerStatusSkullAxisIcon_" + player.name].vertAlign = "top";
-			game["playerStatusSkullAxisIcon_" + player.name].y = 9;
+		game["playerStatusEliminateIconAllies"] = createServerIcon( "skull_hud", 16, 16, "axis" );
+		game["playerStatusEliminateIconAllies"].x = game["playerStatusIconAllies"].x - 20;
+		game["playerStatusEliminateIconAllies"].archived = true;
+		game["playerStatusEliminateIconAllies"].hideWhenInMenu = true;
+		game["playerStatusEliminateIconAllies"].alignX = "center";
+		game["playerStatusEliminateIconAllies"].alignY = "top";
+		game["playerStatusEliminateIconAllies"].sort = -3;
+		game["playerStatusEliminateIconAllies"].horzAlign = "center";
+		game["playerStatusEliminateIconAllies"].vertAlign = "top";
+		game["playerStatusEliminateIconAllies"].y = 20;
 
-		}
+	}
+	game["playerStatusDeadIconAxis"] = createServerIcon( "hud_status_dead", 16, 16 );
+	game["playerStatusDeadIconAxis"].x = game["playerStatusIconAxis"].x + 23;
+	game["playerStatusDeadIconAxis"].archived = true;
+	game["playerStatusDeadIconAxis"].hideWhenInMenu = true;
+	game["playerStatusDeadIconAxis"].alignX = "center";
+	game["playerStatusDeadIconAxis"].alignY = "top";
+	game["playerStatusDeadIconAxis"].sort = -3;
+	game["playerStatusDeadIconAxis"].horzAlign = "center";
+	game["playerStatusDeadIconAxis"].vertAlign = "top";
+	game["playerStatusDeadIconAxis"].y = 5;
+
+	if (level.gametype == "sr") {
+		game["playerStatusReviveIconAxis"] = createServerIcon( "cross_hud", 16, 16, "axis" );
+		game["playerStatusReviveIconAxis"].x = game["playerStatusIconAxis"].x + 23;
+		game["playerStatusReviveIconAxis"].archived = true;
+		game["playerStatusReviveIconAxis"].hideWhenInMenu = true;
+		game["playerStatusReviveIconAxis"].alignX = "center";
+		game["playerStatusReviveIconAxis"].alignY = "top";
+		game["playerStatusReviveIconAxis"].sort = -3;
+		game["playerStatusReviveIconAxis"].horzAlign = "center";
+		game["playerStatusReviveIconAxis"].vertAlign = "top";
+		game["playerStatusReviveIconAxis"].y = 20;
+
+		game["playerStatusEliminateIconAxis"] = createServerIcon( "skull_hud", 16, 16, "allies" );
+		game["playerStatusEliminateIconAxis"].x = game["playerStatusIconAxis"].x + 23;
+		game["playerStatusEliminateIconAxis"].archived = true;
+		game["playerStatusEliminateIconAxis"].hideWhenInMenu = true;
+		game["playerStatusEliminateIconAxis"].alignX = "center";
+		game["playerStatusEliminateIconAxis"].alignY = "top";
+		game["playerStatusEliminateIconAxis"].sort = -3;
+		game["playerStatusEliminateIconAxis"].horzAlign = "center";
+		game["playerStatusEliminateIconAxis"].vertAlign = "top";
+		game["playerStatusEliminateIconAxis"].y = 20;
+	}
+
+	game["playerStatusDeadAllies"] = createServerFontString( "default", 1.4 );
+	game["playerStatusDeadAllies"] setPoint( "CENTER", "TOP", game["playerStatusIconAllies"].x - 32, 10 );
+	game["playerStatusDeadAllies"] setValue( 0 );
+	game["playerStatusDeadAllies"].info = 0;
+	game["playerStatusDeadAllies"].archived = false;
+	game["playerStatusDeadAllies"].foreground = true;
+	game["playerStatusDeadAllies"].hidewheninmenu = true;
+	game["playerStatusDeadAllies"].color = ( 0.694, 0.220, 0.114 );
+	game["playerStatusDeadAllies"] maps\mp\gametypes\_hud::fontPulseInit();
+
+	if (level.gametype == "sr") {
+		game["playerStatusReviveAllies"] = createServerFontString( "default", 1.4 );
+		game["playerStatusReviveAllies"] setPoint( "CENTER", "TOP", game["playerStatusIconAllies"].x - 32, 25 );
+		game["playerStatusReviveAllies"] setValue( 0 );
+		game["playerStatusReviveAllies"].info = 0;
+		game["playerStatusReviveAllies"].archived = false;
+		game["playerStatusReviveAllies"].foreground = true;
+		game["playerStatusReviveAllies"].hidewheninmenu = true;
+		game["playerStatusReviveAllies"].color = ( 0.694, 0.220, 0.114 );
+		game["playerStatusReviveAllies"] maps\mp\gametypes\_hud::fontPulseInit();
+	}
+
+	game["playerStatusDeadAxis"] = createServerFontString( "default", 1.4 );
+	game["playerStatusDeadAxis"] setPoint( "CENTER", "TOP", game["playerStatusIconAxis"].x + 35, 10 );
+	game["playerStatusDeadAxis"] setValue( 0 );
+	game["playerStatusDeadAxis"].info = 0;
+	game["playerStatusDeadAxis"].archived = false;
+	game["playerStatusDeadAxis"].foreground = true;
+	game["playerStatusDeadAxis"].hidewheninmenu = true;
+	game["playerStatusDeadAxis"].color = ( 0.694, 0.220, 0.114 );
+	game["playerStatusDeadAxis"] maps\mp\gametypes\_hud::fontPulseInit();
+
+	if (level.gametype == "sr") {
+		game["playerStatusReviveAxis"] = createServerFontString( "default", 1.4 );
+		game["playerStatusReviveAxis"] setPoint( "CENTER", "TOP", game["playerStatusIconAxis"].x + 35, 25 );
+		game["playerStatusReviveAxis"] setValue( 0 );
+		game["playerStatusReviveAxis"].info = 0;
+		game["playerStatusReviveAxis"].archived = false;
+		game["playerStatusReviveAxis"].foreground = true;
+		game["playerStatusReviveAxis"].hidewheninmenu = true;
+		game["playerStatusReviveAxis"].color = ( 0.694, 0.220, 0.114 );
+		game["playerStatusReviveAxis"] maps\mp\gametypes\_hud::fontPulseInit();
 	}
 }
 
@@ -436,66 +499,108 @@ createSRHudElements() {
 startSRTeamStatusRefresh() {
 	self endon("game_ended");
 
-	previousTeamStatus["allies"] = -1;
-	previousTeamStatus["axis"] = -1;
-
 	for (;;)
 	{
 		wait (0.1);
 
+		alliesAlive = 0;
+		alliesRevive = 0;
+		alliesDead = 0;
+		axisAlive = 0;
+		axisRevive = 0;
+		axisDead = 0;
+
 		for ( index = 0; index < level.players.size; index++ )
 		{
 			player = level.players[index];
-			if (isDefined(game["playerStatusIcon_" + player.name])) {
-				if (isAlive(player)) {
-					game["playerStatusIcon_" + player.name].alpha = 0.9;
-					game["playerStatusText_" + player.name].color = ( 0.07, 0.69, 0.26 );
-					game["playerStatusCrossAlliesIcon_" + player.name].alpha = 0;
-					game["playerStatusSkullAlliesIcon_" + player.name].alpha = 0;
-					game["playerStatusCrossAxisIcon_" + player.name].alpha = 0;
-					game["playerStatusSkullAxisIcon_" + player.name].alpha = 0;
-					game["playerStatusDeadIcon_" + player.name].alpha = 0;
-				} else if (!isAlive(player) && isDefined(player.pers["tag"]) && player.pers["tag"] == true) {
-					game["playerStatusIcon_" + player.name].alpha = 0.2;
-					game["playerStatusText_" + player.name].color = ( 1, 1, 0.108 );
-					if (player.pers["team"] == "allies") {
-						game["playerStatusCrossAlliesIcon_" + player.name].alpha = 0.9;
-						game["playerStatusSkullAxisIcon_" + player.name].alpha = 0.9;
-						game["playerStatusSkullAlliesIcon_" + player.name].alpha = 0;
-						game["playerStatusCrossAxisIcon_" + player.name].alpha = 0;
-					} else 	if (player.pers["team"] == "axis") {
-						game["playerStatusCrossAlliesIcon_" + player.name].alpha = 0;
-						game["playerStatusSkullAxisIcon_" + player.name].alpha = 0;
-						game["playerStatusSkullAlliesIcon_" + player.name].alpha = 0.9;
-						game["playerStatusCrossAxisIcon_" + player.name].alpha = 0.9;
-					}
-					game["playerStatusDeadIcon_" + player.name].alpha = 0;
-				} else if (!isAlive(player)) {
-					game["playerStatusIcon_" + player.name].alpha = 0.2;
-					game["playerStatusText_" + player.name].color = ( 0.694, 0.220, 0.114 );
-					game["playerStatusCrossAlliesIcon_" + player.name].alpha = 0;
-					game["playerStatusSkullAlliesIcon_" + player.name].alpha = 0;
-					game["playerStatusCrossAxisIcon_" + player.name].alpha = 0;
-					game["playerStatusSkullAxisIcon_" + player.name].alpha = 0;
-					game["playerStatusDeadIcon_" + player.name].alpha = 0.9;
+			if (isAlive(player)) {
+				if (player.pers["team"] == "allies") {
+					alliesAlive += 1;
+				} else if (player.pers["team"] == "axis") {
+					axisAlive += 1;
+				}
+			} else if (!isAlive(player) && isDefined(player.pers["tag"]) && player.pers["tag"] == true) {
+				if (player.pers["team"] == "allies") {
+					alliesRevive += 1;
+				} else if (player.pers["team"] == "axis") {
+					axisRevive += 1;
+				}
+			} else if (!isAlive(player)) {
+				if (player.pers["team"] == "allies") {
+					alliesDead += 1;
+				} else if (player.pers["team"] == "axis") {
+					axisDead += 1;
 				}
 			}
+		}
+		if (game["playerStatusAliveAllies"].info != alliesAlive) {
+			game["playerStatusAliveAllies"].info = alliesAlive;
+			if (game["playerStatusAliveAllies"].info == 0) {
+				game["playerStatusAliveAllies"].color = ( 0.694, 0.220, 0.114 );
+			} else if (game["playerStatusAliveAllies"].info > 0) {
+				game["playerStatusAliveAllies"].color = ( 0.07, 0.69, 0.26 );
+			}
+			game["playerStatusAliveAllies"] setValue(alliesAlive);
+			game["playerStatusAliveAllies"] thread maps\mp\gametypes\_hud::fontPulse( level );
+		}
+		if (game["playerStatusAliveAxis"].info != axisAlive) {
+			game["playerStatusAliveAxis"].info = axisAlive;
+			if (game["playerStatusAliveAxis"].info == 0) {
+				game["playerStatusAliveAxis"].color = ( 0.694, 0.220, 0.114 );
+			} else if (game["playerStatusAliveAxis"].info > 0) {
+				game["playerStatusAliveAxis"].color = ( 0.07, 0.69, 0.26 );
+			}
+			game["playerStatusAliveAxis"] setValue(axisAlive);
+			game["playerStatusAliveAxis"] thread maps\mp\gametypes\_hud::fontPulse( level );
+		}
+		if (game["playerStatusDeadAllies"].info != alliesDead) {
+			game["playerStatusDeadAllies"].info = alliesDead;
+			game["playerStatusDeadAllies"] setValue(alliesDead);
+			game["playerStatusDeadAllies"] thread maps\mp\gametypes\_hud::fontPulse( level );
+		}
+		if (level.gametype == "sr" && game["playerStatusReviveAllies"].info != alliesRevive) {
+			game["playerStatusReviveAllies"].info = alliesRevive;
+			if (game["playerStatusReviveAllies"].info == 0) {
+				game["playerStatusReviveAllies"].color = ( 0.694, 0.220, 0.114 );
+			} else if (game["playerStatusReviveAllies"].info > 0) {
+				game["playerStatusReviveAllies"].color = ( 1, 1, 0.108 );
+			}
+			game["playerStatusReviveAllies"] setValue(alliesRevive);
+			game["playerStatusReviveAllies"] thread maps\mp\gametypes\_hud::fontPulse( level );
+		}
+		if (game["playerStatusDeadAxis"].info != axisDead) {
+			game["playerStatusDeadAxis"].info = axisDead;
+			game["playerStatusDeadAxis"] setValue(axisDead);
+			game["playerStatusDeadAxis"] thread maps\mp\gametypes\_hud::fontPulse( level );
+		}
+		if (level.gametype == "sr" && game["playerStatusReviveAxis"].info != axisRevive) {
+			game["playerStatusReviveAxis"].info = axisRevive;
+			if (game["playerStatusReviveAxis"].info == 0) {
+				game["playerStatusReviveAxis"].color = ( 0.694, 0.220, 0.114 );
+			} else if (game["playerStatusReviveAxis"].info > 0) {
+				game["playerStatusReviveAxis"].color = ( 1, 1, 0.108 );
+			}
+			game["playerStatusReviveAxis"] setValue(axisRevive);
+			game["playerStatusReviveAxis"] thread maps\mp\gametypes\_hud::fontPulse( level );
 		}
 	}
 }
 
 destroySRHudElements() {
-	for ( index = 0; index < level.players.size; index++ )
-	{
-		player = level.players[index];
-		if (isDefined(game["playerStatusIcon_" + player.name])) {
-			game["playerStatusIcon_" + player.name] destroy();
-			game["playerStatusText_" + player.name] destroy();
-			game["playerStatusCrossAlliesIcon_" + player.name] destroy();
-			game["playerStatusSkullAlliesIcon_" + player.name] destroy();
-			game["playerStatusCrossAxisIcon_" + player.name] destroy();
-			game["playerStatusSkullAxisIcon_" + player.name] destroy();
-			game["playerStatusDeadIcon_" + player.name] destroy();
+		game["playerStatusIconAllies"] destroy();
+		game["playerStatusIconAxis"] destroy();
+		game["playerStatusAliveAllies"] destroy();
+		game["playerStatusAliveAxis"] destroy();
+		game["playerStatusDeadIconAllies"] destroy();
+		game["playerStatusDeadIconAxis"] destroy();
+		game["playerStatusDeadAllies"] destroy();
+		game["playerStatusDeadAxis"] destroy();
+		if (level.gametype == "sr") {
+			game["playerStatusReviveIconAllies"] destroy();
+			game["playerStatusEliminateIconAllies"] destroy();
+			game["playerStatusReviveIconAxis"] destroy();
+			game["playerStatusEliminateIconAxis"] destroy();
+			game["playerStatusReviveAllies"] destroy();
+			game["playerStatusReviveAxis"] destroy();
 		}
-	}
 }
