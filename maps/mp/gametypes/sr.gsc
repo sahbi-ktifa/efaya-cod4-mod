@@ -1828,7 +1828,7 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 
 
 	trigger waittill( "trigger", player );
-	
+
 	// If by some chance a dead player activates the trigger, the dogtag will simply be deleted!
 	if ( isAlive( player ) ) {
 
@@ -1844,6 +1844,7 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 				if (!isDefined(friendlyTag.reviveCounter)) {
 					friendlyTag.reviveCounter = 0;
 				}
+				ClientPrint(player, "Reviving : " + friendlyTag.reviveCounter + " / 2");
 				friendlyTag.reviveCounter += 1;
 				player playLocalSound( "scramble" );
 				wait (0.5);
