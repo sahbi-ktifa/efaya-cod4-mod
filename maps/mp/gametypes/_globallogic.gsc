@@ -2429,13 +2429,13 @@ beginClassChoice( forceNewChoice )
 		//TODO: Disable opening chooseclass menu ASAP
 
 		//Works on first round but not after
-		/*self notify( "menuresponse", game["menu_changeclass_" + self.pers["team"] ], "assault" );
+		self notify( "menuresponse", game["menu_changeclass_" + self.pers["team"] ], "assault" );
 		wait(1);
 		self notify( "menuresponse", game["menu_changeclass"] , "go" );
 
 		if ( self.sessionstate != "playing" && game["state"] == "playing" )
 			self thread [[level.spawnClient]]();
-		return;*/
+		return;
 	}
 
 	// menu_changeclass_team is the one where you choose one of the n classes to play as.
@@ -4657,7 +4657,7 @@ Callback_PlayerConnect()
 
 		[[level.spawnSpectator]]();
 
-		if ( self isValidClass( self.pers["class"] ) )
+		if ( self isValidClass( self.pers["class"] ) ||  (level.gametype == "csd" && (self.pers["team"] == "axis" || self.pers["team"] == "allies") ))
 		{
 			self thread [[level.spawnClient]]();
 		}
@@ -5970,7 +5970,7 @@ getPerks( player )
 	if ( level.gametype == "hns" && player.pers["team"] == game["defenders"] )
 		return perks;
 
-	if ( !level.rankedMatch || level.gametype == "gg" || level.gametype == "ss" || level.gametype == "oitc" ) {
+	if ( !level.rankedMatch || level.gametype == "gg" || level.gametype == "csd" || level.gametype == "oitc" ) {
 		if ( isPlayer( player ) )
 		{
 			if ( isDefined( player.specialty[0] ) )

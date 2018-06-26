@@ -400,7 +400,8 @@ buyLoadoutMenuNav(response) {
 }
 
 doBuy(response) {
-	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay))
+	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay)
+		|| !isDefined(level.grenade_weapons))
 		return;
 
 	cost = 0;
@@ -476,23 +477,23 @@ sd_getTeamKillScore( eInflictor, attacker, sMeansOfDeath, sWeapon )
 }
 
 buyWeaponAction(weapon, cost, type) {
-	if (!isDefined(game[self.name]["money"])) {
+	if (!isDefined(game[self.name]["money"]) || !isDefined(cost)) {
 		return;
 	}
 	if (int(game[self.name]["money"]) < int(cost)) {
 		//ClientPrint(self, "Not enough money to purchase this weapon");
 		self playLocalSound( "error_csd" );
 	} else {
-		if (isDefined(game[self.name]["weapon"]) && game[self.name]["weapon"] != weapon) {
+		if (isDefined(game[self.name]["weapon"]) && game[self.name]["weapon"] != weapon && type != "grenade") {
 			currentWeapon = self getCurrentWeapon();
 			self dropItem( currentWeapon );
 		}
 		//ClientPrint(self, "Buying : " + weapon);
 		self giveWeapon( weapon );
-		self giveMaxAmmo( weapon );
 		if (type == "grenade") {
 			self SwitchToOffhand( weapon );
 		} else {
+			self giveMaxAmmo( weapon );
 			self setSpawnWeapon( weapon );
 			self switchToWeapon( weapon );
 		}
@@ -550,12 +551,14 @@ giveCSGOLevelLoadout()
 	}
 
 	self.specialty = [];
-	self.specialty[0] = "specialty_null";
-	//self setPerk( self.specialty[0] );
+	self.specialty[0] = "specialty_extraammo";
+	self setPerk( self.specialty[0] );
 	self.specialty[1] = "specialty_bulletdamage";
 	self setPerk( self.specialty[1] );
 	self.specialty[2] = "specialty_bulletpenetration";
 	self setPerk( self.specialty[2] );
+
+	self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_specops_movespeed", "float", 1.0, 0.5, 1.5 ) );
 
 	self giveWeapon( game["startWeapon"] );
 	self giveMaxAmmo( game["startWeapon"] );
@@ -764,7 +767,7 @@ showMoney(name)
 	moneyLeft = self createFontString( "objective", 1.4 );
 	moneyLeft.archived = true;
 	moneyLeft.hideWhenInMenu = false;
-	moneyLeft setPoint( "CENTER", "CENTER", -390, 215 );
+	moneyLeft setPoint( "CENTER", "CENTER", -420, 220 );
 	moneyLeft.alignX = "left";
 	moneyLeft.sort = -1;
 	moneyLeft.alpha = 0.75;
@@ -781,7 +784,7 @@ showMoney(name)
 			moneyLeft setText( game[name]["money"] + " $");
 			oldMoney = game[name]["money"];
 			moneyLeft.color = ( 0, 0.49, 0.05 );
-			if (game[name]["money"] < 0) {
+			if (game[name]["money"] <= 0) {
 				moneyLeft.color = ( 0.49, 0.12, 0.05 );
 			}
 		}

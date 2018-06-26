@@ -79,9 +79,9 @@ x,x,x,x,x,x,x,x,x,x,x
 77,3077,weapon_shotgun,,,,,,,,
 78,3078,weapon_shotgun,,,,,,,,
 79,3079,weapon_shotgun,,,,,,,,
-80,3080,weapon_lmg,WEAPON_M1GARAND,rpd,,weapon_m1garand,WEAPON_SEMIAUTOMATIC_SNIPER,acog,,
-81,3081,weapon_lmg,WEAPON_MOSIN,saw,,weapon_mosin,WEAPON_BOLTACTION_SNIPER_RIFLE,acog,,
-82,3082,weapon_lmg,WEAPON_KAR98,m60e4,,weapon_kar98,WEAPON_BOLTACTION_SNIPER_RIFLE,acog,,PERKS_UNLOCKED_AT_LV19
+80,3080,weapon_lmg,WEAPON_RPD,rpd,,weapon_rpd,WEAPON_SEMIAUTOMATIC_SNIPER,acog,,
+81,3081,weapon_lmg,WEAPON_SAW,saw,,weapon_m249saw,WEAPON_BOLTACTION_SNIPER_RIFLE,acog,,
+82,3082,weapon_lmg,WEAPON_M60E4,m60e4,,weapon_m60e4,WEAPON_BOLTACTION_SNIPER_RIFLE,acog,,PERKS_UNLOCKED_AT_LV19
 83,3083,weapon_lmg,,,,,,,,
 84,3084,weapon_lmg,,,,,,,,
 85,3085,weapon_lmg,,,,,,,,
@@ -90,7 +90,7 @@ x,x,x,x,x,x,x,x,x,x,x
 88,3088,weapon_lmg,,,,,,,,
 89,3089,weapon_lmg,,,,,,,,
 90,3090,weapon_explosive,WEAPON_C4,c4,2,weapon_c4,PERKS_CHARGE_OF_PLASTIC_EXPLOSIVES,,,
-91,3091,weapon_explosive,WEAPON_CLAYMORE,claymore,2,weapon_claymore,PERKS_DIRECTIONAL_ANTIPERSONNEL,,,
+91,3091,weapon_explosive,WEAPON_CLAYMORE,claymore,1,weapon_claymore,PERKS_DIRECTIONAL_ANTIPERSONNEL,,,
 92,3092,weapon_explosive,,,,,,,,
 93,3093,weapon_explosive,,,,,,,,
 94,3094,weapon_explosive,,,,,,,,

@@ -157,7 +157,7 @@ load_default_loadout_raw( class_dataTable, team, class, stat_num )
 	// give frag and special grenades
 	level.classGrenades[class]["primary"]["type"] = tablelookup( class_dataTable, 1, stat_num, 4 ) + "_mp";
 	level.classGrenades[class]["primary"]["count"] = game["loadout_" + class + "_frags"];
-	
+
 	level.classGrenades[class]["secondary"]["type"] = tablelookup( class_dataTable, 1, stat_num + 8, 4 ) + "_mp";
 	level.classGrenades[class]["secondary"]["count"] = game["loadout_" + class + "_special"];
 
@@ -424,7 +424,7 @@ getWeaponChoice( response )
 // obtains custom class setup from stat values
 cac_getdata()
 {
-	if ( isDefined( self.cac_initialized ) )
+	if ( isDefined( self.cac_initialized ) || level.gametype == "csd")
 		return;
 
 	/* custom class stat allocation order, example of custom class slot 1
@@ -624,12 +624,16 @@ get_specialtydata( class_num, specialty )
 	cac_weaponref = self.custom_class[class_num][specialty+"_weaponref"];	// for inventory whos string ref is the weapon ref
 	cac_group = self.custom_class[class_num][specialty+"_group"];
 	cac_count = self.custom_class[class_num][specialty+"_count"];
-	class = getPlayerCustomClass( self.custom_class[class_num]["primary"] );
+	if (level.gameType == "csd") {
+		class = "CLASS_SPECOPS";
+	} else {
+		class = getPlayerCustomClass( self.custom_class[class_num]["primary"] );
+	}
 
 	assertex( isdefined( cac_group ), "Missing "+specialty+"'s group name" );
 
 	// grenade classification and distribution ==================
-	if( specialty == "specialty1" )
+	if( specialty == "specialty1" && level.gametype != "csd" )
 	{
 		if( isSubstr( cac_group, "grenade" ) )
 		{
@@ -664,14 +668,14 @@ get_specialtydata( class_num, specialty )
 	}
 
 	// if user selected inventory items
-	if( cac_group == "inventory" )
+	if( level.gametype != "csd" && cac_group == "inventory" )
 	{
 		// inventory distribution to action slot 3 - unique per class
 		assertex( isdefined( cac_count ) && isdefined( cac_weaponref ), "Missing "+specialty+"'s reference or count data" );
 		self.custom_class[class_num]["inventory"] = cac_weaponref;		// loads inventory into action slot 3
 		self.custom_class[class_num]["inventory_count"] = cac_count;	// loads ammo count
 	}
-	else if( cac_group == "specialty" )
+	else if( level.gametype != "csd" && cac_group == "specialty" )
 	{
 		// building player's specialty, variable size array with size 3 max
 		if( self.custom_class[class_num][specialty] != "" )
@@ -724,6 +728,9 @@ reset_specialty_slots( class_num )
 
 giveLoadout( team, class )
 {
+	if (level.gametype == "csd") {
+		class = "CLASS_CUSTOM1";
+	}
 	self takeAllWeapons();
 
 	/*
@@ -766,87 +773,91 @@ giveLoadout( team, class )
 		self register_perks();
 		// at this stage, the specialties are loaded into the correct weapon slots, and special slots
 
-		// weapon override for round based gametypes
-		// TODO: if they switched to a sidearm, we shouldn't give them that as their primary!
-		if ( isDefined( self.pers["weapon"] ) && self.pers["weapon"] != "none" )
-			weapon = self.pers["weapon"];
-		else
-			weapon = self.custom_class[class_num]["primary"];
-
-		sidearm = self.custom_class[class_num]["secondary"];
-
-		self GiveWeapon( sidearm );
-		if ( self cac_hasSpecialty( "specialty_extraammo" ) )
-			self giveMaxAmmo( sidearm );
-
-		// give primary weapon
-		primaryWeapon = weapon;
-
-		assertex( isdefined( self.custom_class[class_num]["camo_num"] ), "Player's camo skin is not defined, it should be at least initialized to 0" );
-
-		primaryTokens = strtok( primaryWeapon, "_" );
-		self.pers["primaryWeapon"] = primaryTokens[0];
-
-		self maps\mp\gametypes\_teams::playerModelForWeapon( self.pers["primaryWeapon"] );
-
-		self GiveWeapon( weapon, self.custom_class[class_num]["camo_num"] );
-		self.camo_num = self.custom_class[class_num]["camo_num"];
-		if ( self cac_hasSpecialty( "specialty_extraammo" ) )
-			self giveMaxAmmo( weapon );
-		self setSpawnWeapon( weapon );
-
-		// give secondary weapon
-
-		if ( level.scr_enable_nightvision )
-			self SetActionSlot( 1, "nightvision" );
-
-		secondaryWeapon = self.custom_class[class_num]["inventory"];
-		if ( secondaryWeapon != "" )
-		{
-			self GiveWeapon( secondaryWeapon );
-
-			self setWeaponAmmoOverall( secondaryWeapon, self.custom_class[class_num]["inventory_count"] );
-
-			self thread giveActionSlot3AfterDelay( secondaryWeapon );
-			self SetActionSlot( 4, "" );
-		}
-		else
-		{
-			self thread giveActionSlot3AfterDelay( "altMode" );
-			self SetActionSlot( 4, "" );
-		}
-
-		// give frag for all no matter what
-		grenadeTypePrimary = self.custom_class[class_num]["grenades"];
-		if ( grenadeTypePrimary != "" )
-		{
-			self.primarynade = grenadeTypePrimary;
-			grenadeCount = self.custom_class[class_num]["grenades_count"];
-
-			// Give grenades after a dvar specified delay
-			if ( isdefined ( grenadeCount ) && grenadeCount ) {
-				self.primarynadecount = grenadeCount;
-				self thread giveNadesAfterDelay( grenadeTypePrimary, grenadeCount, true );
-			}
-		}
-
-		// give special grenade
-		grenadeTypeSecondary = self.custom_class[class_num]["specialgrenades"];
-		if ( grenadeTypeSecondary != "" )
-		{
-			grenadeCount = self.custom_class[class_num]["specialgrenades_count"];
-
-			if ( grenadeTypeSecondary == level.weapons["flash"])
-				self setOffhandSecondaryClass("flash");
+		if (level.gametype == "csd") {
+			self maps\mp\gametypes\_teams::playerModelForWeapon( "mp5" );
+		} else {
+			// weapon override for round based gametypes
+			// TODO: if they switched to a sidearm, we shouldn't give them that as their primary!
+			if ( isDefined( self.pers["weapon"] ) && self.pers["weapon"] != "none" )
+				weapon = self.pers["weapon"];
 			else
-				self setOffhandSecondaryClass("smoke");
+				weapon = self.custom_class[class_num]["primary"];
 
-			// Give grenades after a dvar specified delay
-			if ( isdefined ( grenadeCount ) && grenadeCount )
-				self thread giveNadesAfterDelay( grenadeTypeSecondary, grenadeCount, false );
+			sidearm = self.custom_class[class_num]["secondary"];
+
+			self GiveWeapon( sidearm );
+			if ( self cac_hasSpecialty( "specialty_extraammo" ) )
+				self giveMaxAmmo( sidearm );
+
+			// give primary weapon
+			primaryWeapon = weapon;
+
+			assertex( isdefined( self.custom_class[class_num]["camo_num"] ), "Player's camo skin is not defined, it should be at least initialized to 0" );
+
+			primaryTokens = strtok( primaryWeapon, "_" );
+			self.pers["primaryWeapon"] = primaryTokens[0];
+
+			self maps\mp\gametypes\_teams::playerModelForWeapon( self.pers["primaryWeapon"] );
+
+			self GiveWeapon( weapon, self.custom_class[class_num]["camo_num"] );
+			self.camo_num = self.custom_class[class_num]["camo_num"];
+			if ( self cac_hasSpecialty( "specialty_extraammo" ) )
+				self giveMaxAmmo( weapon );
+			self setSpawnWeapon( weapon );
+
+			// give secondary weapon
+
+			if ( level.scr_enable_nightvision )
+				self SetActionSlot( 1, "nightvision" );
+
+			secondaryWeapon = self.custom_class[class_num]["inventory"];
+			if ( secondaryWeapon != "" )
+			{
+				self GiveWeapon( secondaryWeapon );
+
+				self setWeaponAmmoOverall( secondaryWeapon, self.custom_class[class_num]["inventory_count"] );
+
+				self thread giveActionSlot3AfterDelay( secondaryWeapon );
+				self SetActionSlot( 4, "" );
+			}
+			else
+			{
+				self thread giveActionSlot3AfterDelay( "altMode" );
+				self SetActionSlot( 4, "" );
+			}
+
+			// give frag for all no matter what
+			grenadeTypePrimary = self.custom_class[class_num]["grenades"];
+			if ( grenadeTypePrimary != "" )
+			{
+				self.primarynade = grenadeTypePrimary;
+				grenadeCount = self.custom_class[class_num]["grenades_count"];
+
+				// Give grenades after a dvar specified delay
+				if ( isdefined ( grenadeCount ) && grenadeCount ) {
+					self.primarynadecount = grenadeCount;
+					self thread giveNadesAfterDelay( grenadeTypePrimary, grenadeCount, true );
+				}
+			}
+
+			// give special grenade
+			grenadeTypeSecondary = self.custom_class[class_num]["specialgrenades"];
+			if ( grenadeTypeSecondary != "" )
+			{
+				grenadeCount = self.custom_class[class_num]["specialgrenades_count"];
+
+				if ( grenadeTypeSecondary == level.weapons["flash"])
+					self setOffhandSecondaryClass("flash");
+				else
+					self setOffhandSecondaryClass("smoke");
+
+				// Give grenades after a dvar specified delay
+				if ( isdefined ( grenadeCount ) && grenadeCount )
+					self thread giveNadesAfterDelay( grenadeTypeSecondary, grenadeCount, false );
+			}
+
+			self thread logClassChoice( class, primaryWeapon, grenadeTypeSecondary, self.specialty );
 		}
-
-		self thread logClassChoice( class, primaryWeapon, grenadeTypeSecondary, self.specialty );
 	}
 	else
 	{
@@ -948,34 +959,35 @@ giveLoadout( team, class )
 	}
 
 	// [0.0.1] Load the movespeed depending on which gun the player is using as the primary weapon
+	if (level.gametype != "csd") {
+		switch ( weaponClass( primaryWeapon ) )
+		{
+			case "rifle":
+				self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_assault_movespeed", "float", 0.95, 0.5, 1.5 ) );
+				break;
+			case "pistol":
+				self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_sniper_movespeed", "float", 1.0, 0.5, 1.5 ) );
+				break;
+			case "mg":
+				self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_heavygunner_movespeed", "float", 1.0, 0.5, 1.5 )  );
+				break;
+			case "smg":
+				self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_specops_movespeed", "float", 1.0, 0.5, 1.5 ) );
+				break;
+			case "spread":
+				self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_demolitions_movespeed", "float", 1.0, 0.5, 1.5 ) );
+				break;
+			default:
+				self thread openwarfare\_speedcontrol::setBaseSpeed( 1.0 );
+				break;
+		}
+		// [0.0.1]
 
-	switch ( weaponClass( primaryWeapon ) )
-	{
-		case "rifle":
-			self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_assault_movespeed", "float", 0.95, 0.5, 1.5 ) );
-			break;
-		case "pistol":
-			self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_sniper_movespeed", "float", 1.0, 0.5, 1.5 ) );
-			break;
-		case "mg":
-			self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_heavygunner_movespeed", "float", 1.0, 0.5, 1.5 )  );
-			break;
-		case "smg":
-			self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_specops_movespeed", "float", 1.0, 0.5, 1.5 ) );
-			break;
-		case "spread":
-			self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_demolitions_movespeed", "float", 1.0, 0.5, 1.5 ) );
-			break;
-		default:
-			self thread openwarfare\_speedcontrol::setBaseSpeed( 1.0 );
-			break;
+
+		// cac specialties that require loop threads
+		self cac_selector();
 	}
-	// [0.0.1]
 
-
-	// cac specialties that require loop threads
-	self cac_selector();
-	
 	[[level.onLoadoutGiven]]();
 }
 
@@ -1010,7 +1022,7 @@ replenishLoadout() // used by ammo hardpoint.
 		self SetWeaponAmmoClip( weapon, 9999 );
 
 		if ( weapon == "claymore_mp" || weapon == "claymore_detonator_mp" )
-			self setWeaponAmmoStock( weapon, 2 );
+			self setWeaponAmmoStock( weapon, 1 );
     }
 
 	if ( self getAmmoCount( level.classGrenades[class]["primary"]["type"] ) < level.classGrenades[class]["primary"]["count"] )
@@ -1266,7 +1278,7 @@ isPrimaryDamage( meansofdeath )
 getPlayerCustomClass( primaryWeapon )
 {
 	playerClass = "CLASS_UNKNOWN";
-	
+
 	switch ( weaponClass( primaryWeapon ) )
 	{
 		case "rifle":
@@ -1285,7 +1297,6 @@ getPlayerCustomClass( primaryWeapon )
 			playerClass = "CLASS_DEMOLITIONS";
 			break;
 	}
-	
+
 	return playerClass;
-}	
-	
+}

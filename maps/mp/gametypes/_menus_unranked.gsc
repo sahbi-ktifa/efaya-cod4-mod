@@ -26,7 +26,7 @@ init()
 	game["menu_muteplayer"] = "muteplayer";
 	precacheMenu(game["menu_callvote"]);
 	precacheMenu(game["menu_muteplayer"]);
-	
+
 	// game summary popups
 	game["menu_eog_unlock"] = "popup_unlock";
 	game["menu_eog_summary"] = "popup_summary";
@@ -97,7 +97,7 @@ onMenuResponse()
 			self closeMenu();
 			self closeInGameMenu();
 			self thread maps\mp\gametypes\hns::choosePropClass( response );
-			continue;			
+			continue;
 		}*/
 
 		if( getSubStr( response, 0, 7 ) == "loadout" )
@@ -166,12 +166,12 @@ onMenuResponse()
 			self maps\mp\gametypes\_modwarfare::setClassChoice( response );
 			self closeMenu();
 			self closeInGameMenu();
-			
+
 			if ( level.gametype != "gg" && level.gametype != "ss" && level.gametype != "oitc" ) {
 				self openMenu( game["menu_changeclass"] );
 			} else {
 				self.selectedClass = true;
-				self maps\mp\gametypes\_modwarfare::menuAcceptClass();				
+				self maps\mp\gametypes\_modwarfare::menuAcceptClass();
 			}
 			continue;
 		}

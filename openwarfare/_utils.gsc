@@ -23,18 +23,18 @@ getdvarx( dvarName, dvarType, dvarDefault, minValue, maxValue )
 		level.gametype = toLower( getDvar( "g_gametype" ) );
 		level.serverLoad = getDvar( "_sl_current" );
 	}
-	
+
 	// scr_variable_name_<load>
 	if ( getdvar( dvarName + "_" + level.serverLoad ) != "" )
 		dvarName = dvarName + "_" + level.serverLoad;
-			
+
 	// scr_variable_name_<gametype>
 	if ( getdvar( dvarName + "_" + level.gametype ) != "" )
 		dvarName = dvarName + "_" + level.gametype;
 
 	// scr_variable_name_<gametype>_<load>
 	if ( getdvar( dvarName + "_" + level.gametype + "_" + level.serverLoad ) != "" )
-		dvarName = dvarName + "_" + level.gametype + "_" + level.serverLoad;		
+		dvarName = dvarName + "_" + level.gametype + "_" + level.serverLoad;
 
 	// scr_variable_name_<mapname>
 	if ( getdvar( dvarName + "_" + level.script ) != "" )
@@ -188,8 +188,8 @@ getPlayerEyes()
 			playerEyes += (0,0,60);
 			break;
 	}
-	
-	return playerEyes;	
+
+	return playerEyes;
 }
 
 
@@ -275,23 +275,23 @@ addLeagueRuleset( leagueName, gameType, functionPointer )
 
 giveNadesAfterDelay( nadeType, nadeCount, nadePrimary )
 {
-	if ( level.gametype == "gg" || level.gametype == "ss" || level.gametype == "oitc" )
+	if ( level.gametype == "gg" || level.gametype == "csd" || level.gametype == "oitc" )
 		return;
-	
+
 	if ( level.gametype == "hns" ) {
 		if ( self.pers["team"] == game["defenders"] ) {
 			return;
 		} else {
 			// If we are in the hiding period wait until the period is over to start counting
 			if ( level.inHidingPeriod ) {
-				level waittill( "hiding_time_over" );	
-			}	
+				level waittill( "hiding_time_over" );
+			}
 		}
 	}
-	
+
 	self notify("giveNadesAfterDelay");
 	wait (0.05);
-	
+
 	self endon("disconnect");
 	self endon("death");
 	self endon("giveNadesAfterDelay");
@@ -334,12 +334,12 @@ giveNadesAfterDelay( nadeType, nadeCount, nadePrimary )
 	if ( isDefined( self ) ) {
 		self giveWeapon( nadeType );
 		self setWeaponAmmoClip( nadeType, nadeCount );
-	
+
 		// Play a sound so the players know they can use grenades
 		if ( playSound && level.scr_delay_sound_enable == 1 ) {
 			self playLocalSound( "weap_ammo_pickup" );
 		}
-	
+
 		if( nadePrimary )
 			self switchToOffhand( nadeType );
 	}
@@ -350,7 +350,7 @@ giveNadesAfterDelay( nadeType, nadeCount, nadePrimary )
 
 giveActionSlot3AfterDelay( slotWeapon )
 {
-	if ( level.gametype == "gg" || level.gametype == "ss" || level.gametype == "oitc" )
+	if ( level.gametype == "gg" || level.gametype == "csd" || level.gametype == "oitc" )
 		return;
 
 	if ( level.gametype == "hns" ) {
@@ -359,14 +359,14 @@ giveActionSlot3AfterDelay( slotWeapon )
 		} else {
 			// If we are in the hiding period wait until the period is over to start counting
 			if ( level.inHidingPeriod ) {
-				level waittill( "hiding_time_over" );	
-			}	
+				level waittill( "hiding_time_over" );
+			}
 		}
 	}
-					
+
 	self notify("giveActionSlot3AfterDelay");
 	wait (0.05);
-	
+
 	self endon("disconnect");
 	self endon("death");
 	self endon("giveActionSlot3AfterDelay");
@@ -382,28 +382,28 @@ giveActionSlot3AfterDelay( slotWeapon )
 				return;
 			timeToUse = level.scr_delay_grenade_launchers * 1000;
 			break;
-			
+
 		case "rpg_mp":
 			// We do not give RPGs if it's disabled (condition here for ranked servers)
 			if ( level.perk_allow_rpg_mp == 0 )
 				return;
 			timeToUse = level.scr_delay_rpgs * 1000;
 			break;
-			
+
 		case "c4_mp":
 			// We do not give C4 if it's disabled (condition here for ranked servers)
 			if ( level.perk_allow_c4_mp == 0 )
 				return;
 			timeToUse = level.scr_delay_c4s * 1000;
 			break;
-			
+
 		case "claymore_mp":
 			// We do not give Claymores if it's disabled (condition here for ranked servers)
 			if ( level.perk_allow_claymore_mp == 0 )
 				return;
 			timeToUse = level.scr_delay_claymores * 1000;
 			break;
-			
+
 		default:
 			timeToUse = 0;
 	}
@@ -428,7 +428,7 @@ giveActionSlot3AfterDelay( slotWeapon )
 		} else {
 			self SetActionSlot( 3, "weapon", slotWeapon );
 		}
-	
+
 		// Play a sound so the players know they can use grenades
 		if ( playSound && level.scr_delay_sound_enable == 1 ) {
 			self playLocalSound( "weap_ammo_pickup" );
@@ -443,7 +443,7 @@ giveActionSlot4AfterDelay( hardpointType, streak )
 {
 	self notify("giveActionSlot4AfterDelay");
 	wait (0.05);
-	
+
 	self endon("disconnect");
 	self endon("death");
 	self endon("giveActionSlot4AfterDelay");
@@ -461,10 +461,10 @@ giveActionSlot4AfterDelay( hardpointType, streak )
 			default:
 				timeToUse = 0;
 		}
-	
+
 		if ( timeToUse > 0 ) {
 			playSound = true;
-	
+
 			while ( timeToUse > openwarfare\_timer::getTimePassed() )
 				wait (0.05);
 		}
@@ -476,12 +476,12 @@ giveActionSlot4AfterDelay( hardpointType, streak )
 		self giveMaxAmmo( hardpointType );
 		self setActionSlot( 4, "weapon", hardpointType );
 		self.pers["hardPointItem"] = hardpointType;
-		
+
 		// Check if we should remind the player about having the hardpoint
 		if ( level.scr_hardpoint_show_reminder != 0 ) {
 			self thread maps\mp\gametypes\_hardpoints::hardpointReminder( hardpointType );
 		}
-	
+
 		// Show the message
 		if ( isDefined( streak ) || level.scr_hardpoint_show_reminder != 0 ) {
 			self thread maps\mp\gametypes\_hardpoints::hardpointNotify( hardpointType, streak );
@@ -891,8 +891,8 @@ convertWeaponName( sWeapon )
 		} else {
 			break;
 		}
-	} 
-	
+	}
+
 	// Use the localized strings to get the name of the weapon
 	switch( sWeaponShort ) {
 		case "m16":
@@ -920,7 +920,7 @@ convertWeaponName( sWeapon )
 			break;
 
 		case "mp44_mp":
-		case "mp44_single_mp":		
+		case "mp44_single_mp":
 			sWeapon = &"WEAPON_MP44";
 			break;
 
@@ -1160,8 +1160,8 @@ rulesetDvar( varName, varValue )
 		level.dvarMonitor = [];
 
 	// Set the variable value
-	setDvar( varName, varValue );	
-	
+	setDvar( varName, varValue );
+
 	// Store the new variable in the array
 	newElement = level.dvarMonitor.size;
 	level.dvarMonitor[newElement]["name"] = varName;
@@ -1205,13 +1205,13 @@ isPlayerNearTurret()
 		turretClasses = [];
 		turretClasses[0] = "misc_turret";
 		turretClasses[1] = "misc_mg42";
-	
+
 		// Cycle all the classes used by turrets
 		for ( classix = 0; classix < turretClasses.size; classix++ )
 		{
 			// Get an array of entities for this class
 			turretEntities = getentarray( turretClasses[ classix ], "classname" );
-	
+
 			// Cycle and check if the player is touching the trigger of the entity
 			if ( isDefined ( turretEntities ) ) {
 				for ( turretix = 0; turretix < turretEntities.size; turretix++ ) {
@@ -1222,7 +1222,7 @@ isPlayerNearTurret()
 			}
 		}
 		return false;
-	}	
+	}
 }
 
 
@@ -1245,7 +1245,7 @@ getMapName( mapName )
 	if ( isDefined( level.stockMapNames[ mapName ] ) ) {
 		mapName = level.stockMapNames[ mapName ];
 	} else if ( isDefined( level.customMapNames[ mapname ] ) ) {
-		mapName = level.customMapNames[ mapName ];		
+		mapName = level.customMapNames[ mapName ];
 	}
 
 	return mapName;
@@ -1282,16 +1282,16 @@ switchPlayerTeam( newTeam, halfTimeSwitch )
 		self.class = undefined;
 		self.pers["spawnweapon"] = undefined;
 	}
-	
+
 	self maps\mp\gametypes\_globallogic::updateObjectiveText();
-	
+
 	// Log in the system log the team switch
 	lpselfnum = self getEntityNumber();
 	lpselfname = self.name;
 	lpselfteam = newTeam;
 	lpselfguid = self getGuid();
-	logPrint( "JT;" + lpselfguid + ";" + lpselfnum + ";" + lpselfteam + ";" + lpselfname + ";" + "\n" );	
-	
+	logPrint( "JT;" + lpselfguid + ";" + lpselfnum + ";" + lpselfteam + ";" + lpselfname + ";" + "\n" );
+
 	// Notify other modules about the team switch
 	self notify("joined_team");
 	if ( !halfTimeSwitch ) {
@@ -1311,61 +1311,61 @@ resetPlayerClassOnTeamSwitch( halfTimeSwitch )
 	// If the server is ranked there's no need to reset
 	if ( level.rankedMatch || !isDefined( self.pers["class"] ) )
 		return false;
-		
+
 	// Check non-class dependent limits
 	if ( isDefined( self.specialty ) && isDefined ( self.specialty[0] ) ) {
 		if ( !halfTimeSwitch && game["perk_c4_mp_limit"] != 0 && game["perk_c4_mp_limit"] != 64 && self.specialty[0] == "c4_mp" )
 			return true;
 		if ( !halfTimeSwitch && game["perk_rpg_mp_limit"] != 0 && game["perk_rpg_mp_limit"] != 64 && self.specialty[0] == "rpg_mp" )
-			return true;		
+			return true;
 		if ( !halfTimeSwitch && game["perk_claymore_mp_limit"] != 0 && game["perk_claymore_mp_limit"] != 64 && self.specialty[0] == "claymore_mp" )
-			return true;	
+			return true;
 	}
 	if ( !halfTimeSwitch && game["smoke_grenade_limit"] != 0 && game["smoke_grenade_limit"] != 64 && self.pers[self.pers["class"]]["loadout_grenade"] == "smoke_grenade" )
-		return true;		
-		
-				
+		return true;
+
+
 	// Check class dependent limits
 	switch ( self.pers["class"] ) {
 		case "assault":
 			if ( ( !halfTimeSwitch && game[ self.team + "_assault_limit"] != 0 && game[ self.team + "_assault_limit"] != 64 ) || ( halfTimeSwitch && game[ "allies_assault_limit"] != game[ "axis_assault_limit"] ) )
 				return true;
-				
+
 			if ( !halfTimeSwitch && game["attach_assault_gl_limit"] != 0 && game["attach_assault_gl_limit"] != 64 && self.pers["assault"]["loadout_primary_attachment"] == "gl" )
 				return true;
 			break;
-			
+
 		case "specops":
 			if ( ( !halfTimeSwitch && game[ self.team + "_specops_limit"] != 0 && game[ self.team + "_specops_limit"] != 64 ) || ( halfTimeSwitch && game[ "allies_specops_limit"] != game[ "axis_specops_limit"] ) )
-				return true;			
+				return true;
 			break;
-			
+
 		case "heavygunner":
 			if ( ( !halfTimeSwitch && game[ self.team + "_heavygunner_limit"] != 0 && game[ self.team + "_heavygunner_limit"] != 64 ) || ( halfTimeSwitch && game[ "allies_heavygunner_limit"] != game[ "axis_heavygunner_limit"] ) )
-				return true;			
+				return true;
 			break;
-			
+
 		case "demolitions":
 			if ( ( !halfTimeSwitch && game[ self.team + "_demolitions_limit"] != 0 && game[ self.team + "_demolitions_limit"] != 64 ) || ( halfTimeSwitch && game[ "allies_demolitions_limit"] != game[ "axis_demolitions_limit"] ) )
-				return true;			
+				return true;
 			break;
-			
+
 		case "sniper":
 			if ( ( !halfTimeSwitch && game[ self.team + "_sniper_limit"] != 0 && game[ self.team + "_sniper_limit"] != 64 ) || ( halfTimeSwitch && game[ "allies_sniper_limit"] != game[ "axis_sniper_limit"] ) )
-				return true;			
+				return true;
 			break;
 	}
-	
-	return false;	
+
+	return false;
 }
 
 
 waitAndSendEvent( timeToWait, eventToSend )
 {
 	self endon( eventToSend );
-	
+
 	xWait(timeToWait );
-	self notify( eventToSend );	
+	self notify( eventToSend );
 }
 
 
@@ -1375,7 +1375,7 @@ suicidePlayer()
 		self suicide();
 	} else {
 		//self maps\mp\gametypes\hns::killPropOwner( undefined, self, 0, undefined, "MOD_SUICIDE", "none", (0,0,0), (0,0,0), "torso_upper", gettime() );
-	}	
+	}
 }
 
 
@@ -1384,7 +1384,7 @@ serverHideHUD()
 	setDvar( "ui_hud_hardcore", 1 );
 	setDvar( "ui_hud_hardcore_show_minimap", 0 );
 	setDvar( "ui_hud_hardcore_show_compass", 0 );
-	setDvar( "ui_hud_show_inventory", 0 );	
+	setDvar( "ui_hud_show_inventory", 0 );
 }
 
 
@@ -1393,7 +1393,7 @@ serverShowHUD()
 	setDvar( "ui_hud_hardcore", level.hardcoreMode );
 	setDvar( "ui_hud_hardcore_show_minimap", level.scr_hud_hardcore_show_minimap );
 	setDvar( "ui_hud_hardcore_show_compass", level.scr_hud_hardcore_show_compass );
-	setDvar( "ui_hud_show_inventory", level.scr_hud_show_inventory );	
+	setDvar( "ui_hud_show_inventory", level.scr_hud_show_inventory );
 }
 
 
@@ -1425,27 +1425,27 @@ showHUD()
 getLastAlivePlayer()
 {
 	winner = undefined;
-	
+
 	for ( index = 0; index < level.players.size; index++ ) {
 		player = level.players[index];
-		
+
 		if ( !isDefined( player ) || !isDefined( player.pers ) || player.pers["team"] == "spectator" )
 			continue;
-			
+
 		if ( ( player.sessionstate == "dead" || player.sessionstate == "spectator" ) && ( player.pers["lives"] == 0 || !player.hasSpawned ) )
 			continue;
-			
+
 		winner = player;
-		break;		
+		break;
 	}
 
 	return winner;
 }
 //**********************************************************************************
-// Returns team specific voice 
-sayTeamVoice( player, dialog, playLocal, playWorld ) 
-{ 
-        
+// Returns team specific voice
+sayTeamVoice( player, dialog, playLocal, playWorld )
+{
+
         if( !isDefined( player ) )
                 return;
 
@@ -1474,15 +1474,15 @@ sayTeamVoice( player, dialog, playLocal, playWorld )
                         intro = "US_";
                 } else {
                         intro = "UK_";
-                }  
-        }       
+                }
+        }
 
         if( team == "axis" ) {
                 if ( game["axis"] == "russian" ) {
                         intro = "RU_";
                 } else {
                         intro = "AB_";
-                } 
+                }
         }
 
         song = intro + dialog;
@@ -1490,13 +1490,13 @@ sayTeamVoice( player, dialog, playLocal, playWorld )
         if( isDefined( playLocal ) && playLocal == true ) {
                 player playLocalSound( song );
 
-        } else if( isDefined( playWorld ) && playWorld == true ) { 
+        } else if( isDefined( playWorld ) && playWorld == true ) {
                 player playSound( song );
 
-        } else { 
+        } else {
 
                 return song;
         }
 
-} 
+}
 //*******************************************************************************
