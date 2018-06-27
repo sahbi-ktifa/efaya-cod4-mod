@@ -135,7 +135,7 @@ main()
 	level.onTimeLimit = ::onTimeLimit;
 	level.onRoundSwitch = ::onRoundSwitch;
 	level.getTeamKillPenalty = ::sd_getTeamKillPenalty;
-	level.getTeamKillScore = ::sd_getTeamKillScore;				
+	level.getTeamKillScore = ::sd_getTeamKillScore;
 
 	level.endGameOnScoreLimit = false;
 
@@ -199,19 +199,19 @@ sd_getTeamKillPenalty( eInflictor, attacker, sMeansOfDeath, sWeapon )
 	{
 		teamkill_penalty = teamkill_penalty * level.teamKillPenaltyMultiplier;
 	}
-	
+
 	return teamkill_penalty;
 }
 
 sd_getTeamKillScore( eInflictor, attacker, sMeansOfDeath, sWeapon )
 {
 	teamkill_score = maps\mp\gametypes\_rank::getScoreInfoValue( "kill" );
-	
+
 	if ( ( isdefined( self.isDefusing ) && self.isDefusing ) || ( isdefined( self.isPlanting ) && self.isPlanting ) )
 	{
 		teamkill_score = teamkill_score * level.teamKillScoreMultiplier;
 	}
-	
+
 	return int(teamkill_score);
 }
 
@@ -403,8 +403,8 @@ checkAllowSpectating()
 
 sd_endGame( winningTeam, endReasonText )
 {
-	if ( isdefined( winningTeam ) )
-		[[level._setTeamScore]]( winningTeam, [[level._getTeamScore]]( winningTeam ) + 1 );
+	//if ( isdefined( winningTeam ) )
+		//[[level._setTeamScore]]( winningTeam, [[level._getTeamScore]]( winningTeam ) + 1 );
 
 	//thread maps\mp\gametypes\_globallogic::endGame( winningTeam, endReasonText );
 	thread maps\mp\gametypes\_finalkillcam::endGame( winningTeam, endReasonText );
@@ -519,17 +519,17 @@ updateGametypeDvars()
 	level.defuseTime = getdvarx( "scr_sd_defusetime", "float", 8, 0, 20 );
 	level.bombTimer = getdvarx( "scr_sd_bombtimer", "float", 60, 1, 300 );
 	level.multiBomb = getdvarx( "scr_sd_multibomb", "int", 0, 0, 1 );
-	
+
 	// Calculate the bomb timer with the random modifier
 	maxModifier = level.bombTimer - 5;
 	if ( maxModifier < 0 ) {
 		maxModifier = 0;
 	}
 	level.scr_sd_bombtimer_modifier = getdvarx( "scr_sd_bombtimer_modifier", "int", 0, 0, maxModifier );
-	level.bombTimer = randomFloatRange( level.bombTimer - level.scr_sd_bombtimer_modifier, level.bombTimer + level.scr_sd_bombtimer_modifier + 1 );	
-	
+	level.bombTimer = randomFloatRange( level.bombTimer - level.scr_sd_bombtimer_modifier, level.bombTimer + level.scr_sd_bombtimer_modifier + 1 );
+
 	level.teamKillPenaltyMultiplier = dvarFloatValue( "teamkillpenalty", 2, 0, 10 );
-	level.teamKillScoreMultiplier = dvarFloatValue( "teamkillscore", 4, 0, 40 );		
+	level.teamKillScoreMultiplier = dvarFloatValue( "teamkillscore", 4, 0, 40 );
 }
 
 
@@ -682,7 +682,7 @@ onBeginUse( player )
 
 		if ( level.scr_sd_allow_quickdefuse )
  	      player thread openwarfare\_objoptions::quickDefuse();
- 	      
+
 		if ( isDefined( level.sdBombModel ) )
 			level.sdBombModel hide();
 	}
@@ -746,7 +746,7 @@ onUsePlantObject( player )
 		lpselfnum = player getEntityNumber();
 		lpGuid = player getGuid();
 		logPrint("BP;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
-		
+
 		// disable all bomb zones except this one
 		for ( index = 0; index < level.bombZones.size; index++ )
 		{
@@ -756,7 +756,7 @@ onUsePlantObject( player )
 			if ( level.scr_sd_sdmode == 0 ) {
 				level.bombZones[index] maps\mp\gametypes\_gameobjects::disableObject();
 			} else {
-				level.bombZones[index] maps\mp\gametypes\_gameobjects::allowUse( "none" );			
+				level.bombZones[index] maps\mp\gametypes\_gameobjects::allowUse( "none" );
 			}
 		}
 
@@ -785,7 +785,7 @@ onUseDefuseObject( player )
 	lpselfnum = player getEntityNumber();
 	lpGuid = player getGuid();
 	logPrint("BD;" + lpGuid + ";" + lpselfnum + ";" + player.name + "\n");
-	
+
 	// disable this bomb zone
 	self maps\mp\gametypes\_gameobjects::disableObject();
 
@@ -804,7 +804,7 @@ onDrop( player )
 	{
 		if ( isDefined( player ) && isDefined( player.name ) && player.pers["team"] == game["attackers"] ) {
 			player.isBombCarrier = false;
-			
+
 			printOnTeamArg( &"MP_EXPLOSIVES_DROPPED_BY", game["attackers"], player );
 
 			if ( level.scr_sd_scoreboard_bomb_carrier == 1 && isAlive( player ) ) {
@@ -820,7 +820,7 @@ onDrop( player )
 	}
 
 	self maps\mp\gametypes\_gameobjects::set3DIcon( "friendly", "waypoint_bomb" );
-	
+
 	if ( isDefined( player ) && player.pers["team"] == game["attackers"] )
 		maps\mp\_utility::playSoundOnPlayers( game["bomb_dropped_sound"], game["attackers"] );
 	else if ( isDefined( player ) )
@@ -838,7 +838,7 @@ onPickup( player )
 
 	if ( isDefined( player ) && player.pers["team"] == game["defenders"] && level.scr_sd_allow_defender_explosivedestroy )
 		player iprintln( &"OW_DESTROY_EXPLOSIVES" );
- 	 
+
 	if ( isDefined( player ) && player.pers["team"] == game["attackers"] )
 		self maps\mp\gametypes\_gameobjects::set3DIcon( "friendly", "waypoint_defend" );
 
@@ -871,9 +871,9 @@ bombPlanted( destroyedObj, player )
 	level.tickingObject = destroyedObj.visuals[0];
 
 	level.timeLimitOverride = true;
-	
+
 	setGameEndTime( int( gettime() + (level.bombTimer * 1000) ) );
-	
+
 	if ( level.scr_sd_bombtimer_show == 1 )
 		setDvar( "ui_bomb_timer", 1 );
 
@@ -905,12 +905,12 @@ bombPlanted( destroyedObj, player )
 		level.sdBombModel setModel( "prop_suitcase_bomb" );
 	}
 	destroyedObj maps\mp\gametypes\_gameobjects::allowUse( "none" );
-		
+
 	// Check if we need to hide the bomb site in the radar
 	if ( level.scr_sd_sdmode == 0 ) {
 		destroyedObj maps\mp\gametypes\_gameobjects::setVisibleTeam( "none" );
 	}
-	
+
 	label = destroyedObj maps\mp\gametypes\_gameobjects::getLabel();
 
 	// create a new object to defuse with.
@@ -923,7 +923,7 @@ bombPlanted( destroyedObj, player )
 	defuseObject maps\mp\gametypes\_gameobjects::setUseText( &"MP_DEFUSING_EXPLOSIVE" );
 	defuseObject maps\mp\gametypes\_gameobjects::setUseHintText( &"PLATFORM_HOLD_TO_DEFUSE_EXPLOSIVES" );
 	defuseObject maps\mp\gametypes\_gameobjects::setVisibleTeam( "any" );
-		
+
 	// Check if we need to show the defuse/defend icons
 	if ( level.scr_sd_sdmode == 0 ) {
 		defuseObject maps\mp\gametypes\_gameobjects::set2DIcon( "friendly", "compass_waypoint_defuse" + label );
@@ -937,10 +937,10 @@ bombPlanted( destroyedObj, player )
 			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set2DIcon( "friendly", "compass_waypoint_defuse" + label );
 			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set2DIcon( "enemy", "compass_waypoint_defend" + label );
 			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set3DIcon( "friendly", "waypoint_defuse" + label );
-			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set3DIcon( "enemy", "waypoint_defend" + label );				
-		}		
+			level.bombZones[ idx ] maps\mp\gametypes\_gameobjects::set3DIcon( "enemy", "waypoint_defend" + label );
+		}
 	}
-	
+
 	defuseObject.label = label;
 	defuseObject.onBeginUse = ::onBeginUse;
 	defuseObject.onEndUse = ::onEndUse;
@@ -1030,5 +1030,5 @@ disableObject()
 		self maps\mp\gametypes\_gameobjects::allowUse( "none" );
 	} else {
 		self maps\mp\gametypes\_gameobjects::disableObject();
-	}	
+	}
 }
