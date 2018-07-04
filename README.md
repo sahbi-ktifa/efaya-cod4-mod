@@ -1,8 +1,13 @@
 # BootifulWarfare Mod Source
 ## Custom COD4 Mod based on OpenWarfare.
 
+### Available Gametypes
+
+Gametypes are : DM, CTF, SAB, GG, DOM, WAR, SD, SR, CSD
+
 ### Special Features
 
+* Competitive Search & Destroy : Exclusive gametype based on Counter-Strike game logic. Each player got an amount of money and buy his weapons.
 * Advanced Map Voting System Enhanced : With custom map loadscreen configurable.
 * Nemesis system : Identify favorite target and your nemesis. Will be display in end of game statistics.
 * Final Killcam : In some gametypes (dm, sd, sr, csd), a final kill cam will be played for winning round/game kill.

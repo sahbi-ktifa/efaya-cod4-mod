@@ -424,7 +424,7 @@ getWeaponChoice( response )
 // obtains custom class setup from stat values
 cac_getdata()
 {
-	if ( isDefined( self.cac_initialized ) || level.gametype == "csd")
+	if ( isDefined( self.cac_initialized ))// || level.gametype == "csd")
 		return;
 
 	/* custom class stat allocation order, example of custom class slot 1
@@ -633,7 +633,7 @@ get_specialtydata( class_num, specialty )
 	assertex( isdefined( cac_group ), "Missing "+specialty+"'s group name" );
 
 	// grenade classification and distribution ==================
-	if( specialty == "specialty1" && level.gametype != "csd" )
+	if( specialty == "specialty1")// && level.gametype != "csd" )
 	{
 		if( isSubstr( cac_group, "grenade" ) )
 		{
@@ -668,14 +668,14 @@ get_specialtydata( class_num, specialty )
 	}
 
 	// if user selected inventory items
-	if( level.gametype != "csd" && cac_group == "inventory" )
+	if(cac_group == "inventory" )
 	{
 		// inventory distribution to action slot 3 - unique per class
 		assertex( isdefined( cac_count ) && isdefined( cac_weaponref ), "Missing "+specialty+"'s reference or count data" );
 		self.custom_class[class_num]["inventory"] = cac_weaponref;		// loads inventory into action slot 3
 		self.custom_class[class_num]["inventory_count"] = cac_count;	// loads ammo count
 	}
-	else if( level.gametype != "csd" && cac_group == "specialty" )
+	else if( cac_group == "specialty" )
 	{
 		// building player's specialty, variable size array with size 3 max
 		if( self.custom_class[class_num][specialty] != "" )
@@ -728,9 +728,9 @@ reset_specialty_slots( class_num )
 
 giveLoadout( team, class )
 {
-	if (level.gametype == "csd") {
+	/*if (level.gametype == "csd") {
 		class = "CLASS_CUSTOM1";
-	}
+	}*/
 	self takeAllWeapons();
 
 	/*
@@ -773,9 +773,6 @@ giveLoadout( team, class )
 		self register_perks();
 		// at this stage, the specialties are loaded into the correct weapon slots, and special slots
 
-		if (level.gametype == "csd") {
-			self maps\mp\gametypes\_teams::playerModelForWeapon( "mp5" );
-		} else {
 			// weapon override for round based gametypes
 			// TODO: if they switched to a sidearm, we shouldn't give them that as their primary!
 			if ( isDefined( self.pers["weapon"] ) && self.pers["weapon"] != "none" )
@@ -797,7 +794,11 @@ giveLoadout( team, class )
 			primaryTokens = strtok( primaryWeapon, "_" );
 			self.pers["primaryWeapon"] = primaryTokens[0];
 
-			self maps\mp\gametypes\_teams::playerModelForWeapon( self.pers["primaryWeapon"] );
+			if (level.gametype == "csd") {
+				self maps\mp\gametypes\_teams::playerModelForWeapon( "mp5" );
+			} else {
+				self maps\mp\gametypes\_teams::playerModelForWeapon( self.pers["primaryWeapon"] );
+			}
 
 			self GiveWeapon( weapon, self.custom_class[class_num]["camo_num"] );
 			self.camo_num = self.custom_class[class_num]["camo_num"];
@@ -857,7 +858,6 @@ giveLoadout( team, class )
 			}
 
 			self thread logClassChoice( class, primaryWeapon, grenadeTypeSecondary, self.specialty );
-		}
 	}
 	else
 	{
@@ -959,7 +959,7 @@ giveLoadout( team, class )
 	}
 
 	// [0.0.1] Load the movespeed depending on which gun the player is using as the primary weapon
-	if (level.gametype != "csd") {
+	//if (level.gametype != "csd") {
 		switch ( weaponClass( primaryWeapon ) )
 		{
 			case "rifle":
@@ -986,7 +986,7 @@ giveLoadout( team, class )
 
 		// cac specialties that require loop threads
 		self cac_selector();
-	}
+	//}
 
 	[[level.onLoadoutGiven]]();
 }

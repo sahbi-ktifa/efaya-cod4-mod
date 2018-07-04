@@ -177,9 +177,9 @@ showDailyChallenge( index , challengeScore)
 
 	if ( isDefined( text ) ) {
 		completion.alpha = 0.75;
-		completion setText(" : " + challengeScore + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
+		completion setValue(" : " + challengeScore + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
 		text.alpha = 0.75;
-		text setText(level.daily_challenges["challenge" + (index + 1)]["label"]);
+		text setValue(level.daily_challenges["challenge" + (index + 1)]["label"]);
 	}
 }
 
@@ -340,7 +340,7 @@ playerSpawned() {
 				self.daily_challenges_names[ (index + 1) ].color = ( 1, 1, 1 );
 				self.daily_challenges_completions[ (index + 1) ].color = ( 1, 1, 1 );
 				level.daily_challenges["challenge" + (index + 1) + "_" + self.name] = 0;
-				self.daily_challenges_completions[ (index + 1) ] setText(" : " + level.daily_challenges["challenge" + (index + 1) + "_" + self.name] + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
+				self.daily_challenges_completions[ (index + 1) ] setValue(" : " + level.daily_challenges["challenge" + (index + 1) + "_" + self.name] + "/" + level.daily_challenges["challenge" + (index + 1)]["amount"]);
 
 				setDvar("scr_daily_challenge" + (index + 1) + "_" + self.name, level.daily_challenges["challenge" + (index + 1) + "_" + self.name]);
 				//TODO : Give Reward + score

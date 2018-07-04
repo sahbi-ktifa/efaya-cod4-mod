@@ -184,7 +184,7 @@ x,x,x,x,x,x,x,x,x,x,x
 182,182,specialgrenade,,,,,,,,
 183,183,specialgrenade,,,,,,,,
 184,184,inventory,PERKS_C4_X_2,c4_mp,2,specialty_weapon_c4,PERKS_REMOTE_DETONATION_EXPLOSIVE,perk1,,
-185,185,inventory,PERKS_CLAYMORE_X_2,claymore_mp,2,specialty_weapon_claymore,PERKS_TRIP_ACTIVATED_EXPLOSIVE,perk1,,PERKS_UNLOCKED_AT_MASTER_GUNNERY
+185,185,inventory,PERKS_CLAYMORE_X_2,claymore_mp,1,specialty_weapon_claymore,PERKS_TRIP_ACTIVATED_EXPLOSIVE,perk1,,PERKS_UNLOCKED_AT_MASTER_GUNNERY
 186,186,inventory,PERKS_RPG7_X_2,rpg_mp,2,specialty_weapon_rpg,PERKS_ROCKET_LAUNCHER_WITH,perk1,,
 187,187,inventory,,,,,,,,
 188,188,inventory,,,,,,,,

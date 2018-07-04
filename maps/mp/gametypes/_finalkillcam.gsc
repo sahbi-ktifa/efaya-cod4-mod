@@ -213,12 +213,12 @@ CreateFKMenu( victim , attacker)
       self.top_fk_shader.alpha = 0.5;
       self.bottom_fk_shader.alpha = 0.5;
 
-      self.fk_title_low setText("^3" + attacker.name + " ^7killed ^1" + victim.name);
+      self.fk_title_low setValue("^3" + attacker.name + " ^7killed ^1" + victim.name);
 
       if( !level.killcam_style )
-          self.fk_title setText("GAME WINNING KILL");
+          self.fk_title setValue("GAME WINNING KILL");
       else
-          self.fk_title setText("ROUND WINNING KILL");
+          self.fk_title setValue("ROUND WINNING KILL");
     }
 }
 
@@ -230,21 +230,23 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 
         team = attacker.team;
 
-        level.doFK[team] = true;
+        if (isDefined(team)) {
+          level.doFK[team] = true;
 
-        if(level.teamBased)
-        {
-            level.KillInfo[team]["attacker"] = attacker;
-            level.KillInfo[team]["attackerNumber"] = attacker getEntityNumber();
-            level.KillInfo[team]["victim"] = self;
-            level.KillInfo[team]["deathTime"] = GetTime()/1000;
-        }
-        else
-        {
-            attacker.KillInfo["attacker"] = attacker;
-            attacker.KillInfo["attackerNumber"] = attacker getEntityNumber();
-            attacker.KillInfo["victim"] = self;
-            attacker.KillInfo["deathTime"] = GetTime()/1000;
+          if(level.teamBased)
+          {
+              level.KillInfo[team]["attacker"] = attacker;
+              level.KillInfo[team]["attackerNumber"] = attacker getEntityNumber();
+              level.KillInfo[team]["victim"] = self;
+              level.KillInfo[team]["deathTime"] = GetTime()/1000;
+          }
+          else
+          {
+              attacker.KillInfo["attacker"] = attacker;
+              attacker.KillInfo["attackerNumber"] = attacker getEntityNumber();
+              attacker.KillInfo["victim"] = self;
+              attacker.KillInfo["deathTime"] = GetTime()/1000;
+          }
         }
     }
 }
@@ -655,7 +657,7 @@ startFK( winner )
     if(!level.showFinalKillcam)
         return;
 
-    if(!isPlayer(Winner) && !level.doFK[winner])
+    if(!isPlayer(winner) && !isDefined(level.doFK[winner]))
         return;
 
     level.fk = true;

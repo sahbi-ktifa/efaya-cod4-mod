@@ -125,6 +125,8 @@ main()
 	level.scr_csd_planting_reward = getdvard( "scr_csd_planting_reward", "int", 200 );
 	level.scr_csd_defusing_reward = getdvard( "scr_csd_defusing_reward", "int", 400 );
 
+	level.scr_csd_allow_quickdefuse = getdvarx( "scr_csd_allow_quickdefuse", "int", 0, 0, 1 );
+
 	level.pistol_allies_weapons = [];
 	level.pistol_axis_weapons = [];
 	level.sniper_allies_weapons = [];
@@ -401,7 +403,10 @@ buyLoadoutMenuNav(response) {
 
 doBuy(response) {
 	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay)
-		|| !isDefined(level.grenade_weapons))
+		|| !isDefined(level.grenade_weapons) || !isDefined(level.assault_allies_weapons) || !isDefined(level.assault_axis_weapons)
+		|| !isDefined(level.smg_shotgun_allies_weapons) || !isDefined(level.smg_shotgun_axis_weapons)
+		|| !isDefined(level.sniper_allies_weapons) || !isDefined(level.sniper_axis_weapons)
+		|| !isDefined(level.pistol_allies_weapons) || !isDefined(level.pistol_axis_weapons))
 		return;
 
 	cost = 0;
@@ -500,7 +505,7 @@ buyWeaponAction(weapon, cost, type) {
 		game[self.name]["weapon"] = weapon;
 		game[self.name]["money"] -= int(cost);
 		//self thread displayBuying(cost);
-		//self playLocalSound( "cash" );
+		self playLocalSound( "cash" );
 	}
 }
 
@@ -514,7 +519,7 @@ displayBuying(price) {
 	moneyBuy.sort = -1;
 	moneyBuy.alpha = 0.75;
 	moneyBuy.color = ( 0.49, 0.12, 0.05);
-	moneyBuy setText("-" + price + " $");
+	moneyBuy setValue("-" + price + " $");
 
 	wait 2;
 	moneyBuy destroy();
@@ -564,7 +569,7 @@ giveCSGOLevelLoadout()
 	self giveMaxAmmo( game["startWeapon"] );
 	self setSpawnWeapon( game["startWeapon"] );
 	self switchToWeapon( game["startWeapon"] );
-	if (isDefined(game[self.name]["weapon"])) {
+	if (isDefined(game[self.name] && isDefined(game[self.name]["weapon"])) {
 		self giveWeapon( game[self.name]["weapon"] );
 		self giveMaxAmmo( game[self.name]["weapon"] );
 		self setSpawnWeapon( game[self.name]["weapon"] );
@@ -723,6 +728,8 @@ onSpawnPlayer()
 	self.isPlanting = false;
 	self.isDefusing = false;
 	self.isBombCarrier = false;
+	if ( level.scr_csd_allow_quickdefuse == 1 )
+		self.didQuickDefuse = false;
 
 	if(self.pers["team"] == game["attackers"])
 		spawnPointName = "mp_sd_spawn_attacker";
@@ -750,6 +757,10 @@ onSpawnPlayer()
 	spawnpoint = maps\mp\gametypes\_spawnlogic::getSpawnpoint_Random( spawnPoints );
 
 	self spawn( spawnpoint.origin, spawnpoint.angles );
+	if (!isDefined(game[self.name]))
+		game[self.name] = [];
+	if (!isDefined(game[self.name]["money"]))
+		game[self.name]["money"] = level.scr_csd_minimum_wage;
 	self thread showMoney(self.name);
 	self giveCSGOLevelLoadout();
 	level notify ( "spawned_player" );
@@ -766,13 +777,13 @@ showMoney(name)
 	// Create the money left
 	moneyLeft = self createFontString( "objective", 1.4 );
 	moneyLeft.archived = true;
-	moneyLeft.hideWhenInMenu = false;
+	moneyLeft.hideWhenInMenu = true;
 	moneyLeft setPoint( "CENTER", "CENTER", -420, 220 );
 	moneyLeft.alignX = "left";
 	moneyLeft.sort = -1;
 	moneyLeft.alpha = 0.75;
 	moneyLeft.color = ( 0, 0.49, 0.05 );
-	moneyLeft setText("0 $");
+	moneyLeft setValue("0 $");
 
 	oldMoney = 0;
 	// Update the level and kills info until the player dies
@@ -780,8 +791,8 @@ showMoney(name)
 		wait (0.05);
 
 		// Check if money has changed
-		if ( IsDefined(game[name]) && game[name]["money"] != oldMoney ) {
-			moneyLeft setText( game[name]["money"] + " $");
+		if ( isDefined(game[name]) && isDefined(game[name]["money"]) && game[name]["money"] != oldMoney ) {
+			moneyLeft setValue( game[name]["money"] + " $");
 			oldMoney = game[name]["money"];
 			moneyLeft.color = ( 0, 0.49, 0.05 );
 			if (game[name]["money"] <= 0) {
@@ -845,11 +856,11 @@ sd_endGame( winningTeam, endReasonText )
 		if ( level.players[index].pers["team"] ==  winningTeam) {
 			game[level.players[index].name]["money"] += level.scr_csd_winning_round_reward;
 			//level.players[index] displayGaining(level.scr_csd_winning_round_reward, "+");
-			//level.players[index] playLocalSound( "cash" );
+			level.players[index] playLocalSound( "cash" );
 		} else {
 			game[level.players[index].name]["money"] += level.scr_csd_loosing_round_reward;
 			//level.players[index] displayGaining(level.scr_csd_loosing_round_reward, "+");
-			//level.players[index] playLocalSound( "cash" );
+			level.players[index] playLocalSound( "cash" );
 		}
 		weap = level.players[index] getCurrentWeapon();
 		if (isDefined(weap) && weap != "none" && weap != "briefcase_bomb_defuse_mp" && (!isDefined(game[level.players[index].name]["weapon"]) || game[level.players[index].name]["weapon"] != weap)) {
@@ -865,6 +876,9 @@ sd_endGame( winningTeam, endReasonText )
 
 onDeadEvent( team )
 {
+	logPrint("CSD_DEADEVENT\n");
+	logPrint("team : " + team + "\n");
+	logPrint("CSD_DEADEVENT\n");
 	if ( level.bombExploded || level.bombDefused )
 		return;
 
@@ -1321,7 +1335,7 @@ bombPlanted( destroyedObj, player )
 
 	game[player.name]["money"] += level.scr_csd_planting_reward;
 	//player displayGaining(level.scr_csd_planting_reward, "+");
-	//player playLocalSound( "cash" );
+	player playLocalSound( "cash" );
 
 	if ( level.scr_csd_bomb_notification_enable == 1 )
 		destroyedObj.visuals[0] thread maps\mp\gametypes\_globallogic::playTickingSound();
@@ -1470,7 +1484,7 @@ bombDefused(player)
 
 	game[player.name]["money"] += level.scr_csd_defusing_reward;
 	//player displayGaining(level.scr_csd_defusing_reward, "+");
-	//player playLocalSound( "cash" );
+	player playLocalSound( "cash" );
 
 	setDvar( "ui_bomb_timer", 0 );
 
@@ -1493,4 +1507,68 @@ disableObject()
 	} else {
 		self maps\mp\gametypes\_gameobjects::disableObject();
 	}
+}
+
+quickDefuse()
+{
+        self endon( "disconnect" );
+        self endon( "death" );
+
+        if ( self.didQuickDefuse )
+  	        return;
+
+        self.isChangingWire = false;
+
+        if ( isAlive( self ) && self.isDefusing && !level.gameEnded && !level.bombExploded )
+        {
+                bombwire[0] = &"OW_RED_WIRE";
+                bombwire[1] = &"OW_GREEN_WIRE";
+                bombwire[2] = &"OW_YELLOW_WIRE";
+                bombwire[3] = &"OW_BLUE_WIRE";
+
+                correctWire = randomIntRange( 0, 4 );
+                playerChoice = 0;
+
+                self iprintlnbold( &"OW_QUICK_DEFUSE_1" );
+                self iprintlnbold( &"OW_QUICK_DEFUSE_2" );
+
+                while ( self.isDefusing && isAlive( self ) && !level.gameEnded && !level.bombExploded && !self.didQuickDefuse )
+                {
+                        if ( self attackButtonPressed() ) {
+      	                        self.didQuickDefuse = true;
+				self thread quickDefuseResults( playerChoice, correctWire );
+
+                        } else if ( self adsButtonPressed() && !self.isChangingWire ) {
+                                self.isChangingWire = true;
+                                self allowAds( false );
+
+                                if ( playerChoice == 3 )
+                                        playerChoice = 0;
+                                else
+                                        playerChoice++;
+
+                                self iprintlnbold( bombwire[playerChoice] );
+                                wait( 0.1 );
+                                self.isChangingWire = false;
+                                self allowAds( true );
+                        }
+
+                        wait( 0.05 );
+                }
+
+        }
+
+}
+
+quickDefuseResults( playerChoice, correctWire )
+{
+        level endon ( "game_ended" );
+
+        if ( playerChoice == correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
+  	        level.defuseObject thread onUseDefuseObject( self );
+
+        } else if ( playerChoice != correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
+  	        level notify( "wrong_wire" );
+        }
+
 }

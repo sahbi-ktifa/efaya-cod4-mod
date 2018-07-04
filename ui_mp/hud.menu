@@ -665,7 +665,7 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 0 && gametype() != "csd");
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 0 && gametype() != "csd" && gametype() != "sr");
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		1 1 1 HUD_ALPHA
@@ -678,7 +678,7 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 1 && gametype() != "csd");
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 1 && gametype() != "csd" && gametype() != "sr");
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		0 0.5 0 HUD_ALPHA
@@ -691,7 +691,7 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 2 && gametype() != "csd" );
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 2 && gametype() != "csd" && gametype() != "sr" );
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		1 1 0 HUD_ALPHA
@@ -704,7 +704,7 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 3 && gametype() != "csd" );
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 3 && gametype() != "csd" && gametype() != "sr" );
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		1 0.5 0 HUD_ALPHA
@@ -717,7 +717,7 @@
 			rect			-2 0 48 48 // 64x64
 			ownerdraw		CG_PLAYER_STANCE
 			textfont		UI_FONT_OBJECTIVE
-			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 4 && gametype() != "csd" );
+			visible			when( !inkillcam() && !selecting_location() && dvarint( ui_hud_show_stance ) == 1 && dvarInt(ui_stance_color) == 4 && gametype() != "csd" && gametype() != "sr" );
 			textscale		TEXTSIZE_SMALL
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			forecolor		1 0 0 HUD_ALPHA

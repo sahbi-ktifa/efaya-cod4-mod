@@ -2425,7 +2425,7 @@ beginClassChoice( forceNewChoice )
 		self thread maps\mp\gametypes\_spectating::setSpectatePermissions();
 
 		return;
-	} else if (level.gameType == "csd") {
+	} /*else if (level.gameType == "csd") {
 		//TODO: Disable opening chooseclass menu ASAP
 
 		//Works on first round but not after
@@ -2436,7 +2436,7 @@ beginClassChoice( forceNewChoice )
 		if ( self.sessionstate != "playing" && game["state"] == "playing" )
 			self thread [[level.spawnClient]]();
 		return;
-	}
+	}*/
 
 	// menu_changeclass_team is the one where you choose one of the n classes to play as.
 	// menu_class_team is where you can choose to change your team, class, controls, or leave game.
@@ -4657,7 +4657,7 @@ Callback_PlayerConnect()
 
 		[[level.spawnSpectator]]();
 
-		if ( self isValidClass( self.pers["class"] ) ||  (level.gametype == "csd" && (self.pers["team"] == "axis" || self.pers["team"] == "allies") ))
+		if ( self isValidClass( self.pers["class"] ))  //} ||  (level.gametype == "csd" && (self.pers["team"] == "axis" || self.pers["team"] == "allies") ))
 		{
 			self thread [[level.spawnClient]]();
 		}
