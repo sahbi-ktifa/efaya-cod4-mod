@@ -320,7 +320,7 @@ resetClientVariables(step)
 				"ui_item1_name", "1. Assault weapons",
 				"ui_item1_image", "",
 				"ui_item1_cost", "",
-				"ui_item2_name", "2. SMG / Shotguns weapons",
+				"ui_item2_name", "2. SMG / Shotguns",
 				"ui_item2_image", "",
 				"ui_item2_cost", "",
 				"ui_item3_name", "3. Sniper weapons",
@@ -569,7 +569,7 @@ giveCSGOLevelLoadout()
 	self giveMaxAmmo( game["startWeapon"] );
 	self setSpawnWeapon( game["startWeapon"] );
 	self switchToWeapon( game["startWeapon"] );
-	if (isDefined(game[self.name] && isDefined(game[self.name]["weapon"])) {
+	if (isDefined(game[self.name]) && isDefined(game[self.name]["weapon"])) {
 		self giveWeapon( game[self.name]["weapon"] );
 		self giveMaxAmmo( game[self.name]["weapon"] );
 		self setSpawnWeapon( game[self.name]["weapon"] );
@@ -775,15 +775,25 @@ showMoney(name)
 	self endon("disconnect");
 
 	// Create the money left
+	dollarSign = self createFontString( "objective", 1.4 );
+	dollarSign.archived = true;
+	dollarSign.hideWhenInMenu = true;
+	dollarSign setPoint( "CENTER", "CENTER", -425, 220 );
+	dollarSign.alignX = "left";
+	dollarSign.sort = -1;
+	dollarSign.alpha = 0.75;
+	dollarSign.color = ( 0, 0.49, 0.05 );
+	dollarSign setText("$");
+
 	moneyLeft = self createFontString( "objective", 1.4 );
 	moneyLeft.archived = true;
 	moneyLeft.hideWhenInMenu = true;
-	moneyLeft setPoint( "CENTER", "CENTER", -420, 220 );
+	moneyLeft setPoint( "CENTER", "CENTER", -415, 220 );
 	moneyLeft.alignX = "left";
 	moneyLeft.sort = -1;
 	moneyLeft.alpha = 0.75;
 	moneyLeft.color = ( 0, 0.49, 0.05 );
-	moneyLeft setValue("0 $");
+	moneyLeft setValue(0);
 
 	oldMoney = 0;
 	// Update the level and kills info until the player dies
@@ -792,11 +802,13 @@ showMoney(name)
 
 		// Check if money has changed
 		if ( isDefined(game[name]) && isDefined(game[name]["money"]) && game[name]["money"] != oldMoney ) {
-			moneyLeft setValue( game[name]["money"] + " $");
+			moneyLeft setValue( int(game[name]["money"]) );
 			oldMoney = game[name]["money"];
 			moneyLeft.color = ( 0, 0.49, 0.05 );
+			dollarSign.color = ( 0, 0.49, 0.05 );
 			if (game[name]["money"] <= 0) {
 				moneyLeft.color = ( 0.49, 0.12, 0.05 );
+				dollarSign.color = ( 0.49, 0.12, 0.05 );
 			}
 		}
 	}
@@ -863,7 +875,7 @@ sd_endGame( winningTeam, endReasonText )
 			level.players[index] playLocalSound( "cash" );
 		}
 		weap = level.players[index] getCurrentWeapon();
-		if (isDefined(weap) && weap != "none" && weap != "briefcase_bomb_defuse_mp" && (!isDefined(game[level.players[index].name]["weapon"]) || game[level.players[index].name]["weapon"] != weap)) {
+		if (isDefined(weap) && weap != "none" && weap != "briefcase_bomb_mp" && weap != "briefcase_bomb_defuse_mp" && (!isDefined(game[level.players[index].name]["weapon"]) || game[level.players[index].name]["weapon"] != weap)) {
 			game[level.players[index].name]["weapon"] = weap;
 		}
 	}

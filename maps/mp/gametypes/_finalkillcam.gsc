@@ -213,12 +213,12 @@ CreateFKMenu( victim , attacker)
       self.top_fk_shader.alpha = 0.5;
       self.bottom_fk_shader.alpha = 0.5;
 
-      self.fk_title_low setValue("^3" + attacker.name + " ^7killed ^1" + victim.name);
+      self.fk_title_low setText("^3" + attacker.name + " ^7killed ^1" + victim.name);
 
       if( !level.killcam_style )
-          self.fk_title setValue("GAME WINNING KILL");
+          self.fk_title setText("GAME WINNING KILL");
       else
-          self.fk_title setValue("ROUND WINNING KILL");
+          self.fk_title setText("ROUND WINNING KILL");
     }
 }
 

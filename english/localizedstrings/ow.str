@@ -471,7 +471,7 @@ REFERENCE	AMVS_LEAVE_GAME
 LANG_ENGLISH "^7Press ^3ESC ^7to leave the game"
 
 REFERENCE	AMVS_GO_BACK
-LANG_ENGLISH "^7Press ^36 ^7to go back to the menu"
+LANG_ENGLISH "^7Click here or press ^36 ^7to go back to the menu"
 
 REFERENCE AMVS_CASTVOTE
 LANG_ENGLISH "Cast Vote"
@@ -510,8 +510,8 @@ LANG_ENGLISH "^7The server admin has switched you to the other team."
 // openwarfare/_capeditor.gsc
 //******************************************************************************
 
-REFERENCE CAP_OPEN 
-LANG_ENGLISH "Hit the ^3[USE] ^7key to open the\n^3Customize-A-Player Interface" 
+REFERENCE CAP_OPEN
+LANG_ENGLISH "Hit the ^3[USE] ^7key to open the\n^3Customize-A-Player Interface"
 
 REFERENCE CAP_CYCLE_AND_CLOSE
 LANG_ENGLISH "Hit the ^3[USE] ^7key to cycle through the models\nHit the ^3[MELEE] ^7key to exit the interface"
@@ -651,28 +651,28 @@ LANG_ENGLISH "This is your last life!"
 //******************************************************************************
 REFERENCE QUICK_DEFUSE_1
 LANG_ENGLISH "^1Quick Defuse: ^7Cycle through the wires by pressing ^2[{+toggleads_throw}]^7"
- 	 
+
 REFERENCE QUICK_DEFUSE_2
 LANG_ENGLISH "Press ^2[{+attack}]^7 to select the wire to cut"
- 	 
+
 REFERENCE RED_WIRE
 LANG_ENGLISH "^1Red Wire"
- 	 
+
 REFERENCE GREEN_WIRE
 LANG_ENGLISH "^2Green Wire"
- 	 
+
 REFERENCE YELLOW_WIRE
 LANG_ENGLISH "^3Yellow Wire"
- 	 
+
 REFERENCE BLUE_WIRE
 LANG_ENGLISH "^4Blue Wire"
- 	 
+
 REFERENCE EXPLOSIVES_DESTROYED
 LANG_ENGLISH "Explosives Destroyed!"
- 	 
+
 REFERENCE DESTROYING_EXPLOSIVES
 LANG_ENGLISH "Destroying Explosives"
- 	 
+
 REFERENCE DESTROY_EXPLOSIVES
 LANG_ENGLISH "You can destroy the explosive by holding ^2[{+melee}]^7"
 
