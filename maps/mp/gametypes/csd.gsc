@@ -178,7 +178,7 @@ main()
 		level.pistol_axis_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	//Grenades loading
-	tmp_value = getdvard( "scr_csd_grenade_weapons", "string", "frag_grenade_mp:Frag grenade:weapon_fraggrenade:250;flash_grenade_mp:Flash grenade:weapon_flashbang:200;smoke_grenade_mp:Smoke grenade:weapon_smokegrenade:150;concussion_grenade_mp:Stun grenade:weapon_concgrenade:150" );
+	tmp_value = getdvard( "scr_csd_grenade_weapons", "string", "frag_grenade_mp:Frag grenade:weapon_fraggrenade:250;flash_grenade_mp:Flash grenade:weapon_flashbang:100;smoke_grenade_mp:Smoke grenade:weapon_smokegrenade:150;concussion_grenade_mp:Stun grenade:weapon_concgrenade:150" );
 	tmp_values = strtok(tmp_value, ";");
 	for (i = 0; i < tmp_values.size; i++) {
 		level.grenade_weapons[i] = strtok(tmp_values[i], ":");
@@ -501,8 +501,8 @@ buyWeaponAction(weapon, cost, type) {
 			self giveMaxAmmo( weapon );
 			self setSpawnWeapon( weapon );
 			self switchToWeapon( weapon );
+			game[self.name]["weapon"] = weapon;
 		}
-		game[self.name]["weapon"] = weapon;
 		game[self.name]["money"] -= int(cost);
 		//self thread displayBuying(cost);
 		self playLocalSound( "cash" );
