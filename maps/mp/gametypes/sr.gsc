@@ -957,8 +957,6 @@ onUseDefuseObject( player )
 
 	maps\mp\gametypes\_globallogic::givePlayerScore( "defuse", player );
 	player thread [[level.onXPEvent]]( "defuse" );
-
-	sr_endGame( game["defenders"], game["strings"]["bomb_defused"] );
 }
 
 onDrop( player )
@@ -1699,6 +1697,7 @@ quickDefuseResults( playerChoice, correctWire )
 
         if ( playerChoice == correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level.defuseObject thread onUseDefuseObject( self );
+						[[level._setTeamScore]]( self.pers["team"], [[level._getTeamScore]]( self.pers["team"] ) + 1 );
 
         } else if ( playerChoice != correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level notify( "wrong_wire" );

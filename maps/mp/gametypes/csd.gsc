@@ -321,6 +321,39 @@ resetClientVariables(step)
 			break;
 		}
 	}
+	primary = "";
+	primary_name = "";
+	secondary = "";
+	secondary_name = "";
+	flash = "0";
+	stun = "0";
+	smoke = "0";
+	frag = "0";
+	weaps = self GetWeaponsList();
+	for ( i = 0; i < weaps.size; i++) {
+		weap = weaps[i];
+		if (weap == "frag_grenade_mp") {
+			frag = self GetAmmoCount( "frag_grenade_mp" );
+		} else if (weap == "flash_grenade_mp") {
+			flash = self GetAmmoCount( "flash_grenade_mp" );
+		} else if (weap == "smoke_grenade_mp") {
+			smoke = self GetAmmoCount( "smoke_grenade_mp" );
+		} else if (weap == "concussion_grenade_mp") {
+			stun = self GetAmmoCount( "concussion_grenade_mp" );
+		}	else if (maps\mp\gametypes\_weapons::isPistol( weap ) ) {
+			secondary = maps\mp\gametypes\_weapons::getWeaponMaterial( weap );
+		} else if (maps\mp\gametypes\_weapons::isPrimaryWeapon( weap )) {
+			primary = maps\mp\gametypes\_weapons::getWeaponMaterial( weap );
+		}
+	}
+	self setClientDvars(
+		"ui_item_primary", primary,
+		"ui_item_secondary",secondary,
+		"ui_item_frag", frag,
+		"ui_item_flash", flash,
+		"ui_item_stun", stun,
+		"ui_item_smoke", smoke
+	);
 	switch ( step ) {
 		case "base":
 			self setClientDvars(
@@ -469,6 +502,7 @@ doBuy(response) {
 			break;
 	}
 	self buyWeaponAction(weapon, cost, game[self.name]["menu_step"]);
+	self resetClientVariables(game[self.name]["menu_step"]);
 }
 
 sd_getTeamKillPenalty( eInflictor, attacker, sMeansOfDeath, sWeapon )
@@ -512,9 +546,16 @@ buyWeaponAction(weapon, cost, type) {
 		}
 		//ClientPrint(self, "Buying : " + weapon);
 		self giveWeapon( weapon );
-		if (type != "grenade") {
+		if (type == "grenade") {
 			//self SwitchToOffhand( weapon );
-		//} else {
+			if ( isSubStr( weapon, "flash_" ) ) {
+				 self SetOffhandSecondaryClass( "flash" );
+			} else if ( isSubStr( weapon, "smoke_" ) ) {
+				 self SetOffhandSecondaryClass( "smoke" );
+			} else if ( isSubStr( weapon, "concussion_" ) ) {
+				 self SetOffhandSecondaryClass( "concussion" );
+			}
+		} else {
 			self giveMaxAmmo( weapon );
 			self setSpawnWeapon( weapon );
 			self switchToWeapon( weapon );
@@ -1291,7 +1332,6 @@ onUseDefuseObject( player )
 	maps\mp\gametypes\_globallogic::givePlayerScore( "defuse", player );
 	player thread [[level.onXPEvent]]( "defuse" );
 
-	sd_endGame( game["defenders"], game["strings"]["bomb_defused"] );
 }
 
 
@@ -1597,6 +1637,7 @@ quickDefuseResults( playerChoice, correctWire )
 
         if ( playerChoice == correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level.defuseObject thread onUseDefuseObject( self );
+						[[level._setTeamScore]]( self.pers["team"], [[level._getTeamScore]]( self.pers["team"] ) + 1 );
 
         } else if ( playerChoice != correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level notify( "wrong_wire" );

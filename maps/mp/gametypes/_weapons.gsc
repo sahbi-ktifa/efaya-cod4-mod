@@ -32,7 +32,7 @@ init()
 
 	level.scr_deleteexplosivesondeath = getdvarx( "scr_deleteexplosivesondeath", "int", 0, 0, 1 );
 	level.scr_deleteexplosivesonspawn = getdvarx( "scr_deleteexplosivesonspawn", "int", 1, 0, 1 );
-	
+
 	level.scr_concussion_grenades_base_time = getdvarx( "scr_concussion_grenades_base_time", "float", 4, 4, 15 );
 
 	// Drop of grenades
@@ -40,7 +40,7 @@ init()
 	level.scr_concussion_grenades_allowdrop = getdvarx( "scr_concussion_grenades_allowdrop", "int", 0, 0, 1 );
 	level.scr_flash_grenades_allowdrop = getdvarx( "scr_flash_grenades_allowdrop", "int", 0, 0, 1 );
 	level.scr_smoke_grenades_allowdrop = getdvarx( "scr_smoke_grenades_allowdrop", "int", 0, 0, 1 );
-	
+
 	// Drop of explosives
 	/*level.scr_claymore_allowdrop = getdvarx( "scr_claymore_allowdrop", "int", 0, 0, 1 );
 	level.scr_rpg_allowdrop = getdvarx( "scr_rpg_allowdrop", "int", 0, 0, 1 );
@@ -67,7 +67,7 @@ init()
 			i = max_weapon_num - wi;
 		else
 			i = wi;
-		
+
 		weapon_name = tablelookup( "mp/statstable.csv", 0, i, 4 );
 		if( !isdefined( weapon_name ) || weapon_name == "" )
 		{
@@ -282,7 +282,7 @@ mayDropWeapon( weapon )
 {
 	if ( weapon == "none" )
 		return false;
-		
+
 	if ( isHackWeapon( weapon ) )
 		return false;
 
@@ -492,10 +492,10 @@ itemRemoveAmmoFromAltModes()
 dropOffhand()
 {
 	grenadeTypes = [];
-	
+
 	if ( level.gametype == "gg" || level.gametype == "ss" || level.gametype == "oitc" || level.gametype == "hns" )
 		return;
-		
+
 	if ( level.scr_frag_grenades_allowdrop ) {
 		grenadeTypes[grenadeTypes.size] = "frag_grenade_mp";
 	}
@@ -656,7 +656,7 @@ checkHit( sWeapon )
 	// Hack for Airstrikes
 	if ( sWeapon == "artillery_mp" )
 		return;
-	
+
 	switch ( weaponClass( sWeapon ) )
 	{
 		case "rifle":
@@ -1931,3 +1931,64 @@ stow_inventory( inventories, current )
 }
 
 
+getWeaponMaterial(weapon) {
+		if ( isSubStr( weapon, "dragunov_" ) )
+			return "weapon_dragunovsvd";
+		if ( isSubStr( weapon, "m40a3_" ) )
+			return "weapon_m40a3";
+		if ( isSubStr( weapon, "barrett_" ) )
+			return "weapon_barrett50cal";
+		if ( isSubStr( weapon, "remington700_" ) )
+			return "weapon_remington700";
+		if ( isSubStr( weapon, "m21_" ) )
+			return "weapon_m14_scoped";
+
+		if ( isSubStr( weapon, "m1014_" ) )
+			return "weapon_benelli_m4";
+		if ( isSubStr( weapon, "winchester1200_" ) )
+			return "weapon_winchester1200";
+
+		if ( isSubStr( weapon, "ak47_" ) )
+			return "weapon_ak47";
+		if ( isSubStr( weapon, "m14_" ) )
+			return "weapon_m14";
+		if ( isSubStr( weapon, "mp44_" ) )
+			return "weapon_mp44";
+		if ( isSubStr( weapon, "g3_" ) )
+			return "weapon_g3";
+		if ( isSubStr( weapon, "g36c_" ) )
+			return "weapon_g36c";
+		if ( isSubStr( weapon, "m16_" ) )
+			return "weapon_m16a4";
+		if ( isSubStr( weapon, "m4_" ) )
+			return "weapon_m4carbine";
+
+		if ( isSubStr( weapon, "rpd_" ) )
+			return "weapon_rpd";
+		if ( isSubStr( weapon, "saw_" ) )
+			return "weapon_m249saw";
+		if ( isSubStr( weapon, "m60e4_" ) )
+			return "weapon_m60e4";
+
+		if ( isSubStr( weapon, "mp5_" ) )
+			return "weapon_mp5";
+		if ( isSubStr( weapon, "skorpion_" ) )
+			return "weapon_skorpion";
+		if ( isSubStr( weapon, "uzi_" ) )
+			return "weapon_mini_uzi";
+		if ( isSubStr( weapon, "ak74u_" ) )
+			return "weapon_aks74u";
+		if ( isSubStr( weapon, "p90_" ) )
+			return "weapon_p90";
+
+		if ( isSubStr( weapon, "beretta_" ) )
+			return "weapon_m9beretta";
+		if ( isSubStr( weapon, "colt45_" ) )
+			return "weapon_colt_45";
+		if ( isSubStr( weapon, "usp_" ) )
+			return "weapon_usp_45";
+		if ( isSubStr( weapon, "deserteagle_" ) )
+			return "weapon_desert_eagle";
+		if ( isSubStr( weapon, "deserteaglegold_" ) )
+			return "weapon_desert_eagle_gold";
+}

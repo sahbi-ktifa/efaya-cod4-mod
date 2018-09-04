@@ -18,7 +18,7 @@
 			type			1	\
 			style			WINDOW_STYLE_FILLED	\
 			textstyle		ITEM_TEXTSTYLE_SHADOWED	\
-			rect			x (y-160) 245 195 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP	\
+			rect			x (y-160) 195 195 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP	\
 			visible			when ( dvarString( ui_item_name ) != "" )	\
 			mouseEnter { play "mouse_over"; } 	\
 			action { play "mouse_click"; scriptMenuResponse response; }		\
@@ -150,32 +150,222 @@
 			decoration }
 		itemDef	{
 			style			WINDOW_STYLE_SHADER
-			rect			280 100 0.5 120 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			rect			250 100 0.5 120 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
 			background		"line_vertical"
 			forecolor		1 1 1 0.85
 			visible			1
 			decoration }
 		itemDef	{
 			style			WINDOW_STYLE_SHADER
-			rect			530 100 0.5 120 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			rect			455 100 0.5 120 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
 			background		"line_vertical"
 			forecolor		1 1 1 0.85
 			visible			1
 			decoration }
 		itemDef	{
 			style			WINDOW_STYLE_SHADER
-			rect			395 300 0.5 120 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			rect			355 300 0.5 120 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
 			background		"line_vertical"
 			forecolor		1 1 1 0.85
 			visible			1
 			decoration }
 		// Items
 		ITEM_CSD(20, 180, ui_item1_name, ui_item1_image, ui_item1_cost, ui_item1_cost_color, "1");
-		ITEM_CSD(270, 180, ui_item2_name, ui_item2_image, ui_item2_cost, ui_item2_cost_color, "2");
-		ITEM_CSD(520, 180, ui_item3_name, ui_item3_image, ui_item3_cost, ui_item3_cost_color, "3");
+		ITEM_CSD(220, 180, ui_item2_name, ui_item2_image, ui_item2_cost, ui_item2_cost_color, "2");
+		ITEM_CSD(420, 180, ui_item3_name, ui_item3_image, ui_item3_cost, ui_item3_cost_color, "3");
 		ITEM_CSD(135, 380, ui_item4_name, ui_item4_image, ui_item4_cost, ui_item4_cost_color, "4");
-		ITEM_CSD(385, 380, ui_item5_name, ui_item5_image, ui_item5_cost, ui_item5_cost_color, "5");
+		ITEM_CSD(335, 380, ui_item5_name, ui_item5_image, ui_item5_cost, ui_item5_cost_color, "5");
 
+		//Inventory
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			720 100 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			text			"Primary weapon"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			when (dvarString( ui_item_primary ) != "")
+			decoration
+		}
+		/*itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			750 180 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp			text(dvarString(ui_item_primary_name))
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			when (dvarString( ui_item_primary_name ) != "")
+			decoration
+		}*/
+		itemDef {
+			style			WINDOW_STYLE_SHADER
+			rect			660 110 100 75 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin 			0 0
+			forecolor		1 1 1 1
+			exp				material( dvarString( ui_item_primary ) );
+			border			0
+			bordersize		1
+			bordercolor		1 1 1 1
+			visible			when (dvarString( ui_item_primary ) != "")
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			720 220 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			text			"Secondary weapon"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			when (dvarString( ui_item_secondary ) != undefined)
+			decoration
+		}
+		/*itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			750 300 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp			text(dvarString(ui_item_secondary_name))
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			when (dvarString( ui_item_secondary_name ) != "")
+			decoration
+		}*/
+		itemDef {
+			style			WINDOW_STYLE_SHADER
+			rect			660 230 100 75 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin 			0 0
+			forecolor		1 1 1 1
+			exp				material( dvarString( ui_item_secondary ) );
+			border			0
+			bordersize		1
+			bordercolor		1 1 1 1
+			visible			when (dvarString( ui_item_secondary ) != undefined)
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			720 320 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			text			"Grenades"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			1
+			decoration
+		}
+		itemDef {
+			style			WINDOW_STYLE_SHADER
+			rect			660 335 50 38 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin 			0 0
+			forecolor		1 1 1 1
+			exp				material( "weapon_fraggrenade" );
+			border			0
+			bordersize		1
+			bordercolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			670 360 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp			text (dvarString( ui_item_frag ) );
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			when (dvarString( ui_item_frag ) != "")
+			decoration
+		}
+		itemDef {
+			style			WINDOW_STYLE_SHADER
+			rect			690 335 50 38 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin 			0 0
+			forecolor		1 1 1 1
+			exp				material( "weapon_flashbang" );
+			border			0
+			bordersize		1
+			bordercolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			700 360 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp			text (dvarString( ui_item_flash ) );
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			1
+			decoration
+		}
+		itemDef {
+			style			WINDOW_STYLE_SHADER
+			rect			720 335 50 38 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin 			0 0
+			forecolor		1 1 1 1
+			exp				material( "weapon_smokegrenade" );
+			border			0
+			bordersize		1
+			bordercolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			730 360 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp			text (dvarString( ui_item_smoke ) );
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			1
+			decoration
+		}
+		itemDef {
+			style			WINDOW_STYLE_SHADER
+			rect			750 335 50 38 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			origin 			0 0
+			forecolor		1 1 1 1
+			exp				material( "weapon_concgrenade" );
+			border			0
+			bordersize		1
+			bordercolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			760 360 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp			text (dvarString( ui_item_stun ) );
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER
+			forecolor		COLOR_FOCUSED
+			visible			1
+			decoration
+		}
 		execKey "1" { scriptMenuResponse "1"; }
 		execKey "2" { scriptMenuResponse "2"; }
 		execKey "3" { scriptMenuResponse "3"; }
