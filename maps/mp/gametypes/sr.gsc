@@ -957,6 +957,8 @@ onUseDefuseObject( player )
 
 	maps\mp\gametypes\_globallogic::givePlayerScore( "defuse", player );
 	player thread [[level.onXPEvent]]( "defuse" );
+
+	sr_endGame( game["defenders"], game["strings"]["bomb_defused"] );
 }
 
 onDrop( player )
