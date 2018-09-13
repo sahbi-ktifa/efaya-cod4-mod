@@ -553,6 +553,9 @@ checkAllowSpectating()
 
 sr_endGame( winningTeam, endReasonText )
 {
+
+	logPrint("SR_ENDGAME;" + winningTeam + "\n");
+
 	if ( isdefined( winningTeam ) )
 		[[level._setTeamScore]]( winningTeam, [[level._getTeamScore]]( winningTeam ) + 1 );
 
@@ -839,7 +842,8 @@ onBeginUse( player )
 		player.isDefusing = true;
 
 		if ( level.scr_sr_allow_quickdefuse )
- 	      player thread openwarfare\_objoptions::quickDefuse();
+ 	      //player thread openwarfare\_objoptions::quickDefuse();
+ 	      player thread quickDefuse();
 
 		if ( isDefined( level.sdBombModel ) )
 			level.sdBombModel hide();
@@ -1697,7 +1701,7 @@ quickDefuseResults( playerChoice, correctWire )
 
         if ( playerChoice == correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level.defuseObject thread onUseDefuseObject( self );
-						[[level._setTeamScore]]( self.pers["team"], [[level._getTeamScore]]( self.pers["team"] ) + 1 );
+						//[[level._setTeamScore]]( self.pers["team"], [[level._getTeamScore]]( self.pers["team"] ) + 1 );
 
         } else if ( playerChoice != correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level notify( "wrong_wire" );

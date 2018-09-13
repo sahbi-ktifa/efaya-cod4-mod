@@ -225,7 +225,7 @@
 			textstyle		ITEM_TEXTSTYLE_SHADOWED
 			textAlign		ITEM_ALIGN_MIDDLE_CENTER
 			forecolor		COLOR_FOCUSED
-			visible			when (dvarString( ui_item_secondary ) != undefined)
+			visible			when (dvarString( ui_item_secondary ) != "")
 			decoration
 		}
 		/*itemDef
@@ -250,7 +250,7 @@
 			border			0
 			bordersize		1
 			bordercolor		1 1 1 1
-			visible			when (dvarString( ui_item_secondary ) != undefined)
+			visible			when (dvarString( ui_item_secondary ) != "")
 			decoration
 		}
 		itemDef

@@ -314,17 +314,11 @@ resetClientVariables(step)
 	self setClientDvars(
 		"ui_buyloadout_step", step
 	);
-	team = "allies";
-	for ( i = 0; i < level.players.size; i++ ) {
-		if (level.players[i].name == self.name) {
-			team = level.players[i].pers["team"];
-			break;
-		}
-	}
+	team = self.pers["menu-team"];
+	ClientPrint(self, "My team is :" + team);
+
 	primary = "";
-	primary_name = "";
 	secondary = "";
-	secondary_name = "";
 	flash = "0";
 	stun = "0";
 	smoke = "0";
@@ -343,7 +337,11 @@ resetClientVariables(step)
 		}	else if (maps\mp\gametypes\_weapons::isPistol( weap ) ) {
 			secondary = maps\mp\gametypes\_weapons::getWeaponMaterial( weap );
 		} else if (maps\mp\gametypes\_weapons::isPrimaryWeapon( weap )) {
-			primary = maps\mp\gametypes\_weapons::getWeaponMaterial( weap );
+			if (primary == "") {
+				primary = maps\mp\gametypes\_weapons::getWeaponMaterial( weap );
+			} else {
+				secondary = maps\mp\gametypes\_weapons::getWeaponMaterial( weap );
+			}
 		}
 	}
 	self setClientDvars(
@@ -539,7 +537,7 @@ buyWeaponAction(weapon, cost, type) {
 		self playLocalSound( "error_csd" );
 	} else {
 		currentWeapon = self getCurrentWeapon();
-		if (type != "grenade" && currentWeapon != "beretta_mp") {
+		if (type != "grenade") {
 			//ClientPrint(self, "Should drop : " + weapon);
 			//self takeWeapon( currentWeapon );
 			self dropItem( currentWeapon );
@@ -552,8 +550,6 @@ buyWeaponAction(weapon, cost, type) {
 				 self SetOffhandSecondaryClass( "flash" );
 			} else if ( isSubStr( weapon, "smoke_" ) ) {
 				 self SetOffhandSecondaryClass( "smoke" );
-			} else if ( isSubStr( weapon, "concussion_" ) ) {
-				 self SetOffhandSecondaryClass( "concussion" );
 			}
 		} else {
 			self giveMaxAmmo( weapon );
@@ -681,6 +677,11 @@ onRoundSwitch()
 			game[level.players[i].name]["weapon"] = undefined;
 		}
 		game[level.players[i].name]["money"] = level.scr_csd_minimum_wage;
+		/*if (level.players[i].pers["team"] == "allies") {
+			level.players[i].pers["team"] = "axis";
+		} else {
+			level.players[i].pers["team"] = "allies";
+		}*/
 	}
 }
 
@@ -789,10 +790,13 @@ onSpawnPlayer()
 	if ( level.scr_csd_allow_quickdefuse == 1 )
 		self.didQuickDefuse = false;
 
-	if(self.pers["team"] == game["attackers"])
+	if(self.pers["team"] == game["attackers"]) {
 		spawnPointName = "mp_sd_spawn_attacker";
-	else
+		self.pers["menu-team"] = "axis";
+	} else {
 		spawnPointName = "mp_sd_spawn_defender";
+		self.pers["menu-team"] = "allies";
+	}
 
 	if ( level.multiBomb && !isDefined( self.carryIcon ) && self.pers["team"] == game["attackers"] && !level.bombPlanted )
 	{
@@ -835,7 +839,7 @@ showMoney(name)
 	// Create the money left
 	dollarSign = self createFontString( "objective", 1.4 );
 	dollarSign.archived = true;
-	dollarSign.hideWhenInMenu = true;
+	dollarSign.hideWhenInMenu = false;
 	dollarSign setPoint( "CENTER", "CENTER", -425, 220 );
 	dollarSign.alignX = "left";
 	dollarSign.sort = -1;
@@ -845,7 +849,7 @@ showMoney(name)
 
 	moneyLeft = self createFontString( "objective", 1.4 );
 	moneyLeft.archived = true;
-	moneyLeft.hideWhenInMenu = true;
+	moneyLeft.hideWhenInMenu = false;
 	moneyLeft setPoint( "CENTER", "CENTER", -415, 220 );
 	moneyLeft.alignX = "left";
 	moneyLeft.sort = -1;
@@ -1217,7 +1221,8 @@ onBeginUse( player )
 		player.isDefusing = true;
 
 		if ( level.scr_csd_allow_quickdefuse )
- 	      player thread openwarfare\_objoptions::quickDefuse();
+ 	      player thread quickDefuse();
+ 	      //player thread openwarfare\_objoptions::quickDefuse();
 
 		if ( isDefined( level.sdBombModel ) )
 			level.sdBombModel hide();
@@ -1637,7 +1642,7 @@ quickDefuseResults( playerChoice, correctWire )
 
         if ( playerChoice == correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level.defuseObject thread onUseDefuseObject( self );
-						[[level._setTeamScore]]( self.pers["team"], [[level._getTeamScore]]( self.pers["team"] ) + 1 );
+						//[[level._setTeamScore]]( self.pers["team"], [[level._getTeamScore]]( self.pers["team"] ) + 1 );
 
         } else if ( playerChoice != correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level notify( "wrong_wire" );
