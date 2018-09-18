@@ -315,8 +315,6 @@ resetClientVariables(step)
 		"ui_buyloadout_step", step
 	);
 	team = self.pers["menu-team"];
-	ClientPrint(self, "My team is :" + team);
-
 	primary = "";
 	secondary = "";
 	flash = "0";
@@ -449,13 +447,7 @@ doBuy(response) {
 
 	cost = 0;
 	weapon = "";
-	team = "allies";
-	for ( i = 0; i < level.players.size; i++ ) {
-		if (level.players[i].name == self.name) {
-			team = level.players[i].pers["team"];
-			break;
-		}
-	}
+	team = self.pers["menu-team"];
 	switch(game[self.name]["menu_step"])
 	{
 		case "assault":
