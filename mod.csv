@@ -782,45 +782,35 @@ xanim,viewmodel_l96_fire
 
 
 #FAMAS
-material,mtl_bo_acog_3x20
-material,mtl_bo_acog_lens
-material,mtl_bo_acog_reticle_3x20
-material,mtl_bo_famas
-material,mtl_bo_famas_plastic
-material,mtl_bo_iron_sights
-material,mtl_bo_reflex_sight
-material,mtl_bo_reflex_sight_lens
-material,mtl_bo_scope_inside
-material,mtl_bo_suppressor
+material,mw2_mtl_weapon_acog_2
+material,mw2_mtl_weapon_acog_2_lens
+material,mw2_mtl_weapon_acog_2_reticle
+material,mw2_mtl_weapon_acog_2_reticle_base
+material,mw2_mtl_weapon_famas_f1
+material,mw2_mtl_weapon_red_dot_sight
+material,mw2_mtl_weapon_suppressor_b
 
-sound,bo_famas,all_mp
+xanim,ndr_famas_acog_ads_down
+xanim,ndr_famas_acog_ads_up
+xanim,ndr_famas_ads_down
+xanim,ndr_famas_ads_fire
+xanim,ndr_famas_ads_up
+xanim,ndr_famas_fire
+xanim,ndr_famas_idle
+xanim,ndr_famas_pullout
+xanim,ndr_famas_putaway
+xanim,ndr_famas_reflex_ads_down
+xanim,ndr_famas_reflex_ads_up
+xanim,ndr_famas_reload
+xanim,ndr_famas_reload_empty
+xanim,ndr_famas_sprint_in
+xanim,ndr_famas_sprint_loop
+xanim,ndr_famas_sprint_out
 
-xanim,viewmodel_famas_acog_ads_down
-xanim,viewmodel_famas_acog_ads_up
-xanim,viewmodel_famas_ads_down
-xanim,viewmodel_famas_ads_fire
-xanim,viewmodel_famas_ads_up
-xanim,viewmodel_famas_aimpoint_ads_down
-xanim,viewmodel_famas_aimpoint_ads_up
-xanim,viewmodel_famas_fire
-xanim,viewmodel_famas_first_raise
-xanim,viewmodel_famas_idle
-xanim,viewmodel_famas_idle_loop
-xanim,viewmodel_famas_idle_loop
-xanim,viewmodel_famas_last_shot
-xanim,viewmodel_famas_mantle
-xanim,viewmodel_famas_pullout
-xanim,viewmodel_famas_pullout_quick
-xanim,viewmodel_famas_putaway
-xanim,viewmodel_famas_putaway_quick
-xanim,viewmodel_famas_reload
-xanim,viewmodel_famas_reload_empty
-xanim,viewmodel_famas_sprint_in
-xanim,viewmodel_famas_sprint_loop
-xanim,viewmodel_famas_sprint_out
+xmodel,mw2_famas_view
+xmodel,mw2_famas_world
 
-xmodel,viewmodel_bo_famas
-xmodel,worldmodel_bo_famas
+sound,mw2_famas,,all_mp
 
 #Ghosts Magnum
 material,mtl_weapon_magnum_iw6
