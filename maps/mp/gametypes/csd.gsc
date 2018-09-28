@@ -131,7 +131,8 @@ main()
 	level.pistol_axis_weapons = [];
 	level.sniper_allies_weapons = [];
 	level.sniper_axis_weapons = [];
-	level.grenade_weapons = [];
+	level.grenade_allies_weapons = [];
+	level.grenade_axis_weapons = [];
 
 	//Assault loading
 	tmp_value = getdvard( "scr_csd_assault_allies_weapons", "string", "m16_silencer_mp:M16:weapon_m16a4:650;m14_reflex_mp:Famas:weapon_m14:750;m4_reflex_mp:Remington R5:weapon_m4carbine:800" );
@@ -178,10 +179,14 @@ main()
 		level.pistol_axis_weapons[i] = strtok(tmp_values[i], ":");
 	}
 	//Grenades loading
-	tmp_value = getdvard( "scr_csd_grenade_weapons", "string", "frag_grenade_mp:Frag grenade:weapon_fraggrenade:250;flash_grenade_mp:Flash grenade:weapon_flashbang:100;smoke_grenade_mp:Smoke grenade:weapon_smokegrenade:150;concussion_grenade_mp:Stun grenade:weapon_concgrenade:150" );
-	tmp_values = strtok(tmp_value, ";");
+	tmp_values = strtok("frag_grenade_mp:Frag grenade:weapon_fraggrenade:250;flash_grenade_mp:Flash grenade:weapon_flashbang:100", ";");
 	for (i = 0; i < tmp_values.size; i++) {
-		level.grenade_weapons[i] = strtok(tmp_values[i], ":");
+		level.grenade_allies_weapons[i] = strtok(tmp_values[i], ":");
+	}
+
+	tmp_values = strtok("frag_grenade_mp:Frag grenade:weapon_fraggrenade:250;smoke_grenade_mp:Smoke grenade:weapon_smokegrenade:100;concussion_grenade_mp:Stun grenade:weapon_concgrenade:150", ";");
+	for (i = 0; i < tmp_values.size; i++) {
+		level.grenade_axis_weapons[i] = strtok(tmp_values[i], ":");
 	}
 
 	maps\mp\gametypes\_globallogic::registerNumLivesDvar( level.gameType, 1, 1, 1 );
@@ -399,7 +404,11 @@ resetClientVariables(step)
 			}
 			break;
 		case "grenade":
-			loadItemMenu(level.grenade_weapons);
+			if (team == "axis") {
+				loadItemMenu(level.grenade_axis_weapons);
+			} else {
+				loadItemMenu(level.grenade_allies_weapons);
+			}
 			break;
 	}
 }
@@ -439,7 +448,7 @@ buyLoadoutMenuNav(response) {
 
 doBuy(response) {
 	if(!isdefined(self.pers["team"]) || self.pers["team"] == "spectator" || isdefined(self.spamdelay)
-		|| !isDefined(level.grenade_weapons) || !isDefined(level.assault_allies_weapons) || !isDefined(level.assault_axis_weapons)
+		|| !isDefined(level.grenade_allies_weapons) || !isDefined(level.assault_allies_weapons) || !isDefined(level.assault_axis_weapons)
 		|| !isDefined(level.smg_shotgun_allies_weapons) || !isDefined(level.smg_shotgun_axis_weapons)
 		|| !isDefined(level.sniper_allies_weapons) || !isDefined(level.sniper_axis_weapons)
 		|| !isDefined(level.pistol_allies_weapons) || !isDefined(level.pistol_axis_weapons))
@@ -487,8 +496,13 @@ doBuy(response) {
 			}
 			break;
 		case "grenade":
-			weapon = level.grenade_weapons[int(response) - 1][0];
-			cost = level.grenade_weapons[int(response) - 1][3];
+			if (team == "allies") {
+				weapon = level.grenade_allies_weapons[int(response) - 1][0];
+				cost = level.grenade_allies_weapons[int(response) - 1][3];
+			} else if (team == "axis") {
+				weapon = level.grenade_axis_weapons[int(response) - 1][0];
+				cost = level.grenade_axis_weapons[int(response) - 1][3];
+			}
 			break;
 	}
 	self buyWeaponAction(weapon, cost, game[self.name]["menu_step"]);
@@ -535,6 +549,7 @@ buyWeaponAction(weapon, cost, type) {
 			self dropItem( currentWeapon );
 		}
 		//ClientPrint(self, "Buying : " + weapon);
+		count = self GetWeaponAmmoStock(weapon);
 		self giveWeapon( weapon );
 		if (type == "grenade") {
 			//self SwitchToOffhand( weapon );
@@ -543,15 +558,23 @@ buyWeaponAction(weapon, cost, type) {
 			} else if ( isSubStr( weapon, "smoke_" ) ) {
 				 self SetOffhandSecondaryClass( "smoke" );
 			}
+			if (count > 0) {
+				self SetWeaponAmmoClip( weapon, count + 1 );
+			}
+			if (count + 1 < WeaponMaxAmmo( weapon )) {
+				game[self.name]["money"] -= int(cost);
+				self playLocalSound( "cash" );
+			} else {
+				self playLocalSound( "error_csd" );
+			}
 		} else {
 			self giveMaxAmmo( weapon );
 			self setSpawnWeapon( weapon );
 			self switchToWeapon( weapon );
 			game[self.name]["weapon"] = weapon;
+			game[self.name]["money"] -= int(cost);
+			self playLocalSound( "cash" );
 		}
-		game[self.name]["money"] -= int(cost);
-		//self thread displayBuying(cost);
-		self playLocalSound( "cash" );
 	}
 }
 
@@ -816,7 +839,6 @@ onSpawnPlayer()
 	if (!isDefined(game[self.name]["money"]))
 		game[self.name]["money"] = level.scr_csd_minimum_wage;
 	self thread showMoney(self.name);
-	self giveCSGOLevelLoadout();
 	level notify ( "spawned_player" );
 
 	game[self.name]["menu_step"] = "base";
