@@ -31,7 +31,7 @@ start()
 	if ( level.scr_match_strategy_time < 2.5 ) {
 		level.scr_match_strategy_time = 2.5;
 	}
-	
+
 	// Get the rest of the dvars
 	level.scr_match_strategy_allow_bypass = getdvarx( "scr_match_strategy_allow_bypass", "int", 1, 0, 1 );
 	level.scr_match_strategy_show_bypassed = getdvarx( "scr_match_strategy_show_bypassed", "int", 1, 0, 1 );
@@ -129,13 +129,13 @@ start()
 				player thread maps\mp\gametypes\_gameobjects::_enableWeapon();
 				player thread maps\mp\gametypes\_gameobjects::_enableJump();
 				// Unfreeze the player
-				player thread openwarfare\_speedcontrol::setModifierSpeed( "_strategyperiod", 0 );			
+				player thread openwarfare\_speedcontrol::setModifierSpeed( "_strategyperiod", 0 );
 			} else {
 				player freezeControls( false );
 			}
 		}
 	}
-	
+
 	level notify("strategyperiod_ended");
 }
 
@@ -175,17 +175,17 @@ strategyPeriod()
 		self thread maps\mp\gametypes\_gameobjects::_disableWeapon();
 		self thread maps\mp\gametypes\_gameobjects::_disableJump();
 		// Freeze player on the spot
-		self thread openwarfare\_speedcontrol::setModifierSpeed( "_strategyperiod", 100 );		
+		self thread openwarfare\_speedcontrol::setModifierSpeed( "_strategyperiod", 100 );
 	}
-	
+
 	self.bypassedStratPeriod =  false;
-	
+
 	self.bypassedPeriodText = createFontString( "objective", 1.5 );
 	self.bypassedPeriodText setPoint( "CENTER", "CENTER", 0, 18 );
 	self.bypassedPeriodText.sort = 1001;
 	self.bypassedPeriodText.color = ( .42, 1, 0.42 );
 	self.bypassedPeriodText.foreground = false;
-	self.bypassedPeriodText.hidewheninmenu = true;	
+	self.bypassedPeriodText.hidewheninmenu = true;
 
 	// Make sure players are allowed to bypass
 	if ( level.scr_match_strategy_allow_bypass == 1 ) {
