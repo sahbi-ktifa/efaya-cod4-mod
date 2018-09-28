@@ -563,6 +563,7 @@ buyWeaponAction(weapon, cost, type) {
 			}
 			if (count + 1 < WeaponMaxAmmo( weapon )) {
 				game[self.name]["money"] -= int(cost);
+				self playLocalSound( "cash" );
 			} else {
 				self playLocalSound( "error_csd" );
 			}
