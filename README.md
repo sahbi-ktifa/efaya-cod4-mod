@@ -1,4 +1,4 @@
-# BootifulWarfare Mod Source
+# COD4 Reloaded Mod Source
 ## Custom COD4 Mod based on OpenWarfare.
 
 ### Available Gametypes
