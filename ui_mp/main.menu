@@ -95,7 +95,7 @@
 		//#include "ui/background_bars.menu"
 
 		// cod:mw logo
-		itemDef
+		/*itemDef
 		{
 			//rect			275 56 278 68
 			rect			LOGO_START_X LOGO_START_Y 256 128 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_BOTTOM
@@ -117,9 +117,9 @@
 			forecolor		1 1 1 1
 			text				OPENWARFARE_VERSION
 			visible			when( !localvarBool( ui_hideBack ) );
-			decoration	
-		}		
-		
+			decoration
+		}		*/
+
 		#define SETUP_ACTION_CREATEACLASS \
 				execnow "statset 260 1"; \
 				play "mouse_click"; \
@@ -213,4 +213,3 @@
 		CHOICE_BUTTON( 4, "@MENU_NO", close self )
 	}*/
 }
-

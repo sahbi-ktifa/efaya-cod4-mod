@@ -1,4 +1,4 @@
-# COD4 Reloaded Mod Source
+# COD4 Efaya Mod Source
 ## Custom COD4 Mod based on OpenWarfare.
 
 ### Available Gametypes
