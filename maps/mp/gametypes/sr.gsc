@@ -462,7 +462,9 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 		self updateSecondaryProgressBar( undefined, undefined, true, undefined );
 	}
 
-	thread maps\mp\gametypes\_finalkillcam::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
+	if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self ) {
+		thread maps\mp\gametypes\_finalkillcam::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
+	}
 }
 
 broadcastInfo(type, attacker, victim) {

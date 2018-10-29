@@ -791,6 +791,10 @@ spawnPlayer()
 		self setClientDvar( "cg_thirdPerson", "0" );
 	}
 
+	respawned = false;
+	if (isDefined(self.toBeRespawned) && self.toBeRespawned == true) {
+		respawned = true;
+	}
 	[[level.onSpawnPlayer]]();
 
 	self maps\mp\gametypes\_missions::playerSpawned();
@@ -823,7 +827,7 @@ spawnPlayer()
 				self maps\mp\gametypes\_class_unranked::giveLoadout( self.team, self.class );
 			} else {
 				self maps\mp\gametypes\_class::setClass( self.class );
-				self maps\mp\gametypes\_class::giveLoadout( self.team, self.class );
+				self maps\mp\gametypes\_class::giveLoadout( self.team, self.class, respawned );
 			}
 		}
 	}

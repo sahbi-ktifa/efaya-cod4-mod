@@ -726,7 +726,7 @@ reset_specialty_slots( class_num )
 	self.custom_class[class_num]["specialgrenades_group"] = "";
 }
 
-giveLoadout( team, class )
+giveLoadout( team, class, respawned )
 {
 	/*if (level.gametype == "csd") {
 		class = "CLASS_CUSTOM1";
@@ -821,7 +821,7 @@ giveLoadout( team, class )
 				self thread giveActionSlot3AfterDelay( secondaryWeapon );
 				self SetActionSlot( 4, "" );
 			}
-			else
+			else if (respawned != true)
 			{
 				self thread giveActionSlot3AfterDelay( "altMode" );
 				self SetActionSlot( 4, "" );
@@ -829,7 +829,7 @@ giveLoadout( team, class )
 
 			// give frag for all no matter what
 			grenadeTypePrimary = self.custom_class[class_num]["grenades"];
-			if ( grenadeTypePrimary != "" )
+			if ( grenadeTypePrimary != "" && respawned != true)
 			{
 				self.primarynade = grenadeTypePrimary;
 				grenadeCount = self.custom_class[class_num]["grenades_count"];
@@ -843,7 +843,7 @@ giveLoadout( team, class )
 
 			// give special grenade
 			grenadeTypeSecondary = self.custom_class[class_num]["specialgrenades"];
-			if ( grenadeTypeSecondary != "" )
+			if ( grenadeTypeSecondary != "" && respawned != true)
 			{
 				grenadeCount = self.custom_class[class_num]["specialgrenades_count"];
 
@@ -921,14 +921,14 @@ giveLoadout( team, class )
 			self thread giveActionSlot3AfterDelay( secondaryWeapon );
 			self SetActionSlot( 4, "" );
 		}
-		else
+		else if (respawned != true)
 		{
 			self thread giveActionSlot3AfterDelay( "altMode" );
 			self SetActionSlot( 4, "" );
 		}
 
 		grenadeTypePrimary = level.classGrenades[class]["primary"]["type"];
-		if ( grenadeTypePrimary != "" )
+		if ( grenadeTypePrimary != "" && respawned != true)
 		{
 			self.primarynade = grenadeTypePrimary;
 			grenadeCount = level.classGrenades[class]["primary"]["count"];
@@ -941,7 +941,7 @@ giveLoadout( team, class )
 		}
 
 		grenadeTypeSecondary = level.classGrenades[class]["secondary"]["type"];
-		if ( grenadeTypeSecondary != "" )
+		if ( grenadeTypeSecondary != "" && respawned != true)
 		{
 			grenadeCount = level.classGrenades[class]["secondary"]["count"];
 
