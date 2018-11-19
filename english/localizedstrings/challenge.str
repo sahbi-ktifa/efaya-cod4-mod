@@ -110,22 +110,22 @@ REFERENCE           M16_EXPERT_III
 LANG_ENGLISH        "M16 Expert III"
 
 REFERENCE           AK47_MARKSMAN_I
-LANG_ENGLISH        "AK47 Marksman I"
+LANG_ENGLISH        "AK12 Marksman I"
 
 REFERENCE           AK47_MARKSMAN_II
-LANG_ENGLISH        "AK47 Marksman II"
+LANG_ENGLISH        "AK12 Marksman II"
 
 REFERENCE           AK47_MARKSMAN_III
-LANG_ENGLISH        "AK47 Marksman III"
+LANG_ENGLISH        "AK12 Marksman III"
 
 REFERENCE           AK47_EXPERT_I
-LANG_ENGLISH        "AK47 Expert I"
+LANG_ENGLISH        "AK12 Expert I"
 
 REFERENCE           AK47_EXPERT_II
-LANG_ENGLISH        "AK47 Expert II"
+LANG_ENGLISH        "AK12 Expert II"
 
 REFERENCE           AK47_EXPERT_III
-LANG_ENGLISH        "AK47 Expert III"
+LANG_ENGLISH        "AK12 Expert III"
 
 REFERENCE           G3_MARKSMAN_I
 LANG_ENGLISH        "Honey Badger Marksman I"
@@ -245,22 +245,22 @@ REFERENCE           UNLOCK_M16_RED_TIGER
 LANG_ENGLISH        "UNLOCK: M16 Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_AK47_RED_DOT_SIGHT
-LANG_ENGLISH        "UNLOCK: AK47 Red Dot Sight"
+LANG_ENGLISH        "UNLOCK: AK12 Red Dot Sight"
 
 REFERENCE           UNLOCK_AK47_SILENCER
-LANG_ENGLISH        "UNLOCK: AK47 Silencer"
+LANG_ENGLISH        "UNLOCK: AK12 Silencer"
 
 REFERENCE           UNLOCK_AK47_ACOG_SCOPE
-LANG_ENGLISH        "UNLOCK: AK47 ACOG Scope"
+LANG_ENGLISH        "UNLOCK: AK12 ACOG Scope"
 
 REFERENCE           UNLOCK_AK47_DIGITAL_CAMOUFLAGE
-LANG_ENGLISH        "UNLOCK: AK47 Digital Camouflage"
+LANG_ENGLISH        "UNLOCK: AK12 Digital Camouflage"
 
 REFERENCE           UNLOCK_AK47_BLUE_TIGER
-LANG_ENGLISH        "UNLOCK: AK47 Blue Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: AK12 Blue Tiger Camouflage"
 
 REFERENCE           UNLOCK_AK47_RED_TIGER
-LANG_ENGLISH        "UNLOCK: AK47 Red Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: AK12 Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_G3_RED_DOT_SIGHT
 LANG_ENGLISH        "UNLOCK: Honey Badger Red Dot Sight"
@@ -1710,5 +1710,3 @@ LANG_ENGLISH        "Get 25 kills with this weapon. (Phase 1 of 2)"
 
 
 ENDMARKER
-
-

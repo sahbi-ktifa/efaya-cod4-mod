@@ -974,3 +974,26 @@ material,amvs_loadscreen20
 #material,avatar15
 #material,avatar16
 #menufile,ui_mp/scriptmenus/clientdvar.menu
+
+#AK12 - BO2
+xanim,viewmodel_ak12_ads_down
+xanim,viewmodel_ak12_ads_up
+xanim,viewmodel_ak12_fire_ads
+xanim,viewmodel_ak12_fire_recoil
+xanim,viewmodel_ak12_idle
+xanim,viewmodel_ak12_pullout
+xanim,viewmodel_ak12_putaway
+xanim,viewmodel_ak12_reload
+xanim,viewmodel_ak12_reload_empty
+xanim,viewmodel_ak12_sprint_in
+xanim,viewmodel_ak12_sprint_loop
+xanim,viewmodel_ak12_sprint_out
+xanim,viewmodel_ak12_acog_ads_down
+xanim,viewmodel_ak12_acog_ads_up
+xanim,viewmodel_ak12_eotech_ads_down
+xanim,viewmodel_ak12_eotech_ads_up
+xanim,viewmodel_ak12_reflex_ads_down
+xanim,viewmodel_ak12_reflex_ads_up
+sound,gh_ak12,,all_mp
+xmodel,vm_gh_ak12
+xmodel,wm_gh_ak12
