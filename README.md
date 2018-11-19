@@ -18,6 +18,7 @@ Gametypes are : DM, CTF, SAB, GG, DOM, WAR, SD, SR, CSD
 
 * Assault:
 	* M16A4 ----------------> MW2 M16 (http://cfgfactory.com/downloads/show/4f6ce2ecb97bb)
+	* AK47 -----------------> BO2 AK12 (http://cfgfactory.com/downloads/show/5bc64a3245e49)
 	* G3 -------------------> Ghosts Honey Badger (http://cfgfactory.com/downloads/show/5a59420e85e50)
 	* M4 -------------------> Ghosts Remington R5 (http://cfgfactory.com/downloads/show/5a523e2ad013f)
 	* G36C -----------------> BO Commando (http://cfgfactory.com/downloads/show/4e5b671927131)
