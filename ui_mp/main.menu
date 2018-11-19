@@ -142,7 +142,7 @@
 		CHOICE_DBUTTON_VIS( 5, "@MPUI_CREATE_A_CLASS", when( !localvarBool( ui_hideBack ) && stat( 260 ) < 1 ) )
 		CHOICE_NEWICON_VIS( 5, "specialty_new", when( !localvarBool( ui_hideBack ) && ANY_NEW_CAC ) )
 
-		CHOICE_BUTTON_VIS( 5, "Create a Class", open pc_cac_popup;, when( !localvarBool( ui_hideBack ) && stat(260) ) )
+		CHOICE_BUTTON_VIS( 5, "@MPUI_CREATE_A_CLASS", open pc_cac_popup;, when( !localvarBool( ui_hideBack ) && stat(260) ) )
 		CHOICE_BUTTON_VIS( 6, "@MENU_RANK_AND_CHALLENGES", open menu_challenges;, when( !localvarBool( ui_hideBack ) ) )
 
 		CHOICE_SEPARATOR_VIS( CHOICE_SEP_2, when( !localvarBool( ui_hideBack ) ) )
