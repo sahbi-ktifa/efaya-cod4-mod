@@ -11,7 +11,7 @@
 //            Website: http://openwarfaremod.com/
 //******************************************************************************
 // Recoded for Openwarfare by Samuel
-// Changes by [105]HolyMoly 
+// Changes by [105]HolyMoly
 // V.1.Final
 
 
@@ -23,8 +23,8 @@
 init()
 {
         level.scr_objective_safezone_enable = getdvarx( "scr_objective_safezone_enable", "int", 0, 0, 1 );
-        level.scr_objective_safezone_radius = getdvarx( "scr_objective_safezone_radius", "int", 100, 50, 500 ); 
-  
+        level.scr_objective_safezone_radius = getdvarx( "scr_objective_safezone_radius", "int", 100, 50, 500 );
+
         level.scr_sd_objective_takedamage_enable = getdvarx( "scr_sd_objective_takedamage_enable", "int", 0, 0, 1 );
         level.scr_sd_objective_takedamage_option = getdvarx( "scr_sd_objective_takedamage_option", "int", 0, 0, 1 );
 
@@ -32,30 +32,30 @@ init()
                 level.scr_sd_objective_takedamage_health = getdvarx( "scr_sd_objective_takedamage_health", "int", 500, 1, 2000 );
         else
                 level.scr_sd_objective_takedamage_counter = getdvarx( "scr_sd_objective_takedamage_counter", "int", 5, 1, 20 );
-	
-        level.scr_sd_allow_defender_explosivepickup = getdvarx( "scr_sd_allow_defender_explosivepickup", "int", 0, 0, 1 );  
+
+        level.scr_sd_allow_defender_explosivepickup = getdvarx( "scr_sd_allow_defender_explosivepickup", "int", 0, 0, 1 );
         level.scr_sd_allow_defender_explosivedestroy = getdvarx( "scr_sd_allow_defender_explosivedestroy", "int", 0, 0, 1 );
         level.scr_sd_allow_defender_explosivedestroy_time = getdvarx( "scr_sd_allow_defender_explosivedestroy_time", "int", 10, 1, 60 );
         level.scr_sd_allow_defender_explosivedestroy_sound = getdvarx( "scr_sd_allow_defender_explosivedestroy_sound", "int", 0, 0, 1 );
         level.scr_sd_allow_defender_explosivedestroy_win = getdvarx( "scr_sd_allow_defender_explosivedestroy_win", "int", 0, 0, 1 );
         level.scr_sd_allow_quickdefuse = getdvarx( "scr_sd_allow_quickdefuse", "int", 0, 0, 1 );
-        
+
 		level.scr_csd_allow_quickdefuse = getdvarx( "scr_csd_allow_quickdefuse", "int", 0, 0, 1 );
 		level.scr_csd_objective_takedamage_enable = getdvarx( "scr_csd_objective_takedamage_enable", "int", 0, 0, 1 );
-		
+
         //Level thread to create and control all safe zones.
         level thread setSafeZones();
-  
+
         if ( level.gameType == "sd" && level.scr_sd_objective_takedamage_enable ||  level.gameType == "sr" && level.scr_sr_objective_takedamage_enable ||  level.gameType == "csd" && level.scr_csd_objective_takedamage_enable )
         {
                 level._effect["bombexplosion"] = loadfx( "props/barrelexp" );
-                game["strings"]["target_destroyed"] = &"MP_TARGET_DESTROYED"; 
+                game["strings"]["target_destroyed"] = &"MP_TARGET_DESTROYED";
                 game["strings"]["bomb_defused"] = &"MP_BOMB_DEFUSED";
                 precacheString( game["strings"]["target_destroyed"] );
                 precacheString( game["strings"]["bomb_defused"] );
 
                 level thread createDamageArea();
-        }      
+        }
 
         level thread addNewEvent( "onPlayerConnected", ::onPlayerConnected );
 
@@ -63,7 +63,7 @@ init()
 
 onPlayerConnected()
 {
-	self thread addNewEvent( "onPlayerSpawned", ::onPlayerSpawned );  
+	self thread addNewEvent( "onPlayerSpawned", ::onPlayerSpawned );
 }
 
 onPlayerSpawned()
@@ -71,31 +71,31 @@ onPlayerSpawned()
 
 	if ( level.scr_sd_allow_quickdefuse == 1 || level.scr_csd_allow_quickdefuse == 1 )
 		self.didQuickDefuse = false;
-	
+
 	//The per-player monitor thread uses level safezones,
 	if ( level.scr_objective_safezone_enable == 1 )
 		self thread monitorSafeZoneLevel();
-	
+
 	if ( level.scr_sd_allow_defender_explosivepickup && level.scr_sd_allow_defender_explosivedestroy && self.pers["team"] == game["defenders"] && getDvar( "g_gametype" ) == "sd" )
 		self thread allowDefenderExplosiveDestroy();
-} 
+}
 
 //Called once on game start to set level safe zones.
 setSafeZones()
 {
-        // Delete any safezones 
+        // Delete any safezones
 	if( isDefined( game["safezones"] ) ) {
                 for( index = 0; index < game["safezones"].size; index++ )
-                {       
+                {
                         game["safezones"][index] delete();
-                    
+
                 }
         }
 
 	game["safezones"] = [];
 	gametype = getDvar( "g_gametype" );
 	objZones = [];
-	
+
 	switch( gametype )
 	{
 		case "csd":
@@ -145,9 +145,9 @@ setSafeZones()
 			break;
 
 	}
-		
+
 	for ( index = 0; index < objZones.size; index++ )
-	{     
+	{
 		game["safezones"][index] = spawn( "trigger_radius", objZones[index].origin + ( 0, 0, -48 ), 0, level.scr_objective_safezone_radius, 200 );
 	}
 
@@ -157,19 +157,19 @@ monitorSafeZonesKoth()
 {
         level endon("game_ended");
 
-        // Delete any safezones 
+        // Delete any safezones
 	if( isDefined( game["safezones"] ) ) {
                 for( index = 0; index < game["safezones"].size; index++ )
-                {       
+                {
                         game["safezones"][index] delete();
-                    
+
                 }
         }
 
-        currentRadio = undefined; 
-        origin = undefined; 
+        currentRadio = undefined;
+        origin = undefined;
         radios = getEntArray( "hq_hardpoint", "targetname" );
-  
+
         while ( 1 )
         {
 
@@ -177,19 +177,19 @@ monitorSafeZonesKoth()
                 if ( isDefined( level.prevradio ) && !isDefined( currentRadio ) )
                 {
                         currentRadio = level.prevradio;
-      
+
                         for ( index = 0; index < radios.size; index++ )
                         {
                                 if ( radios[index] == currentRadio )
                                 {
                                         origin = index;
                                         break;
-                                }  
+                                }
                         }
 
                         game["safezones"][0] = spawn( "trigger_radius", radios[origin].origin + ( 0, 0, -100 ), 0, level.scr_objective_safezone_radius, 200 );
                 }
-     
+
                 else if ( isDefined( level.prevradio ) && isDefined( currentRadio ) && currentRadio != level.prevradio )
                 {
                         currentRadio = level.prevradio;
@@ -200,33 +200,33 @@ monitorSafeZonesKoth()
                                 {
                                         origin = index;
                                         break;
-                                } 
- 
+                                }
+
                         }
 
                         game["safezones"][0].origin = game["safezones"][0].origin + ( 0, 0, -100 );
                 }
-    
+
                 wait( 1.0 );
 
-        } 
-  
+        }
+
 }
 
 monitorSafeZonesGreed()
 {
 
         level endon("game_ended");
-  
-        // Delete any safezones 
+
+        // Delete any safezones
 	if( isDefined( game["safezones"] ) ) {
                 for( index = 0; index < game["safezones"].size; index++ )
-                {       
+                {
                         game["safezones"][index] delete();
-                    
+
                 }
         }
-  
+
         while ( 1 )
         {
 	        if( isDefined( level.activeDropZones ) && level.activeDropZones.size > 0 )
@@ -244,46 +244,46 @@ monitorSafeZonesGreed()
 			        }
 		        }
 
-                } 
-  
+                }
+
                 wait( 1.0 );
 
         }
-   
+
 }
 
 monitorSafeZoneLevel()
-{  
+{
         self endon( "death" );
         self endon( "disconnect" );
-    
+
         for (;;)
-        {    
+        {
                 self waittill( "grenade_fire", explosive, weaponName );
-  
+
                 if ( weaponName == "c4_mp" || weaponName == "claymore_mp" )
-                {  
+                {
                         explosive.weaponName = weaponName;
                         explosive maps\mp\gametypes\_weapons::waitTillNotMoving();
-      
+
                         for ( index = 0; index < game["safezones"].size; index++ )
                         {
                                 if ( isDefined( explosive ) && explosive isTouching( game["safezones"][index] ) )
                                 {
                                         stockCount = self getWeaponAmmoStock( explosive.weaponName );
                                         maxStock = weaponMaxAmmo( explosive.weaponName );
-        
-                                        if ( stockCount < maxStock ) 
+
+                                        if ( stockCount < maxStock )
                                                 self setWeaponAmmoStock( explosive.weaponName, stockCount + 1 );
 
                                         explosive delete();
-                                        break;  
-                                } 
+                                        break;
+                                }
 
                         }
 
-                }  
-    
+                }
+
         }
 
 }
@@ -292,10 +292,10 @@ createDamageArea()
 {
         if ( level.gameType != "sd" || level.gameType != "sr" || level.gameType != "csd" )
                 return;
-    
+
         while ( !isDefined( level.bombZones ) )
                 wait( 0.5 );
-      
+
         bombZones = getEntArray( "bombzone", "targetname" );
         level.damageArea = [];
         level.damageArea2 = [];
@@ -305,33 +305,33 @@ createDamageArea()
         {
                 visuals = getEntArray( bombZones[index].target, "targetname" );
                 if ( index == 0 )
-                {      
-                        if( level.gameType == "sd" ) {      
-                                if ( level.scr_sd_objective_takedamage_option )    
-                                        level.objectiveHealth[index] = level.scr_sd_objective_takedamage_health;     
+                {
+                        if( level.gameType == "sd" ) {
+                                if ( level.scr_sd_objective_takedamage_option )
+                                        level.objectiveHealth[index] = level.scr_sd_objective_takedamage_health;
                                 else
                                         level.objectiveHealth[index] = level.scr_sd_objective_takedamage_counter;
                         }
 
-                        if( level.gameType == "sr" ) {      
-                                if ( level.scr_sr_objective_takedamage_option )    
-                                        level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;     
+                        if( level.gameType == "sr" ) {
+                                if ( level.scr_sr_objective_takedamage_option )
+                                        level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;
                                 else
                                         level.objectiveHealth[index] = level.scr_sr_objective_takedamage_counter;
                         }
-						
-						if( level.gameType == "csd" ) {      
-                                if ( level.scr_csd_objective_takedamage_option )    
-                                        level.objectiveHealth[index] = level.scr_csd_objective_takedamage_health;     
+
+						if( level.gameType == "csd" ) {
+                                if ( level.scr_csd_objective_takedamage_option )
+                                        level.objectiveHealth[index] = level.scr_csd_objective_takedamage_health;
                                 else
                                         level.objectiveHealth[index] = level.scr_csd_objective_takedamage_counter;
                         }
-        
+
                         level.objDamageCounter[index] = 0;
                         level.objDamageTotal[index] = 0;
                         level.isLosingHealth[index] = false;
 
-                        //Script models with no setModel used to check for damage. 
+                        //Script models with no setModel used to check for damage.
                         for ( i = 0; i < 5; i++ )
                         {
                                 switch( i )
@@ -350,9 +350,9 @@ createDamageArea()
                                                 break;
                                         case 4:
                                                 level.damageArea[index] = spawn( "script_model", bombZones[index].origin + ( 0, -75, 10 ) );
-                                                break;  
-                                }  
-             
+                                                break;
+                                }
+
                                 level.damageArea[index] setcandamage( true ); //Allows the script_model to receive damage
                                 level.damageArea[index].health = 100000; //A high value is all we need
                                 level.damageArea[index] thread waitForDamage( index, bombZones[index], visuals );
@@ -361,30 +361,30 @@ createDamageArea()
 
                else {
                        if( level.gameType == "sd" ) {
-                               if ( level.scr_sd_objective_takedamage_option )    
-                                       level.objectiveHealth[index] = level.scr_sd_objective_takedamage_health;     
+                               if ( level.scr_sd_objective_takedamage_option )
+                                       level.objectiveHealth[index] = level.scr_sd_objective_takedamage_health;
                                else
                                        level.objectiveHealth[index] = level.scr_sd_objective_takedamage_counter;
                        }
 
                        if( level.gameType == "sr" ) {
-                               if ( level.scr_sr_objective_takedamage_option )    
-                                       level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;     
+                               if ( level.scr_sr_objective_takedamage_option )
+                                       level.objectiveHealth[index] = level.scr_sr_objective_takedamage_health;
                                else
                                        level.objectiveHealth[index] = level.scr_sr_objective_takedamage_counter;
                        }
-					   
+
 					   if( level.gameType == "csd" ) {
-                               if ( level.scr_csd_objective_takedamage_option )    
-                                       level.objectiveHealth[index] = level.scr_csd_objective_takedamage_health;     
+                               if ( level.scr_csd_objective_takedamage_option )
+                                       level.objectiveHealth[index] = level.scr_csd_objective_takedamage_health;
                                else
                                        level.objectiveHealth[index] = level.scr_csd_objective_takedamage_counter;
                        }
-           
+
                        level.objDamageCounter[index] = 0;
                        level.objDamageTotal[index] = 0;
                        level.isLosingHealth[index] = false;
-      
+
                                for ( i = 0; i < 5; i++ )
                                {
                                        switch( i )
@@ -403,12 +403,12 @@ createDamageArea()
                                                        break;
                                                case 4:
                                                        level.damageArea2[index] = spawn( "script_model", bombZones[index].origin + ( 0, -75, 10 ) );
-                                                       break;  
-                                       }  
-             
+                                                       break;
+                                       }
+
                                        level.damageArea2[index] setcandamage( true );
                                        level.damageArea2[index].health = 100000;
-                                       level.damageArea2[index] thread waitForDamage( index, bombZones[index], visuals );    
+                                       level.damageArea2[index] thread waitForDamage( index, bombZones[index], visuals );
                                }
 
 
@@ -417,7 +417,7 @@ createDamageArea()
         }
 
 }
-  
+
 waitForDamage( index, object, visuals )
 {
         attacker = undefined;
@@ -426,7 +426,7 @@ waitForDamage( index, object, visuals )
         {
                 if ( level.objectiveHealth[index] <= 0 )
                         break;
-  
+
                 self waittill( "damage", damage, attacker );
 
                 if( level.gameType == "sd" ) {
@@ -444,7 +444,7 @@ waitForDamage( index, object, visuals )
                                 level.objDamageTotal[index] += damage;
                         }
                 }
-    
+
 				if( level.gameType == "csd" ) {
                         if ( level.scr_csd_objective_takedamage_option )
                         {
@@ -452,11 +452,11 @@ waitForDamage( index, object, visuals )
                                 level.objDamageTotal[index] += damage;
                         }
                 }
-				
+
                 wait( 0.1 );
-    
+
                 if ( isDefined( attacker ) && isPlayer( attacker ) )
-                {  
+                {
                         if ( attacker.pers["team"] == game["defenders"] )
                         {
                                 if ( !level.isLosingHealth[index] )
@@ -508,7 +508,7 @@ waitForDamage( index, object, visuals )
                                                         }
 
                                                 }
-												
+
                                                 wait( 0.1 );
 
                                                 level.isLosingHealth[index] = false;
@@ -516,24 +516,24 @@ waitForDamage( index, object, visuals )
                         }
                 }
 
-                wait( 0.1 ); 
-        } 
+                wait( 0.1 );
+        }
 
         if ( !level.objectiveTakeDamage )
         {
                 level.objectiveTakeDamage = true;
                 self thread destroyObjective( object, visuals, attacker );
-        } 
-}  
-  
+        }
+}
+
 destroyObjective( object, visuals, attacker )
 {
 
         if ( isDefined( level.bombExploded ) && !level.bombExploded )
                 level.bombExploded = true;
-        else 
+        else
                 return;
-      
+
         for ( i = 0; i < visuals.size; i++ )
         {
 		if ( isDefined( visuals[i].script_exploder ) )
@@ -541,51 +541,51 @@ destroyObjective( object, visuals, attacker )
 			object.exploderIndex = visuals[i].script_exploder;
 			break;
 		}
-	}  
-      
+	}
+
         visuals[0] radiusDamage( object.origin, 512, 200, 20, attacker, "MOD_EXPLOSIVE", "briefcase_bomb_mp" );
-    
+
         rot = randomfloat(360);
 	explosionEffect = spawnFx( level._effect["bombexplosion"], object.origin + ( 0, 0, 50 ), ( 0, 0, 1 ), ( cos( rot ),sin( rot ),0 ) );
 	triggerFx( explosionEffect );
-	  
+
 	exploder( object.exploderIndex );
-	  
-        if( level.gameType == "sd" ) {  
+
+        if( level.gameType == "sd" ) {
 	        thread maps\mp\gametypes\sd::playSoundinSpace( "exp_suitcase_bomb_main", object.origin );
         }
 
-        if( level.gameType == "sr" ) {  
+        if( level.gameType == "sr" ) {
 	        thread maps\mp\gametypes\sr::playSoundinSpace( "exp_suitcase_bomb_main", object.origin );
         }
-		
-		if( level.gameType == "csd" ) {  
+
+		if( level.gameType == "csd" ) {
 	        thread maps\mp\gametypes\csd::playSoundinSpace( "exp_suitcase_bomb_main", object.origin );
         }
-	  
+
 	setGameEndTime( 0 );
-	  
+
 	wait( 3.0 );
-	
-        if( level.gameType == "sd" ) {  
+
+        if( level.gameType == "sd" ) {
 	        maps\mp\gametypes\sd::sd_endGame( game["attackers"], game["strings"]["target_destroyed"] );
         }
 
-        if( level.gameType == "sr" ) {  
+        if( level.gameType == "sr" ) {
 	        maps\mp\gametypes\sr::sr_endGame( game["attackers"], game["strings"]["target_destroyed"] );
         }
-		
-		if( level.gameType == "csd" ) {  
+
+		if( level.gameType == "csd" ) {
 	        maps\mp\gametypes\csd::sd_endGame( game["attackers"], game["strings"]["target_destroyed"] );
         }
 
-} 
+}
 
 allowDefenderExplosiveDestroy() // Finally fixed animation issue
 {
         self endon( "disconnect" );
         self endon( "death" );
-  
+
         self.destroyingExplosive = false;
         self.explosiveDestroyed = false;
         lastWeapon = self getCurrentWeapon();
@@ -593,7 +593,7 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
         destroyTime = level.scr_sd_allow_defender_explosivedestroy_time;
 
         while ( isAlive( self ) && !level.bombPlanted && !level.gameEnded && !self.explosiveDestroyed )
-        {     
+        {
                 while ( isAlive( self ) && self meleeButtonPressed() && self.isBombCarrier && !level.gameEnded )
                 {
                         if ( startTime == 0 )
@@ -643,20 +643,20 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
 
                                         break;
                                 }
-   
+
                         }
 
                         wait( 0.05 );
 
-                        timeHack = ( openwarfare\_timer::getTimePassed() - startTime ) / 1000; 
+                        timeHack = ( openwarfare\_timer::getTimePassed() - startTime ) / 1000;
                         self updateSecondaryProgressBar( timeHack, destroyTime, false, &"OW_DESTROYING_EXPLOSIVES" );
-        
+
                         if ( timeHack >= destroyTime )
                         {
-                                self.explosiveDestroyed = true; 
+                                self.explosiveDestroyed = true;
                                 break;
                         }
-      
+
                         if( level.scr_sd_show_briefcase && self getCurrentWeapon() != "briefcase_bomb_mp" )
       	                        break;
 
@@ -704,18 +704,18 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
                         }
                 }
 
-                
+
                 self updateSecondaryProgressBar( undefined, undefined, true, undefined );
                 self.destroyingExplosive = false;
 
                 self maps\mp\gametypes\_gameobjects::detachUseModels();
 
-                startTime = 0;  
+                startTime = 0;
 
                 wait( 0.50 );
 
         }
-  
+
         if ( !level.bombPlanted && !level.gameEnded && level.scr_sd_allow_defender_explosivedestroy_win )
         {
                 setGameEndTime( 0 );
@@ -744,7 +744,7 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
                         wait( 0.50 );
                         self thread openwarfare\_speedcontrol::setModifierSpeed( "_objpoints", 0 );
                 }
-              
+
                 else
 
                 {
@@ -766,7 +766,7 @@ allowDefenderExplosiveDestroy() // Finally fixed animation issue
         {
                 // Finish animation if trying to Destroy Explosives
                 if( level.gameEnded && self meleeButtonPressed() && self hasWeapon( "briefcase_bomb_mp") ) {
-                        if( level.scr_sd_show_briefcase ) { 
+                        if( level.scr_sd_show_briefcase ) {
                                 self freezeControls( false );
                                 self execClientCommand( "weapprev" );
                                 wait( 0.50 );
@@ -781,19 +781,19 @@ quickDefuse()
 {
         self endon( "disconnect" );
         self endon( "death" );
-  
+
         if ( self.didQuickDefuse )
   	        return;
-  
+
         self.isChangingWire = false;
-  
+
         if ( isAlive( self ) && self.isDefusing && !level.gameEnded && !level.bombExploded )
         {
                 bombwire[0] = &"OW_RED_WIRE";
                 bombwire[1] = &"OW_GREEN_WIRE";
                 bombwire[2] = &"OW_YELLOW_WIRE";
-                bombwire[3] = &"OW_BLUE_WIRE"; 
-    
+                bombwire[3] = &"OW_BLUE_WIRE";
+
                 correctWire = randomIntRange( 0, 4 );
                 playerChoice = 0;
 
@@ -805,7 +805,7 @@ quickDefuse()
                         if ( self attackButtonPressed() ) {
       	                        self.didQuickDefuse = true;
 				self thread quickDefuseResults( playerChoice, correctWire );
-				
+
                         } else if ( self adsButtonPressed() && !self.isChangingWire ) {
                                 self.isChangingWire = true;
                                 self allowAds( false );
@@ -813,28 +813,28 @@ quickDefuse()
                                 if ( playerChoice == 3 )
                                         playerChoice = 0;
                                 else
-                                        playerChoice++;     
-   
-                                self iprintlnbold( bombwire[playerChoice] );  
-                                wait( 0.1 );  
+                                        playerChoice++;
+
+                                self iprintlnbold( bombwire[playerChoice] );
+                                wait( 0.1 );
                                 self.isChangingWire = false;
                                 self allowAds( true );
                         }
-      
+
                         wait( 0.05 );
                 }
 
         }
 
-}  
+}
 
 quickDefuseResults( playerChoice, correctWire )
 {
         level endon ( "game_ended" );
-  
+
         if ( playerChoice == correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level.defuseObject thread maps\mp\gametypes\sd::onUseDefuseObject( self );
-  		
+
         } else if ( playerChoice != correctWire && isAlive( self ) && !level.gameEnded && !level.bombExploded ) {
   	        level notify( "wrong_wire" );
         }

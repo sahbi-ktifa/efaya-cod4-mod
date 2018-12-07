@@ -152,8 +152,8 @@ init()
 	if ( level.scr_show_c4_blink_effect == 1 )
 		level.C4FXid = loadfx( "misc/light_c4_blink" );
 
-	if ( level.scr_claymore_show_laser_beams == 1 )
-		level.claymoreFXid = loadfx( "misc/claymore_laser" );
+	//if ( level.scr_claymore_show_laser_beams == 1 )
+	//	level.claymoreFXid = loadfx( "misc/claymore_laser" );
 
 	level thread onPlayerConnect();
 
@@ -744,7 +744,7 @@ watchGrenadeUsage()
 	thread watchC4();
 	thread watchC4Detonation();
 	thread watchC4AltDetonation();
-	thread watchClaymores();
+	//thread watchClaymores();
 	thread deleteC4AndClaymoresOnDisconnect();
 
 	self thread watchForThrowbacks();

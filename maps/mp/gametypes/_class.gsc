@@ -1022,7 +1022,7 @@ replenishLoadout() // used by ammo hardpoint.
 		self SetWeaponAmmoClip( weapon, 9999 );
 
 		if ( weapon == "claymore_mp" || weapon == "claymore_detonator_mp" )
-			self setWeaponAmmoStock( weapon, 1 );
+			self setWeaponAmmoStock( weapon, 30 );
     }
 
 	if ( self getAmmoCount( level.classGrenades[class]["primary"]["type"] ) < level.classGrenades[class]["primary"]["count"] )
