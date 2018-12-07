@@ -136,24 +136,9 @@ goto END
 :MAKE_OPENWARFARE_IWD
 echo _________________________________________________________________
 echo.
-echo  Please choose what set of weapon files to use:
-echo    1. Only fixes.
-echo    2. No Gun Sway.
-echo    3. Sniper Increased Distance.
-echo    4. "The Company Hub" weapons by Buster.
-echo    5. Custom
+echo  Efaya weapons set will be used.
 echo.
-echo    0. Back
-echo.
-set /p zow_option=:
-set zow_option=%zow_option:~0,1%
-if "%zow_option%"=="1" goto WEAPONS_FIXES
-if "%zow_option%"=="2" goto WEAPONS_FIXES_NOGUNSWAY
-if "%zow_option%"=="3" goto WEAPONS_FIXES_NOGUNSWAY_SNIPER
-if "%zow_option%"=="4" goto WEAPONS_THECOMPANY
-if "%zow_option%"=="5" goto WEAPONS_CUSTOMS
-if "%zow_option%"=="0" goto START
-goto MAKE_OPENWARFARE_IWD
+goto WEAPONS_CUSTOMS
 
 
 :BUILD_OPENWARFARE_IWD

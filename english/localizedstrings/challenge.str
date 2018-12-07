@@ -1708,5 +1708,10 @@ LANG_ENGLISH        "Get 50 kills with this weapon. (Phase 2 of 2)"
 REFERENCE           GET_25_KILLS_WITH_THIS_2
 LANG_ENGLISH        "Get 25 kills with this weapon. (Phase 1 of 2)"
 
+REFERENCE           CLAYMORE_SHOT
+LANG_ENGLISH        "Crossbow Shot"
+
+REFERENCE           KILL_5_ENEMIES_BY_USING
+LANG_ENGLISH        "Kill 5 enemies by using a crossbow."
 
 ENDMARKER

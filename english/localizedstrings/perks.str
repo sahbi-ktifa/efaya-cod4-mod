@@ -28,4 +28,10 @@ LANG_ENGLISH        "Bolt-action sniper rifle.  Effective at long range."
 REFERENCE			SINGLEFIRE_WITH_HIGH
 LANG_ENGLISH		"The FAMAS is a bullpup-styled assault rifle designed and manufactured in France by MAS located in Saint-Étienne."
 
+REFERENCE           CLAYMORE_X_2
+LANG_ENGLISH        "Crossbow"
+
+REFERENCE           TRIP_ACTIVATED_EXPLOSIVE
+LANG_ENGLISH        "Modern crossbow with deadly arrows."
+
 ENDMARKER

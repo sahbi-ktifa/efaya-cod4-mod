@@ -90,7 +90,7 @@ x,x,x,x,x,x,x,x,x,x,x
 88,3088,weapon_lmg,,,,,,,,
 89,3089,weapon_lmg,,,,,,,,
 90,3090,weapon_explosive,WEAPON_C4,c4,2,weapon_c4,PERKS_CHARGE_OF_PLASTIC_EXPLOSIVES,,,
-91,3091,weapon_explosive,WEAPON_CLAYMORE,claymore,1,weapon_claymore,PERKS_DIRECTIONAL_ANTIPERSONNEL,,,
+91,3091,weapon_explosive,WEAPON_CLAYMORE,claymore,30,weapon_claymore,PERKS_DIRECTIONAL_ANTIPERSONNEL,,,
 92,3092,weapon_explosive,,,,,,,,
 93,3093,weapon_explosive,,,,,,,,
 94,3094,weapon_explosive,,,,,,,,
@@ -184,7 +184,7 @@ x,x,x,x,x,x,x,x,x,x,x
 182,182,specialgrenade,,,,,,,,
 183,183,specialgrenade,,,,,,,,
 184,184,inventory,PERKS_C4_X_2,c4_mp,2,specialty_weapon_c4,PERKS_REMOTE_DETONATION_EXPLOSIVE,perk1,,
-185,185,inventory,PERKS_CLAYMORE_X_2,claymore_mp,1,specialty_weapon_claymore,PERKS_TRIP_ACTIVATED_EXPLOSIVE,perk1,,PERKS_UNLOCKED_AT_MASTER_GUNNERY
+185,185,inventory,PERKS_CLAYMORE_X_2,claymore_mp,30,specialty_weapon_claymore,PERKS_TRIP_ACTIVATED_EXPLOSIVE,perk1,,PERKS_UNLOCKED_AT_MASTER_GUNNERY
 186,186,inventory,PERKS_RPG7_X_2,rpg_mp,2,specialty_weapon_rpg,PERKS_ROCKET_LAUNCHER_WITH,perk1,,
 187,187,inventory,,,,,,,,
 188,188,inventory,,,,,,,,

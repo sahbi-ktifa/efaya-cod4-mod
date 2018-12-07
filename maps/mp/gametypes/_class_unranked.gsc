@@ -235,7 +235,7 @@ giveLoadout( team, class )
 	switch ( self.pers[class]["loadout_perk1"] )
 	{
 		case "claymore_mp":
-			ammoCount = 1;//getdvarx( "scr_claymore_ammo_count", "int", 2, 1, 2 );
+			ammoCount = 30;//getdvarx( "scr_claymore_ammo_count", "int", 2, 1, 2 );
 			break;
 		case "rpg_mp":
 			ammoCount = getdvarx( "scr_rpg_ammo_count", "int", 2, 1, 3 );
