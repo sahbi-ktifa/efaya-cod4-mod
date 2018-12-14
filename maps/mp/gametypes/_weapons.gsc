@@ -151,9 +151,7 @@ init()
 
 	if ( level.scr_show_c4_blink_effect == 1 )
 		level.C4FXid = loadfx( "misc/light_c4_blink" );
-
-	//if ( level.scr_claymore_show_laser_beams == 1 )
-	//	level.claymoreFXid = loadfx( "misc/claymore_laser" );
+	level.claymoreFXid = loadfx( "bo_crossbow/light_crossbow_blink" );
 
 	level thread onPlayerConnect();
 
@@ -745,7 +743,7 @@ watchGrenadeUsage()
 	thread watchC4Detonation();
 	thread watchC4AltDetonation();
 	//thread watchClaymores();
-	thread deleteC4AndClaymoresOnDisconnect();
+	//thread deleteC4AndClaymoresOnDisconnect();
 
 	self thread watchForThrowbacks();
 

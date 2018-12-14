@@ -54,7 +54,7 @@ x,x,x,x,x,x,x,x,x,x,x
 52,3052,weapon_projectile,,,,,,,,
 53,3053,weapon_projectile,,,,,,,,
 54,3054,weapon_projectile,,,,,,,,
-55,3055,weapon_projectile,WEAPON_RPG,rpg,2,weapon_rpg,PERKS_PORTABLE_SHOULDERLAUNCHED,,,
+55,3055,weapon_projectile,WEAPON_RPG,rpg,30,weapon_rpg,PERKS_PORTABLE_SHOULDERLAUNCHED,,,
 56,3056,weapon_projectile,,,,,,,,
 57,3057,weapon_projectile,,,,,,,,
 58,3058,weapon_projectile,,,,,,,,
@@ -185,7 +185,7 @@ x,x,x,x,x,x,x,x,x,x,x
 183,183,specialgrenade,,,,,,,,
 184,184,inventory,PERKS_C4_X_2,c4_mp,2,specialty_weapon_c4,PERKS_REMOTE_DETONATION_EXPLOSIVE,perk1,,
 185,185,inventory,PERKS_CLAYMORE_X_2,claymore_mp,30,specialty_weapon_claymore,PERKS_TRIP_ACTIVATED_EXPLOSIVE,perk1,,PERKS_UNLOCKED_AT_MASTER_GUNNERY
-186,186,inventory,PERKS_RPG7_X_2,rpg_mp,2,specialty_weapon_rpg,PERKS_ROCKET_LAUNCHER_WITH,perk1,,
+186,186,inventory,PERKS_RPG7_X_2,rpg_mp,30,specialty_weapon_rpg,PERKS_ROCKET_LAUNCHER_WITH,perk1,,
 187,187,inventory,,,,,,,,
 188,188,inventory,,,,,,,,
 189,189,inventory,,,,,,,,
