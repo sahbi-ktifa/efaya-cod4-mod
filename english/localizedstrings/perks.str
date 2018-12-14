@@ -34,4 +34,10 @@ LANG_ENGLISH        "Crossbow"
 REFERENCE           TRIP_ACTIVATED_EXPLOSIVE
 LANG_ENGLISH        "Modern crossbow with deadly arrows."
 
+REFERENCE           RPG7_X_2
+LANG_ENGLISH        "Explosive crossbow"
+
+REFERENCE           ROCKET_LAUNCHER_WITH
+LANG_ENGLISH        "Modern crossbow with explosive arrows."
+
 ENDMARKER

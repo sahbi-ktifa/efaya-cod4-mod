@@ -105,4 +105,7 @@ LANG_ENGLISH		"Ballista"
 
 REFERENCE     CLAYMORE
 LANG_ENGLISH  "Crossbow"
+
+REFERENCE     RPG
+LANG_ENGLISH  "Explosive crossbow"
 ENDMARKER

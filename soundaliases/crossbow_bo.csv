@@ -11,7 +11,7 @@ weap_crossbow_fire_npc,,weps/crossbow/weap_crossbow_fire.wav,1,,wpnai,0.8,0.9,35
 weap_crossbow_fire_npc,,weps/crossbow/weap_crossbow_fire.wav,1,,wpnai,0.8,0.9,35,2000,weapon,,,,0.7,all_mp,,,,weapon4
 
 
-#weap_crossbow_beep_beep,,weps/crossbow/weap_crossbow_beep_beep.wav,0.95,1,wpnplyr,1.0,1.1,10,800,weapon,,0.6,rlooping,0.85,,,,,weapon2
+weap_crossbow_beep_beep,,weps/crossbow/weap_crossbow_beep_beep.wav,0.95,1,wpnplyr,1.0,1.1,10,800,weapon,,0.6,rlooping,0.85,,,,,weapon2
 
 
 

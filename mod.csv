@@ -1023,3 +1023,4 @@ xanim,viewmodel_bo_crossbow_sprint_loop
 xanim,viewmodel_bo_crossbow_sprint_out
 xmodel,viewmodel_bo_crossbow
 xmodel,worldmodel_bo_crossbow
+xmodel,projectile_bo_arrow_explosive
