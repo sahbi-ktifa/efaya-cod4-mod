@@ -45,7 +45,7 @@ init()
 		game["perk_counts"]["allies_claymore"] = 0;
 		game["perk_counts"]["allies_c4"] = 0;
 		game["perk_counts"]["allies_rpg"] = 0;
-		
+
 		game["perk_counts"]["axis_claymore"] = 0;
 		game["perk_counts"]["axis_c4"] = 0;
 		game["perk_counts"]["axis_rpg"] = 0;
@@ -58,7 +58,7 @@ init()
 		game["misc"]["allies_smoke"] = 0;
 		game["misc"]["axis_smoke"] = 0;
 	}
-	
+
 	// Initialize arrays
 	game["mwf_classes"] = [];
 	game["mwf_weapons"] = [];
@@ -83,7 +83,7 @@ init()
 	initWeaponData( "mp44", "assault", "axis" );
 	initWeaponAttachments( "assault", "none;reflex;silencer;acog" );
 	//game["attach_assault_gl_limit"] = getdvarx( "attach_assault_gl_limit", "int", 64, 0, 64 );
-			
+
 	//**************************************************************************
 	// Specops weapons:
 	//**************************************************************************
@@ -101,14 +101,14 @@ init()
 	initWeaponData( "rpd", "heavygunner", "axis" );
 	initWeaponData( "m60e4", "heavygunner", "allies" );
 	initWeaponAttachments( "heavygunner", "none;reflex;grip;acog" );
-	
+
 	//**************************************************************************
 	// Demolitions weapons:
 	//**************************************************************************
 	initWeaponData( "winchester1200", "demolitions", "axis" );
 	initWeaponData( "m1014", "demolitions", "allies" );
 	initWeaponAttachments( "demolitions", "none;reflex;grip" );
-	
+
 	//**************************************************************************
 	// Sniper weapons:
 	//**************************************************************************
@@ -118,7 +118,7 @@ init()
 	initWeaponData( "remington700", "sniper", "axis" );
 	initWeaponData( "m21", "sniper", "allies" );
 	initWeaponAttachments( "sniper", "none;acog" );
-		
+
 	//**************************************************************************
 	// Handguns
 	//**************************************************************************
@@ -128,7 +128,7 @@ init()
 	initWeaponData( "deserteagle", "all", "axis" );
 	initWeaponData( "deserteaglegold", "all", "axis" );
 	initWeaponAttachments( "pistol", "none;silencer" );
-	
+
 	//**************************************************************************
 	// Primary and Special Grenades
 	//**************************************************************************
@@ -136,7 +136,7 @@ init()
 	initWeaponData( "concussion_grenade", "all", "all" );
 	initWeaponData( "flash_grenade", "all", "all" );
 	initWeaponData( "smoke_grenade", "all", "all" );
-	
+
 	//**************************************************************************
 	// Perks
 	//**************************************************************************
@@ -147,20 +147,20 @@ init()
 	initPerkData( "specialty_fraggrenade" );
 	initPerkData( "specialty_extraammo" );
 	initPerkData( "specialty_detectexplosive" );
-	
+
 	game["perk_claymore_mp_limit"] = getdvarx( "perk_claymore_mp_limit", "int", 64, 0, 64 );
 	game["perk_rpg_mp_limit"] = getdvarx( "perk_rpg_mp_limit", "int", 64, 0, 64 );
 	game["perk_c4_mp_limit"] = getdvarx( "perk_c4_mp_limit", "int", 64, 0, 64 );
-	
+
 	game["smoke_grenade_limit"] = getdvarx( "smoke_grenade_limit", "int", 64, 0, 64 );
-	
+
 	initPerkData( "specialty_bulletdamage" );
 	initPerkData( "specialty_armorvest" );
 	initPerkData( "specialty_fastreload" );
 	initPerkData( "specialty_rof" );
 	initPerkData( "specialty_gpsjammer" );
 	initPerkData( "specialty_explosivedamage" );
-	
+
 	initPerkData( "specialty_longersprint" );
 	initPerkData( "specialty_bulletaccuracy" );
 	initPerkData( "specialty_pistoldeath" );
@@ -169,7 +169,7 @@ init()
 	initPerkData( "specialty_holdbreath" );
 	initPerkData( "specialty_quieter" );
 	initPerkData( "specialty_parabolic" );
-	
+
 	// Classes
 	initClassData( "assault", "m16;m16;ak47", "reflex", "camo_none", "beretta;beretta;deserteagle", "none", "none", "specialty_bulletdamage", "specialty_longersprint", "frag_grenade", 1, "concussion_grenade", 1 );
 	initClassData( "specops", "mp5;mp5;p90", "none", "camo_none", "usp;usp;deserteagle", "silencer", "c4_mp", "specialty_explosivedamage", "specialty_bulletaccuracy", "frag_grenade", 1, "flash_grenade", 1 );
@@ -188,28 +188,28 @@ initWeaponData( weaponName, weaponClass, weaponTeam )
 		game["mwf_weapons"][weaponClass] = [];
 		game["mwf_weapons_aux"][weaponClass] = [];
 	}
-	
+
 	// Get the new element
 	newElement = game["mwf_weapons"][weaponClass].size;
-	
+
 	// Save the new index for quick access
 	game["mwf_weapons_aux"][weaponClass][weaponName] = newElement;
-	
+
 	game["mwf_weapons"][weaponClass][newElement] = [];
 	game["mwf_weapons"][weaponClass][newElement]["name"] = weaponName;
-	
+
 	if ( weaponClass != "all" )
 		game["mwf_weapons"][weaponClass][newElement]["allow"] = getdvarx( "weap_allow_" + weaponClass + "_" + weaponName, "int", 1, 0, 2 );
 	else
 		game["mwf_weapons"][weaponClass][newElement]["allow"] = getdvarx( "weap_allow_" + weaponName, "int", 1, 0, 2 );
-		
+
 	game["mwf_weapons"][weaponClass][newElement]["team"] = weaponTeam;
 }
 
 isWeaponAllowed( weaponClass, weaponName, playerTeam )
 {
 	weaponAllowed = 0;
-	
+
 	iWeapon = game["mwf_weapons_aux"][weaponClass][weaponName];
 	if ( isDefined( iWeapon ) ) {
 		// 0 = Not allowed, 1 = Allowed for all, 2 = Allowed for team
@@ -217,26 +217,26 @@ isWeaponAllowed( weaponClass, weaponName, playerTeam )
 			weaponAllowed = 1;
 		} else if ( game["mwf_weapons"][weaponClass][iWeapon]["allow"] == 2 && ( game["mwf_weapons"][weaponClass][iWeapon]["team"] == "all" || game["mwf_weapons"][weaponClass][iWeapon]["team"] == playerTeam ) ) {
 			weaponAllowed = 1;
-		}					
+		}
 	}
-	
-	return weaponAllowed;	
+
+	return weaponAllowed;
 }
 
 initWeaponAttachments( weaponClass, weaponAttachments )
 {
 	game["mwf_attachments"][weaponClass] = [];
-	
+
 	// Spam list of attachments
 	weaponAttachments = strtok( weaponAttachments, ";" );
-	for ( iAttach = 0; iAttach < weaponAttachments.size; iAttach++ ) {		
+	for ( iAttach = 0; iAttach < weaponAttachments.size; iAttach++ ) {
 		game["mwf_attachments"][weaponClass][weaponAttachments[iAttach]] = getdvarx( "attach_allow_" + weaponClass + "_" + weaponAttachments[iAttach], "int", 1, 0, 1 );
 	}
 }
 
 isAttachmentAllowed( weaponClass, attachmentName )
 {
-	return game["mwf_attachments"][weaponClass][attachmentName];	
+	return game["mwf_attachments"][weaponClass][attachmentName];
 }
 
 initClassData( className, primary, attachment, camo, secondary, sattachment, perk1, perk2, perk3, pgrenade, pgrenade_count, sgrenade, sgrenade_count )
@@ -244,7 +244,7 @@ initClassData( className, primary, attachment, camo, secondary, sattachment, per
 	// Load class limits
 	game[ "allies_" + className + "_limit" ] = getdvarx( "class_allies_" + className + "_limit", "int", 64, 0, 64 );
 	game[ "axis_" + className + "_limit" ] = getdvarx( "class_axis_" + className + "_limit", "int", 64, 0, 64 );
-	
+
 	// Add new element
 	game["mwf_classes"][className] = [];
 	game["mwf_classes"][className]["primary"] = getdvarx( "class_" + className + "_primary", "string", primary );
@@ -278,7 +278,7 @@ getDefaultPerk( className, perkNumber, defaultValue )
 	if ( !isPerkAllowed( perkName, className ) ) {
 		perkName = "specialty_null";
 	}
-	return perkName;	
+	return perkName;
 }
 
 initPerkData( perkName, varName )
@@ -286,23 +286,23 @@ initPerkData( perkName, varName )
 	if ( !isDefined( varName ) ) {
 		varName = perkName;
 	}
-	
+
 	game["mwf_perks"][perkName] = [];
-	perkAllowed = getdvarx( "perk_allow_" + varName, "int", 1, 0, 1 );	
-	
+	perkAllowed = getdvarx( "perk_allow_" + varName, "int", 1, 0, 1 );
+
 	// Check if the perk status for the classes
-	game["mwf_perks"][perkName]["assault"] = ( perkAllowed && getdvarx( "perk_assault_allow_" + varName, "int", perkAllowed, 0, 1 ) );	
-	game["mwf_perks"][perkName]["specops"] = ( perkAllowed && getdvarx( "perk_specops_allow_" + varName, "int", perkAllowed, 0, 1 ) );	
-	game["mwf_perks"][perkName]["heavygunner"] = ( perkAllowed && getdvarx( "perk_heavygunner_allow_" + varName, "int", perkAllowed, 0, 1 ) );	
-	game["mwf_perks"][perkName]["demolitions"] = ( perkAllowed && getdvarx( "perk_demolitions_allow_" + varName, "int", perkAllowed, 0, 1 ) );	
-	game["mwf_perks"][perkName]["sniper"] = ( perkAllowed && getdvarx( "perk_sniper_allow_" + varName, "int", perkAllowed, 0, 1 ) );	
-	
+	game["mwf_perks"][perkName]["assault"] = ( perkAllowed && getdvarx( "perk_assault_allow_" + varName, "int", perkAllowed, 0, 1 ) );
+	game["mwf_perks"][perkName]["specops"] = ( perkAllowed && getdvarx( "perk_specops_allow_" + varName, "int", perkAllowed, 0, 1 ) );
+	game["mwf_perks"][perkName]["heavygunner"] = ( perkAllowed && getdvarx( "perk_heavygunner_allow_" + varName, "int", perkAllowed, 0, 1 ) );
+	game["mwf_perks"][perkName]["demolitions"] = ( perkAllowed && getdvarx( "perk_demolitions_allow_" + varName, "int", perkAllowed, 0, 1 ) );
+	game["mwf_perks"][perkName]["sniper"] = ( perkAllowed && getdvarx( "perk_sniper_allow_" + varName, "int", perkAllowed, 0, 1 ) );
+
 }
 
 isPerkAllowed( perkName, className )
 {
-	if ( isDefined( game["mwf_perks"][perkName] ) && isDefined( game["mwf_perks"][perkName][className] ) ) 
-		return ( game["mwf_perks"][perkName][className] );	
+	if ( isDefined( game["mwf_perks"][perkName] ) && isDefined( game["mwf_perks"][perkName][className] ) )
+		return ( game["mwf_perks"][perkName][className] );
 	else
 		return 0;
 }
@@ -312,12 +312,12 @@ onPlayerConnect()
 	for(;;)
 	{
 		level waittill( "connected", player );
-		
+
 		player thread onPlayerDisconnect();
 		player thread onJoinedTeam();
-		player thread onJoinedSpectators();		
-		
-		player thread setNonClassSpecificDvars();		
+		player thread onJoinedSpectators();
+
+		player thread setNonClassSpecificDvars();
 	}
 }
 
@@ -334,17 +334,17 @@ onJoinedTeam()
 	for(;;)
 	{
 		self waittill("joined_team");
-		// If this player already has a class it means it switched teams 
+		// If this player already has a class it means it switched teams
 		if ( isDefined( self.pers["class"] ) && self resetPlayerClassOnTeamSwitch( false ) ) {
 			self thread setLoadoutForClass( self.pers["class"] );
 		}
-		
+
 		// Get player's team
 		playerTeam = self.pers["team"];
-		
+
 		self thread setClassIndependent( playerTeam );
 		self thread setClassDependent( playerTeam );
-		
+
 		if ( !level.ignoreUpdateClassLimit ) {
 			level thread updateClassLimits();
 		}
@@ -368,7 +368,7 @@ updateClassLimits()
 	// Check if there's another thread waiting
 	if ( level.updateClassLimitsWaiting )
 		return;
-		
+
 	// Check if there's another thread running
 	if ( level.updateClassLimitsRunning ) {
 		// Flag that the thread is waiting and wait for the running thread to finish
@@ -378,14 +378,14 @@ updateClassLimits()
 		// Flag that we stopped waiting
 		level.updateClassLimitsWaiting = false;
 	}
-	
+
 	// Flag that we are running
-	level.updateClassLimitsRunning = true;	
-	
+	level.updateClassLimitsRunning = true;
+
 	counts = [];
 
 	counts["axis_assault"] = 0;
-	counts["axis_gl"] = 0;	
+	counts["axis_gl"] = 0;
 	counts["axis_specops"] = 0;
 	counts["axis_heavygunner"] = 0;
 	counts["axis_demolitions"] = 0;
@@ -402,7 +402,7 @@ updateClassLimits()
 	perkcounts["allies_claymore"] = 0;
 	perkcounts["allies_c4"] = 0;
 	perkcounts["allies_rpg"] = 0;
-	
+
 	perkcounts["axis_claymore"] = 0;
 	perkcounts["axis_c4"] = 0;
 	perkcounts["axis_rpg"] = 0;
@@ -418,13 +418,13 @@ updateClassLimits()
 		if( isDefined( player ) && isDefined( player.pers["team"] ) && player.pers["team"] != "spectator" && isDefined( player.pers["class"] ) )
 		{
 			counts[ player.pers["team"] + "_" + player.pers["class"] ]++;
-			
+
 			// Check if this player is using the grenade launcher
 			if ( ( player.pers["class"] == "assault" && player.pers["assault"]["loadout_primary_attachment"] == "gl" ) ) {
 				counts[ player.pers["team"] + "_gl" ]++;
 			}
-			
-			// Check for perk1 
+
+			// Check for perk1
 			switch ( player.pers[player.pers["class"]]["loadout_perk1"] ) {
 				case "claymore_mp":
 					perkcounts[ player.pers["team"] + "_claymore" ]++;
@@ -434,16 +434,16 @@ updateClassLimits()
 					break;
 				case "c4_mp":
 					perkcounts[ player.pers["team"] + "_c4" ]++;
-					break;															
+					break;
 			}
-			
+
 			// Check for special grenades
 			switch ( player.pers[player.pers["class"]]["loadout_sgrenade"] ) {
 				case "smoke_grenade":
 					misc[ player.pers["team"] + "_smoke" ]++;
 					break;
 			}
-						
+
 		}
 	}
 
@@ -454,7 +454,7 @@ updateClassLimits()
 	players = level.players;
 	for( i=0; i<players.size; i++ )
 		players[i] thread updateAvailableClasses();
-		
+
 	// Thread completed
 	level.updateClassLimitsRunning = false;
 }
@@ -462,28 +462,28 @@ updateClassLimits()
 setNonClassSpecificDvars()
 {
 	self endon("disconnect");
-	
+
 	// Wait until the player joins a team to delay settings of variables
 	self waittill("joined_team");
-	
-	self setClientDvars( 
+
+	self setClientDvars(
 		"attach_allow_assault_none", game["mwf_attachments"]["assault"]["none"],
 		"attach_allow_assault_reflex", game["mwf_attachments"]["assault"]["reflex"],
 		"attach_allow_assault_silencer", game["mwf_attachments"]["assault"]["silencer"],
 		"attach_allow_assault_acog", game["mwf_attachments"]["assault"]["acog"],
-		
+
 		"attach_allow_specops_none", game["mwf_attachments"]["specops"]["none"],
 		"attach_allow_specops_reflex", game["mwf_attachments"]["specops"]["reflex"],
 		"attach_allow_specops_silencer", game["mwf_attachments"]["specops"]["silencer"],
-		"attach_allow_specops_acog", game["mwf_attachments"]["specops"]["acog"]		
+		"attach_allow_specops_acog", game["mwf_attachments"]["specops"]["acog"]
 	);
 
-	self setClientDvars( 
+	self setClientDvars(
 		"attach_allow_heavygunner_none", game["mwf_attachments"]["heavygunner"]["none"],
 		"attach_allow_heavygunner_reflex", game["mwf_attachments"]["heavygunner"]["reflex"],
 		"attach_allow_heavygunner_grip", game["mwf_attachments"]["heavygunner"]["grip"],
 		"attach_allow_heavygunner_acog", game["mwf_attachments"]["heavygunner"]["acog"],
-		
+
 		"attach_allow_demolitions_none", game["mwf_attachments"]["demolitions"]["none"],
 		"attach_allow_demolitions_reflex", game["mwf_attachments"]["demolitions"]["reflex"],
 		"attach_allow_demolitions_grip", game["mwf_attachments"]["demolitions"]["grip"],
@@ -525,7 +525,7 @@ updateAvailableClasses()
 		assaultGL = 0;
 		smokeGrenade = 0;
 	}
-	
+
 	self setClientDvars(
 		"perk_allow_claymore_mp", ( perkClaymore ),
 		"perk_allow_rpg_mp", ( perkRPG ),
@@ -537,13 +537,13 @@ updateAvailableClasses()
 		"allies_allow_demolitions", ( game["allies_demolitions_limit"] > game["class_counts"]["allies_demolitions"] || ( game["allies_demolitions_limit"] > 0 && playerClass == "demolitions" )),
 		"allies_allow_sniper", ( game["allies_sniper_limit"] > game["class_counts"]["allies_sniper"] || ( game["allies_sniper_limit"] > 0 && playerClass == "sniper" )),
 
-		
+
 		"axis_allow_assault", ( game["axis_assault_limit"] > game["class_counts"]["axis_assault"] || ( game["axis_assault_limit"] > 0 && playerClass == "assault" )),
 		"axis_allow_specops", ( game["axis_specops_limit"] > game["class_counts"]["axis_specops"] || ( game["axis_specops_limit"] > 0 && playerClass == "specops" )),
 		"axis_allow_heavygunner", ( game["axis_heavygunner_limit"] > game["class_counts"]["axis_heavygunner"] || ( game["axis_heavygunner_limit"] > 0 && playerClass == "heavygunner" )),
 		"axis_allow_demolitions", ( game["axis_demolitions_limit"] > game["class_counts"]["axis_demolitions"] || ( game["axis_demolitions_limit"] > 0 && playerClass == "demolitions" )),
 		"axis_allow_sniper", ( game["axis_sniper_limit"] > game["class_counts"]["axis_sniper"] || ( game["axis_sniper_limit"] > 0 && playerClass == "sniper" )),
-						 
+
 		"attach_allow_assault_gl", ( assaultGL ),
 		"weap_allow_smoke_grenade", ( smokeGrenade )
 	);
@@ -559,8 +559,8 @@ isUnderLimit( itemEnabled, itemLimit, itemCount )
 		}
 	} else {
 		itemAllowed = 0;
-	}		
-	
+	}
+
 	return itemAllowed;
 }
 
@@ -571,25 +571,25 @@ setLoadoutForClass( classType )
 		changedTeam = true;
 		self.pers["oldteam"] = self.pers["team"];
 	} else {
-		changedTeam = false;		
+		changedTeam = false;
 	}
-	
+
 	if ( !isDefined( self.pers[classType] ) || changedTeam || self resetPlayerClassOnTeamSwitch( false ) )
 	{
 		self.pers[classType]["loadout_primary"] = self getDefaultLoadoutWeapon( classType, game["mwf_classes"][classType]["primary"] );
-		if ( isSubstr( "mp44", self.pers[classType]["loadout_primary"] ) ) {
-			self.pers[classType]["loadout_primary_attachment"] = "none";
-		} else {		
+		//if ( isSubstr( "mp44", self.pers[classType]["loadout_primary"] ) ) {
+		//	self.pers[classType]["loadout_primary_attachment"] = "none";
+		//} else {
 			self.pers[classType]["loadout_primary_attachment"] = game["mwf_classes"][classType]["primary_attachment"];
-		}
-		
+		//}
+
 		self.pers[classType]["loadout_secondary"] = self getDefaultLoadoutWeapon( "all", game["mwf_classes"][classType]["secondary"] );
 		if ( isSubstr( "deserteagle", self.pers[classType]["loadout_secondary"] ) ) {
 			self.pers[classType]["loadout_secondary_attachment"] = "none";
 		} else {
-			self.pers[classType]["loadout_secondary_attachment"] = game["mwf_classes"][classType]["secondary_attachment"];		
+			self.pers[classType]["loadout_secondary_attachment"] = game["mwf_classes"][classType]["secondary_attachment"];
 		}
-		
+
 		self.pers[classType]["loadout_perk1"] = game["mwf_classes"][classType]["perk1"];
 		self.pers[classType]["loadout_perk2"] = game["mwf_classes"][classType]["perk2"];
 		self.pers[classType]["loadout_perk3"] = game["mwf_classes"][classType]["perk3"];
@@ -614,7 +614,7 @@ setLoadoutForClass( classType )
 		"loadout_special", self.pers[classType]["loadout_sgrenade_count"]
 	);
 
-	
+
 	self setClientDvars(
 		"lock_primary", game["mwf_classes"][classType]["lock_primary"],
 		"lock_primary_attachment", game["mwf_classes"][classType]["lock_primary_attachment"],
@@ -637,25 +637,25 @@ getDefaultLoadoutWeapon( weaponClass, defaultWeapons )
 	defaultWeapons = strtok( defaultWeapons, ";" );
 	defaultWeapon = defaultWeapons[0];
 	arrayPosition = 0;
-	
+
 	iWeapon = game["mwf_weapons_aux"][weaponClass][defaultWeapon];
-	
+
 	if ( isDefined( iWeapon ) ) {
 		if ( game["mwf_weapons"][weaponClass][iWeapon]["allow"] == 2 ) {
 			if ( playerTeam == "allies" ) {
 				arrayPosition = 1;
 			} else {
-				arrayPosition = 2;					
-			}				
+				arrayPosition = 2;
+			}
 		}
-		
+
 		// Check if the element has been defined
 		if ( isDefined( defaultWeapons[arrayPosition] ) ) {
 			defaultWeapon = defaultWeapons[arrayPosition];
 		}
 	}
-	
-	return defaultWeapon;	
+
+	return defaultWeapon;
 }
 
 
@@ -673,7 +673,7 @@ setClassChoice( classType )
 	if ( !isDefined( self.pers["class"] ) || self.pers["class"] != classType || self resetPlayerClassOnTeamSwitch( false ) ) {
 		self.pers["class"] = classType;
 		self.class = classType;
-	
+
 		self thread setLoadoutForClass( classType );
 	}
 
@@ -685,7 +685,7 @@ setClassChoice( classType )
 setClassPerks( classType )
 {
 	// Process which perks are allowed under the player's class
-	self setClientDvars( 
+	self setClientDvars(
 		"perk_allow_specialty_specialgrenade", game["mwf_perks"]["specialty_specialgrenade"][classType],
 		"perk_allow_specialty_fraggrenade", game["mwf_perks"]["specialty_fraggrenade"][classType],
 		"perk_allow_specialty_extraammo", game["mwf_perks"]["specialty_extraammo"][classType],
@@ -697,7 +697,7 @@ setClassPerks( classType )
 		"perk_allow_specialty_rof", game["mwf_perks"]["specialty_rof"][classType],
 		"perk_allow_specialty_gpsjammer", game["mwf_perks"]["specialty_gpsjammer"][classType]
 	);
-	self setClientDvars( 
+	self setClientDvars(
 		"perk_allow_specialty_explosivedamage", game["mwf_perks"]["specialty_explosivedamage"][classType],
 
 		"perk_allow_specialty_longersprint", game["mwf_perks"]["specialty_longersprint"][classType],
@@ -708,7 +708,7 @@ setClassPerks( classType )
 		"perk_allow_specialty_holdbreath", game["mwf_perks"]["specialty_holdbreath"][classType],
 		"perk_allow_specialty_quieter", game["mwf_perks"]["specialty_quieter"][classType],
 		"perk_allow_specialty_parabolic", game["mwf_perks"]["specialty_parabolic"][classType]
-	);		
+	);
 }
 
 setClassDependent( playerTeam )
@@ -720,18 +720,18 @@ setClassDependent( playerTeam )
 	classTypes[classTypes.size] = "heavygunner";
 	classTypes[classTypes.size] = "demolitions";
 	classTypes[classTypes.size] = "sniper";
-	
+
 	for ( iClass = 0; iClass < classTypes.size; iClass++ ) {
 		classType = classTypes[iClass];
-		
+
 		// Process the weapons for this class
 		for ( iWeapon=0; iWeapon < game["mwf_weapons"][classType].size; iWeapon++ ) {
-		
+
 			varName = "weap_allow_" + classType + "_" + game["mwf_weapons"][classType][iWeapon]["name"];
 			weaponAllowed = isWeaponAllowed( classType, game["mwf_weapons"][classType][iWeapon]["name"], playerTeam );
-			
-			self setClientDvar( varName, weaponAllowed );		
-		}	
+
+			self setClientDvar( varName, weaponAllowed );
+		}
 	}
 }
 
@@ -740,14 +740,14 @@ setClassIndependent( playerTeam )
 	// Process the weapons that apply for all the classes
 	for ( iWeapon=0; iWeapon < game["mwf_weapons"]["all"].size; iWeapon++ ) {
 		wait (0.01);
-		
+
 		varName = "weap_allow_" + game["mwf_weapons"]["all"][iWeapon]["name"];
 		// Make sure we don't do set the smoke grenade here anymore
 		if ( varName != "weap_allow_smoke_grenade" ) {
 			weaponAllowed = isWeaponAllowed( "all", game["mwf_weapons"]["all"][iWeapon]["name"], playerTeam );
-			self setClientDvar( varName, weaponAllowed );			
+			self setClientDvar( varName, weaponAllowed );
 		}
-	}	
+	}
 }
 
 
@@ -771,12 +771,12 @@ processLoadoutResponse( respString )
 				{
 					self.pers[self.class][subTokens[0]] = subTokens[1];
 					self setClientDvar( subTokens[0], subTokens[1] );
-	
-					if ( subTokens[1] == "mp44" )
+
+					/*if ( subTokens[1] == "mp44" )
 					{
 						self.pers[self.class]["loadout_primary_attachment"] = "none";
 						self setClientDvar( "loadout_primary_attachment", "none" );
-					}
+					}*/
 				}
 				else
 				{
@@ -784,13 +784,13 @@ processLoadoutResponse( respString )
 					self setClientDvar( subTokens[0], self.pers[self.class][subTokens[0]] );
 				}
 				break;
-				
+
 			case "loadout_secondary":
 				if ( isWeaponAllowed( "all", subTokens[1], playerTeam ) && self verifyWeaponChoice( subTokens[1], self.class ) )
 				{
 					self.pers[self.class][subTokens[0]] = subTokens[1];
 					self setClientDvar( subTokens[0], subTokens[1] );
-					
+
 					if ( subTokens[1] == "deserteagle" || subTokens[1] == "deserteaglegold" )
 					{
 						self.pers[self.class]["loadout_secondary_attachment"] = "none";
@@ -805,12 +805,13 @@ processLoadoutResponse( respString )
 				break;
 
 			case "loadout_primary_attachment":
-			case "loadout_secondary_attachment":				
-				if ( subTokens[0] == "loadout_primary_attachment" && self.pers[self.class]["loadout_primary"] == "mp44" )
+			case "loadout_secondary_attachment":
+				/*if ( subTokens[0] == "loadout_primary_attachment" && self.pers[self.class]["loadout_primary"] == "mp44" )
 				{
 					self.pers[self.class]["loadout_primary_attachment"] = "none";
 					self setClientDvar( "loadout_primary_attachment", "none" );
-				} else if ( isAttachmentAllowed( subTokens[1], subTokens[2] ) ) {
+				} else*/
+				 if ( isAttachmentAllowed( subTokens[1], subTokens[2] ) ) {
 					self.pers[self.class][subTokens[0]] = subTokens[2];
 					self setClientDvar( subTokens[0], subTokens[2] );
 					// grenade launchers and grips take up the perk 1 slot
@@ -825,7 +826,7 @@ processLoadoutResponse( respString )
 					// invalid selection, so reset them to their class default
 					self setClientDvar( subTokens[0], self.pers[self.class][subTokens[0]] );
 				}
-				
+
 				level thread updateClassLimits();
 				break;
 
@@ -842,7 +843,7 @@ processLoadoutResponse( respString )
 					// invalid selection, so reset them to their class default
 					self setClientDvar( subTokens[0], self.pers[self.class][subTokens[0]] );
 				}
-				
+
 				if ( subTokens[0] == "loadout_perk1" ) {
 					level thread updateClassLimits();
 				}

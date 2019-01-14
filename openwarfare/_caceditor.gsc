@@ -341,12 +341,15 @@ primary( direction )
 	else
 		self.primariesIndex--;
 
-	if ( self.primariesIndex < 0 )
+ 	if ( self.primariesIndex < 0 )
 		self.primariesIndex = self.cacEdit_primaries.size - 1;
 	else if ( self.primariesIndex >= self.cacEdit_primaries.size )
 		self.primariesIndex = 0;
 
 	weapon_stat = self getStat( self.cacEdit_primaries[self.primariesIndex].stat + 3000 );
+	if (self.cacEdit_primaries[self.primariesIndex].stat + 3000 == 3022) {
+		weapon_stat = 100000;
+	}
 	while ( weapon_stat < 1 || ( self.isUsingOverkill && ( self.cacEdit_primaries[self.primariesIndex].stat == self.cacEdit_primaries[self.primaries2Index].stat ) ) )
 	{
 		if ( direction == "next" )
@@ -360,6 +363,9 @@ primary( direction )
 			self.primariesIndex = 0;
 
 		weapon_stat = self getStat( self.cacEdit_primaries[self.primariesIndex].stat + 3000 );
+		if (self.cacEdit_primaries[self.primariesIndex].stat + 3000 == 3022) {
+			weapon_stat = 100000;
+		}
 	}
 
 	//Display new weapon
@@ -387,7 +393,10 @@ primaryAttachment( direction )
 	//We have to check to make sure the camo is unlocked for this weapon
 	addonMask = int( tableLookup( "mp/attachmenttable.csv", 9, self.cacEdit_pattachments[self.pattachmentsIndex].stat, 10 ) );
 	weaponStat = self getStat( self.cacEdit_primaries[self.primariesIndex].stat + 3000 );
-	while( ( int(weaponStat) & addonMask ) == 0 )
+	if (self.cacEdit_primaries[self.primariesIndex].stat + 3000 == 3022) {
+		weaponStat = 100000;
+	}
+	while( ( int(weaponStat) & addonMask ) == 0 && self.cacEdit_primaries[self.primariesIndex].stat + 3000 != 3022)
 	{
 		if ( direction == "next" )
 			self.pattachmentsIndex++;
@@ -810,7 +819,7 @@ addPrimaries()
 	self addCACPrimaries( "assault", 23 ); //G3
 	self addCACPrimaries( "assault", 24 ); //G36C
 	self addCACPrimaries( "assault", 21 ); //M14
-	//self addCACPrimaries( "assault", 22 ); //MP44
+	self addCACPrimaries( "assault", 22 ); //MP44
 	//Sub-Machine Weapons
 	self addCACPrimaries( "smg", 10 ); //MP5
 	self addCACPrimaries( "smg", 11 ); //Skorpion

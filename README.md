@@ -23,7 +23,7 @@ Gametypes are : DM, CTF, SAB, GG, DOM, WAR, SD, SR, CSD
 	* M4 -------------------> Ghosts Remington R5 (http://cfgfactory.com/downloads/show/5a523e2ad013f)
 	* G36C -----------------> BO Commando (http://cfgfactory.com/downloads/show/4e5b671927131)
 	* M14 ------------------> MW2 Famas (http://cfgfactory.com/downloads/show/54954ec2d1d8a)
-
+	* MP44 -----------------> MW3 MK14
 * Pistols:
 	* Beretta --------------> Ghosts M9A1 (http://cfgfactory.com/downloads/show/5a59593e15b61)
 	* Colt45 ---------------> BO3 RK5 (http://cfgfactory.com/downloads/show/59e3001db2de6)
@@ -47,3 +47,6 @@ Gametypes are : DM, CTF, SAB, GG, DOM, WAR, SD, SR, CSD
 * Perks
 	* Claymore -------------> Crossbow  (http://www.cfgfactory.com/downloads/show/4e63dbaadc111)
 	* RPG ------------------> Explosive crossbow (http://www.cfgfactory.com/downloads/show/4e63dbaadc111)
+
+* Others
+ 	* Binoculars -----------> Karambit
