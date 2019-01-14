@@ -2623,3 +2623,345 @@
   0:02 JT;;0;axis;iClan|Efaya;
   0:57 ShutdownGame:
   0:57 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  0:30 say;;0;iClan|Efaya;give mp44_mp
+  0:32 Weapon;;0;iClan|Efaya;mp44_mp
+  1:17 ShutdownGame:
+  1:17 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:00 Weapon;;0;iClan|Efaya;mp44_mp
+  1:06 Weapon;;0;iClan|Efaya;mp44_mp
+  1:08 Weapon;;0;iClan|Efaya;m16_mp
+  1:10 Weapon;;0;iClan|Efaya;mp44_mp
+  1:12 Weapon;;0;iClan|Efaya;m16_mp
+  1:13 Weapon;;0;iClan|Efaya;mp44_mp
+  1:24 ShutdownGame:
+  1:24 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  0:59 Weapon;;0;iClan|Efaya;mp44_mp
+  1:07 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:19 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:20 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:20 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:20 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:21 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:21 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:21 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:21 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:21 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:21 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:21 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:21 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:21 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:28 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:28 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:28 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:28 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:28 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:28 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:28 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:35 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:36 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:36 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:36 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:36 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:38 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:39 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:40 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:41 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  2:02 ShutdownGame:
+  2:02 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;149 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  1:47 ShutdownGame:
+  1:47 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;65 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  0:08 Weapon;;0;iClan|Efaya;mp44_mp
+  1:07 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:09 Weapon;;0;iClan|Efaya;mp44_mp
+  1:10 Weapon;;0;iClan|Efaya;mp44_silencer_mp
+  1:20 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:31 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  1:32 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:32 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:32 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:32 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:42 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:43 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  2:27 ShutdownGame:
+  2:27 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  2:14 ShutdownGame:
+  2:14 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\40
+  0:00 OWFYI;148 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:09 ShutdownGame:
+  1:09 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\40
+  0:00 OWFYI;148 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:07 JT;;0;allies;iClan|Efaya;
+  0:52 ShutdownGame:
+  0:52 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\40
+  0:00 OWFYI;71 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:01 JT;;0;allies;iClan|Efaya;
+  0:07 say;;0;iClan|Efaya;give mp44_mp
+  0:09 Weapon;;0;iClan|Efaya;mp44_mp
+  0:18 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:25 Weapon;;0;iClan|Efaya;mp44_acog_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:26 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:27 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:28 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:29 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:30 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:30 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  0:30 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:25 ShutdownGame:
+  1:25 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\40
+  0:00 OWFYI;148 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:10 ShutdownGame:
+  1:10 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\40
+  0:00 OWFYI;65 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:04 ShutdownGame:
+  1:04 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\40
+  0:00 OWFYI;65 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;allies;iClan|Efaya;
+  0:55 ShutdownGame:
+  0:55 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\40
+  0:00 OWFYI;65 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;axis;iClan|Efaya;
+  0:20 ShutdownGame:
+  0:20 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\40
+  0:00 OWFYI;65 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  0:53 K;;0;axis;iClan|Efaya;;-1;axis;iClan|Efaya;frag_grenade_mp;230;MOD_GRENADE_SPLASH;none
+  1:09 Weapon;;0;iClan|Efaya;mp44_mp
+  1:10 Weapon;;0;iClan|Efaya;mp44_reflex_mp
+  1:37 ShutdownGame:
+  1:37 ------------------------------------------------------------

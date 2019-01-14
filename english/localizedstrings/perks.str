@@ -40,4 +40,7 @@ LANG_ENGLISH        "Explosive crossbow"
 REFERENCE           ROCKET_LAUNCHER_WITH
 LANG_ENGLISH        "Modern crossbow with explosive arrows."
 
+REFERENCE           SINGLEFIRE_WITH_HIGH2
+LANG_ENGLISH        "Singleshot modern assault rifle. Very deadly at medium/close range."
+
 ENDMARKER

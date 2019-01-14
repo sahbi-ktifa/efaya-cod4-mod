@@ -21,7 +21,7 @@
 
 #include "ui_mp/menustyle.inc"
 #include "ui/choices_setup_common.menu"
- 
+
 #define ORIGIN_STATUS			390 64
 #define MENU_FONT_COLOR2		1 1 1 0.5
 
@@ -33,7 +33,7 @@
 		execOnDvarStringValue loadout_primary_attachment none "set loadout_perk1_locked 0"; \
 		execOnDvarStringValue loadout_primary_attachment acog "set loadout_perk1_locked 0"; \
 		execOnDvarStringValue loadout_primary_attachment silencer "set loadout_perk1_locked 0"; \
-		execOnDvarStringValue loadout_primary_attachment reflex "set loadout_perk1_locked 0";	
+		execOnDvarStringValue loadout_primary_attachment reflex "set loadout_perk1_locked 0";
 
 	menuDef	{
 		name			CAC_MENU_NAME
@@ -41,7 +41,7 @@
 		focuscolor		COLOR_FOCUSED
 		style			WINDOW_STYLE_EMPTY
 		blurWorld		7.0
-		onOpen {			
+		onOpen {
 			setfocus primary_weapon_selection;
 			UPDATE_PERK1;
 		}
@@ -61,15 +61,15 @@
 
 		// ------------------  statics ------------------------
 
-		CHOICE_MENU_TITLE( "@MPUI_CREATE_A_CLASS_CAP" )				
+		CHOICE_MENU_TITLE( "@MPUI_CREATE_A_CLASS_CAP" )
 		// ------------------------- buttons ------------------------------
 		#define BACK_OPEN ;
 		#include "ui_mp/navcontrols.inc"
-		
+
 		//=========================================================
 		//===================== MENU SELECTION ====================
 		//=========================================================
-		
+
 		// PRIMARY WEAPON BUTTON =============================================================
 		#define CAC_SETUP_ACTION1 \
 			play "mouse_click"; \
@@ -85,7 +85,7 @@
 			uiScript openMenuOnDvar loadout_class sniper "ocd_popup_cac_sniper";
 
 		CHOICE_BUTTON_BG( 1, 1 )
-		CHOICE_HIGHLIGHT( 1, 1 )		
+		CHOICE_HIGHLIGHT( 1, 1 )
 		CHOICE_BUTTON_VIS_NOHI( 1, "@MPUI_PRIMARY_WEAPON1", CAC_SETUP_ACTION1, when( !dvarBool( lock_primary ) ) )
 		CHOICE_DBUTTON_VIS_NOHI( 1, "@MPUI_PRIMARY_WEAPON1", when( dvarBool( lock_primary ) ) )
 		//CHOICE_BUTTON_EX( 1, "@MPUI_PRIMARY_WEAPON1", CAC_SETUP_ACTION1, name primary_weapon_selection )
@@ -99,9 +99,9 @@
 			uiScript openMenuOnDvar loadout_class sniper "ocd_attachment_popup_sniper";
 
 		CHOICE_BUTTON_BG( 2, 1 )
-		CHOICE_HIGHLIGHT( 2, 1 )		
-		CHOICE_BUTTON_VIS_NOHI( 2, "@PERKS_ATTACHMENT", CAC_SETUP_ACTION_ATTACHMENT, when( !dvarBool( lock_primary_attachment ) && dvarString( loadout_primary ) != "mp44" ) )
-		CHOICE_DBUTTON_VIS_NOHI( 2, "@PERKS_ATTACHMENT", when( dvarBool( lock_primary_attachment ) || dvarString( loadout_primary ) == "mp44" ) )
+		CHOICE_HIGHLIGHT( 2, 1 )
+		CHOICE_BUTTON_VIS_NOHI( 2, "@PERKS_ATTACHMENT", CAC_SETUP_ACTION_ATTACHMENT, when( 1 ) )
+		CHOICE_DBUTTON_VIS_NOHI( 2, "@PERKS_ATTACHMENT", when( dvarBool( lock_primary_attachment ) ) )
 
 		// SECONDARY WEAPON/SIDE ARM BUTTON =============================================================
 		#define CAC_SETUP_ACTION2 \
@@ -109,28 +109,28 @@
 			open "ocd_popup_cac_secondary";
 
 		CHOICE_BUTTON_BG( 3, 1 )
-		CHOICE_HIGHLIGHT( 3, 1 )		
+		CHOICE_HIGHLIGHT( 3, 1 )
 		CHOICE_BUTTON_VIS_NOHI( 3, "@MPUI_SIDE_ARM1", CAC_SETUP_ACTION2, when( !dvarBool( lock_secondary ) ) )
 		CHOICE_DBUTTON_VIS_NOHI( 3, "@MPUI_SIDE_ARM1", when( dvarBool( lock_secondary ) ) )
 		//CHOICE_BUTTON( 3, "@MPUI_SIDE_ARM1", CAC_SETUP_ACTION2 )
-	
+
 		// SPECIAL GRENADE BUTTON =============================================================
 		#define CAC_SETUP_ACTION3 \
 			play "mouse_click"; \
 			open "ocd_popup_cac_extra";
 
 		CHOICE_BUTTON_BG( 4, 1 )
-		CHOICE_HIGHLIGHT( 4, 1 )		
+		CHOICE_HIGHLIGHT( 4, 1 )
 		CHOICE_BUTTON_VIS_NOHI( 4, "@MPUI_SPECIAL_GRENADE", CAC_SETUP_ACTION3, when( !dvarBool( lock_grenade ) ) )
-		CHOICE_DBUTTON_VIS_NOHI( 4, "@MPUI_SPECIAL_GRENADE", when( dvarBool( lock_grenade ) ) )	
+		CHOICE_DBUTTON_VIS_NOHI( 4, "@MPUI_SPECIAL_GRENADE", when( dvarBool( lock_grenade ) ) )
 		//CHOICE_BUTTON( 4, "@MPUI_SPECIAL_GRENADE", CAC_SETUP_ACTION3 )
 
 		/* separator bar */ CHOICE_SEPARATOR( CHOICE_SEP_1 )
-				
+
 		#define CAC_SETUP_ACTION4 \
 			play "mouse_click"; \
-			open "ocd_popup_cac_perk1";	
-		
+			open "ocd_popup_cac_perk1";
+
 		// PERK 1 BUTTON =============================================================
 		// perk 1 empty warning
 		CHOICE_BUTTON_BG_RAW( 5, "gradient_fadein", 0.5 0.15 0 0.5, when( !dvarBool( lock_perk1 ) && dvarString(loadout_perk1) == "specialty_null" && !dvarBool(loadout_perk1_locked) ); )
@@ -140,37 +140,37 @@
 		CHOICE_DBUTTON_VIS( 5, "@MPUI_PERK_1", when( dvarBool( lock_perk1 ) || dvarBool(loadout_perk1_locked) ) )
 
 		// PERK 2 BUTTON =============================================================
-		#define CAC_SETUP_ACTION5 \		
+		#define CAC_SETUP_ACTION5 \
 			play "mouse_click"; \
-			open "ocd_popup_cac_perk2";		
+			open "ocd_popup_cac_perk2";
 
 		CHOICE_BUTTON_BG_RAW( 6, "gradient_fadein", 0.5 0.15 0 0.5, when( !dvarBool( lock_perk2 ) && dvarString(loadout_perk2) == "specialty_null" ); )
 		CHOICE_BUTTON_BG( 6, 1 )
-		CHOICE_HIGHLIGHT( 6, 1 )		
+		CHOICE_HIGHLIGHT( 6, 1 )
 		CHOICE_BUTTON_VIS_NOHI( 6, "@MPUI_PERK_2", CAC_SETUP_ACTION5, when( !dvarBool( lock_perk2 ) ) )
 		CHOICE_DBUTTON_VIS_NOHI( 6, "@MPUI_PERK_2", when( dvarBool( lock_perk2 ) ) )
 		//CHOICE_BUTTON( 6, "@MPUI_PERK_2", CAC_SETUP_ACTION5 )
-		
+
 		// PERK 3 BUTTON =============================================================
-		#define CAC_SETUP_ACTION6 \		
+		#define CAC_SETUP_ACTION6 \
 			play "mouse_click"; \
-			open "ocd_popup_cac_perk3";		
+			open "ocd_popup_cac_perk3";
 
 		CHOICE_BUTTON_BG_RAW( 7, "gradient_fadein", 0.5 0.15 0 0.5, when( !dvarBool( lock_perk3 ) && dvarString(loadout_perk3) == "specialty_null" ); )
 		CHOICE_BUTTON_BG( 7, 1 )
-		CHOICE_HIGHLIGHT( 7, 1 )		
+		CHOICE_HIGHLIGHT( 7, 1 )
 		CHOICE_BUTTON_VIS_NOHI( 7, "@MPUI_PERK_3", CAC_SETUP_ACTION6, when( !dvarBool( lock_perk3 ) ) )
 		CHOICE_DBUTTON_VIS_NOHI( 7, "@MPUI_PERK_3", when( dvarBool( lock_perk3 ) ) )
 		//CHOICE_BUTTON( 7, "@MPUI_PERK_3", CAC_SETUP_ACTION6 )
-		
+
 		/* separator bar */ CHOICE_SEPARATOR( CHOICE_SEP_2 )
 
-		#define CAC_SETUP_ACTIONGO \		
+		#define CAC_SETUP_ACTIONGO \
 			play "mouse_click"; \
 			scriptMenuResponse "go";
 
 		CHOICE_BUTTON( 8, "@MENU_ACCEPT", CAC_SETUP_ACTIONGO )
-				
+
 		/* ================================================================================= */
 		/* ================================ LOADOUT DISPLAY ================================ */
 		/* ================================================================================= */
@@ -184,7 +184,7 @@
 		#define STAT_CAC_SPECIALTY_ABILITY		tableLookup("mp/statstable.csv", 4, dvarString( loadout_perk3 ), 0)
 		#define STAT_CAC_SPECIAL_GRENADE		tableLookup("mp/statstable.csv", 4, dvarString( loadout_grenade ), 0)
 		#define STAT_CAC_CAMO					tableLookup("mp/attachmentTable.csv", 4, dvarString( loadout_camo ), 11)
-		
+
 		#include "ui_mp/cac_loadout_ingame.inc"
 
 		#include "ui/safearea.menu"
@@ -207,21 +207,21 @@
 	close "ocd_attachment_popup_demolitions"; \
 	close "ocd_attachment_popup_pistol"; \
 	close "ocd_popup_cac_camo"; \
-	close "ocd_attachment_popup_fake";	
-	
+	close "ocd_attachment_popup_fake";
+
 	// including weapon data
 	#include "ui_mp/weaponinfo.menu"
-	
-#include "ui_mp/popupstyle.inc"	
+
+#include "ui_mp/popupstyle.inc"
 #include "ui/choices_setup_popmenu.menu"
 
 #undef CHOICE_SIZE_X
 #define CHOICE_SIZE_X			216
 
-#undef NEW_X_OFFSET			
+#undef NEW_X_OFFSET
 #define NEW_X_OFFSET	(0-CHOICE_SIZE_X)
 
-#undef NEW_Y_OFFSET			
+#undef NEW_Y_OFFSET
 #define NEW_Y_OFFSET	(0-2)
 
 	// ====================================================================================================
@@ -261,13 +261,13 @@
 		setdvar	loadout_primary_attachment none; \
 		setdvar loadout_perk1_locked 0; \
 		close self;\
-		setdvar loadout_camo camo_none; 
-		
+		setdvar loadout_camo camo_none;
+
 	#define WI_FOCUS_ACTION( weaponClass, weaponRef ) \
 		execOnDvarStringValue "weap_allow_"weaponClass"_"weaponRef 0 "set ui_primary_hl_unlocked 0";\
 		execOnDvarStringValue "weap_allow_"weaponClass"_"weaponRef 1 "set ui_primary_hl_unlocked 1";\
 		exec "set ui_primary_highlighted "weaponRef;
-	
+
 	// hacked to hide the second primary if same weapon is selected in first primary, change weapon description to "Already selected"
 	#define LOCAL_WEAPON_ITEM( suffix, itemNum, weaponName, weaponClass, weaponRef )\
 		CHOICE_BUTTON_FOCUS_VIS_NOHI( itemNum, "", ;, WI_FOCUS_ACTION( weaponClass, weaponRef ), ;, when( !dvarBool( "weap_allow_"weaponClass"_"weaponRef ) ); ) \
@@ -275,7 +275,7 @@
 		CHOICE_BUTTON_FOCUS_VIS_ADV( itemNum, weaponName, LOCAL_PRIMARY_WEAPON_ACTION( suffix, weaponClass, weaponRef ), \
 		WI_FOCUS_ACTION( weaponClass, weaponRef ), ;, when( dvarBool( "weap_allow_"weaponClass"_"weaponRef ) );, \
 		dvarBool( "weap_allow_"weaponClass"_"weaponRef ) ) \
-		
+
 	#define LOCAL_WEAPON_ITEM2( suffix, itemNum, weaponName, weaponClass, weaponRef )\
 		CHOICE_BUTTON_FOCUS_VIS_NOHI( itemNum, "", ;, WI_FOCUS_ACTION( weaponClass, weaponRef ), ;, when( !dvarBool( "weap_allow_"weaponClass"_"weaponRef ) ); ) \
 		CHOICE_DBUTTON_VIS( itemNum, weaponName, when( 1 ); ) \
@@ -288,21 +288,21 @@
 	{
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_popup_cac_primary", 5, (CHOICE_X( 1 )-2), (CHOICE_Y( 1 )-4), ;, execnow "set ui_inside_popup weapon_class; set ui_show_preview 1";, 1 )
 		onClose{	execnow "set ui_show_preview 0; set ui_primary_highlighted 0; set ui_attachment_highlighted 0";	}
-		
+
 		#define LOCAL_WEAPON_CLASS( itemNum, ptext, plabel ) \
 			CHOICE_BUTTON_EX( itemNum, plabel, play "mouse_click"; execnow "set selected_weapon_class "ptext"; set ui_weapon_class_selected "plabel; open "ocd_popup_cac_"ptext;, name ptext )
 
 		LOCAL_WEAPON_CLASS( 1, "assault", "@MPUI_ASSAULT_RIFLES" )
 		LOCAL_WEAPON_CLASS( 2, "specops", "@MPUI_SUB_MACHINE_GUNS" )
 		LOCAL_WEAPON_CLASS( 3, "demolitions", "@MPUI_SHOTGUNS" )
-		LOCAL_WEAPON_CLASS( 4, "sniper", "@MPUI_SNIPER_RIFLES" )	
+		LOCAL_WEAPON_CLASS( 4, "sniper", "@MPUI_SNIPER_RIFLES" )
 		LOCAL_WEAPON_CLASS( 5, "heavygunner", "@WEAPON_LIGHT_MACHINE_GUNS" )
 	}
 
 	// hackaround to work for PC's floating mouse unfocusing
 	#undef  UI_FOCUSFIRST
 	#define UI_FOCUSFIRST "ui_primary_highlighted"
-		
+
 	// primary weapon items
 	#define LOCAL_MASTER_WEAPON_GROUP( suffix, pos, y_offset )\
 	menuDef	{\
@@ -314,6 +314,7 @@
 		LOCAL_WEAPON_ITEM( suffix, 4, "@WEAPON_G3", "assault", REF_G3 )\
 		LOCAL_WEAPON_ITEM( suffix, 5, "@WEAPON_G36C", "assault", REF_G36C )\
 		LOCAL_WEAPON_ITEM( suffix, 6, "@WEAPON_M14", "assault", REF_M14 )\
+    LOCAL_WEAPON_ITEM( suffix, 7, "@WEAPON_MP44", "assault", REF_MP44 )\
 	}\
 	menuDef	{\
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_popup_cac_heavygunner"suffix, 7, (CHOICE_X( pos )-2), (CHOICE_Y( pos )+20+y_offset), ;, execnow "set "UI_FOCUSFIRST" "REF_M249SAW"; set ui_inside_popup heavygunner";, 0 )\
@@ -346,11 +347,11 @@
 		LOCAL_WEAPON_ITEM( suffix, 4, "@WEAPON_REMINGTON700", "sniper", REF_REMINGTON700 )\
 		LOCAL_WEAPON_ITEM( suffix, 5, "@WEAPON_BARRETT", "sniper", REF_BARRETT )\
 	}
-	
+
 
 	// primary and second primary weapon selection popup menus
 	LOCAL_MASTER_WEAPON_GROUP( "", 1, 0 )
-	
+
 	// ====================================================================================================
 	// primary and second primary attachment selection ====================================================
 	// ====================================================================================================
@@ -377,7 +378,7 @@
 		scriptMenuResponse "loadout_primary_attachment:"groupArg":"attachmentName;\
 		UPDATE_PERK1 \
 		close self;
-		
+
 	#define LOCAL_ATTACHMENT_ACTION2( attachmentDvar, attachmentName, paction, groupArg ) \
 		setdvar loadout_secondary_attachment attachmentName; \
 		scriptMenuResponse "loadout_secondary_attachment:"groupArg":"attachmentName;\
@@ -397,7 +398,7 @@
 	// hackaround to work for PC's floating mouse unfocusing
 	#undef  UI_FOCUSFIRST
 	#define UI_FOCUSFIRST "ui_attachment_highlighted"
-		
+
 	// primary and second primary attachment items
 	#define LOCAL_MASTER_ATTACHMENT_GROUP( stat_slot, suffix, pos, ptype, y_offset, statDvar )\
 	menuDef { /* assault attachments*/ \
@@ -435,7 +436,7 @@
 	}\
 	menuDef	{ /* sniper attachments*/\
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_attachment_popup_sniper"suffix, 7, (CHOICE_X( pos )-2), (CHOICE_Y( pos )+44+y_offset), ;, execnow "set "UI_FOCUSFIRST" "REF_ATTACHMENT_NONE"; set ui_inside_popup attachment";, 0 )\
-		onClose{execnow "set ui_inside_popup 0";} \		
+		onClose{execnow "set ui_inside_popup 0";} \
 		LOCAL_ATTACHMENT_INFO_WINDOW( "loadout_"ptype )\
 		LOCAL_ATTACHMENT_ITEM( 1, stat_slot, "sniper", NUM_NONE, "none", ;, ptype, statDvar, 0 )\
 		LOCAL_ATTACHMENT_ITEM( 2, stat_slot, "sniper", NUM_ACOG, "acog", ;, ptype, statDvar, ACOG_NEW_BITMASK )\
@@ -458,7 +459,7 @@
 		LOCAL_ATTACHMENT_ITEM( 1, CAC_SECONDARY_ATTACHMENT, "pistol", NUM_NONE, "none", ;, "secondary", "ui_secondary_weapon", 0 )
 		LOCAL_ATTACHMENT_ITEM( 2, CAC_SECONDARY_ATTACHMENT, "pistol", NUM_SUPPRESSOR, "silencer", ;, "secondary", "ui_secondary_weapon", SILENCER_NEW_BITMASK )
 	}
-	
+
 	// primary and second primary attachment popup menus
 	LOCAL_MASTER_ATTACHMENT_GROUP( CAC_PRIMARY_ATTACHMENT, "", 1, "primary", 0, "loadout_primary_attachment" )
 
@@ -486,13 +487,13 @@
 			scriptMenuResponse "loadout_secondary:"weaponRef;\
 			PREPROC_ATTACH_CLOSEALL
 
-	#define LOCAL_SIDEARM_ACTION2( pstat, weaponRef ) \		
+	#define LOCAL_SIDEARM_ACTION2( pstat, weaponRef ) \
 			play "mouse_click"; \
 			setdvar	loadout_secondary weaponRef; \
 			setdvar	loadout_secondary_attachment none; \
 			scriptMenuResponse "loadout_secondary:"weaponRef;\
 			uiScript openMenuOnDvar "selected_weapon_class" pistol "ocd_attachment_popup_pistol";
-	
+
 	#define SI_FOCUS_ACTION( weaponRef ) \
 		execOnDvarStringValue "weap_allow_"weaponRef 0 "set ui_sidearm_hl_unlocked 0";\
 		execOnDvarStringValue "weap_allow_"weaponRef 1 "set ui_sidearm_hl_unlocked 1";\
@@ -509,7 +510,7 @@
 		CHOICE_BUTTON_FOCUS_VIS_NOHI( itemNum, "", ;, SI_FOCUS_ACTION( weaponRef ), ;, when( !dvarBool( "weap_allow_"weaponRef ) ); ) \
 		CHOICE_DBUTTON_VIS( itemNum, weaponName, when( !dvarBool( "weap_allow_"weaponRef ) ); )
 	// side arm selection popup menu
-	
+
 	// hackaround to work for PC's floating mouse unfocusing
 	#undef  UI_FOCUSFIRST
 	#ifdef PC
@@ -517,8 +518,8 @@
 	#else
 		#define UI_FOCUSFIRST "ui_fake_focus"
 	#endif
-	
-	menuDef	
+
+	menuDef
 	{
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_popup_cac_secondary", 7, (CHOICE_X( 2 )-2), (CHOICE_Y( 2 )), ;, execnow "set "UI_FOCUSFIRST" "REF_M9BERETTA"; set selected_weapon_class pistol; set ui_inside_popup pistol";, 1 )
 		onClose{execnow "set ui_inside_popup 0";}
@@ -534,8 +535,8 @@
 	// camo skin selection ================================================================================
 	// ====================================================================================================
 	//Removed
-	
-	
+
+
 	// ====================================================================================================
 	// special grenade selection ==========================================================================
 	// ====================================================================================================
@@ -560,20 +561,20 @@
 			setdvar loadout_grenade weaponRef; \
 			scriptMenuResponse "loadout_grenade:"weaponRef;\
 			close "ocd_popup_cac_extra"
-		
+
 	#define LOCAL_SGRENADE_ITEM( itemNum, weaponName, weaponStat, weaponRef, highlight_dvar )\
 		CHOICE_BUTTON_FOCUS_VIS_ADV( itemNum, weaponName, LOCAL_SGRENADE_ACTION( weaponRef ), execnow "set "highlight_dvar" "weaponRef, ;, \
 		when( ( weaponRef == REF_SMOKE_X1 && (dvarString(loadout_perk1)=="specialty_specialgrenade") ) == 0 && dvarBool("weap_allow_"weaponRef) );, \
 			  ( weaponRef == REF_SMOKE_X1 && (dvarString(loadout_perk1)=="specialty_specialgrenade") ) == 0 && dvarBool("weap_allow_"weaponRef) ) \
 		CHOICE_BUTTON_FOCUS_VIS_NOHI( itemNum, "", ;, execnow "set "highlight_dvar" "weaponRef, ;, when( weaponRef == REF_SMOKE_X1 && (dvarString(loadout_perk1)=="specialty_specialgrenade") && dvarBool("weap_allow_"weaponRef)); ) \
 		CHOICE_DBUTTON_VIS( itemNum, weaponName, when( (weaponRef == REF_SMOKE_X1 && (dvarString(loadout_perk1)=="specialty_specialgrenade")) || !dvarBool("weap_allow_"weaponRef) ); )
-	
+
 	// hackaround to work for PC's floating mouse unfocusing
 	#undef  UI_FOCUSFIRST
 	#define UI_FOCUSFIRST "ui_sgrenade_highlighted"
-	
+
 	// special grenade selection popup menus
-	menuDef	
+	menuDef
 	{
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_popup_cac_extra", 6, (CHOICE_X( 3 )-2), (CHOICE_Y( 3 )+4), ;, execnow "set "UI_FOCUSFIRST" "REF_FLASH_X1"; set ui_inside_popup sgrenade";, 1 )
 		onClose{ execnow "set ui_inside_popup 0"; }
@@ -582,7 +583,7 @@
 		LOCAL_SGRENADE_ITEM( 2, "@WEAPON_STUN_GRENADE", STAT_CONCUSSION_X1, REF_CONCUSSION_X1, "ui_sgrenade_highlighted" )
 		LOCAL_SGRENADE_ITEM( 3, "@WEAPON_SMOKE_GRENADE", STAT_SMOKE_X1, REF_SMOKE_X1, "ui_sgrenade_highlighted" )
 	}
-	
+
 	// ====================================================================================================
 	// perk selection =====================================================================================
 	// ====================================================================================================
@@ -609,7 +610,7 @@
 			exec "set "perkDvar" "perkRef;\
 			scriptMenuResponse perkDvar":"perkRef;\
 			paction
-		
+
 	#define LOCAL_PERK_ITEM( itemNum, camoName, perkDvar, perkRef, pslot, highlight_dvar, paction )\
 		LOCAL_PERK_ITEM_VIS( itemNum, camoName, perkDvar, perkRef, pslot, highlight_dvar, paction, 1 )
 
@@ -617,7 +618,7 @@
 		execOnDvarStringValue "perk_allow_"perkRef 0 "set ui_perk_hl_unlocked 0";\
 		execOnDvarStringValue "perk_allow_"perkRef 1 "set ui_perk_hl_unlocked 1";\
 		exec "set ui_perk_highlighted "perkRef;
-		
+
 	#define LOCAL_PERK_ITEM_VIS( itemNum, camoName, perkDvar, perkRef, pslot, highlight_dvar, paction, visArg )\
 		CHOICE_BUTTON_FOCUS_VIS_ADV( itemNum, camoName, LOCAL_PERK_ACTION( perkDvar, perkRef, paction );, PI_FOCUS_ACTION( perkRef ), ;, \
 		when( dvarBool( "perk_allow_"perkRef ) && ( dvarString(loadout_grenade)==REF_SMOKE_X1 && perkRef==REF_SPECIALGRENADE_X3 )==0 && visArg );, \
@@ -632,7 +633,7 @@
 	#define UI_FOCUSFIRST "ui_perk_highlighted"
 
 	// perk1 selection for primary weapon popup menu
-	menuDef	
+	menuDef
 	{
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_popup_cac_perk1", 7, (CHOICE_X( 4 )-2), (CHOICE_Y( 4 )+18), ;, execnow "set "UI_FOCUSFIRST" "REF_C4_X2"; set ui_inside_popup perk1";, 1 )
 		onClose{ execnow "set ui_inside_popup 0"; }
@@ -645,9 +646,9 @@
 		LOCAL_PERK_ITEM( 6, "@PERKS_BANDOLIER", "loadout_perk1", REF_EXTRAAMMO, CAC_SPECIALTY_EQUIPMENT, "ui_perk_highlighted", ; )
 		LOCAL_PERK_ITEM( 7, "@PERKS_BOMB_SQUAD", "loadout_perk1", REF_DETECTEXPLOSIVE, CAC_SPECIALTY_EQUIPMENT, "ui_perk_highlighted", ; )
 	}
-	
+
 	// perk2 selection for primary weapon popup menu
-	menuDef	
+	menuDef
 	{
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_popup_cac_perk2", 6, (CHOICE_X( 5 )-2), (CHOICE_Y( 5 )+22), ;, execnow "set "UI_FOCUSFIRST" "REF_BULLETDAMAGE"; set ui_inside_popup perk2";, 1 )
 		onClose{ execnow "set ui_inside_popup 0"; }
@@ -659,9 +660,9 @@
 		LOCAL_PERK_ITEM( 5, "@PERKS_UAV_JAMMER", "loadout_perk2", REF_GPSJAMMER, CAC_SPECIALTY_WEAPON, "ui_perk_highlighted", ; )
 		LOCAL_PERK_ITEM( 6, "@PERKS_SONIC_BOOM", "loadout_perk2", REF_EXPLOSIVEDAMAGE, CAC_SPECIALTY_WEAPON, "ui_perk_highlighted", ; )
 	}
-				
+
 	// perk3 selection for primary weapon popup menu
-	menuDef	
+	menuDef
 	{
 		IMPROVED_POPUP_SETUP_ONOPEN( "ocd_popup_cac_perk3", 8, (CHOICE_X( 6 )-2), (CHOICE_Y( 6 )+26), ;, execnow "set "UI_FOCUSFIRST" "REF_LONGERSPRINT"; set ui_inside_popup perk3";, 1 )
 		onClose{ execnow "set ui_inside_popup 0"; }
