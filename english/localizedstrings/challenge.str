@@ -1160,7 +1160,7 @@ REFERENCE           BE_THE_LAST_MAN_STANDING
 LANG_ENGLISH        "Be the last man standing in Search and Destroy."
 
 REFERENCE           CLAYMORE_SHOT
-LANG_ENGLISH        "Claymore Shot"
+LANG_ENGLISH        "Crossbow Shot"
 
 REFERENCE           ASSAULT_EXPERT_I
 LANG_ENGLISH        "Assault Expert I"
@@ -1235,7 +1235,7 @@ REFERENCE           STUN_VETERAN_III
 LANG_ENGLISH        "Stun Veteran III"
 
 REFERENCE           MULTIRPG
-LANG_ENGLISH        "Multi-RPG"
+LANG_ENGLISH        "Multi-Crossbow"
 
 REFERENCE           MARTYRDOM_VETERAN_I
 LANG_ENGLISH        "Martyrdom Veteran I"
@@ -1247,7 +1247,7 @@ REFERENCE           MARTYRDOM_VETERAN_III
 LANG_ENGLISH        "Martyrdom Veteran III"
 
 REFERENCE           CLAY_MORE
-LANG_ENGLISH        "Clay More"
+LANG_ENGLISH        "Crossbow"
 
 REFERENCE           STEALTH_I
 LANG_ENGLISH        "Stealth I"
@@ -1286,7 +1286,7 @@ REFERENCE           COUNTERC4_III
 LANG_ENGLISH        "Counter-C4 III"
 
 REFERENCE           KILL_5_ENEMIES_BY_USING
-LANG_ENGLISH        "Kill 5 enemies by using a claymore."
+LANG_ENGLISH        "Kill 5 enemies by using a crossbow."
 
 REFERENCE           KILL_5_ENEMIES_WITH_A1
 LANG_ENGLISH        "Kill 5 enemies with a headshot while using an assault rifle. (Phase 1 of 3)"
@@ -1361,7 +1361,7 @@ REFERENCE           KILL_25_ENEMIES_OF_ENEMIES
 LANG_ENGLISH        "Kill 25 enemies of enemies still dazed by a stun grenade. (Phase 3 of 3)"
 
 REFERENCE           KILL_2_OR_MORE_ENEMIES
-LANG_ENGLISH        "Kill 2 or more enemies with a single RPG shot."
+LANG_ENGLISH        "Kill 2 or more enemies with a single crossbow shot."
 
 REFERENCE           KILL_1_ENEMY_WITH_A_DROPPED
 LANG_ENGLISH        "Kill 1 enemy with a dropped grenade from the Martyrdom perk. (Phase 1 of 3)"
@@ -1373,7 +1373,7 @@ REFERENCE           KILL_15_ENEMIES_WITH1
 LANG_ENGLISH        "Kill 15 enemies with a dropped grenade from the Martyrdom perk. (Phase 3 of 3)"
 
 REFERENCE           KILL_2_OR_MORE_ENEMIES1
-LANG_ENGLISH        "Kill 2 or more enemies with a single claymore."
+LANG_ENGLISH        "Kill 2 or more enemies with a single crossbow."
 
 REFERENCE           KILL_10_ENEMIES_WHILE
 LANG_ENGLISH        "Kill 10 enemies while using a silenced weapon. (Phase 1 of 3)"
@@ -1394,13 +1394,13 @@ REFERENCE           KILL_50_ENEMIES_WHILE1
 LANG_ENGLISH        "Kill 50 enemies while using a sniper rifle in prone. (Phase 3 of 3)"
 
 REFERENCE           KILL_1_ENEMY_BY_SHOOTING
-LANG_ENGLISH        "Kill 1 enemy by shooting a claymore. (Phase 1 of 3)"
+LANG_ENGLISH        "Kill 1 enemy by shooting a crossbow. (Phase 1 of 3)"
 
 REFERENCE           KILL_5_ENEMIES_BY_SHOOTING
-LANG_ENGLISH        "Kill 5 enemies by shooting a claymore. (Phase 2 of 3)"
+LANG_ENGLISH        "Kill 5 enemies by shooting a crossbow. (Phase 2 of 3)"
 
 REFERENCE           KILL_10_ENEMIES_BY_SHOOTING
-LANG_ENGLISH        "Kill 10 enemies by shooting a claymore. (Phase 3 of 3)"
+LANG_ENGLISH        "Kill 10 enemies by shooting a crossbow. (Phase 3 of 3)"
 
 REFERENCE           KILL_1_ENEMY_BY_SHOOTING1
 LANG_ENGLISH        "Kill 1 enemy by shooting C4. (Phase 1 of 3)"

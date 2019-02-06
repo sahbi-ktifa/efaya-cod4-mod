@@ -960,7 +960,7 @@ giveLoadout( team, class, respawned )
 
 	// [0.0.1] Load the movespeed depending on which gun the player is using as the primary weapon
 	//if (level.gametype != "csd") {
-		switch ( weaponClass( primaryWeapon ) )
+		/*switch ( weaponClass( primaryWeapon ) )
 		{
 			case "rifle":
 				self thread openwarfare\_speedcontrol::setBaseSpeed( getdvarx( "class_assault_movespeed", "float", 0.95, 0.5, 1.5 ) );
@@ -980,7 +980,8 @@ giveLoadout( team, class, respawned )
 			default:
 				self thread openwarfare\_speedcontrol::setBaseSpeed( 1.0 );
 				break;
-		}
+		}*/
+		self thread openwarfare\_speedcontrol::setBaseSpeed( 1.0 );
 		// [0.0.1]
 
 

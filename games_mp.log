@@ -2973,3 +2973,83 @@
   0:03 JT;;0;axis;iClan|Efaya;
   0:52 ShutdownGame:
   0:52 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;65 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;allies;iClan|Efaya;
+  1:27 D;;0;allies;iClan|Efaya;;0;allies;iClan|Efaya;rpg_mp;96;MOD_GRENADE_SPLASH;none
+  1:30 K;;0;allies;iClan|Efaya;;-1;allies;iClan|Efaya;rpg_mp;97;MOD_GRENADE_SPLASH;none
+  2:07 K;;0;allies;iClan|Efaya;;-1;world;;none;150;MOD_TRIGGER_HURT;none
+  2:19 ShutdownGame:
+  2:19 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;71 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  0:06 J;;5;bot4
+  0:06 L;;5;bot4
+  0:06 J;;4;bot3
+  0:06 L;;4;bot3
+  0:06 J;;3;bot2
+  0:06 L;;3;bot2
+  0:06 J;;2;bot1
+  0:06 L;;2;bot1
+  0:06 J;;1;bot0
+  0:06 L;;1;bot0
+  0:07 JT;;5;allies;bot4;
+  0:07 JT;;4;allies;bot3;
+  0:07 JT;;3;axis;bot2;
+  0:07 JT;;2;allies;bot1;
+  0:07 JT;;1;axis;bot0;
+  0:25 D;;5;allies;bot4;;0;allies;iClan|Efaya;mp44_mp;91;MOD_RIFLE_BULLET;torso_lower
+  0:26 K;;5;allies;bot4;;0;allies;iClan|Efaya;mp44_mp;91;MOD_RIFLE_BULLET;torso_lower
+  0:32 D;;2;allies;bot1;;0;allies;iClan|Efaya;mp44_mp;91;MOD_RIFLE_BULLET;left_leg_lower
+  0:33 D;;0;allies;iClan|Efaya;;3;axis;bot2;m16_mp;19;MOD_RIFLE_BULLET;left_leg_upper
+  0:33 K;;2;allies;bot1;;0;allies;iClan|Efaya;mp44_mp;91;MOD_RIFLE_BULLET;left_leg_upper
+  0:37 K;;5;allies;bot4;;0;allies;iClan|Efaya;mp44_mp;135;MOD_HEAD_SHOT;head
+  0:39 D;;2;allies;bot1;;0;allies;iClan|Efaya;mp44_mp;91;MOD_RIFLE_BULLET;torso_upper
+  0:41 K;;2;allies;bot1;;0;allies;iClan|Efaya;mp44_mp;91;MOD_RIFLE_BULLET;torso_upper
+  0:51 K;;2;allies;bot1;;0;allies;iClan|Efaya;claymore_mp;140;MOD_RIFLE_BULLET;torso_lower
+  0:54 Weapon;;2;bot1;m16_mp
+  1:05 K;;2;allies;bot1;;0;allies;iClan|Efaya;claymore_mp;140;MOD_RIFLE_BULLET;right_leg_lower
+  1:10 D;;4;allies;bot3;;5;allies;bot4;m16_mp;64;MOD_RIFLE_BULLET;neck
+  1:10 K;;4;allies;bot3;;5;allies;bot4;m16_mp;64;MOD_RIFLE_BULLET;torso_upper
+  1:26 D;;3;axis;bot2;;2;allies;bot1;m16_mp;42;MOD_RIFLE_BULLET;right_leg_lower
+  1:37 Weapon;;5;bot4;m16_mp
+  1:37 say;;4;bot3;Watch Out, Traps has been activated !
+  1:39 say;;4;bot3;Traps has been neutralized !
+  1:40 K;;4;allies;bot3;;0;allies;iClan|Efaya;binoculars_mp;204;MOD_MELEE;torso_upper
+  1:41 say;;4;bot3;Watch Out, Traps has been activated !
+  1:43 D;;5;allies;bot4;;4;allies;bot3;m16_mp;57;MOD_RIFLE_BULLET;torso_lower
+  1:45 K;;2;allies;bot1;;-1;world;;none;150;MOD_TRIGGER_HURT;none
+  1:46 K;;4;allies;bot3;;0;allies;iClan|Efaya;binoculars_mp;200;MOD_MELEE;torso_lower
+  1:50 K;;5;allies;bot4;;0;allies;iClan|Efaya;beretta_mp;135;MOD_MELEE;torso_upper
+  2:06 K;;0;allies;iClan|Efaya;;-1;allies;iClan|Efaya;frag_grenade_mp;271;MOD_GRENADE_SPLASH;none
+  2:16 K;;5;allies;bot4;;0;allies;iClan|Efaya;rpg_mp;145;MOD_GRENADE_SPLASH;none
+  2:21 Weapon;;5;bot4;m16_mp
+  2:25 K;;3;axis;bot2;;0;allies;iClan|Efaya;rpg_mp;136;MOD_GRENADE_SPLASH;none
+  2:32 K;;2;allies;bot1;;0;allies;iClan|Efaya;rpg_mp;100;MOD_IMPACT;left_leg_upper
+  2:34 Weapon;;2;bot1;m16_mp
+  2:40 D;;5;allies;bot4;;-1;world;;none;66;MOD_EXPLOSIVE;none
+  2:40 K;;3;axis;bot2;;0;allies;iClan|Efaya;rpg_mp;141;MOD_GRENADE_SPLASH;none
+  2:44 K;;2;allies;bot1;;0;allies;iClan|Efaya;rpg_mp;128;MOD_GRENADE_SPLASH;none
+  2:44 K;;5;allies;bot4;;0;allies;iClan|Efaya;rpg_mp;137;MOD_GRENADE_SPLASH;none
+  2:47 K;;4;allies;bot3;;-1;world;;none;150;MOD_TRIGGER_HURT;none
+  2:49 K;;3;axis;bot2;;0;allies;iClan|Efaya;rpg_mp;100;MOD_IMPACT;left_leg_upper
+  3:00 D;;4;allies;bot3;;0;allies;iClan|Efaya;winchester1200_mp;88;MOD_PISTOL_BULLET;torso_upper
+  3:00 Weapon;;3;bot2;m16_mp
+  3:02 K;;4;allies;bot3;;0;allies;iClan|Efaya;winchester1200_mp;95;MOD_PISTOL_BULLET;torso_upper
+  3:15 ShutdownGame:
+  3:15 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:44 ShutdownGame:
+  1:44 ------------------------------------------------------------
