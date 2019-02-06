@@ -62,10 +62,12 @@ monitorBinosUtilization()
 			currentWeapon = self getCurrentWeapon();
 			if ( currentWeapon != oldWeapon ) {
 				if ( wasBinos ) {
-					self shiftPlayerView( 3 );
+					//self shiftPlayerView( 3 );
 					wasBinos = false;
+					self thread openwarfare\_speedcontrol::setModifierSpeed( "knife_unboost", 100 );
 				} else if ( currentWeapon == "binoculars_mp" ) {
 					wasBinos = true;
+					self thread openwarfare\_speedcontrol::setModifierSpeed( "knife_boost", 150 );
 				}
 
 				oldWeapon = currentWeapon;
