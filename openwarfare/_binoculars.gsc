@@ -64,10 +64,10 @@ monitorBinosUtilization()
 				if ( wasBinos ) {
 					//self shiftPlayerView( 3 );
 					wasBinos = false;
-					self thread openwarfare\_speedcontrol::setModifierSpeed( "knife_unboost", 100 );
+					self thread openwarfare\_speedcontrol::setBaseSpeed( 1.0 );
 				} else if ( currentWeapon == "binoculars_mp" ) {
 					wasBinos = true;
-					self thread openwarfare\_speedcontrol::setModifierSpeed( "knife_boost", 150 );
+					self thread openwarfare\_speedcontrol::setBaseSpeed( 1.15 );
 				}
 
 				oldWeapon = currentWeapon;
