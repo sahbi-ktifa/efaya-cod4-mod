@@ -29,7 +29,8 @@ Gametypes are : DM, CTF, SAB, GG, DOM, WAR, SD, SR, CSD
 	* Colt45 ---------------> BO3 RK5 (http://cfgfactory.com/downloads/show/59e3001db2de6)
 	* USP ------------------> TitanFall RE45 (http://cfgfactory.com/downloads/show/549553bdc7a78)
 	* DESERTEAGLE ----------> Ghosts Magnum (http://cfgfactory.com/downloads/show/5a594410f0b69)
-	* DESERTEAGLE GOLD -----> MW3 DESERT EAGLE (http://cfgfactory.com/downloads/show/51dea65933a4a)
+	* DESERTEAGLE GOLD -----> Crocodile Desert Eagle (http://cfgfactory.com/downloads/show/5c274f5cbaead)
+	* Tec-9 ----------------> (http://cfgfactory.com/downloads/category/32)
 
 * LMG (Now "Clasic Rifles" - http://cfgfactory.com/downloads/show/507eb82c51988):
 	* RPD ------------------> M1 Garand

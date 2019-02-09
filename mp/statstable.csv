@@ -4,7 +4,7 @@ x,x,x,x,x,x,x,x,x,x,x
 2,3002,weapon_pistol,WEAPON_USP,usp,,weapon_usp_45,PERKS_SEMIAUTOMATIC_WITH_MEDIUM1,silencer,,
 3,3003,weapon_pistol,WEAPON_DESERTEAGLE,deserteagle,,weapon_desert_eagle,PERKS_SEMIAUTOMATIC_WITH_HIGH,,,PERKS_UNLOCKED_AT_LV43
 4,3004,weapon_pistol,WEAPON_MW3_DESERTEAGLE,deserteaglegold,,weapon_desert_eagle_gold,PERKS_SEMIAUTOMATIC_WITH_HIGH,,,PERKS_UNLOCKED_AT_LV55
-5,3005,weapon_pistol,,,,,,,,
+5,3005,weapon_pistol,WEAPON_TEC9,hind_ffar,,weapon_mini_uzi,PERKS_SEMIAUTOMATIC_WITH_HIGH2,,,PERKS_UNLOCKED_AT_LV55
 6,3006,weapon_pistol,,,,,,,,
 7,3007,weapon_pistol,,,,,,,,
 8,3008,weapon_pistol,,,,,,,,

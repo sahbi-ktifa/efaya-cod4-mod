@@ -127,6 +127,7 @@ init()
 	initWeaponData( "usp", "all", "allies" );
 	initWeaponData( "deserteagle", "all", "axis" );
 	initWeaponData( "deserteaglegold", "all", "axis" );
+	initWeaponData( "tec9", "all", "axis" );
 	initWeaponAttachments( "pistol", "none;silencer" );
 
 	//**************************************************************************

@@ -442,6 +442,9 @@ secondary( direction )
 			self.secondariesIndex = 0;
 
 		weapon_stat = self getStat( self.cacEdit_secondaries[self.secondariesIndex].stat + 3000 );
+		if (self.cacEdit_secondaries[self.secondariesIndex].stat + 3000 == 3005) {
+			weapon_stat = 10000;
+		}
 		while ( weapon_stat < 1 )
 		{
 			if ( direction == "next" )
@@ -514,7 +517,10 @@ secondaryAttachment( direction )
 
 		addonMask = int( tableLookup( "mp/attachmenttable.csv", 9, self.cacEdit_sattachments[self.sattachmentsIndex].stat, 10 ) );
 		weaponStat = self getStat( self.cacEdit_secondaries[self.secondariesIndex].stat + 3000 );
-		while( ( int(weaponStat) & addonMask ) == 0 )
+		if (self.cacEdit_secondaries[self.secondariesIndex].stat + 3000 == 3005) {
+			weaponStat = 100000;
+		}
+		while( ( int(weaponStat) & addonMask ) == 0 && self.cacEdit_secondaries[self.secondariesIndex].stat + 3000 != 3005)
 		{
 			if ( direction == "next" )
 				self.sattachmentsIndex++;
@@ -823,7 +829,7 @@ addPrimaries()
 	//Sub-Machine Weapons
 	self addCACPrimaries( "smg", 10 ); //MP5
 	self addCACPrimaries( "smg", 11 ); //Skorpion
-	self addCACPrimaries( "smg", 12 ); //UZI
+	//self addCACPrimaries( "smg", 12 ); //UZI
 	self addCACPrimaries( "smg", 13 ); //AK74U
 	self addCACPrimaries( "smg", 14 ); //P90
 	//Heavy Weapons
@@ -859,6 +865,7 @@ addSecondaries()
 	self addCACSecondaries( 2 ); //USP
 	self addCACSecondaries( 3 ); //Desert Eagle
 	self addCACSecondaries( 4 ); //Gold Desert Eagle
+	self addCACSecondaries( 5 ); //Tec9
 }
 
 addSecondaryAttachments()

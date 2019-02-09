@@ -17,7 +17,7 @@ init()
 {
 	//******************************************************************************
 	// configs/gameplay/classes.cfg
-	//******************************************************************************	
+	//******************************************************************************
 	// setDvar( "class_assault_movespeed", "0.95" );
 	// setDvar( "class_specops_movespeed", "1.00" );
 	// setDvar( "class_heavygunner_movespeed", "0.875" );
@@ -52,6 +52,7 @@ init()
 	// setDvar( "weap_allow_usp", "1" );
 	// setDvar( "weap_allow_deserteagle", "1" );
 	// setDvar( "weap_allow_deserteaglegold", "1" );
+	// setDvar( "weap_allow_hind_ffar", "1" );
 	// setDvar( "attach_allow_pistol_none", "1" );
 	// setDvar( "attach_allow_pistol_silencer", "1" );
 	// setDvar( "weap_allow_binoculars", "0" );
@@ -583,7 +584,7 @@ init()
 	// setDvar( "scr_dcs_first_cycle", "1" );
 	// setDvar( "scr_dcs_sounds_enable", "1" );
 	// setDvar( "scr_dcs_reset_cycle", "0" );
-	
+
 	//******************************************************************************
 	// configs/gameplay/wdm.cfg
 	//******************************************************************************
@@ -639,7 +640,7 @@ init()
 
 	//******************************************************************************
 	// configs/gameplay/weapons.cfg
-	//******************************************************************************					
+	//******************************************************************************
 	// setDvar( "scr_dynamic_attachments_enable", "0" );
 	setDvar( "scr_deleteexplosivesonspawn", "1" );
 	// setDvar( "scr_deleteexplosivesondeath", "0" );
@@ -682,7 +683,7 @@ init()
 	// setDvar( "scr_rangefinder_enable", "0" );
 	// setDvar( "scr_objective_safezone_enable", "0" );
 	// setDvar( "scr_objective_safezone_radius", "100" );
-	
+
 	//******************************************************************************
 	// configs/gameplay/wlm.cfg
 	//******************************************************************************
@@ -697,7 +698,7 @@ init()
 	// setDvar( "scr_wlm_neck", "100" );
 	// setDvar( "scr_wlm_upper_torso", "100" );
 	// setDvar( "scr_wlm_lower_torso", "100" );
-	
+
 	//******************************************************************************
 	// configs/gameplay/wrm.cfg
 	//******************************************************************************
@@ -742,7 +743,7 @@ init()
 	// setDvar( "scr_wrm_usp", "215" );
 	// setDvar( "scr_wrm_usp_silenced", "215" );
 	// setDvar( "scr_wrm_deserteagle", "215" );
-	
+
 	//******************************************************************************
 	// configs/gameplay/wwm.cfg
 	//******************************************************************************

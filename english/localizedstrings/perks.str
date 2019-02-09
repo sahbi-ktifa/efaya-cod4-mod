@@ -43,4 +43,7 @@ LANG_ENGLISH        "Modern crossbow with explosive arrows."
 REFERENCE           SINGLEFIRE_WITH_HIGH2
 LANG_ENGLISH        "Singleshot modern assault rifle. Very deadly at medium/close range."
 
+REFERENCE           SEMIAUTOMATIC_WITH_HIGH2
+LANG_ENGLISH        "Swedish semi automatic pistol, popular with gangs!"
+
 ENDMARKER

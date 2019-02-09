@@ -1989,4 +1989,6 @@ getWeaponMaterial(weapon) {
 			return "weapon_desert_eagle";
 		if ( isSubStr( weapon, "deserteaglegold_" ) )
 			return "weapon_desert_eagle_gold";
+		if ( isSubStr( weapon, "hind_ffar_" ) )
+			return "weapon_tec9";
 }

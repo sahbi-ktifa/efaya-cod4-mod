@@ -386,6 +386,18 @@ onSpawnPlayer()
 	self.isBombCarrier = false;
         self.isDisconnected = false;
 
+	// Create the hud element for the new connected player
+	self.hud_cross_icon = newClientHudElem( self );
+	self.hud_cross_icon.x = 0;
+	self.hud_cross_icon.y = 142;
+	self.hud_cross_icon.alignX = "center";
+	self.hud_cross_icon.alignY = "middle";
+	self.hud_cross_icon.horzAlign = "center_safearea";
+	self.hud_cross_icon.vertAlign = "center_safearea";
+	self.hud_cross_icon.alpha = 0;
+	self.hud_cross_icon.archived = true;
+	self.hud_cross_icon.hideWhenInMenu = true;
+	self.hud_cross_icon setShader( "cross_hud", 32, 32);
 	if(self.pers["team"] == game["attackers"])
 		spawnPointName = "mp_sd_spawn_attacker";
 	else
@@ -465,6 +477,8 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 	if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self ) {
 		thread maps\mp\gametypes\_finalkillcam::onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration);
 	}
+	if ( isDefined( self.hud_cross_icon ) )
+		self.hud_cross_icon destroy();
 }
 
 broadcastInfo(type, attacker, victim) {
@@ -1848,6 +1862,7 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 		// Friendly team picks up Dogtag
 		if( player.pers["team"] == friendlyTag.team ) {
 			if (!isDefined(friendlyTag.reviveCounter) || friendlyTag.reviveCounter < 2) {
+				player.hud_cross_icon.alpha = 1;
 				if (!isDefined(friendlyTag.reviveCounter)) {
 					friendlyTag.reviveCounter = 0;
 				}
@@ -1855,9 +1870,11 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 				friendlyTag.reviveCounter += 1;
 				player playLocalSound( "scramble" );
 				wait (0.5);
+				player.hud_cross_icon.alpha = 0;
 				player thread removeTriggerOnPickup( friendlyTag, enemyTag, trigger );
 				return;
 			}
+			player.hud_cross_icon.alpha = 0;
 
 			if ( level.scr_sr_denied_player_sound == 1 )
 			player playLocalSound( "denied_sr" );

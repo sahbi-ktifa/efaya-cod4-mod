@@ -1001,6 +1001,10 @@ convertWeaponName( sWeapon )
 			sWeapon = &"WEAPON_DESERTEAGLE";
 			break;
 
+		case "hind_ffar":
+			sWeapon = &"WEAPON_TEC9";
+			break;
+
 		case "gl":
 			sWeapon = &"WEAPON_GRENADE_LAUNCHER";
 			break;
