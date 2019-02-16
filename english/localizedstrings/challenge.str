@@ -728,16 +728,16 @@ REFERENCE           UNLOCK_M21_RED_TIGER
 LANG_ENGLISH        "UNLOCK: M21 Red Tiger Camouflage\n"
 
 REFERENCE           UNLOCK_DRAGUNOV_ACOG
-LANG_ENGLISH        "UNLOCK: Dragunov ACOG Scope"
+LANG_ENGLISH        "UNLOCK: AWP ACOG Scope"
 
 REFERENCE           UNLOCK_DRAGUNOV_DIGITAL
-LANG_ENGLISH        "UNLOCK: Dragunov Digital Camouflage"
+LANG_ENGLISH        "UNLOCK: AWP Digital Camouflage"
 
 REFERENCE           UNLOCK_DRAGUNOV_BLUE
-LANG_ENGLISH        "UNLOCK: Dragunov Blue Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: AWP Blue Tiger Camouflage"
 
 REFERENCE           UNLOCK_DRAGUNOV_RED_TIGER
-LANG_ENGLISH        "UNLOCK: Dragunov Red Tiger Camouflage"
+LANG_ENGLISH        "UNLOCK: AWP Red Tiger Camouflage"
 
 REFERENCE           UNLOCK_R700_ACOG_SCOPE
 LANG_ENGLISH        "UNLOCK: Ballista ACOG Scope"
@@ -788,16 +788,16 @@ REFERENCE           M21_EXPERT_III
 LANG_ENGLISH        "M21 Expert III"
 
 REFERENCE           DRAGUNOV_MARKSMAN
-LANG_ENGLISH        "Dragunov Marksman"
+LANG_ENGLISH        "AWP Marksman"
 
 REFERENCE           DRAGUNOV_EXPERT_I
-LANG_ENGLISH        "Dragunov Expert I"
+LANG_ENGLISH        "AWP Expert I"
 
 REFERENCE           DRAGUNOV_EXPERT_II
-LANG_ENGLISH        "Dragunov Expert II"
+LANG_ENGLISH        "AWP Expert II"
 
 REFERENCE           DRAGUNOV_EXPERT_III
-LANG_ENGLISH        "Dragunov Expert III"
+LANG_ENGLISH        "AWP Expert III"
 
 REFERENCE           R700_MARKSMAN
 LANG_ENGLISH        "Ballista Marksman"

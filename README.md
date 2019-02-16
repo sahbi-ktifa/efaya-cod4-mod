@@ -44,6 +44,7 @@ Gametypes are : DM, CTF, SAB, GG, DOM, WAR, SD, SR, CSD
 * Sniper:
 	* M40A3 ----------------> BF3 L96 (http://cfgfactory.com/downloads/show/50b273ab0d906)
 	* Remington 700 --------> BO2 Ballista (http://cfgfactory.com/downloads/show/536f6e081ea5a)
+	* Dragunov -------------> AWP CS:GO (http://cfgfactory.com/downloads/show/5c68080b046ed)
 
 * Perks
 	* Claymore -------------> Crossbow  (http://www.cfgfactory.com/downloads/show/4e63dbaadc111)
