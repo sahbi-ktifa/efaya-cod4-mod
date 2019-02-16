@@ -144,6 +144,7 @@ main()
         level.scr_sr_dogtag_attacker_owner_score = getdvarx( "scr_sr_dogtag_attacker_owner_score", "int", 5, 0, 500 );
 
         level.scr_sr_random_second_chance = getdvarx( "scr_sr_random_second_chance", "int", 75, 0, 100 );
+	level.scr_sr_revive_time = getdvarx( "scr_sr_revive_time", "int", 2, 2, 10 );
 
 	maps\mp\gametypes\_globallogic::registerNumLivesDvar( level.gameType, 1, 1, 1 );
 	maps\mp\gametypes\_globallogic::registerRoundLimitDvar( level.gameType, 5, 0, 500 );
@@ -1790,19 +1791,29 @@ spawnTags( attacker )
 
 }
 
-rotate()
+rotate()
+
 {
 	self endon( "picked_up" );
 	self endon( "timed_out" );
-
-	while( true )
-	{
-           self movez( 20, 1.5, 0.3, 0.3 );
-	   self rotateyaw( 360, 1.5, 0, 0 );
-	   wait( 1.5 );
-	   self movez( -20, 1.5, 0.3, 0.3 );
-	   self rotateyaw( 360 ,1.5, 0, 0 );
-	   wait( 1.5 );
+
+
+	while( true )
+
+	{
+
+           self movez( 20, 1.5, 0.3, 0.3 );
+
+	   self rotateyaw( 360, 1.5, 0, 0 );
+
+	   wait( 1.5 );
+
+	   self movez( -20, 1.5, 0.3, 0.3 );
+
+	   self rotateyaw( 360 ,1.5, 0, 0 );
+
+	   wait( 1.5 );
+
 	}
 
 }
@@ -1861,12 +1872,12 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 
 		// Friendly team picks up Dogtag
 		if( player.pers["team"] == friendlyTag.team ) {
-			if (!isDefined(friendlyTag.reviveCounter) || friendlyTag.reviveCounter < 2) {
+			if (!isDefined(friendlyTag.reviveCounter) || friendlyTag.reviveCounter < level.scr_sr_revive_time) {
 				player.hud_cross_icon.alpha = 1;
 				if (!isDefined(friendlyTag.reviveCounter)) {
 					friendlyTag.reviveCounter = 0;
 				}
-				ClientPrint(player, "Reviving : " + friendlyTag.reviveCounter + " / 2");
+				ClientPrint(player, "Reviving : " + friendlyTag.reviveCounter + " / " + level.scr_sr_revive_time);
 				friendlyTag.reviveCounter += 1;
 				player playLocalSound( "scramble" );
 				wait (0.5);
@@ -1883,7 +1894,7 @@ removeTriggerOnPickup( friendlyTag, enemyTag, trigger )
 			if ( level.scr_sr_denied_team_sound == 1 && friendlyTag.team == "allies" )
 			playSoundOnPlayers( "denied_sr", "axis" );
 
-			if ( level.scr_sr_denied_team_sound ==1  && friendlyTag.team == "axis" )
+			if ( level.scr_sr_denied_team_sound == 1  && friendlyTag.team == "axis" )
 			playSoundOnPlayers( "denied_sr", "allies" );
 
 			// Give player a score
