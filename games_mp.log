@@ -3690,3 +3690,12 @@
   0:08 JT;;0;allies;iClan|Efaya;
   0:53 ShutdownGame:
   0:53 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_titanic\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;160 (not used) out of 188 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;axis;iClan|Efaya;
+  1:47 D;;0;axis;iClan|Efaya;;-1;world;;none;14;MOD_FALLING;none
+  2:07 ShutdownGame:
+  2:07 ------------------------------------------------------------
