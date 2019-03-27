@@ -2,13 +2,13 @@ name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max
 
 awp_01,,v_snip_awp/awp_01.wav,1,1,wpnplyr,1,1,500000,,local,,,,0.85,,,,,weapon2
 awp_02,,v_snip_awp/awp_02.wav,0.84,0.9,wpnai,1,1,35,8400,weapon,,,,0.7,,,,,weapon4
-awp_boltback,,v_snip_awp/awp_boltback.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2
-awp_clipout,,v_snip_awp/awp_clipout.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2
-awp_clipin,,v_snip_awp/awp_clipin.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2
-awp_cliphit,,v_snip_awp/awp_cliphit.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2
-awp_boltforward,,v_snip_awp/awp_boltforward.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2
-awp_draw,,v_snip_awp/awp_draw.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2
-awp_empty,,v_snip_awp/awp_empty.wav,0.8,0.8,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2
-awp_ammo_01,,v_snip_awp/awp_ammo_01.wav,0.9,0.9,wpnplyr,0.9,0.9,7,500,auto,,,,0.85,,,,,,
-awp_ammo_02,,v_snip_awp/awp_ammo_02.wav,0.9,0.9,wpnplyr,0.9,0.9,7,500,auto,,,,0.85,,,,,,
-awp_rechamber,,v_snip_awp/awp_rechamber.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2
+awp_boltback,,v_snip_awp/awp_boltback.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,weapon2,
+awp_clipout,,v_snip_awp/awp_clipout.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,weapon2,
+awp_clipin,,v_snip_awp/awp_clipin.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,weapon2,
+awp_cliphit,,v_snip_awp/awp_cliphit.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,weapon2,
+awp_boltforward,,v_snip_awp/awp_boltforward.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,weapon2,
+awp_draw,,v_snip_awp/awp_draw.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,weapon2,
+awp_empty,,v_snip_awp/awp_empty.wav,0.8,0.8,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,weapon2,
+awp_ammo_01,,v_snip_awp/awp_ammo_01.wav,0.9,0.9,wpnplyr,0.9,0.9,7,500,reload2d,,,,0.85,,,,,weapon2,
+awp_ammo_02,,v_snip_awp/awp_ammo_02.wav,0.9,0.9,wpnplyr,0.9,0.9,7,500,reload2d,,,,0.85,,,,,weapon2,
+awp_rechamber,,v_snip_awp/awp_rechamber.wav,0.55,0.6,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,weapon2,
