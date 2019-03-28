@@ -1,7 +1,7 @@
 name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,probability,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage,conversion
 
 tec9_1,,v_pist_tec9/tec9_1.wav,1,1,wpnplyr,1,1,5000,,local,,,,0.85,,,,,weapon2
-tec9_02,,v_pist_tec9/tec9_02.wav,1,1,wpnai,1,1,35,5000,local,,,,0.7,all_mp,,,,weapon4
+tec9_02,,v_pist_tec9/tec9_02.wav,1,1,wpnai,1,1,35,5000,weapon,,,,0.7,all_mp,,,,weapon4
 tec9_distant_01,,v_pist_tec9/tec9_distant_01.wav,1,1,wpnplyr,1,1,5000,,local,,,,0.85,,,,,weapon2
 tec9_empty,,v_pist_tec9/tec9_empty.wav,1,1,wpnplyr,1,1,500,,local,,,,0.85,,,,,weapon2
 tec9_draw,,v_pist_tec9/tec9_draw.wav,1,1,,1,1,7,500,reload,,,,0.7,all_mp,,,,weapon2,50
