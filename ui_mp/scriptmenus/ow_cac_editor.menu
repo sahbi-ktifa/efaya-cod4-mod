@@ -289,7 +289,7 @@
 			origin			138 4
 			background		"ui_arrow_left"
 			forecolor		COLOR_FOCUSED
-			visible			when ( dvarInt( ow_cac_stat_perk2 ) != 166 && ( dvarInt( ow_cac_stat_secondary ) != 3 || dvarInt( ow_cac_stat_secondary ) != 4 ) )
+			visible			when ( dvarInt( ow_cac_stat_perk2 ) != 166 && ( dvarInt( ow_cac_stat_secondary ) != 3 || dvarInt( ow_cac_stat_secondary ) != 4  || dvarInt( ow_cac_stat_secondary ) != 5 ) )
 		    mouseEnter { play "mouse_over"; }
 		    action { play "mouse_click"; scriptMenuResponse "cacSAttachmentPrev"; }
 		}
@@ -302,7 +302,7 @@
 			origin			138 4
 			background		"ui_arrow_left"
 			forecolor		COLOR_DISABLED
-			visible			when ( dvarInt( ow_cac_stat_perk2 ) != 166 && ( dvarInt( ow_cac_stat_secondary ) == 3 || dvarInt( ow_cac_stat_secondary ) == 4 ) )
+			visible			when ( dvarInt( ow_cac_stat_perk2 ) != 166 && ( dvarInt( ow_cac_stat_secondary ) == 3 || dvarInt( ow_cac_stat_secondary ) == 4 || dvarInt( ow_cac_stat_secondary ) == 5 ) )
 		}
 		CHOICE_CAC_BUTTON( 6, "@OW_CAC_SIDE_ARM_ATTACHMENT", when ( dvarInt( ow_cac_stat_perk2 ) != 166 ) )
 		itemDef
@@ -314,7 +314,7 @@
 			origin			148 4
 			background		"ui_arrow_right"
 			forecolor		COLOR_FOCUSED
-			visible			when ( dvarInt( ow_cac_stat_perk2 ) != 166 && ( dvarInt( ow_cac_stat_secondary ) != 3 || dvarInt( ow_cac_stat_secondary ) != 4 ) )
+			visible			when ( dvarInt( ow_cac_stat_perk2 ) != 166 && ( dvarInt( ow_cac_stat_secondary ) != 3 || dvarInt( ow_cac_stat_secondary ) != 4 || dvarInt( ow_cac_stat_secondary ) != 5 ) )
 		    mouseEnter { play "mouse_over"; }
 		    action { play "mouse_click"; scriptMenuResponse "cacSAttachmentNext"; }
 		}
@@ -327,7 +327,7 @@
 			origin			148 4
 			background		"ui_arrow_right"
 			forecolor		COLOR_DISABLED
-			visible			when ( dvarInt( ow_cac_stat_perk2 ) != 166 && ( dvarInt( ow_cac_stat_secondary ) == 3 || dvarInt( ow_cac_stat_secondary ) == 4 ) )
+			visible			when ( dvarInt( ow_cac_stat_perk2 ) != 166 && ( dvarInt( ow_cac_stat_secondary ) == 3 || dvarInt( ow_cac_stat_secondary ) == 4 || dvarInt( ow_cac_stat_secondary ) == 5 ) )
 		}
 
 		//Secondary Attachment

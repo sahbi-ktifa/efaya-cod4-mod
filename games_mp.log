@@ -3709,3 +3709,104 @@
   1:43 say;;0;iClan|Efaya;give hind_ff_mp
   1:59 ShutdownGame:
   1:59 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;65 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:12 ShutdownGame:
+  1:12 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  0:52 Weapon;;0;iClan|Efaya;colt45_mp
+  0:58 Weapon;;0;iClan|Efaya;colt45_silencer_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  0:59 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:00 Weapon;;0;iClan|Efaya;colt45_mp
+  1:59 say;;0;iClan|Efaya;give m9a1_mp
+  2:24 Weapon;;0;iClan|Efaya;beretta_mp
+  2:30 Weapon;;0;iClan|Efaya;beretta_silencer_mp
+  2:31 Weapon;;0;iClan|Efaya;beretta_mp
+  2:31 Weapon;;0;iClan|Efaya;beretta_mp
+  2:31 Weapon;;0;iClan|Efaya;beretta_mp
+  3:08 Weapon;;0;iClan|Efaya;usp_silencer_mp
+  3:15 Weapon;;0;iClan|Efaya;usp_mp
+  3:20 Weapon;;0;iClan|Efaya;usp_silencer_mp
+  3:21 Weapon;;0;iClan|Efaya;usp_mp
+  3:21 Weapon;;0;iClan|Efaya;usp_mp
+  3:21 Weapon;;0;iClan|Efaya;usp_mp
+  3:21 Weapon;;0;iClan|Efaya;usp_mp
+  3:21 Weapon;;0;iClan|Efaya;usp_mp
+  3:21 Weapon;;0;iClan|Efaya;usp_mp
+  3:21 Weapon;;0;iClan|Efaya;usp_mp
+  3:21 Weapon;;0;iClan|Efaya;usp_mp
+  3:21 Weapon;;0;iClan|Efaya;usp_mp
+  3:34 ShutdownGame:
+  3:34 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  0:32 Weapon;;0;iClan|Efaya;colt45_mp
+  0:38 Weapon;;0;iClan|Efaya;colt45_silencer_mp
+  0:39 Weapon;;0;iClan|Efaya;colt45_mp
+  0:39 Weapon;;0;iClan|Efaya;colt45_mp
+  0:39 Weapon;;0;iClan|Efaya;colt45_mp
+  0:39 Weapon;;0;iClan|Efaya;colt45_mp
+  0:39 Weapon;;0;iClan|Efaya;colt45_mp
+  0:39 Weapon;;0;iClan|Efaya;colt45_mp
+  0:39 Weapon;;0;iClan|Efaya;colt45_mp
+  0:39 Weapon;;0;iClan|Efaya;colt45_mp
+  0:39 Weapon;;0;iClan|Efaya;colt45_mp
+  1:57 ShutdownGame:
+  1:57 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:07 JT;;0;allies;iClan|Efaya;
+  0:50 ShutdownGame:
+  0:50 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:01 ShutdownGame:
+  1:01 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:15 ShutdownGame:
+  1:15 ------------------------------------------------------------
