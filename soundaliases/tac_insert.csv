@@ -1,0 +1,7 @@
+name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,probability,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage,conversion
+
+//tactical_insert_destroyed,,tac_insert/vox_cda_dest_tact.wav,1,1,na,1,1,300,800,auto,,,,0.7,,,,,,,,,
+
+tactical_insert_destroyed,,tac_insert/vox_st6_dest_tact.mp3,1,,music,,,,,auto2d,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,,mp3
+
+tactical_insert_planted,,tac_insert/vox_st2_attack_tactical.mp3,1,,music,,,,,auto2d,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,,mp3

@@ -46,4 +46,13 @@ LANG_ENGLISH        "Singleshot modern assault rifle. Very deadly at medium/clos
 REFERENCE           SEMIAUTOMATIC_WITH_HIGH2
 LANG_ENGLISH        "Swedish semi automatic pistol, popular with gangs!"
 
+REFERENCE           DEVICE_THAT_SPY
+LANG_ENGLISH        "Portable camera"
+
+REFERENCE           TAC_ABILITY
+LANG_ENGLISH        "Tactical ability"
+
+REFERENCE           TAC_ABILITY_DETAILS
+LANG_ENGLISH        "A decisive asset which differs from attacker to defender"
+
 ENDMARKER

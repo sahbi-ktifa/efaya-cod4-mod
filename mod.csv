@@ -1126,3 +1126,23 @@ xanim,viewmodel_tec9_sw_sprint_loop
 xanim,viewmodel_tec9_sw_sprint_out
 xanim,viewmodel_tec9_extclip_reload
 xanim,viewmodel_tec9_extclip_reload_empty
+
+# Cam attaque
+rawfile,openwarfare/_special_ability.gsc
+material,specialty_tactical_insertion
+fx,misc/laser_mov_green2
+fx,misc/laser_mov_red
+xmodel,viewmodel_bo2_tact_insert
+xmodel,worldmodel_bo2_tact_insert
+xanim,viewmodel_tac_insert_t6_idle
+xanim,viewmodel_tac_insert_t6_pullout
+xanim,viewmodel_tac_insert_t6_pullpin
+xanim,viewmodel_tac_insert_t6_putaway
+xanim,viewmodel_tac_insert_t6_raise
+xanim,viewmodel_tac_insert_t6_sprint_in
+xanim,viewmodel_tac_insert_t6_sprint_loop
+xanim,viewmodel_tac_insert_t6_sprint_out
+xanim,viewmodel_tac_insert_t6_throw
+sound,tac_insert,,all_mp
+sound,bomb,,all_mp
+xmodel,model_russian_crouch_efaya
