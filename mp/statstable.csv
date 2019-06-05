@@ -183,7 +183,7 @@ x,x,x,x,x,x,x,x,x,x,x
 181,181,specialgrenade,,,,,,,,
 182,182,specialgrenade,,,,,,,,
 183,183,specialgrenade,,,,,,,,
-184,184,inventory,PERKS_TAC_ABILITY,c4_mp,1,specialty_tactical_insertion,PERKS_TAC_ABILITY_DETAILS,perk1,,
+184,184,inventory,PERKS_TAC_ABILITY,c4_mp,1,specialty_weapon_c4,PERKS_TAC_ABILITY_DETAILS,perk1,,
 185,185,inventory,PERKS_CLAYMORE_X_2,claymore_mp,30,specialty_weapon_claymore,PERKS_TRIP_ACTIVATED_EXPLOSIVE,perk1,,PERKS_UNLOCKED_AT_MASTER_GUNNERY
 186,186,inventory,PERKS_RPG7_X_2,rpg_mp,30,specialty_weapon_rpg,PERKS_ROCKET_LAUNCHER_WITH,perk1,,
 187,187,inventory,,,,,,,,
