@@ -41,7 +41,7 @@ initQuickActions()
 	// Add quick actions in order of importance
 	addQuickAction( &"OW_QUICKACTION_BANDAGE", ::actionBandage );
 	addQuickAction( &"OW_QUICKACTION_UNJAM", ::actionUnjam );
-	addQuickAction( &"OW_ATTACH_DETACH", ::actionAttachDetach );
+	//addQuickAction( &"OW_ATTACH_DETACH", ::actionAttachDetach );
 	
 	return ( level.quickActions.size > 0 );
 }

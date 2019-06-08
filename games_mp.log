@@ -3810,3 +3810,704 @@
   0:02 JT;;0;allies;iClan|Efaya;
   1:15 ShutdownGame:
   1:15 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_downtown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40
+  0:00 OWFYI;288 (not used) out of 320 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;axis;iClan|Efaya;
+  2:18 ShutdownGame:
+  2:18 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:06 JT;;0;axis;iClan|Efaya;
+  0:51 ShutdownGame:
+  0:51 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:14 ShutdownGame:
+  1:14 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:10 JT;;0;axis;iClan|Efaya;
+  1:06 K;;0;axis;iClan|Efaya;;-1;axis;iClan|Efaya;frag_grenade_mp;234;MOD_GRENADE_SPLASH;none
+  1:42 ShutdownGame:
+  1:42 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;149 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  1:35 K;;0;allies;iClan|Efaya;;-1;allies;iClan|Efaya;frag_grenade_mp;259;MOD_GRENADE_SPLASH;none
+  2:12 K;;0;allies;iClan|Efaya;;-1;allies;iClan|Efaya;frag_grenade_mp;283;MOD_GRENADE_SPLASH;none
+  2:32 ShutdownGame:
+  2:32 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;149 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:07 K;;0;allies;iClan|Efaya;;-1;allies;iClan|Efaya;frag_grenade_mp;277;MOD_GRENADE_SPLASH;none
+  1:19 Weapon;;0;iClan|Efaya;dragunov_mp
+  2:04 ShutdownGame:
+  2:04 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:31 ShutdownGame:
+  1:31 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:53 ShutdownGame:
+  1:53 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:03 ShutdownGame:
+  1:03 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;allies;iClan|Efaya;
+  1:14 ShutdownGame:
+  1:14 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 ShutdownGame:
+  0:00 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\sr\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 ShutdownGame:
+  0:00 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  0:07 JT;;0;allies;iClan|Efaya;
+  1:41 ShutdownGame:
+  1:41 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:34 ShutdownGame:
+  1:34 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:09 ShutdownGame:
+  1:09 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;allies;iClan|Efaya;
+  1:02 ShutdownGame:
+  1:02 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  1:06 K;;0;allies;iClan|Efaya;;-1;allies;iClan|Efaya;none;100000;MOD_SUICIDE;none
+  1:06 JT;;0;axis;iClan|Efaya;
+  1:10 K;;0;axis;iClan|Efaya;;-1;axis;iClan|Efaya;none;100000;MOD_SUICIDE;none
+  1:10 JT;;0;allies;iClan|Efaya;
+  1:26 ShutdownGame:
+  1:26 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  0:06 JT;;0;allies;iClan|Efaya;
+  1:45 ShutdownGame:
+  1:45 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:51 ShutdownGame:
+  1:51 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  1:15 ShutdownGame:
+  1:15 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:39 JT;;0;allies;iClan|Efaya;
+  1:07 ShutdownGame:
+  1:07 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:11 ShutdownGame:
+  1:11 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  1:02 ShutdownGame:
+  1:02 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:10 ShutdownGame:
+  1:10 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:01 ShutdownGame:
+  1:01 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  3:03 ShutdownGame:
+  3:03 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;allies;iClan|Efaya;
+  1:34 ShutdownGame:
+  1:34 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:08 ShutdownGame:
+  1:08 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  0:42 K;;0;axis;iClan|Efaya;;-1;axis;iClan|Efaya;none;100000;MOD_SUICIDE;none
+  0:42 JT;;0;allies;iClan|Efaya;
+  1:04 W;;0;iClan|Efaya
+  1:20 ShutdownGame:
+  1:20 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;allies;iClan|Efaya;
+  1:16 ShutdownGame:
+  1:16 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:20 ShutdownGame:
+  1:20 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 ShutdownGame:
+  0:00 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:38 ShutdownGame:
+  1:38 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  1:17 ShutdownGame:
+  1:17 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:05 ShutdownGame:
+  1:05 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;axis;iClan|Efaya;
+  0:07 JT;;0;allies;iClan|Efaya;
+  1:02 ShutdownGame:
+  1:02 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:57 ShutdownGame:
+  1:57 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  1:28 ShutdownGame:
+  1:28 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:42 ShutdownGame:
+  1:42 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 ShutdownGame:
+  0:03 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:05 JT;;0;allies;iClan|Efaya;
+  5:31 ShutdownGame:
+  5:31 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_twin2\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;152 (not used) out of 266 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;allies;iClan|Efaya;
+  2:53 ShutdownGame:
+  2:53 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  0:06 sayteam;;0;iClan|Efaya;ENEMY @ A
+  0:08 sayteam;;0;iClan|Efaya;ENEMY @ A
+  1:10 ShutdownGame:
+  1:10 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 ShutdownGame:
+  0:00 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 ShutdownGame:
+  0:00 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 ShutdownGame:
+  0:03 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:22 ShutdownGame:
+  1:22 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:08 JT;;0;axis;iClan|Efaya;
+  1:04 K;;0;axis;iClan|Efaya;;-1;world;;none;150;MOD_TRIGGER_HURT;none
+  1:35 ShutdownGame:
+  1:35 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;141 (not used) out of 237 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;axis;iClan|Efaya;
+  1:11 ShutdownGame:
+  1:11 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:05 JT;;0;axis;iClan|Efaya;
+  1:27 ShutdownGame:
+  1:27 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  0:25 ShutdownGame:
+  0:25 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 ShutdownGame:
+  0:00 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  1:30 ShutdownGame:
+  1:30 ------------------------------------------------------------
+  1:30 ------------------------------------------------------------
+  1:30 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  1:30 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  1:30 J;;0;iClan|Efaya
+  1:30 L;;0;iClan|Efaya
+  1:32 JT;;0;axis;iClan|Efaya;
+  4:07 ShutdownGame:
+  4:07 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;148 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  0:52 ShutdownGame:
+  0:52 ------------------------------------------------------------
+  0:52 ------------------------------------------------------------
+  0:52 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:52 OWFYI;148 (not used) out of 165 spawn entities have been deleted.
+  0:53 J;;0;iClan|Efaya
+  0:53 L;;0;iClan|Efaya
+  0:54 JT;;0;axis;iClan|Efaya;
+  2:16 ShutdownGame:
+  2:16 ------------------------------------------------------------
+  2:16 ------------------------------------------------------------
+  2:16 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  2:16 OWFYI;148 (not used) out of 165 spawn entities have been deleted.
+  2:16 J;;0;iClan|Efaya
+  2:16 L;;0;iClan|Efaya
+  2:19 JT;;0;axis;iClan|Efaya;
+  3:13 say;;0;iClan|Efaya;Désolé !
+  3:16 ShutdownGame:
+  3:16 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  1:08 ShutdownGame:
+  1:08 ------------------------------------------------------------
+  1:08 ------------------------------------------------------------
+  1:08 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  1:08 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  1:08 J;;0;iClan|Efaya
+  1:08 L;;0;iClan|Efaya
+  1:10 JT;;0;axis;iClan|Efaya;
+  2:24 ShutdownGame:
+  2:24 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;axis;iClan|Efaya;
+  1:08 ShutdownGame:
+  1:08 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:55 say;;0;iClan|Efaya;cg_fullscreen 0
+  2:11 K;;0;axis;iClan|Efaya;;-1;axis;iClan|Efaya;none;100000;MOD_SUICIDE;none
+  2:11 JT;;0;allies;iClan|Efaya;
+  2:31 W;;0;iClan|Efaya
+  2:39 ShutdownGame:
+  2:39 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;axis;iClan|Efaya;
+  0:53 K;;0;axis;iClan|Efaya;;-1;axis;iClan|Efaya;none;100000;MOD_SUICIDE;none
+  0:53 JT;;0;allies;iClan|Efaya;
+  1:14 W;;0;iClan|Efaya
+  1:17 ShutdownGame:
+  1:17 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;allies;iClan|Efaya;
+  1:16 ShutdownGame:
+  1:16 ------------------------------------------------------------
+  1:16 ------------------------------------------------------------
+  1:16 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  1:16 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  1:17 J;;0;iClan|Efaya
+  1:17 L;;0;iClan|Efaya
+  1:18 JT;;0;axis;iClan|Efaya;
+  3:18 ShutdownGame:
+  3:18 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;allies;iClan|Efaya;
+  2:09 ShutdownGame:
+  2:09 ------------------------------------------------------------
+  2:09 ------------------------------------------------------------
+  2:09 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  2:09 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  2:09 J;;0;iClan|Efaya
+  2:09 L;;0;iClan|Efaya
+  2:10 JT;;0;axis;iClan|Efaya;
+ 11:41 ShutdownGame:
+ 11:41 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:12 ShutdownGame:
+  1:12 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:43 ShutdownGame:
+  1:43 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:06 JT;;0;axis;iClan|Efaya;
+ 10:29 T;;0;iClan|Efaya
+ 10:56 ExitLevel: executed
+ 10:56 ShutdownGame:
+ 10:56 ------------------------------------------------------------
+ 10:56 ------------------------------------------------------------
+ 10:56 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+ 10:56 OWFYI;114 (not used) out of 186 spawn entities have been deleted.
+ 10:58 J;;0;iClan|Efaya
+ 10:58 L;;0;iClan|Efaya
+ 16:36 ShutdownGame:
+ 16:36 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 ShutdownGame:
+  0:00 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  2:01 ShutdownGame:
+  2:01 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:33 ShutdownGame:
+  1:33 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:36 ShutdownGame:
+  1:36 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:31 ShutdownGame:
+  1:31 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;108 (not used) out of 180 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:05 ShutdownGame:
+  1:05 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 ShutdownGame:
+  0:00 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 ShutdownGame:
+  0:00 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:30 ShutdownGame:
+  1:30 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:44 ShutdownGame:
+  1:44 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:25 JT;;0;axis;iClan|Efaya;
+  1:14 ShutdownGame:
+  1:14 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;182 (not used) out of 282 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:04 JT;;0;axis;iClan|Efaya;
+  2:07 ShutdownGame:
+  2:07 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;141 (not used) out of 237 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:27 JT;;0;axis;iClan|Efaya;
+  1:18 ShutdownGame:
+  1:18 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_ctan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;136 (not used) out of 256 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;axis;iClan|Efaya;
+  1:29 ShutdownGame:
+  1:29 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_skyline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;22 (not used) out of 79 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:02 JT;;0;axis;iClan|Efaya;
+  1:01 ShutdownGame:
+  1:01 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_mission\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;80 (not used) out of 169 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:10 JT;;0;axis;iClan|Efaya;
+  1:35 ShutdownGame:
+  1:35 ------------------------------------------------------------
+  1:35 ------------------------------------------------------------
+  1:35 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_mission\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  1:35 OWFYI;80 (not used) out of 169 spawn entities have been deleted.
+  1:35 J;;0;iClan|Efaya
+  1:35 L;;0;iClan|Efaya
+  1:36 JT;;0;allies;iClan|Efaya;
+  3:12 ShutdownGame:
+  3:12 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;99 (not used) out of 165 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:03 JT;;0;axis;iClan|Efaya;
+  0:14 ShutdownGame:
+  0:14 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \fs_game\mods/bootiful-warfare\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\^7CoD4:MW ^3OpenWarfare\sv_maxclients\32\sv_maxPing\350\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\1\ui_maxclients\40\version\CoD4 MP 17.9 win_mingw-x86 Feb 27 2019
+  0:00 OWFYI;108 (not used) out of 180 spawn entities have been deleted.
+  0:01 J;;0;iClan|Efaya
+  0:01 L;;0;iClan|Efaya
+  0:13 JT;;0;axis;iClan|Efaya;
+  0:15 ShutdownGame:
+  0:15 ------------------------------------------------------------

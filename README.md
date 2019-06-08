@@ -47,6 +47,7 @@ Gametypes are : DM, CTF, SAB, GG, DOM, WAR, SD, SR, CSD
 	* Dragunov -------------> AWP CS:GO (http://cfgfactory.com/downloads/show/5c68080b046ed)
 
 * Perks
+	* C4 -------------------> Tactical camera / drone
 	* Claymore -------------> Crossbow  (http://www.cfgfactory.com/downloads/show/4e63dbaadc111)
 	* RPG ------------------> Explosive crossbow (http://www.cfgfactory.com/downloads/show/4e63dbaadc111)
 

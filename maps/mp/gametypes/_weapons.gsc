@@ -739,9 +739,9 @@ watchGrenadeUsage()
 			self.claymorearray = [];
 	}
 
-	thread watchC4();
-	thread watchC4Detonation();
-	thread watchC4AltDetonation();
+	//thread watchC4();
+	//thread watchC4Detonation();
+	//thread watchC4AltDetonation();
 	//thread watchClaymores();
 	//thread deleteC4AndClaymoresOnDisconnect();
 

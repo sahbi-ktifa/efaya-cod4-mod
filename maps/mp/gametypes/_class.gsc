@@ -990,6 +990,10 @@ giveLoadout( team, class, respawned )
 	//}
 
 	[[level.onLoadoutGiven]]();
+
+	if (self HasPerk("specialty_tactical_insertion") && self.pers["team"] == "axis") {
+		self TakeWeapon("c4_mp");
+	}
 }
 
 // sets the amount of ammo in the gun.

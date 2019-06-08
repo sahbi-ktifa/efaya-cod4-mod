@@ -144,8 +144,8 @@ grenadeTracking()
 		else if ( weaponName == "smoke_grenade_mp" && shouldPlayBattlechatter( level.scr_battlechatter_smoke_out_probability ) )
 			level thread sayLocalSound( self, "smoke_out" );
 
-		else if ( weaponName == "c4_mp" && shouldPlayBattlechatter( level.scr_battlechatter_c4_planted_probability ) )
-			level thread sayLocalSound( self, "c4_plant" );
+		//else if ( weaponName == "c4_mp" && shouldPlayBattlechatter( level.scr_battlechatter_c4_planted_probability ) )
+		//	level thread sayLocalSound( self, "c4_plant" );
 	}
 }
 

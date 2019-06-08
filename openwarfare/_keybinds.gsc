@@ -58,8 +58,12 @@ onMenuResponse()
 					self openMenu( game[ "menu_changeclass_" + self.pers["team"] ] );
 					break;
 
-				case "attachdetach":
+				/*case "attachdetach":
 					self thread openwarfare\_dynamicattachments::attachDetachAttachment();
+					break;	*/
+				
+				case "specialability":
+					self thread openwarfare\_special_ability::triggerAbility();
 					break;	
 
 				case "firingmode":

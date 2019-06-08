@@ -1,0 +1,19 @@
+name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,probability,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage,conversion
+
+
+fly_bomb_raise_plr,,weps/bomb/wpfoly_case_bomb_raise_v1.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+fly_bomb_interrupt_plr,,weps/bomb/wpfoly_case_bomb_interrupt_v1.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+fly_bomb_screen_on_plr,,weps/bomb/wpfoly_case_bomb_screen_on.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+fly_bomb_screen_off_plr,,weps/bomb/wpfoly_case_bomb_screen_off.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+fly_suitcase_button_press_plr,,weps/bomb/wpfoly_case_bomb_beep.wav,0.85,0.85,wpnplyr,1,1,4000,5000,auto2d,,,,,all_mp
+fly_bomb_drop_plr,,weps/bomb/wpfoly_case_bomb_drop_v1.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+fly_bomb_defuse_plr,,weps/bomb/wpfoly_case_bomb_defuse_v1.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
+
+
+mp_cbomb,,cbomb/veh_rc_eng_plr_l.wav,0.45,0.55,element,0.9,1.05,7,150,element,,,looping,0.5,all_mp,,,,,250,,,0.2,,,,,,
+
+
+
+
+
+

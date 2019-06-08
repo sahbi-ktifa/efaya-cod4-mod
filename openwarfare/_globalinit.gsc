@@ -76,6 +76,7 @@ init()
 	thread openwarfare\_speedcontrol::init();
 	thread openwarfare\_sponsors::init();
 	thread openwarfare\_stationaryturrets::init();
+	thread openwarfare\_special_ability::init();
 	thread openwarfare\_teamstatus::init();
 	thread openwarfare\_testbots::init();
 	thread openwarfare\_thirdperson::init();
