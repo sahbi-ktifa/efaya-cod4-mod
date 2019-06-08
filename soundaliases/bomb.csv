@@ -10,7 +10,7 @@ fly_bomb_drop_plr,,weps/bomb/wpfoly_case_bomb_drop_v1.wav,1,1,wpnplyr,1,1,7,500,
 fly_bomb_defuse_plr,,weps/bomb/wpfoly_case_bomb_defuse_v1.wav,1,1,wpnplyr,1,1,7,500,reload2d,,,,0.85,,,,,weapon2,
 
 
-
+mp_cbomb,,cbomb/veh_rc_eng_plr_l.wav,0.45,0.55,element,0.9,1.05,7,150,element,,,looping,0.5,all_mp,,,,,250,,,0.2,,,,,,
 
 
 

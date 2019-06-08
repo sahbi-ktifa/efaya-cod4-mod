@@ -7,7 +7,8 @@ init()
 	
 	level.scr_tactical_insert_allow_damage = getdvarx( "scr_tactical_insert_allow_damage", "int", 1, 0, 1 );
 	level.scr_tactical_insert_debug = getdvarx( "scr_tactical_insert_debug", "int", 0, 0, 1 );
-	
+	level._effect["rcxd_tread_dust"] = loadfx("ow2/rcxd_tread_dust");
+
 	precacheModel( "model_russian_crouch_efaya" );
 	precacheModel( "model_usmc_crouch_efaya" );
 	precacheModel("vm_rccar_efaya");
@@ -207,7 +208,7 @@ insertion_damage()
 	}
 	
 	if( isdefined( self.owner ) ) {
-		ClientPrint(self, "tactical_insert_destroyed");	
+		ClientPrint(self.owner, "Your tactical camera has been destroyed.");	
 		self playSound ( "tactical_insert_destroyed" );
 		self.owner thread CleanUpMarker();
 	}
@@ -292,11 +293,13 @@ mobile_drone() {
 		self setModel("vm_rccar_efaya");
 		self unlink();
 		self setOrigin(self.using_mobile_drone + (50,0,5));
+		self setPerk( "specialty_quieter" );
 		self setClientDvars(
 			"cg_thirdPerson", 1,
 			"cg_thirdPersonRange", 70,
 			"cg_footsteps", 0
 		);
+		self mobile_drone_extra();
 		wait(0.5);
 		visionSetNaked( "mpIntro", 0 );
 		self.ab_blackscreen destroy();
@@ -318,11 +321,12 @@ mobile_drone() {
 		self setModel("vm_rccar_efaya");
 		self unlink();
 		self setOrigin(self.mobile_drone_pos);
+		self setPerk( "specialty_quieter" );
 		self setClientDvars(
 			"cg_thirdPerson", 1,
-			"cg_thirdPersonRange", 70,
-			"cg_footsteps", 0
+			"cg_thirdPersonRange", 70
 		);
+		self mobile_drone_extra();
 		wait(0.5);
 		visionSetNaked( "mpIntro", 0 );
 		self.ab_blackscreen destroy();
@@ -339,9 +343,9 @@ mobile_drone() {
 			self.spawn_model_collision delete();
 		}
 		self setClientDvars(
-			"cg_thirdPerson", 0,
-			"cg_footsteps", 1
+			"cg_thirdPerson", 0
 		);
+		self setPerk( "specialty_weapon_c4" );
 		self.mobile_drone_pos = self getOrigin();
 		self unlink();
 		self setOrigin(self.using_mobile_drone + (0,0,5));
@@ -364,7 +368,94 @@ mobile_drone() {
 		self.ab_blackscreen2 destroy();
 		self freezeControls( false );
 		self enableWeapons();		
-		self.using_mobile_drone = false;					
+		self.using_mobile_drone = false;
+		self.c_hitbox delete();			
+		self.csound delete();
+	}
+}
+
+mobile_drone_extra() {
+	if (!isDefined(self.c_hitbox)) {
+		//The rc hit box uses the same xmodel as the pc player model so has the MP bone structure, but it is not animated.
+		//Since it is a script model there is no player hitbox. Collision is set to high so it will respond to damage.
+		self.c_hitbox = spawn ("script_model", self.origin);
+		self.c_hitbox hide();
+		self.c_hitbox setmodel("vm_rccar_efaya");
+		self.c_hitbox.angles = self.angles;
+
+		self.c_hitbox linkto(self, "tag_origin", (0,0,2), (0,0,0) );
+		self.c_hitbox.health = self.health;
+		//self.c_hitbox.team = self.pers["team"]; //not used at this time. but change team checks from owner to rc.
+
+		self.c_hitbox setCanDamage(true);
+	}
+	if (!isDefined(self.csound)) {
+		self.csound = spawn("script_model", self getTagOrigin( "tag_origin") );
+		self.csound setModel("tag_origin");
+		self.csound linkTo( self, "tag_origin");
+
+		self.csound thread play_loop_sound_on_entity("mp_cbomb");	
+	}
+	self thread rcxdTreadDust();
+}
+
+delete_on_death (ent)
+{
+	ent endon ("death");
+	self waittill ("death");
+	if (isdefined (ent))
+		ent delete();
+}
+
+play_loop_sound_on_entity(alias, offset)
+{
+	org = spawn ("script_origin",(0,0,0));
+	org endon ("death");
+	thread delete_on_death (org);
+	if (isdefined (offset))
+	{
+		org.origin = self.origin + offset;
+		org.angles = self.angles;
+		org linkto (self);
+	}
+	else
+	{
+		org.origin = self.origin;
+		org.angles = self.angles;
+		org linkto (self);
+	}
+//	org endon ("death");
+	org playloopsound (alias);
+//	println ("playing loop sound ", alias," on entity at origin ", self.origin, " at ORIGIN ", org.origin);
+	self waittill ("stop sound" + alias);
+	org stoploopsound (alias);
+	org delete();
+}
+
+//Play tread dust effects while the RC-XD moves. The number of FX to play depends on speed.
+//For simplicity self is the player.
+rcxdTreadDust()
+{
+	self endon( "death" );
+	self endon( "disconnect");
+	self endon( "player_rc_done" );
+	//self endon("streak_respawn");//Needed?
+	level endon("game_ended");
+
+	while( isDefined(self) && isDefined( self.using_mobile_drone ) )
+	{
+		speed = lengthSquared( self getVelocity() );
+		if ( speed == 0 )
+		{
+			wait 0.1; 
+			continue; 
+		}
+		else if( speed > 85000) //81000 is normal player speed without modifiers
+			wait 0.05;
+		else
+			wait 0.1;
+
+		playfx( level._effect["rcxd_tread_dust"], self.origin + (0,0,5), anglestoforward( self.angles ) );
 	}
 }
 
@@ -511,7 +602,10 @@ spawn_model_damage(trigger, selfDamaged)
 	}
 
 	if (self.owner && isDefined(self.owner.spawn_waiting_model)) {
+		self.owner.mobile_drone_destroyed = true;
+		ClientPrint(self.owner, "Your mobile tactical drone has been destroyed.");	
+		self.owner playSound ( "tactical_insert_destroyed" );		
 		self.owner.spawn_waiting_model delete();
-		self.owner.spawn_waiting_model_collision delete();
+		self.owner.spawn_waiting_model_collision delete();	
 	}
 }
