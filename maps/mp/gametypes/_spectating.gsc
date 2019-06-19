@@ -172,3 +172,47 @@ setSpectatePermissions()
          self allowSpectateTeam( getOtherTeam( team ), true );
    }
 }
+
+initStatus() {
+   for (i = 0; i < level.players.size; i++) {
+      player = level.players[i];
+      allies = 0;
+      axis = 0;
+      for (j = 0; j < level.players.size; j++) {
+         _player = level.players[j];
+         if (_player.sessionteam == "allies") {
+            player setClientDvar( "allies_name_" + allies, _player.name);
+            player setClientDvar( "allies_status_" + allies, "alive");
+            allies++;
+         } else if (_player.sessionteam == "axis") {
+            player setClientDvar( "axis_name_" + axis, _player.name);
+            player setClientDvar( "axis_status_" + axis, "alive");            
+            axis++;
+         }            
+      }
+   }
+}
+
+updateStatus(names, team, state) {
+   for (i = 0; i < level.players.size; i++) {
+      player = level.players[i];
+      allies = 0;
+      axis = 0;
+      for (j = 0; j < level.players.size; j++) {
+         _player = level.players[j];
+         if (_player.sessionteam == "allies") {
+            player setClientDvar( "allies_name_" + allies, _player.name);
+            if (isSubStr(names, _player.name)) {
+               player setClientDvar( "allies_status_" + allies, state);
+            }         
+            allies++;
+         } else if (_player.sessionteam == "axis") {
+            player setClientDvar( "axis_name_" + axis, _player.name);
+            if (isSubStr(names, _player.name)) {
+               player setClientDvar( "axis_status_" + axis, state);
+            }            
+            axis++;
+         }            
+      }
+   }
+}

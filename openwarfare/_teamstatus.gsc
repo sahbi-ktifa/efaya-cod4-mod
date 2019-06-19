@@ -337,7 +337,7 @@ startTeamStatusRefresh()
 createSRHudElements() {
 
 	game["playerStatusIconAllies"] = createServerIcon( game["icons"]["allies"], 24, 24 );
-	game["playerStatusIconAllies"].x = -35;
+	game["playerStatusIconAllies"].x = -100;
 	game["playerStatusIconAllies"].archived = true;
 	game["playerStatusIconAllies"].hideWhenInMenu = true;
 	game["playerStatusIconAllies"].alignX = "center";
@@ -349,7 +349,7 @@ createSRHudElements() {
 	game["playerStatusIconAllies"].y = 5;
 
 	game["playerStatusIconAxis"] = createServerIcon( game["icons"]["axis"], 24, 24 );
-	game["playerStatusIconAxis"].x = 45;
+	game["playerStatusIconAxis"].x = 100;
 	game["playerStatusIconAxis"].archived = true;
 	game["playerStatusIconAxis"].hideWhenInMenu = true;
 	game["playerStatusIconAxis"].alignX = "center";
@@ -499,6 +499,7 @@ createSRHudElements() {
 startSRTeamStatusRefresh() {
 	self endon("game_ended");
 
+	level thread maps\mp\gametypes\_spectating::initStatus();
 	for (;;)
 	{
 		wait (0.1);
@@ -509,6 +510,12 @@ startSRTeamStatusRefresh() {
 		axisAlive = 0;
 		axisRevive = 0;
 		axisDead = 0;
+		alliesNameAlive = "";
+		alliesNameRevive = "";
+		alliesNameDead = "";
+		axisNameAlive = "";
+		axisNameRevive = "";
+		axisNameDead = "";
 
 		for ( index = 0; index < level.players.size; index++ )
 		{
@@ -516,20 +523,26 @@ startSRTeamStatusRefresh() {
 			if (isAlive(player)) {
 				if (player.pers["team"] == "allies") {
 					alliesAlive += 1;
+					alliesNameAlive += player.name;
 				} else if (player.pers["team"] == "axis") {
 					axisAlive += 1;
+					axisNameAlive += player.name;
 				}
 			} else if (!isAlive(player) && isDefined(player.pers["tag"]) && player.pers["tag"] == true) {
 				if (player.pers["team"] == "allies") {
 					alliesRevive += 1;
+					alliesNameRevive += player.name;
 				} else if (player.pers["team"] == "axis") {
 					axisRevive += 1;
+					axisNameRevive += player.name;
 				}
 			} else if (!isAlive(player)) {
 				if (player.pers["team"] == "allies") {
 					alliesDead += 1;
+					alliesNameDead += player.name;
 				} else if (player.pers["team"] == "axis") {
 					axisDead += 1;
+					axisNameDead += player.name;
 				}
 			}
 		}
@@ -542,6 +555,7 @@ startSRTeamStatusRefresh() {
 			}
 			game["playerStatusAliveAllies"] setValue(alliesAlive);
 			game["playerStatusAliveAllies"] thread maps\mp\gametypes\_hud::fontPulse( level );
+			level thread maps\mp\gametypes\_spectating::updateStatus( alliesNameAlive, "allies", "alive");
 		}
 		if (game["playerStatusAliveAxis"].info != axisAlive) {
 			game["playerStatusAliveAxis"].info = axisAlive;
@@ -552,11 +566,13 @@ startSRTeamStatusRefresh() {
 			}
 			game["playerStatusAliveAxis"] setValue(axisAlive);
 			game["playerStatusAliveAxis"] thread maps\mp\gametypes\_hud::fontPulse( level );
+			level thread maps\mp\gametypes\_spectating::updateStatus( axisNameAlive, "axis", "alive");
 		}
 		if (game["playerStatusDeadAllies"].info != alliesDead) {
 			game["playerStatusDeadAllies"].info = alliesDead;
 			game["playerStatusDeadAllies"] setValue(alliesDead);
 			game["playerStatusDeadAllies"] thread maps\mp\gametypes\_hud::fontPulse( level );
+			level thread maps\mp\gametypes\_spectating::updateStatus( alliesNameDead, "allies", "dead");
 		}
 		if (level.gametype == "sr" && game["playerStatusReviveAllies"].info != alliesRevive) {
 			game["playerStatusReviveAllies"].info = alliesRevive;
@@ -567,11 +583,13 @@ startSRTeamStatusRefresh() {
 			}
 			game["playerStatusReviveAllies"] setValue(alliesRevive);
 			game["playerStatusReviveAllies"] thread maps\mp\gametypes\_hud::fontPulse( level );
+			level thread maps\mp\gametypes\_spectating::updateStatus( alliesNameRevive, "allies", "revive");
 		}
 		if (game["playerStatusDeadAxis"].info != axisDead) {
 			game["playerStatusDeadAxis"].info = axisDead;
 			game["playerStatusDeadAxis"] setValue(axisDead);
 			game["playerStatusDeadAxis"] thread maps\mp\gametypes\_hud::fontPulse( level );
+			level thread maps\mp\gametypes\_spectating::updateStatus( axisNameDead, "axis", "dead");
 		}
 		if (level.gametype == "sr" && game["playerStatusReviveAxis"].info != axisRevive) {
 			game["playerStatusReviveAxis"].info = axisRevive;
@@ -582,6 +600,7 @@ startSRTeamStatusRefresh() {
 			}
 			game["playerStatusReviveAxis"] setValue(axisRevive);
 			game["playerStatusReviveAxis"] thread maps\mp\gametypes\_hud::fontPulse( level );
+			level thread maps\mp\gametypes\_spectating::updateStatus( axisNameRevive, "axis", "revive");
 		}
 	}
 }

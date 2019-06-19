@@ -47,7 +47,7 @@ REFERENCE           NO
 LANG_ENGLISH        "NO"
 
 REFERENCE           FOLLOWING
-LANG_ENGLISH        ""
+LANG_ENGLISH        "Currently following"
 
 REFERENCE           YOUKILLED
 LANG_ENGLISH        "You killed &&1"
