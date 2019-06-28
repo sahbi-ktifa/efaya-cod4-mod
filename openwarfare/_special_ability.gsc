@@ -50,15 +50,13 @@ CleanUpMarker()
 			if ( isDefined( self.spawn_model ) ) {		
 				self.spawn_model delete();
 			}			
-			self unlink();	
-			visionSetNaked( getDvar( "mapname" ), 0 );	
+			self unlink();				
 		}
 	}
 	if( isDefined( self.using_mobile_drone ) ) {
 		self.using_mobile_drone = false;
 		self setPerk( "specialty_tactical_insertion" );
-		self ShowAllParts();
-		visionSetNaked( getDvar( "mapname" ), 0 );		
+		self ShowAllParts();		
 	}
 }
 
@@ -203,13 +201,11 @@ insertion_damage()
 		
 		// destroy camera if no health is left
 		if( self.health <= 0 )
-		//self playSound ( "tactical_insert_destroyed" );
 			break;
 	}
 	
 	if( isdefined( self.owner ) ) {
 		ClientPrint(self.owner, "Your tactical camera has been destroyed.");	
-		self playSound ( "tactical_insert_destroyed" );
 		self.owner thread CleanUpMarker();
 	}
 }
@@ -301,7 +297,6 @@ mobile_drone() {
 		);
 		self mobile_drone_extra();
 		wait(0.5);
-		visionSetNaked( "mpIntro", 0 );
 		self.ab_blackscreen destroy();
 		self.ab_blackscreen2 destroy();
 		self freezeControls( false );			
@@ -328,7 +323,6 @@ mobile_drone() {
 		);
 		self mobile_drone_extra();
 		wait(0.5);
-		visionSetNaked( "mpIntro", 0 );
 		self.ab_blackscreen destroy();
 		self.ab_blackscreen2 destroy();
 		self freezeControls( false );			
@@ -363,7 +357,6 @@ mobile_drone() {
 		self.spawn_waiting_model_collision thread MonitorForDamage("dmg_spawn_mobile_model");
 
 		wait(0.5);
-		visionSetNaked( getDvar( "mapname" ), 0 );		
 		self.ab_blackscreen destroy();
 		self.ab_blackscreen2 destroy();
 		self freezeControls( false );
@@ -495,7 +488,6 @@ tactical_cam() {
 		self spawnCrouchModel(self.use_marker);
 		
 		wait(0.5);
-		visionSetNaked( "mpIntro", 0 );
 		self.ab_blackscreen destroy();
 		self.ab_blackscreen2 destroy();
 		self freezeControls( false );
@@ -515,7 +507,6 @@ tactical_cam() {
 		self unlink();
 		self setOrigin(self.use_marker);
 		wait(0.5);
-		visionSetNaked( getDvar( "mapname" ), 0 );		
 		self.ab_blackscreen destroy();
 		self.ab_blackscreen2 destroy();
 
@@ -604,7 +595,6 @@ spawn_model_damage(trigger, selfDamaged)
 	if (self.owner && isDefined(self.owner.spawn_waiting_model)) {
 		self.owner.mobile_drone_destroyed = true;
 		ClientPrint(self.owner, "Your mobile tactical drone has been destroyed.");	
-		self.owner playSound ( "tactical_insert_destroyed" );		
 		self.owner.spawn_waiting_model delete();
 		self.owner.spawn_waiting_model_collision delete();	
 	}
