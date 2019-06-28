@@ -454,21 +454,17 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 	// No tags for falling, suicides or team kills
 	//if( isPlayer( attacker ) && attacker.pers["team"] != self.pers["team"] && attacker != self )
 	if( isPlayer( attacker ) && attacker != self && sHitLoc != "head" && sHitLoc != "helmet" && sMeansOfDeath != "MOD_MELEE") {
-		// Send notice to players
-		//iprintln("^3" + attacker.name + " ^7shot down ^3" + self.name + "^7!");
-		broadcastInfo("shot", attacker, self);
-		self thread spawnTags( attacker );
+		if (isDefined(self.revivedOnce) && self.revivedOnce == true) { // Has already been revived once so no more revival
+			broadcastInfo("eliminate", attacker, self);
+		} else {
+			broadcastInfo("shot", attacker, self);
+			self thread spawnTags( attacker );
+		}
 	} else if (sHitLoc == "head" || sHitLoc == "helmet") {
-		// Send notice to players
-		//iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a headshot by ^3" + attacker.name + "^7!");
 		broadcastInfo("hs", attacker, self);
 	}  else if (sMeansOfDeath == "MOD_MELEE") {
-		// Send notice to players
-		broadcastInfo("knife", attacker, self);
-		//iprintln("^3" + self.name + " ^7.... has been ELIMINATED with a knife melee by ^3" + attacker.name + "^7!");
+		broadcastInfo("knife", attacker, self);	
 	} else if ( sMeansOfDeath == "MOD_FALLING" || ( isPlayer( attacker ) && attacker == self ) ) {
-		// Send notice to players
-		//iprintln("^3" + self.name + " ^7.... has been ELIMINATED by ... himself... commiting suicide");
 		broadcastInfo("suicide", attacker, self);
 	}
 	if( isDefined( self.destroyingExplosive ) && self.destroyingExplosive == true ) {
@@ -482,7 +478,7 @@ onPlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDir, sHit
 		self.hud_cross_icon destroy();
 }
 
-broadcastInfo(type, attacker, victim) {
+broadcastInfo(type, attacker, victim, debugMsg) {
 	for ( i = 0; i < level.players.size; i++ ) {
 		msg = "";
 		if (type == "shot") {
@@ -542,6 +538,8 @@ broadcastInfo(type, attacker, victim) {
 			} else {
 				msg += "^1" + victim.name + " ^7.... has been ELIMINATED!";
 			}
+		} else if (type == "debug") {
+			msg = debugMsg;
 		}
 		ClientPrint(level.players[i], msg);
 	}
@@ -2041,6 +2039,8 @@ revivePlayer(player) {
 	if (!level.gameEnded) {
 		player.pers["tag"] = false;
 		player thread [[level.spawnPlayer]]();
+		player.health = player.maxhealth / 2;
+		player.revivedOnce = true;
 	}
 
 }
