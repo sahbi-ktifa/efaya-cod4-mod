@@ -58,6 +58,7 @@ CleanUpMarker()
 		self setPerk( "specialty_tactical_insertion" );
 		self ShowAllParts();		
 	}
+	self destroyDroneVision();
 }
 
 monitorTacticalInsert()
@@ -336,6 +337,7 @@ mobile_drone() {
 			self.spawn_model delete();
 			self.spawn_model_collision delete();
 		}
+		self destroyDroneVision();				
 		self setClientDvars(
 			"cg_thirdPerson", 0
 		);
@@ -390,6 +392,27 @@ mobile_drone_extra() {
 		self.csound thread play_loop_sound_on_entity("mp_cbomb");	
 	}
 	self thread rcxdTreadDust();
+	self droneVision();
+}
+
+droneVision() {
+	self.drone_vision = newClientHudElem(self);
+	self.drone_vision.x = 0;
+	self.drone_vision.y = 0;
+	self.drone_vision.alignX = "left";
+	self.drone_vision.alignY = "top";
+	self.drone_vision.horzAlign = "fullscreen";
+	self.drone_vision.vertAlign = "fullscreen";
+	self.drone_vision.sort = 0;
+	self.drone_vision.alpha = 0.25;
+	self.drone_vision.color = (1, 1, 1);
+	self.drone_vision setshader ("white", 640, 480);
+}
+
+destroyDroneVision() {
+	if (isDefined(self.drone_vision)) {
+		self.drone_vision destroy();
+	}
 }
 
 delete_on_death (ent)
@@ -490,6 +513,7 @@ tactical_cam() {
 		wait(0.5);
 		self.ab_blackscreen destroy();
 		self.ab_blackscreen2 destroy();
+		self droneVision();
 		self freezeControls( false );
 
 		self.using_marker = true;		
@@ -504,12 +528,12 @@ tactical_cam() {
 			self.spawn_model delete();
 			self.spawn_model_collision delete();
 		}			
+		self destroyDroneVision();		
 		self unlink();
 		self setOrigin(self.use_marker);
 		wait(0.5);
 		self.ab_blackscreen destroy();
-		self.ab_blackscreen2 destroy();
-
+		self.ab_blackscreen2 destroy();		
 		self enableWeapons();
 		self freezeControls( false );
 		self show();

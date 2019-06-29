@@ -438,6 +438,7 @@ onSpawnPlayer()
 			self setOrigin( self.toBeRespawnedOrigin );
 			self ExecClientCommand("gocrouch");
 			self ExecClientCommand("goprone");
+			self.health = 50;
 		} else {
 			self.pers["stats"]["misc"]["hitman"] = 0;
 			self.pers["stats"]["misc"]["medic"] = 0;
@@ -2038,9 +2039,8 @@ revivePlayer(player) {
 	wait(1.0);
 	if (!level.gameEnded) {
 		player.pers["tag"] = false;
-		player thread [[level.spawnPlayer]]();
-		player.health = player.maxhealth / 2;
 		player.revivedOnce = true;
+		player thread [[level.spawnPlayer]]();		
 	}
 
 }
